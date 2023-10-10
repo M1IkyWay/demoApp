@@ -9,13 +9,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="закінчила 10.10 о 14:40" />
+    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="first commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[4LBYPFIJNZE6X495]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -59,15 +59,8 @@
       </state>
     </system>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="layoutResourceFile" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/f-283" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
@@ -80,30 +73,15 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="283" />
-                    <option name="lastUsedInstant" value="1696860344" />
+                    <option name="lastUsedInstant" value="1696846603" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1696860343" />
+                    <option name="lastUsedInstant" value="1696846602" />
                   </RecentBranch>
                 </list>
               </option>
-              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/283" />
-            </RecentBranchesForRepo>
-            <RecentBranchesForRepo>
-              <option name="branches">
-                <list>
-                  <RecentBranch>
-                    <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1696865340" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="283" />
-                    <option name="lastUsedInstant" value="1696864061" />
-                  </RecentBranch>
-                </list>
-              </option>
-              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/f-283" />
             </RecentBranchesForRepo>
           </list>
         </option>
@@ -114,31 +92,27 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2WUdHYEO4oJklJam38i4cIKr70D" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/res/drawable",
+    "last_opened_file_path": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol",
     "recommended.upgrade.do.not.ask.for.project": "true",
-    "settings.editor.selected.configurable": "vcs.Subversion.Network"
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="android.template.-1963943531">
-      <recent name="com.example.cashluckpatrol" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
-    </key>
-    <key name="android.template.1836220176">
+    <key name="android.template.-898720048">
       <recent name="com.example.cashluckpatrol" />
     </key>
   </component>
@@ -224,11 +198,6 @@
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration>$USER_HOME$/.subversion</configuration>
-    <option name="sshConnectionType" value="PASSWORD" />
-    <option name="sshPrivateKeyPath" value="$USER_HOME$/.ssh/id_ed25519" />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="" />
@@ -238,27 +207,55 @@
       <updated>1696791005397</updated>
     </task>
     <task id="LOCAL-00001" summary="first commit">
-      <created>1696861665640</created>
+      <created>1696847144269</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1696861665640</updated>
+      <updated>1696847144269</updated>
     </task>
-    <task id="LOCAL-00002" summary="почала 10.10 о 12:54">
-      <created>1696931698843</created>
+    <task id="LOCAL-00002" summary="first commit">
+      <created>1696847179481</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1696931698843</updated>
+      <updated>1696847179481</updated>
     </task>
-    <task id="LOCAL-00003" summary="закінчила 10.10 о 14:40">
-      <created>1696938031009</created>
+    <task id="LOCAL-00003" summary="first commit">
+      <created>1696847181606</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1696938031009</updated>
+      <updated>1696847181606</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="first commit">
+      <created>1696847188047</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696847188047</updated>
+    </task>
+    <task id="LOCAL-00005" summary="first commit">
+      <created>1696847188712</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696847188712</updated>
+    </task>
+    <task id="LOCAL-00006" summary="first commit">
+      <created>1696847189345</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696847189346</updated>
+    </task>
+    <task id="LOCAL-00007" summary="first commit">
+      <created>1696847198503</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696847198503</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -273,13 +270,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
-      <path value="$PROJECT_DIR$/283" />
-      <path value="$PROJECT_DIR$/f-283" />
+      <path value="$PROJECT_DIR$/f-283/f-283" />
     </ignored-roots>
     <MESSAGE value="first commit" />
-    <MESSAGE value="почала 10.10 о 12:54" />
-    <MESSAGE value="закінчила 10.10 о 14:40" />
-    <option name="LAST_COMMIT_MESSAGE" value="закінчила 10.10 о 14:40" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
 </project>
