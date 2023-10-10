@@ -1,7 +1,7 @@
 
 apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 apply plugin: 'com.android.application'
-
+apply plugin: 'org.jetbrains.kotlin.android'
 
 
 android {
@@ -28,6 +28,17 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    viewBinding {
+        enabled true
+    }
+    buildFeatures {
+        viewBinding true
     }
 
 }
