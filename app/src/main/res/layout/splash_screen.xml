@@ -20,17 +20,96 @@
         app:srcCompat="@drawable/background" />
 
 
-
-    <ImageView
-        android:id="@+id/progress_bar"
-        android:layout_width="@dimen/_270sdp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="400dp"
-        android:scaleType="fitCenter"
+    <LinearLayout
+        android:id="@+id/vibroSet"
+        android:layout_width="@dimen/_280sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/status_bar0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.424">
+
+        <ImageView
+            android:id="@+id/vgrade1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/star_bar"
+            android:layout_marginEnd="@dimen/_2sdp"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vgrade2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/star_bar"
+            android:layout_marginEnd="@dimen/_2sdp"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vgrade3"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/star_bar"
+            android:layout_marginEnd="@dimen/_2sdp"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vgrade4"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/star_bar"
+            android:layout_marginEnd="@dimen/_2sdp"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vgrade5"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/star_bar"
+            android:layout_marginEnd="@dimen/_2sdp"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+
+
+        <ImageView
+            android:id="@+id/vgrade7"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/star_bar"
+            android:layout_marginEnd="@dimen/_2sdp"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vgrade8"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/star_bar"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+    </LinearLayout>
 
     <ImageView
     android:id="@+id/cop"

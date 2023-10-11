@@ -47,6 +47,98 @@
         app:layout_constraintVertical_bias="0.292" />
 
 
+    <LinearLayout
+        android:id="@+id/soundSet"
+        android:layout_width="@dimen/_280sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.433">
+
+        <ImageView
+            android:id="@+id/grade1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/step_grade_fat"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/grade2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/step_grade_fat"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/grade3"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/step_grade_fat"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/grade4"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/step_grade_fat"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/grade5"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/step_grade_fat"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/grade6"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/step_grade_fat"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/grade7"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/step_grade_fat"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/grade8"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/step_grade_fat"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/vibrationText"
@@ -62,13 +154,98 @@
         app:layout_constraintTop_toTopOf="@+id/imageView6"
         app:layout_constraintVertical_bias="0.564" />
 
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="350dp"
-        android:layout_height="54dp"
-        app:srcCompat="@drawable/status_bar1"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="457dp" />
+    <LinearLayout
+        android:id="@+id/vibroSet"
+        android:layout_width="@dimen/_280sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.702">
+
+        <ImageView
+            android:id="@+id/vgrade1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/step_grade_fat"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vgrade2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/step_grade_fat"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vgrade3"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/step_grade_fat"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vgrade4"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/step_grade_fat"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vgrade5"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/step_grade_fat"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vgrade6"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/step_grade_fat"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vgrade7"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/step_grade_fat"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vgrade8"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/step_grade_fat"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/resetScoreText"
@@ -95,5 +272,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.925" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,16 +16,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/background" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="333dp"
-        android:layout_height="96dp"
+    <TextView
+        android:id="@+id/emailInput"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/air_millhouse_italic"
+        android:gravity="center"
+        android:lines="2"
+        android:text="Enter your email"
+        android:textSize="@dimen/_45sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1"
-        app:srcCompat="@drawable/email_entering" />
+        app:layout_constraintVertical_bias="0.129" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -48,4 +52,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.639"
         app:srcCompat="@drawable/play_button_small" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
