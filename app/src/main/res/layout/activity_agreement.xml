@@ -18,17 +18,6 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/background" />
 
-    <ImageView
-        android:id="@+id/privPolText"
-        android:layout_width="307dp"
-        android:layout_height="153dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.079"
-        app:srcCompat="@drawable/privacy_policy_text" />
-
     <ImageButton
         android:id="@+id/privPolButton"
         android:layout_width="316dp"
@@ -44,18 +33,6 @@
         android:focusable="true"
         app:srcCompat="@drawable/privacy_policy_button" />
 
-    <ImageView
-        android:id="@+id/acceptText"
-        android:layout_width="270dp"
-        android:layout_height="45dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.679"
-        app:srcCompat="@drawable/accept_text" />
-
     <ImageButton
         android:id="@+id/yesButton"
         android:layout_width="130dp"
@@ -69,4 +46,35 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.931"
         app:srcCompat="@drawable/button_yes" />
+
+    <TextView
+        android:id="@+id/privacyPolicy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/air_millhouse_italic"
+        android:text="Privacy policy "
+        android:textSize="@dimen/_45sdp"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="34dp" />
+
+    <TextView
+        android:id="@+id/andTerms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/air_millhouse_italic"
+        android:text="and terms"
+        android:textSize="@dimen/_45sdp"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="99dp" />
+
+    <TextView
+        android:id="@+id/accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/air_millhouse_italic"
+        android:text="Accept? "
+        android:textSize="@dimen/_45sdp"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="454dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

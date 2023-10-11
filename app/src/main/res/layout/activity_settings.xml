@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
+
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="wrap_content"
@@ -18,27 +19,32 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/background" />
 
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="197dp"
-        android:layout_height="31dp"
+    <TextView
+        android:id="@+id/setingsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/air_millhouse_italic"
+        android:text="Settings"
+        android:textSize="@dimen/_60sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.292"
-        app:srcCompat="@drawable/music" />
+        app:layout_constraintVertical_bias="0.082" />
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="295dp"
-        android:layout_height="35dp"
+    <TextView
+        android:id="@+id/musicText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/air_millhouse_italic"
+        android:text="Music"
+        android:textSize="@dimen/_45sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54"
-        app:srcCompat="@drawable/vibration" />
+        app:layout_constraintVertical_bias="0.292" />
 
     <ImageView
         android:id="@+id/imageView12"
@@ -48,6 +54,19 @@
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="283dp" />
 
+    <TextView
+        android:id="@+id/vibrationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/air_millhouse_italic"
+        android:text="Vibration"
+        android:textSize="@dimen/_45sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.564" />
 
     <ImageView
         android:id="@+id/imageView13"
@@ -55,30 +74,32 @@
         android:layout_height="54dp"
         app:srcCompat="@drawable/status_bar1"
         tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="467dp" />
+        tools:layout_editor_absoluteY="457dp" />
 
-    <ImageView
-        android:id="@+id/imageView14"
+    <TextView
+        android:id="@+id/resetScoreText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/air_millhouse_italic"
+        android:text="Reset score"
+        android:textSize="@dimen/_35sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.776"
-        app:srcCompat="@drawable/reset_score" />
+        app:layout_constraintVertical_bias="0.825" />
 
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="344dp"
-        android:layout_height="27dp"
+    <TextView
+        android:id="@+id/removeAccountButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/air_millhouse_italic"
+        android:text="RemoveAccount"
+        android:textSize="@dimen/_35sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.537"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.872"
-        app:srcCompat="@drawable/remove_account" />
+        app:layout_constraintVertical_bias="0.925" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
