@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="почала 11.10 о 18:28">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_agreement.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_agreement.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" afterDir="false" />
-    </list>
+    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="закінчила 11.10 о 19:11" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -291,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697038124928</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="закінчила 11.10 о 19:11">
+      <created>1697040726403</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1697040726403</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -331,6 +334,7 @@
     <MESSAGE value="почала 11.10 о 13:04" />
     <MESSAGE value="закынчила 11.10 о 14:40" />
     <MESSAGE value="почала 11.10 о 18:28" />
-    <option name="LAST_COMMIT_MESSAGE" value="почала 11.10 о 18:28" />
+    <MESSAGE value="закінчила 11.10 о 19:11" />
+    <option name="LAST_COMMIT_MESSAGE" value="закінчила 11.10 о 19:11" />
   </component>
 </project>

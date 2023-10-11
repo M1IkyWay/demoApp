@@ -46,13 +46,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.292" />
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="350dp"
-        android:layout_height="54dp"
-        app:srcCompat="@drawable/status_bar1"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="283dp" />
+
 
     <TextView
         android:id="@+id/vibrationText"
