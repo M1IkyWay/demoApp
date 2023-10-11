@@ -10,7 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/EnteringPhoneActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_entering_phone.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +117,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="android.template.-805501103">
+      <recent name="com.example.cashluckpatrol" />
+    </key>
     <key name="android.template.-898720048">
       <recent name="com.example.cashluckpatrol" />
     </key>
@@ -265,7 +271,24 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
