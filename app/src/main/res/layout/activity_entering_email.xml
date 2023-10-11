@@ -4,28 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EnteringPhoneActivity">
-
+    tools:context=".EnteringEmailActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/background" />
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="310dp"
-        android:layout_height="121dp"
-        app:srcCompat="@drawable/phone_input"
-        tools:layout_editor_absoluteX="49dp"
-        tools:layout_editor_absoluteY="241dp" />
+        android:id="@+id/imageView3"
+        android:layout_width="333dp"
+        android:layout_height="96dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        app:srcCompat="@drawable/email_entering" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="309dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/email_input"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="220dp" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -40,31 +48,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.639"
         app:srcCompat="@drawable/play_button_small" />
-
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/air_millhouse_italic"
-        android:text=" Enter your phone "
-        android:textColor="@color/material_dynamic_tertiary60"
-        android:textSize="@dimen/_40sdp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="61dp" />
-
-    <TextView
-        android:id="@+id/textViewfgf"
-        android:layout_width="401dp"
-        android:layout_height="81dp"
-        android:clickable="true"
-        android:fontFamily="@font/air_millhouse_italic"
-        android:gravity="center"
-        android:text="Anonymous mode"
-        android:textColor="@color/material_dynamic_tertiary60"
-        android:textSize="@dimen/_34sdp"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="581dp" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
