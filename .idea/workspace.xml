@@ -9,31 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="почала 12.10 о 00:04">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/flash1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/hot_flash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/register_to_unlock.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/slot_first.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/star_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/step_grade.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/step_grade_fat.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/games-menu-anon/flash_game_second.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/flash_second.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/games-menu-anon/flash_game_third.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/flash_third.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/games-menu-anon/flash_games.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/games-menu-anon/flash_gane_first.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/games-menu-anon/hot_game_spole.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/games-menu-anon/hot_games.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/games-menu-anon/register_to_unlock_button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/games-menu-anon/slot_game_first.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/games-menu-anon/slot_game_second.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/slot_game_second.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/games-menu-anon/slot_game_third.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/slot_game_third.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/games-menu-anon/slot_games.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_entering_email.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_entering_email.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_games_menu_anon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_games_menu_anon.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/splash_screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/splash_screen.xml" afterDir="false" />
-    </list>
+    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="закінчила 12.10 о 02:00" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -325,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697058304027</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="закінчила 12.10 о 02:00">
+      <created>1697065252926</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1697065252926</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -367,6 +350,7 @@
     <MESSAGE value="почала 11.10 о 18:28" />
     <MESSAGE value="закінчила 11.10 о 19:11" />
     <MESSAGE value="почала 12.10 о 00:04" />
-    <option name="LAST_COMMIT_MESSAGE" value="почала 12.10 о 00:04" />
+    <MESSAGE value="закінчила 12.10 о 02:00" />
+    <option name="LAST_COMMIT_MESSAGE" value="закінчила 12.10 о 02:00" />
   </component>
 </project>
