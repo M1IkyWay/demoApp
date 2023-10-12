@@ -47,11 +47,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/air_millhouse_italic"
+        android:shadowColor="@color/shadow_color"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="5"
         android:text=" Enter your phone "
-        android:textColor="@color/material_dynamic_tertiary60"
+        android:textColor="@color/white"
         android:textSize="@dimen/_40sdp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="61dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.12" />
 
     <TextView
         android:id="@+id/textViewfgf"

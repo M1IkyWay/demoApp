@@ -17,7 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/background" />
+        app:srcCompat="@drawable/background"
+        />
 
 
     <LinearLayout
@@ -109,6 +110,13 @@
             android:src="@drawable/star_bar"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/stars_bar" />
+
     </LinearLayout>
 
     <ImageView
@@ -123,6 +131,16 @@
     app:layout_constraintVertical_bias="1.0"
     app:srcCompat="@drawable/cop"
     android:layout_marginBottom="-10dp"/>
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/stars_bar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

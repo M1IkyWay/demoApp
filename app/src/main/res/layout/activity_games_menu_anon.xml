@@ -153,6 +153,7 @@
         android:layout_width="@dimen/_190sdp"
         android:layout_height="@dimen/_45sdp"
         android:scaleType="fitCenter"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

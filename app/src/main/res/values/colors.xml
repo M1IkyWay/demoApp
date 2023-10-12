@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="border_for_input">#FF7E14</color>
+    <color name="bg_for_input">#FFC142</color>
+    <color name="invalidity_color">#FF1414</color>
+    <color name="validity_color">#2DBA00</color>
+    <color name="shadow_color">#ADADAC</color>
 </resources>
