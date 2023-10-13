@@ -6,4 +6,10 @@
     <string name="email_hint">email</string>
     <string name="email_is_invalid">Email is invalid</string>
     <string name="email_is_valid">Email is valid</string>
+    <string name="anonymous_mode">Anonymous mode</string>
+    <string name="bg_city">bg city</string>
+    <string name="button_play">button play</string>
+    <string name="phone_input_hint">Enter your phone</string>
+    <string name="phone_input_area">phone_input area</string>
+    <string name="phone_number">phone number</string>
 </resources>
