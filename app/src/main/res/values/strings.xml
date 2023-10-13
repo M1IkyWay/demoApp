@@ -12,4 +12,6 @@
     <string name="phone_input_hint">Enter your phone</string>
     <string name="phone_input_area">phone_input area</string>
     <string name="phone_number">phone number</string>
+    <string name="button_play_">Button play</string>
+    <string name="play">Play </string>
 </resources>
