@@ -19,13 +19,7 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/background" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="310dp"
-        android:layout_height="121dp"
-        app:srcCompat="@drawable/phone_input"
-        tools:layout_editor_absoluteX="49dp"
-        tools:layout_editor_absoluteY="241dp" />
+
 
     <ImageButton
         android:id="@+id/imageButton"
