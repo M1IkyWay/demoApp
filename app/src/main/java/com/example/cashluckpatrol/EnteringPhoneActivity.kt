@@ -12,5 +12,7 @@ class EnteringPhoneActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+
+
     }
 }
