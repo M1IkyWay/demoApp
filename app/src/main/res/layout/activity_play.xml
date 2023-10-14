@@ -6,10 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".PlayActivity">
 
+
     <ImageView
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/background_city"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -18,19 +20,40 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/background" />
 
-    <ImageButton
-        android:id="@+id/playButton"
-        android:layout_width="300dp"
-        android:layout_height="134dp"
-        android:background="@drawable/transparent_background"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <RelativeLayout
+        android:id="@+id/btnPlay"
+        android:layout_width="303dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="144dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.256"
-        app:srcCompat="@drawable/play_button" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/playButton"
+            android:layout_width="312dp"
+            android:layout_height="129dp"
+            android:clickable="true"
+            android:contentDescription="@string/button_play"
+            android:focusable="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_bg"
+            tools:layout_editor_absoluteX="49dp"
+            tools:layout_editor_absoluteY="389dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/air_millhouse_italic"
+            android:text="@string/play"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_40sdp" />
+
+    </RelativeLayout>
 
     <ImageView
         android:id="@+id/copImage"
@@ -42,5 +65,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/cop" />
+        app:srcCompat="@drawable/cop"
+        android:contentDescription="@string/cop" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -58,47 +58,46 @@
             android:src="@drawable/bg_input"
             android:contentDescription="@string/phone_input_area" />
 
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerVertical="true"
-    android:layout_centerHorizontal="true">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:translationZ="@dimen/_2sdp"
+            android:layout_alignStart="@id/bgForInput"
+            android:layout_alignEnd="@id/bgForInput"
+            android:layout_centerHorizontal="true">
 
-    <com.ak.ui.CountryCodePicker
-        android:id="@+id/ccp_phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:contentColor="@color/black"
-        app:fontFamily="@font/air_millhouse_italic"
-        app:showFlag="true"
-        android:gravity="center"
-        app:defaultNameCode="in"
-        app:showArrowDown="true"
-        app:showNameCode="false"
-        app:arrowSize="@dimen/_20sdp"
-        app:textSize="@dimen/_12ssp"
-        app:excludedCountries="ad,ae" />
 
-    <EditText
-        android:id="@+id/numberInput"
-        android:layout_width="@dimen/_130sdp"
-        android:layout_height="90dp"
-        android:layout_marginEnd="@dimen/_10sdp"
-        android:textColorHint="@color/hint_color"
-        android:background="@drawable/transparent_background"
-        android:ems="10"
-        android:gravity="center"
-        android:translationZ="3dp"
-        android:hint="@string/phone_number"
-        android:fontFamily="@font/air_millhouse_italic"
-        android:textColor="@color/input_color"
-        android:textSize="@dimen/_35sdp"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="220dp"
-        android:importantForAutofill="no"
-        android:inputType="phone" />
+            <ImageView
+                android:id="@+id/flag"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:paddingVertical="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/round_background"/>
 
-</LinearLayout>
+            <EditText
+                android:id="@+id/numberInput"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:textColorHint="@color/hint_color"
+                android:background="@drawable/transparent_background"
+                android:ems="10"
+                android:gravity="center"
+                android:translationZ="3dp"
+                android:hint="@string/phone_number"
+                android:fontFamily="@font/air_millhouse_italic"
+                android:textColor="@color/input_color"
+                android:textSize="@dimen/_35sdp"
+                tools:layout_editor_absoluteX="98dp"
+                tools:layout_editor_absoluteY="220dp"
+                android:importantForAutofill="no"
+                android:inputType="phone" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 

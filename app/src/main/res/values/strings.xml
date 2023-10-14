@@ -14,4 +14,6 @@
     <string name="phone_number">phone number</string>
     <string name="button_play_">Button play</string>
     <string name="play">Play </string>
+    <string name="background_city">background city</string>
+    <string name="cop">cop</string>
 </resources>
