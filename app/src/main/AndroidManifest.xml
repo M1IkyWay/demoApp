@@ -31,9 +31,6 @@
             android:name=".ChoosingModeActivity"
             android:exported="false" />
         <activity
-            android:name=".PlayActivity"
-            android:exported="false" />
-        <activity
             android:name=".AgreementActivity"
             android:exported="false" />
         <activity
@@ -42,14 +39,10 @@
             android:label="@string/title_activity_privacy_policy"
             android:theme="@style/Theme.CashLuckPatrol.NoActionBar" />
         <activity
-            android:name=".SecondActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".PlayActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
