@@ -16,4 +16,7 @@
     <string name="play">Play </string>
     <string name="background_city">background city</string>
     <string name="cop">cop</string>
+    <string name="sign_up_to_play">Sign up to play</string>
+    <string name="via_phone">via phone </string>
+    <string name="via_email">"via email "</string>
 </resources>

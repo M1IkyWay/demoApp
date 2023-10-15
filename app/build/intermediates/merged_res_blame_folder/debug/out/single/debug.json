@@ -60,6 +60,10 @@
         "source": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/res/layout/splash_screen.xml"
     },
     {
+        "merged": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/build/intermediates/merged_res/debug/layout_edittext_layout.xml.flat",
+        "source": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/res/layout/edittext_layout.xml"
+    },
+    {
         "merged": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/build/intermediates/merged_res/debug/drawable_flash_second.png.flat",
         "source": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/res/drawable/flash_second.png"
     },
@@ -158,6 +162,10 @@
     {
         "merged": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/build/intermediates/merged_res/debug/layout_activity_sign_up.xml.flat",
+        "source": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/res/layout/activity_sign_up.xml"
     },
     {
         "merged": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/build/intermediates/merged_res/debug/drawable_privacy_policy_button.png.flat",

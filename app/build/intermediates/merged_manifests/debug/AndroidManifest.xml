@@ -27,6 +27,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CashLuckPatrol" >
         <activity
+            android:name="com.example.cashluckpatrol.SignUpActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.cashluckpatrol.GamesMenuActivity"
             android:exported="false" />
         <activity

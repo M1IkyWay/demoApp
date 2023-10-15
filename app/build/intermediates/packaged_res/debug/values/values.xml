@@ -29,7 +29,10 @@
     <string name="phone_input_hint">Enter your phone</string>
     <string name="phone_number">phone number</string>
     <string name="play">Play </string>
+    <string name="sign_up_to_play">Sign up to play</string>
     <string name="title_activity_privacy_policy">PrivacyPolicy</string>
+    <string name="via_email">"via email "</string>
+    <string name="via_phone">via phone </string>
     <style name="Base.Theme.CashLuckPatrol" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
