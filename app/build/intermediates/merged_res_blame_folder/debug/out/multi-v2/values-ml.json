@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ml/values-ml.xml",
+            "outputFile": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ml/values-ml.xml",
             "map": [
                 {
                     "source": "/home/milkyway/.gradle/caches/transforms-3/af227b4dd8cd4644855d0df647eb38a2/transformed/appcompat-1.6.1/res/values-ml/values-ml.xml",

@@ -27,7 +27,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CashLuckPatrol" >
         <activity
-            android:name="com.example.cashluckpatrol.MainActivity"
+            android:name="com.example.cashluckpatrol.GamesMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.cashluckpatrol.GamesMenuAnonActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.cashluckpatrol.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.cashluckpatrol.EnteringEmailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.cashluckpatrol.EnteringPhoneActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.cashluckpatrol.ChoosingModeActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.cashluckpatrol.AgreementActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.cashluckpatrol.PrivacyPolicy"
+            android:exported="false"
+            android:label="@string/title_activity_privacy_policy"
+            android:theme="@style/Theme.CashLuckPatrol.NoActionBar" />
+        <activity
+            android:name="com.example.cashluckpatrol.PlayActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
