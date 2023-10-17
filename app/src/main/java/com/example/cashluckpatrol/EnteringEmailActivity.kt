@@ -18,7 +18,7 @@ class EnteringEmailActivity : AppCompatActivity() {
         setContentView(binding.root)
     var email = ""
     val emailInput = binding.emailInput
-        emailInput.baseline.luminance //what have i done?
+//        emailInput.baseline.luminance //what have i done?
     val playButton = binding.playButton
     val validity = binding.textValidity
 

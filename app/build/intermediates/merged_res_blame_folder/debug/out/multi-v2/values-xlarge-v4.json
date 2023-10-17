@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-xlarge-v4/values-xlarge-v4.xml",
+            "outputFile": "com.example.cashluckpatrol.app-mergeDebugResources-30:/values-xlarge-v4/values-xlarge-v4.xml",
             "map": [
                 {
-                    "source": "/home/milkyway/.gradle/caches/transforms-3/af227b4dd8cd4644855d0df647eb38a2/transformed/appcompat-1.6.1/res/values-xlarge-v4/values-xlarge-v4.xml",
+                    "source": "/home/milkyway/.gradle/caches/transforms-3/dc709874b4fddd4696237c2a15de0bfa/transformed/appcompat-1.6.1/res/values-xlarge-v4/values-xlarge-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",

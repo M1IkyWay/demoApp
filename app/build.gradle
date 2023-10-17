@@ -4,6 +4,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'org.jetbrains.kotlin.android'
 
 
+
 android {
     namespace 'com.example.cashluckpatrol'
     compileSdk 33
@@ -30,10 +31,6 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    dataBinding {
-        enabled true
-    }
-
     viewBinding {
         enabled true
     }
@@ -46,18 +43,17 @@ android {
 
 dependencies {
 
-    implementation 'com.makeramen:roundedimageview:2.3.0'
+//    implementation 'com.makeramen:roundedimageview:2.0.0'
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
     implementation 'com.airbnb.android:lottie:4.2.0'
-    implementation 'com.android.tools.build:gradle:7.4.2'
+    implementation 'com.google.android.material:material:1.5.0'
+//    implementation 'com.android.tools.build:gradle:7.6.0'
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'com.github.ibrahimsn98:PhoneNumberKit:2.0.6'
-
 
 }

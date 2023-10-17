@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol/app/build/intermediates/merged_res/debugAndroidTest/values-v28_values-v28.arsc.flat",
+            "outputFile": "com.example.cashluckpatrol.test.app-merged_res-6:/values-v28_values-v28.arsc.flat",
             "map": [
                 {
-                    "source": "/home/milkyway/.gradle/caches/transforms-3/68f854f290d9d1356fc163527f5d310e/transformed/core-1.5.0/res/values-v28/values.xml",
+                    "source": "/home/milkyway/.gradle/caches/transforms-3/ee35d80ac4bea77477daf437f5c7337a/transformed/jetified-core-1.5.0/res/values-v28/values.xml",
                     "from": {
                         "startLines": "4,13",
                         "startColumns": "0,0",
@@ -25,34 +25,10 @@
             ]
         },
         {
-            "outputFile": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol/app/build/intermediates/merged_res/debugAndroidTest/values-v18_values-v18.arsc.flat",
+            "outputFile": "com.example.cashluckpatrol.test.app-merged_res-6:/values-v21_values-v21.arsc.flat",
             "map": [
                 {
-                    "source": "/home/milkyway/.gradle/caches/transforms-3/68f854f290d9d1356fc163527f5d310e/transformed/core-1.5.0/res/values-v18/values.xml",
-                    "from": {
-                        "startLines": "4,12",
-                        "startColumns": "0,0",
-                        "startOffsets": "180,596",
-                        "endLines": "11,19",
-                        "endColumns": "8,8",
-                        "endOffsets": "595,1009"
-                    },
-                    "to": {
-                        "startLines": "2,10",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,475",
-                        "endLines": "9,17",
-                        "endColumns": "8,8",
-                        "endOffsets": "470,888"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol/app/build/intermediates/merged_res/debugAndroidTest/values-v21_values-v21.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/milkyway/.gradle/caches/transforms-3/68f854f290d9d1356fc163527f5d310e/transformed/core-1.5.0/res/values-v21/values.xml",
+                    "source": "/home/milkyway/.gradle/caches/transforms-3/ee35d80ac4bea77477daf437f5c7337a/transformed/jetified-core-1.5.0/res/values-v21/values.xml",
                     "from": {
                         "startLines": "4,13",
                         "startColumns": "0,0",
@@ -73,10 +49,34 @@
             ]
         },
         {
-            "outputFile": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol/app/build/intermediates/merged_res/debugAndroidTest/values_values.arsc.flat",
+            "outputFile": "com.example.cashluckpatrol.test.app-merged_res-6:/values-v18_values-v18.arsc.flat",
             "map": [
                 {
-                    "source": "/home/milkyway/.gradle/caches/transforms-3/68f854f290d9d1356fc163527f5d310e/transformed/core-1.5.0/res/values/values.xml",
+                    "source": "/home/milkyway/.gradle/caches/transforms-3/ee35d80ac4bea77477daf437f5c7337a/transformed/jetified-core-1.5.0/res/values-v18/values.xml",
+                    "from": {
+                        "startLines": "4,12",
+                        "startColumns": "0,0",
+                        "startOffsets": "180,596",
+                        "endLines": "11,19",
+                        "endColumns": "8,8",
+                        "endOffsets": "595,1009"
+                    },
+                    "to": {
+                        "startLines": "2,10",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,475",
+                        "endLines": "9,17",
+                        "endColumns": "8,8",
+                        "endOffsets": "470,888"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.example.cashluckpatrol.test.app-merged_res-6:/values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/milkyway/.gradle/caches/transforms-3/ee35d80ac4bea77477daf437f5c7337a/transformed/jetified-core-1.5.0/res/values/values.xml",
                     "from": {
                         "startLines": "4,11",
                         "startColumns": "0,0",

@@ -43,61 +43,143 @@
 
     <RelativeLayout
         android:id="@+id/container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="312dp"
+        android:layout_height="129dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.357">
+        app:layout_constraintVertical_bias="0.357"
+        android:clickable="true"
+        android:background="@drawable/bg_input"
+        android:contentDescription="@string/phone_input_area"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:translationZ="@dimen/_2sdp">
 
 
-        <ImageView
-            android:id="@+id/bgForInput"
-            android:layout_width="312dp"
-            android:layout_height="129dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/bg_input"
-            android:contentDescription="@string/phone_input_area" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:orientation="horizontal"
-            android:translationZ="@dimen/_2sdp"
-            android:layout_alignStart="@id/bgForInput"
-            android:layout_alignEnd="@id/bgForInput"
-            android:layout_centerHorizontal="true">
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Phone Number"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColorHint="@color/hint_color"
-                    android:background="@drawable/transparent_background"
-                    android:ems="10"
-                    android:hint="@string/phone_number"
-                    android:fontFamily="@font/air_millhouse_italic"
-                    android:textColor="@color/input_color"
-                    android:textSize="@dimen/_35sdp"
-                    android:importantForAutofill="no"
-                    android:inputType="phone"
-
-
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:gravity="center"-->
+<!--            android:translationZ="@dimen/_2sdp">-->
 
 <!--            <ImageView-->
+<!--                android:id="@+id/imageFlag"-->
+<!--                android:layout_width="@dimen/_45sdp"-->
+<!--                android:layout_height="@dimen/_45sdp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/textViewName"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:singleLine="true"-->
+<!--                android:maxLines="1"-->
+<!--                android:ellipsize="end"-->
+<!--                android:textSize="@dimen/_30sdp"-->
+<!--                android:textColor="@color/input_color" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/textViewCode"-->
+<!--                android:layout_width="@dimen/_60sdp"-->
+<!--                android:layout_height="@dimen/_60sdp"-->
+<!--                android:fontFamily="@font/air_millhouse_italic"-->
+<!--                android:textSize="@dimen/_35sdp"-->
+<!--                android:textColor="#838383" />-->
+
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/textField"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Phone Number"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+<!--                -->
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/editText"-->
+<!--                    android:layout_width="@dimen/_120sdp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textColorHint="@color/hint_color"-->
+<!--                    android:background="@drawable/transparent_background"-->
+<!--                    android:ems="10"-->
+<!--                    android:hint="@string/phone_number"-->
+<!--                    android:fontFamily="@font/air_millhouse_italic"-->
+<!--                    android:textColor="@color/input_color"-->
+<!--                    android:textSize="@dimen/_35sdp"-->
+<!--                    android:importantForAutofill="no"-->
+<!--                    android:inputType="phone"-->
+<!--                    />-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                </LinearLayout>-->
+
+
+
+
+
+
+
+
+
+
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/textField"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:hint="Phone Number"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageFlag"-->
+<!--                    android:layout_width="@dimen/_45sdp"-->
+<!--                    android:layout_height="@dimen/_45sdp"-->
+<!--                    />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textViewName"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:ellipsize="end"-->
+<!--                    android:textSize="@dimen/_30sdp"-->
+<!--                    android:textColor="@color/input_color" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textViewCode"-->
+<!--                    android:layout_width="@dimen/_60sdp"-->
+<!--                    android:layout_height="@dimen/_60sdp"-->
+<!--                    android:fontFamily="@font/air_millhouse_italic"-->
+<!--                    android:textSize="@dimen/_35sdp"-->
+<!--                    android:textColor="#838383" />-->
+
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/editText"-->
+<!--                    android:layout_width="@dimen/_120sdp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textColorHint="@color/hint_color"-->
+<!--                    android:background="@drawable/transparent_background"-->
+<!--                    android:ems="10"-->
+<!--                    android:hint="@string/phone_number"-->
+<!--                    android:fontFamily="@font/air_millhouse_italic"-->
+<!--                    android:textColor="@color/input_color"-->
+<!--                    android:textSize="@dimen/_35sdp"-->
+<!--                    android:importantForAutofill="no"-->
+<!--                    android:inputType="phone"-->
+<!--                    />-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+
+
+
+        <!--            <ImageView-->
 <!--                android:id="@+id/flag"-->
 <!--                android:layout_width="@dimen/_50sdp"-->
 <!--                android:layout_height="@dimen/_50sdp"-->
@@ -125,9 +207,8 @@
 <!--                android:importantForAutofill="no"-->
 <!--                android:inputType="phone" />-->
 
-        </LinearLayout>
+        </RelativeLayout>
 
-    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/btnPlay"

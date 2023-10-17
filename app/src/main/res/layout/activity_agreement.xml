@@ -16,7 +16,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/background" />
+        app:srcCompat="@drawable/background"
+        android:contentDescription="@string/background_city" />
 
     <ImageButton
         android:id="@+id/privPolButton"
@@ -31,7 +32,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.371"
         android:focusable="true"
-        app:srcCompat="@drawable/privacy_policy_button" />
+        app:srcCompat="@drawable/privacy_policy_button"
+        android:contentDescription="@string/privacy_policy_button" />
 
     <ImageButton
         android:id="@+id/yesButton"
@@ -45,36 +47,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.931"
-        app:srcCompat="@drawable/button_yes" />
+        app:srcCompat="@drawable/button_yes"
+        android:contentDescription="@string/yes_button" />
 
     <TextView
         android:id="@+id/privacyPolicy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/air_millhouse_italic"
-        android:text="Privacy policy "
+        android:text="@string/privacy_policy"
         android:textSize="@dimen/_45sdp"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="34dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051" />
 
     <TextView
         android:id="@+id/andTerms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/air_millhouse_italic"
-        android:text="and terms"
+        android:text="@string/and_terms"
         android:textSize="@dimen/_45sdp"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="99dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.148" />
 
     <TextView
         android:id="@+id/accept"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/air_millhouse_italic"
-        android:text="Accept? "
+        android:text="@string/accept"
         android:textSize="@dimen/_45sdp"
-        tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="454dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.662" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

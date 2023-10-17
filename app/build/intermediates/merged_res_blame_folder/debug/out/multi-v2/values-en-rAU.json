@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "com.example.cashluckpatrol.app-mergeDebugResources-30:/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
-                    "source": "/home/milkyway/.gradle/caches/transforms-3/af227b4dd8cd4644855d0df647eb38a2/transformed/appcompat-1.6.1/res/values-en-rAU/values-en-rAU.xml",
+                    "source": "/home/milkyway/.gradle/caches/transforms-3/dc709874b4fddd4696237c2a15de0bfa/transformed/appcompat-1.6.1/res/values-en-rAU/values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/milkyway/.gradle/caches/transforms-3/7d041d75a5d37cf5eb18b802d359e391/transformed/core-1.9.0/res/values-en-rAU/values-en-rAU.xml",
+                    "source": "/home/milkyway/.gradle/caches/transforms-3/3442b491be1019a2d5bfaa8797a65871/transformed/core-1.9.0/res/values-en-rAU/values-en-rAU.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
