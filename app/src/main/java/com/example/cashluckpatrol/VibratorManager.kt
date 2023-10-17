@@ -9,16 +9,11 @@ import androidx.core.content.ContextCompat.getSystemService
 class VibratorManager (private val context : Context) {
 
 
-
-
-    private val vibratorManager : VibratorManager? =
-        context.getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as Vibrator?
-
-
-    private val vibrator : Vibrator? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
-        context.getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as? Vibrator
+    private val myVibrator: Vibrator? = try {
+        context.getSystemService(Vibrator::class.java)
+    } catch (e: Exception) {
+        null
     }
-    else {
-        context.getSystemService((Context.VIBRATOR_SERVICE) as? Vibrator
-    }
+
+
 }

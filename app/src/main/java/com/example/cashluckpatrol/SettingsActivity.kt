@@ -48,14 +48,16 @@ class SettingsActivity : AppCompatActivity() {
         }
 //set default value
 
-        val vib = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            val vibratorManager =
-                ContextCompat.getSystemService(VIBRATOR_MANAGER_SERVICE) as VibratorManager
-            vibratorManager.defaultVibrator
-        } else {
-            @Suppress("DEPRECATION")
-            ContextCompat.getSystemService(VIBRATOR_SERVICE) as Vibrator
-        }
+        val vibrationStrengthLevels = listOf(
+            binding.grade1,
+            binding.grade2,
+            binding.grade3,
+            binding.grade4,
+            binding.grade5,
+            binding.grade6,
+            binding.grade7,
+            binding.grade8,
+        )
 
 
 
