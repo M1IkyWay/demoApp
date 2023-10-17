@@ -6,14 +6,178 @@
     android:layout_height="match_parent"
     tools:context=".GamesMenuActivity">
 
+
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/backgr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.51"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/background" />
+
+    <TextView
+        android:id="@+id/hotGames"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/air_millhouse_italic"
+        android:text="@string/hot_games"
+        android:textSize="@dimen/_30sdp"
+        android:shadowColor="@color/shadow_color"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="5"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <TextView
+        android:id="@+id/slotGames"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/air_millhouse_italic"
+        android:text="@string/slot_games"
+        android:textSize="@dimen/_30sdp"
+        android:shadowColor="@color/shadow_color"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="5"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.337" />
+
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_110sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/slot1"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="@dimen/_110sdp"
+                android:src="@drawable/slot_first" />
+
+
+            <ImageView
+                android:id="@+id/slot2"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="@dimen/_110sdp"
+                android:src="@drawable/slot_game_second" />
+
+
+            <ImageView
+                android:id="@+id/slot3"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="@dimen/_110sdp"
+                android:src="@drawable/slot_game_third" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/flashGames"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/air_millhouse_italic"
+        android:text="@string/flash_games"
+        android:textSize="@dimen/_30sdp"
+        android:shadowColor="@color/shadow_color"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="5"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.652" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_110sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.855">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/flash1"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="@dimen/_110sdp"
+                android:src="@drawable/flash1" />
+
+
+            <ImageView
+                android:id="@+id/flash2"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="@dimen/_110sdp"
+                android:src="@drawable/flash_second" />
+
+
+            <ImageView
+                android:id="@+id/flash3"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="@dimen/_110sdp"
+                android:src="@drawable/flash_third" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="361dp"
+        android:layout_height="180dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backgr"
+        app:layout_constraintVertical_bias="0.119"
+        app:srcCompat="@drawable/hot_flash" />
+
+
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="@dimen/_190sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:scaleType="fitCenter"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.961"
+        app:srcCompat="@drawable/register_to_unlock" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
