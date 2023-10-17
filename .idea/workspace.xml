@@ -9,10 +9,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="закінчила 17.10 о 13:47">
+    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment=" почала 17.10 о 20:03">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SettingsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SettingsActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/VibratorManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/VibratorManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/VibratorManager.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -461,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697539641283</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary=" почала 17.10 о 20:03">
+      <created>1697562204483</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1697562204483</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -497,7 +504,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/f-283/f-283" />
     </ignored-roots>
-    <MESSAGE value="почала 11.10 о 13:04" />
     <MESSAGE value="закынчила 11.10 о 14:40" />
     <MESSAGE value="почала 11.10 о 18:28" />
     <MESSAGE value="закінчила 11.10 о 19:11" />
@@ -522,6 +528,7 @@
     <MESSAGE value="закінчила 15.10 о 15:54" />
     <MESSAGE value="почала 17.10 о 11:06" />
     <MESSAGE value="закінчила 17.10 о 13:47" />
-    <option name="LAST_COMMIT_MESSAGE" value="закінчила 17.10 о 13:47" />
+    <MESSAGE value=" почала 17.10 о 20:03" />
+    <option name="LAST_COMMIT_MESSAGE" value=" почала 17.10 о 20:03" />
   </component>
 </project>

@@ -5,9 +5,9 @@ import android.media.AudioManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.VibrationEffect
 import android.os.Vibrator
-import android.view.ViewGroup
-import androidx.core.content.ContextCompat
+import android.os.VibratorManager
 import com.example.cashluckpatrol.databinding.ActivitySettingsBinding
 
 class SettingsActivity : AppCompatActivity() {
@@ -49,17 +49,45 @@ class SettingsActivity : AppCompatActivity() {
 //set default value
 
         val vibrationStrengthLevels = listOf(
-            binding.grade1,
-            binding.grade2,
-            binding.grade3,
-            binding.grade4,
-            binding.grade5,
-            binding.grade6,
-            binding.grade7,
-            binding.grade8,
+            binding.vgrade1,
+            binding.vgrade2,
+            binding.vgrade3,
+            binding.vgrade4,
+            binding.vgrade5,
+            binding.vgrade6,
+            binding.vgrade7,
+            binding.vgrade8,
+
         )
 
 
+        val vib = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val vibratorManager =
+                getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+            vibratorManager.defaultVibrator
+        } else {
+            @Suppress("DEPRECATION")
+            getSystemService(VIBRATOR_SERVICE) as Vibrator
+        }
 
+
+        val maxAmplitude = 250
+
+        vibrationStrengthLevels.forEachIndexed {index, vibrationLevel ->
+            vibrationLevel.setOnClickListener {
+                val newVibrationLevel =  (index + 1) / 8 * maxAmplitude
+                vibrationLevel.setImageResource(R.drawable.active_rect)
+                for (i in 0  until index ) {
+                    vibrationStrengthLevels[i].setImageResource(R.drawable.active_rect)
+                }
+                for (i in index+1 until volumeLevels.size-1) {
+                    vibrationStrengthLevels[i].setImageResource(R.drawable.non_active_rect)
+                }
+                VibrationEffect.createOneShot(100L, newVibrationLevel)
+
+            }
+        }
+
+//написати як повністю вимкнути вібро і звук при подвійному танисканні
     }
 }
