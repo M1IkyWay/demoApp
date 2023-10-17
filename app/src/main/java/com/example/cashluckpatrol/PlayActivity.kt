@@ -14,8 +14,8 @@ class PlayActivity : AppCompatActivity() {
         binding = ActivityPlayBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnPlay.setOnClickListener{
-            val intent = Intent(this, ChoosingModeActivity::class.java)
+        binding.playButton.setOnClickListener{
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
     }

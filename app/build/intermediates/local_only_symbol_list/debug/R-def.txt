@@ -64,6 +64,7 @@ id accept
 id acceptButton
 id action_settings
 id andTerms
+id anonMode
 id askEmailInput
 id back
 id backgr
@@ -71,6 +72,7 @@ id btnPlay
 id container
 id cop
 id copImage
+id editText
 id emailInput
 id enteringPhone
 id flash1
@@ -88,8 +90,10 @@ id grade8
 id horizontalScrollView
 id horizontalScrollView2
 id hotGames
+id imageFlag
 id imageView
 id imageView2
+id imageView3
 id imageView4
 id imageView5
 id imageView6
@@ -115,8 +119,11 @@ id slot2
 id slot3
 id slotGames
 id soundSet
+id textField
 id textValidity
 id textView
+id textViewCode
+id textViewName
 id textViewfgf
 id vgrade1
 id vgrade2

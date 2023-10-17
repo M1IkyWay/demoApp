@@ -111,7 +111,7 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/textViewfgf"
+        android:id="@+id/anonMode"
         android:layout_width="301dp"
         android:layout_height="81dp"
         android:layout_marginTop="600dp"

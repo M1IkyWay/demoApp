@@ -62,80 +62,96 @@
         <ImageView
             android:id="@+id/grade1"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
             android:scaleType="fitCenter"
-            android:src="@drawable/step_grade_fat"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
         <ImageView
             android:id="@+id/grade2"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/step_grade_fat"
+            android:src="@drawable/active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
         <ImageView
             android:id="@+id/grade3"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/step_grade_fat"
+            android:src="@drawable/active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
         <ImageView
             android:id="@+id/grade4"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/step_grade_fat"
+            android:src="@drawable/active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
         <ImageView
             android:id="@+id/grade5"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/step_grade_fat"
+            android:src="@drawable/active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
         <ImageView
             android:id="@+id/grade6"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/step_grade_fat"
+            android:src="@drawable/active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
         <ImageView
             android:id="@+id/grade7"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/step_grade_fat"
+            android:src="@drawable/active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
         <ImageView
             android:id="@+id/grade8"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/step_grade_fat"
+            android:src="@drawable/active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
     </LinearLayout>
@@ -169,80 +185,96 @@
         <ImageView
             android:id="@+id/vgrade1"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/step_grade_fat"
+            android:src="@drawable/active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
         <ImageView
             android:id="@+id/vgrade2"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/step_grade_fat"
+            android:src="@drawable/active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
         <ImageView
             android:id="@+id/vgrade3"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/step_grade_fat"
+            android:src="@drawable/active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
         <ImageView
             android:id="@+id/vgrade4"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/step_grade_fat"
+            android:src="@drawable/active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
         <ImageView
             android:id="@+id/vgrade5"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/step_grade_fat"
+            android:src="@drawable/active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
         <ImageView
             android:id="@+id/vgrade6"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/step_grade_fat"
+            android:src="@drawable/active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
         <ImageView
             android:id="@+id/vgrade7"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/step_grade_fat"
+            android:src="@drawable/active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
         <ImageView
             android:id="@+id/vgrade8"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/step_grade_fat"
+            android:src="@drawable/active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
     </LinearLayout>
