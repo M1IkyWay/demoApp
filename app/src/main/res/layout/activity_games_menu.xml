@@ -19,6 +19,47 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/background" />
 
+
+    <RelativeLayout
+        android:id="@+id/smBtnPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:translationZ="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.192">
+
+
+        <ImageView
+            android:id="@+id/playButton"
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:clickable="true"
+            android:contentDescription="@string/button_play"
+            android:focusable="true"
+            android:src="@drawable/bt_play_small"
+            android:translationZ="@dimen/_2sdp"
+            tools:layout_editor_absoluteX="271dp"
+            tools:layout_editor_absoluteY="116dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/air_millhouse_italic"
+            android:text="@string/play"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:translationZ="@dimen/_3sdp" />
+
+    </RelativeLayout>
+
     <TextView
         android:id="@+id/hotGames"
         android:layout_width="wrap_content"
@@ -38,24 +79,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.047" />
 
+
     <TextView
         android:id="@+id/slotGames"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/air_millhouse_italic"
-        android:text="@string/slot_games"
-        android:textSize="@dimen/_30sdp"
         android:shadowColor="@color/shadow_color"
         android:shadowDx="3"
         android:shadowDy="3"
         android:shadowRadius="5"
+        android:text="@string/slot_games"
         android:textColor="@color/white"
+        android:textSize="@dimen/_30sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.337" />
-
+        app:layout_constraintVertical_bias="0.345" />
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
@@ -72,18 +114,110 @@
             android:layout_marginStart="@dimen/_5sdp"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/slot1"
+            <RelativeLayout
+                android:id="@+id/smBtnPlaySlot1"
                 android:layout_width="@dimen/_125sdp"
                 android:layout_height="@dimen/_110sdp"
-                android:src="@drawable/slot_first" />
+                android:gravity="center"
+                android:translationZ="@dimen/_2sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.834"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.192">
+
+                <ImageView
+                    android:id="@+id/slot1"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="@dimen/_110sdp"
+                    android:src="@drawable/slot_first" />
+
+                <ImageView
+                    android:id="@+id/playButtonSlot1"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:clickable="true"
+                    android:contentDescription="@string/button_play"
+                    android:focusable="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_55sdp"
+                    android:src="@drawable/bt_play_small"
+                    android:translationZ="@dimen/_2sdp"
+                    tools:layout_editor_absoluteX="271dp"
+                    tools:layout_editor_absoluteY="116dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/air_millhouse_italic"
+                    android:text="@string/play"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:layout_alignStart="@id/playButtonSlot1"
+                    android:layout_alignBottom="@id/playButtonSlot1"
+                    android:layout_alignEnd="@id/playButtonSlot1"
+                    android:layout_alignTop="@id/playButtonSlot1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp"
+                    android:translationZ="@dimen/_3sdp" />
+
+            </RelativeLayout>
 
 
-            <ImageView
-                android:id="@+id/slot2"
+            <RelativeLayout
+                android:id="@+id/smBtnPlaySlot2"
                 android:layout_width="@dimen/_125sdp"
                 android:layout_height="@dimen/_110sdp"
-                android:src="@drawable/slot_game_second" />
+                android:gravity="center"
+                android:translationZ="@dimen/_2sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.834"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.192">
+
+                <ImageView
+                    android:id="@+id/slot2_non_anon"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="@dimen/_110sdp"
+                    android:src="@drawable/slot2_non_anon" />
+
+                <ImageView
+                    android:id="@+id/playButtonSlot2"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:clickable="true"
+                    android:contentDescription="@string/button_play"
+                    android:focusable="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_55sdp"
+                    android:src="@drawable/bt_play_small"
+                    android:translationZ="@dimen/_2sdp"
+                    tools:layout_editor_absoluteX="271dp"
+                    tools:layout_editor_absoluteY="116dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/air_millhouse_italic"
+                    android:text="@string/play"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:layout_alignStart="@id/playButtonSlot2"
+                    android:layout_alignBottom="@id/playButtonSlot2"
+                    android:layout_alignEnd="@id/playButtonSlot2"
+                    android:layout_alignTop="@id/playButtonSlot2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp"
+                    android:translationZ="@dimen/_3sdp" />
+
+            </RelativeLayout>
 
 
             <ImageView
@@ -94,6 +228,8 @@
 
         </LinearLayout>
     </HorizontalScrollView>
+
+
 
     <TextView
         android:id="@+id/flashGames"
@@ -130,18 +266,110 @@
             android:layout_marginStart="@dimen/_5sdp"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/flash1"
+            <RelativeLayout
+                android:id="@+id/smBtnPlayFlash1"
                 android:layout_width="@dimen/_125sdp"
                 android:layout_height="@dimen/_110sdp"
-                android:src="@drawable/flash1" />
+                android:gravity="center"
+                android:translationZ="@dimen/_2sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.834"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.192">
+
+                <ImageView
+                    android:id="@+id/flash1"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="@dimen/_110sdp"
+                    android:src="@drawable/flash1" />
+
+                <ImageView
+                    android:id="@+id/playButtonFlash1"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:clickable="true"
+                    android:contentDescription="@string/button_play"
+                    android:focusable="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_55sdp"
+                    android:src="@drawable/bt_play_small"
+                    android:translationZ="@dimen/_2sdp"
+                    tools:layout_editor_absoluteX="271dp"
+                    tools:layout_editor_absoluteY="116dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/air_millhouse_italic"
+                    android:text="@string/play"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:layout_alignStart="@id/playButtonFlash1"
+                    android:layout_alignBottom="@id/playButtonFlash1"
+                    android:layout_alignEnd="@id/playButtonFlash1"
+                    android:layout_alignTop="@id/playButtonFlash1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp"
+                    android:translationZ="@dimen/_3sdp" />
+
+            </RelativeLayout>
 
 
-            <ImageView
-                android:id="@+id/flash2"
+            <RelativeLayout
+                android:id="@+id/smBtnPlayFlash2"
                 android:layout_width="@dimen/_125sdp"
                 android:layout_height="@dimen/_110sdp"
-                android:src="@drawable/flash_second" />
+                android:gravity="center"
+                android:translationZ="@dimen/_2sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.834"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.192">
+
+                <ImageView
+                    android:id="@+id/flash2_non_anon"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="@dimen/_110sdp"
+                    android:src="@drawable/flash2_non_anon" />
+
+                <ImageView
+                    android:id="@+id/playButtonFlash2"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:clickable="true"
+                    android:contentDescription="@string/button_play"
+                    android:focusable="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_55sdp"
+                    android:src="@drawable/bt_play_small"
+                    android:translationZ="@dimen/_2sdp"
+                    tools:layout_editor_absoluteX="271dp"
+                    tools:layout_editor_absoluteY="116dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/air_millhouse_italic"
+                    android:text="@string/play"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:layout_alignStart="@id/playButtonFlash2"
+                    android:layout_alignBottom="@id/playButtonFlash2"
+                    android:layout_alignEnd="@id/playButtonFlash2"
+                    android:layout_alignTop="@id/playButtonFlash2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp"
+                    android:translationZ="@dimen/_3sdp" />
+
+            </RelativeLayout>
 
 
             <ImageView
@@ -165,19 +393,26 @@
         app:srcCompat="@drawable/hot_flash" />
 
 
+    <ImageView
+        android:id="@+id/level"
+        android:layout_width="199dp"
+        android:layout_height="56dp"
+        app:srcCompat="@drawable/bg_field"
+        tools:layout_editor_absoluteX="12dp"
+        tools:layout_editor_absoluteY="659dp" />
 
     <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="@dimen/_190sdp"
-        android:layout_height="@dimen/_45sdp"
-        android:scaleType="fitCenter"
-        android:clickable="true"
+        android:id="@+id/balance"
+        android:layout_width="200dp"
+        android:layout_height="68dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961"
-        app:srcCompat="@drawable/register_to_unlock" />
+        app:layout_constraintVertical_bias="0.981"
+        app:srcCompat="@drawable/nice_bg_score_long" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
