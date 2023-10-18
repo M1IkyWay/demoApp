@@ -9,7 +9,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="закінчила 18.10 о 23:11" />
+    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="почала 18.10 о 23:52">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/ComingSoonActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/HotGameActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_coming_soon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_hot_game.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/GamesMenuActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/GamesMenuActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/GamesMenuAnonActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/GamesMenuAnonActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_games_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_games_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_games_menu_anon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_games_menu_anon.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,6 +155,9 @@
       <recent name="com.example.cashluckpatrol" />
     </key>
     <key name="android.template.992429453">
+      <recent name="com.example.cashluckpatrol" />
+    </key>
+    <key name="android.template.2104058159">
       <recent name="com.example.cashluckpatrol" />
     </key>
     <key name="android.template.-1381183987">
@@ -499,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697659894391</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="почала 18.10 о 23:52">
+      <created>1697662362289</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1697662362289</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -535,7 +556,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/f-283/f-283" />
     </ignored-roots>
-    <MESSAGE value="почала 12.10 о 09:59" />
     <MESSAGE value="закінчила 12.10 о 10:26" />
     <MESSAGE value="почала 12.10 о 11:32" />
     <MESSAGE value="закінчила 12.10 о 14:53" />
@@ -560,6 +580,7 @@
     <MESSAGE value="закінчила 17.10 о 22:45" />
     <MESSAGE value="почала 18.10 о 21:25" />
     <MESSAGE value="закінчила 18.10 о 23:11" />
-    <option name="LAST_COMMIT_MESSAGE" value="закінчила 18.10 о 23:11" />
+    <MESSAGE value="почала 18.10 о 23:52" />
+    <option name="LAST_COMMIT_MESSAGE" value="почала 18.10 о 23:52" />
   </component>
 </project>

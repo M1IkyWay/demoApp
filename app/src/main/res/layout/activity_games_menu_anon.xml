@@ -34,7 +34,7 @@
 
 
         <ImageView
-            android:id="@+id/playButton"
+            android:id="@+id/playHotButton"
             android:layout_width="@dimen/_65sdp"
             android:layout_height="@dimen/_50sdp"
             android:clickable="true"
@@ -133,7 +133,7 @@
                     android:src="@drawable/slot_first" />
 
                 <ImageView
-                    android:id="@+id/playButtonSlot"
+                    android:id="@+id/playButtonSlot1"
                     android:layout_width="@dimen/_45sdp"
                     android:layout_height="@dimen/_35sdp"
                     android:clickable="true"
@@ -155,10 +155,10 @@
                     android:text="@string/play"
                     android:gravity="center"
                     android:layout_marginBottom="@dimen/_5sdp"
-                    android:layout_alignStart="@id/playButtonSlot"
-                    android:layout_alignBottom="@id/playButtonSlot"
-                    android:layout_alignEnd="@id/playButtonSlot"
-                    android:layout_alignTop="@id/playButtonSlot"
+                    android:layout_alignStart="@id/playButtonSlot1"
+                    android:layout_alignBottom="@id/playButtonSlot1"
+                    android:layout_alignEnd="@id/playButtonSlot1"
+                    android:layout_alignTop="@id/playButtonSlot1"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp"
                     android:translationZ="@dimen/_3sdp" />
@@ -166,10 +166,10 @@
             </RelativeLayout>
 
 
-
-
             <ImageView
                 android:id="@+id/slot2"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_width="@dimen/_125sdp"
                 android:layout_height="@dimen/_110sdp"
                 android:src="@drawable/slot_game_second" />
@@ -177,6 +177,8 @@
 
             <ImageView
                 android:id="@+id/slot3"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_width="@dimen/_125sdp"
                 android:layout_height="@dimen/_110sdp"
                 android:src="@drawable/slot_game_third" />
@@ -241,7 +243,7 @@
                     android:src="@drawable/flash1" />
 
                 <ImageView
-                    android:id="@+id/playButtonFlash"
+                    android:id="@+id/playButtonFlash1"
                     android:layout_width="@dimen/_45sdp"
                     android:layout_height="@dimen/_35sdp"
                     android:clickable="true"
@@ -263,10 +265,10 @@
                     android:text="@string/play"
                     android:gravity="center"
                     android:layout_marginBottom="@dimen/_5sdp"
-                    android:layout_alignStart="@id/playButtonFlash"
-                    android:layout_alignBottom="@id/playButtonFlash"
-                    android:layout_alignEnd="@id/playButtonFlash"
-                    android:layout_alignTop="@id/playButtonFlash"
+                    android:layout_alignStart="@id/playButtonFlash1"
+                    android:layout_alignBottom="@id/playButtonFlash1"
+                    android:layout_alignEnd="@id/playButtonFlash1"
+                    android:layout_alignTop="@id/playButtonFlash1"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp"
                     android:translationZ="@dimen/_3sdp" />
@@ -277,6 +279,8 @@
 
             <ImageView
                 android:id="@+id/flash2"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_width="@dimen/_125sdp"
                 android:layout_height="@dimen/_110sdp"
                 android:src="@drawable/flash_second" />
@@ -284,6 +288,8 @@
 
             <ImageView
                 android:id="@+id/flash3"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_width="@dimen/_125sdp"
                 android:layout_height="@dimen/_110sdp"
                 android:src="@drawable/flash_third" />
@@ -303,11 +309,12 @@
         app:srcCompat="@drawable/hot_flash" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/registerButton"
         android:layout_width="@dimen/_190sdp"
         android:layout_height="@dimen/_45sdp"
         android:scaleType="fitCenter"
         android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

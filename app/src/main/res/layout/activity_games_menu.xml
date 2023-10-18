@@ -19,6 +19,37 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/background" />
 
+    <TextView
+        android:id="@+id/hotGames"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/air_millhouse_italic"
+        android:shadowColor="@color/shadow_color"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="5"
+        android:text="@string/hot_games"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_30sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.033" />
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="361dp"
+        android:layout_height="180dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backgr"
+        app:layout_constraintVertical_bias="0.119"
+        app:srcCompat="@drawable/hot_flash" />
+
 
     <RelativeLayout
         android:id="@+id/smBtnPlay"
@@ -35,12 +66,12 @@
 
 
         <ImageView
-            android:id="@+id/playButton"
+            android:id="@+id/playHotButton"
             android:layout_width="@dimen/_65sdp"
             android:layout_height="@dimen/_50sdp"
             android:clickable="true"
-            android:contentDescription="@string/button_play"
             android:focusable="true"
+            android:contentDescription="@string/button_play"
             android:src="@drawable/bt_play_small"
             android:translationZ="@dimen/_2sdp"
             tools:layout_editor_absoluteX="271dp"
@@ -59,26 +90,6 @@
             android:translationZ="@dimen/_3sdp" />
 
     </RelativeLayout>
-
-    <TextView
-        android:id="@+id/hotGames"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/air_millhouse_italic"
-        android:text="@string/hot_games"
-        android:textSize="@dimen/_30sdp"
-        android:shadowColor="@color/shadow_color"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="5"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.047" />
-
 
     <TextView
         android:id="@+id/slotGames"
@@ -222,6 +233,8 @@
 
             <ImageView
                 android:id="@+id/slot3"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_width="@dimen/_125sdp"
                 android:layout_height="@dimen/_110sdp"
                 android:src="@drawable/slot_game_third" />
@@ -374,6 +387,8 @@
 
             <ImageView
                 android:id="@+id/flash3"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_width="@dimen/_125sdp"
                 android:layout_height="@dimen/_110sdp"
                 android:src="@drawable/flash_third" />
@@ -381,54 +396,98 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="361dp"
-        android:layout_height="180dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backgr"
-        app:layout_constraintVertical_bias="0.119"
-        app:srcCompat="@drawable/hot_flash" />
-
 
     <LinearLayout
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_100sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="1.0"
+        android:orientation="horizontal"
+        android:gravity="center">
 
+        <RelativeLayout
+            android:id="@+id/levelView"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/level"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.056"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.976"
+                app:srcCompat="@drawable/bg_field" />
+
+            <TextView
+                android:id="@+id/levelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/level"
+                android:layout_alignTop="@id/level"
+                android:layout_alignEnd="@id/level"
+                android:layout_alignBottom="@id/level"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/air_millhouse_italic"
+                android:gravity="center"
+                android:maxWidth="@dimen/_180sdp"
+                android:text="Level 1"
+                android:textColor="@color/input_color"
+                android:textSize="@dimen/_20sdp"
+                android:shadowColor="@color/shadow_color"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="5" />
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/balanceView"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/balance"
+                android:layout_width="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/nice_bg_score_long" />
+
+            <TextView
+                android:id="@+id/balanceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/balance"
+                android:layout_alignTop="@id/balance"
+                android:layout_alignEnd="@id/balance"
+                android:layout_alignBottom="@id/balance"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/air_millhouse_italic"
+                android:gravity="center"
+                android:maxWidth="@dimen/_180sdp"
+                android:text="Balance 123456"
+                android:textColor="@color/input_color"
+                android:textSize="@dimen/_13sdp" />
+        </RelativeLayout>
 
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/level"
-        android:layout_width="185dp"
-        android:layout_height="47dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
-        app:srcCompat="@drawable/bg_field" />
-
-    <ImageView
-        android:id="@+id/balance"
-        android:layout_width="184dp"
-        android:layout_height="56dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
-        app:srcCompat="@drawable/nice_bg_score_long" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
