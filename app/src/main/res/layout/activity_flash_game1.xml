@@ -6,4 +6,272 @@
     android:layout_height="match_parent"
     tools:context=".FlashGame1Activity">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/imageView13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:translationZ="@dimen/_2sdp"
+        android:paddingHorizontal="@dimen/_15sdp">
+
+        <RelativeLayout
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_55sdp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/_5sdp">
+
+
+            <ImageView
+                android:id="@+id/winsAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/bg_default" />
+
+            <TextView
+                android:id="@+id/winsWord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/air_millhouse_italic"
+                android:gravity="center"
+                android:layout_alignStart="@id/winsAmount"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:layout_alignBottom="@id/winsAmount"
+                android:layout_alignTop="@id/winsAmount"
+                android:text="WIN  "
+                android:textColor="@color/input_color"
+                android:textSize="@dimen/_15sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/air_millhouse_italic"
+                android:gravity="center"
+                android:layout_alignTop="@id/winsAmount"
+                android:layout_alignBottom="@id/winsAmount"
+                android:layout_toEndOf="@id/winsWord"
+                android:layout_marginEnd="@dimen/_40sdp"
+                android:text="1 "
+                android:textColor="@color/input_color"
+                android:textSize="@dimen/_14sdp" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_55sdp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/_5sdp">
+
+
+            <ImageView
+                android:id="@+id/balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/bg_default" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/air_millhouse_italic"
+                android:gravity="center"
+                android:layout_alignStart="@id/balance"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:layout_alignBottom="@id/balance"
+                android:layout_alignTop="@id/balance"
+                android:text="Balance "
+                android:textColor="@color/input_color"
+                android:textSize="@dimen/_18sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/air_millhouse_italic"
+                android:gravity="center"
+                android:layout_alignTop="@id/balance"
+                android:layout_alignBottom="@id/balance"
+                android:layout_alignEnd="@id/balance"
+                android:layout_marginEnd="@dimen/_7sdp"
+                android:text="123456"
+                android:textColor="@color/input_color"
+                android:textSize="@dimen/_14sdp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg_flash1" />
+
+    <ImageView
+        android:id="@+id/marginGame"
+        android:layout_width="400dp"
+        android:layout_height="404dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.584"
+        app:srcCompat="@drawable/hot_field" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="175dp"
+        android:layout_height="149dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.183"
+        app:srcCompat="@drawable/cop" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_130sdp"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.987">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/decremBet"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_weight="1"
+                android:background="@drawable/transparent_background"
+                android:scaleType="fitCenter"
+                android:textAlignment="center"
+                app:srcCompat="@drawable/btn_decr" />
+
+
+            <RelativeLayout
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:gravity="center">
+
+
+                <ImageView
+                    android:id="@+id/bgBet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/bg_btn_flash1" />
+
+                <ImageView
+                    android:id="@+id/betMrg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/marg_flash1" />
+
+
+                <TextView
+                    android:id="@+id/choosenBet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/bgBet"
+                    android:layout_alignTop="@id/bgBet"
+                    android:layout_alignEnd="@id/bgBet"
+                    android:layout_alignBottom="@id/bgBet"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/air_millhouse_italic"
+                    android:gravity="center"
+                    android:text="200 "
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_25sdp" />
+
+
+            </RelativeLayout>
+
+            <ImageButton
+                android:id="@+id/incremBet"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_weight="1"
+                android:background="@drawable/transparent_background"
+                android:scaleType="fitCenter"
+                android:textAlignment="center"
+                app:srcCompat="@drawable/btn_incr" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+
+                <ImageView
+                    android:id="@+id/btnSpin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/btn_spin_long" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/btnSpin"
+                    android:layout_alignTop="@id/btnSpin"
+
+                    android:layout_alignEnd="@id/btnSpin"
+                    android:layout_alignBottom="@id/btnSpin"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:fontFamily="@font/air_millhouse_italic"
+                    android:gravity="center"
+                    android:text="Spin"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_30sdp" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
