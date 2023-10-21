@@ -9,17 +9,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="почала 21.10 о 21:57">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_btn_flash1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_default.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_decr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_incr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_spin_long.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/marg_flash1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/spin_btn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/drpeppers2.ttf" afterDir="false" />
+    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="закінчила 21.10 о 23:43">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_flash_game1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_flash_game1.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -572,7 +563,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697914646406</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="закінчила 21.10 о 23:43">
+      <created>1697921028656</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1697921028656</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -608,7 +606,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/f-283/f-283" />
     </ignored-roots>
-    <MESSAGE value="почала 13.10 о 22:53" />
     <MESSAGE value="закінчила 13.10 о 23:53" />
     <MESSAGE value="почала 14.10 о 00:34" />
     <MESSAGE value="закінчила 14.10 о 01:21" />
@@ -633,6 +630,7 @@
     <MESSAGE value="закінчила 21.10 о 20:38" />
     <MESSAGE value=" 21.10 о 20:38" />
     <MESSAGE value="почала 21.10 о 21:57" />
-    <option name="LAST_COMMIT_MESSAGE" value="почала 21.10 о 21:57" />
+    <MESSAGE value="закінчила 21.10 о 23:43" />
+    <option name="LAST_COMMIT_MESSAGE" value="закінчила 21.10 о 23:43" />
   </component>
 </project>
