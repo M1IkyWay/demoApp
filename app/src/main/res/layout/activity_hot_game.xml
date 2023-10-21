@@ -6,8 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".HotGameActivity">
 
+
+
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/bg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,8 +19,20 @@
         app:srcCompat="@drawable/background" />
 
 
+    <LinearLayout
+        android:layout_width="@dimen/_260sdp"
+        android:layout_height="@dimen/_200sdp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView12"
+        app:layout_constraintEnd_toEndOf="@+id/marginGame"
+        app:layout_constraintStart_toStartOf="@+id/marginGame"
+        app:layout_constraintTop_toTopOf="@+id/marginGame"
+        app:layout_constraintVertical_bias="0.835">
+
+
+    </LinearLayout>
+
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/marginGame"
         android:layout_width="400dp"
         android:layout_height="404dp"
         app:layout_constraintBottom_toBottomOf="parent"
