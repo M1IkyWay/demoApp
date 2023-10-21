@@ -8,4 +8,5 @@ class FlashGame1Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_flash_game1)
     }
+
 }
