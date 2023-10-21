@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="закінчила 21.10 о 23:43">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="почала 22.10 о 00:45" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -570,7 +568,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697921028656</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="почала 22.10 о 00:45">
+      <created>1697924705068</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1697924705068</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -606,7 +611,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/f-283/f-283" />
     </ignored-roots>
-    <MESSAGE value="закінчила 13.10 о 23:53" />
     <MESSAGE value="почала 14.10 о 00:34" />
     <MESSAGE value="закінчила 14.10 о 01:21" />
     <MESSAGE value="почала 14.10 о 12:15" />
@@ -631,6 +635,7 @@
     <MESSAGE value=" 21.10 о 20:38" />
     <MESSAGE value="почала 21.10 о 21:57" />
     <MESSAGE value="закінчила 21.10 о 23:43" />
-    <option name="LAST_COMMIT_MESSAGE" value="закінчила 21.10 о 23:43" />
+    <MESSAGE value="почала 22.10 о 00:45" />
+    <option name="LAST_COMMIT_MESSAGE" value="почала 22.10 о 00:45" />
   </component>
 </project>
