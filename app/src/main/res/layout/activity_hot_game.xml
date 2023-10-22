@@ -22,11 +22,38 @@
     <LinearLayout
         android:layout_width="@dimen/_260sdp"
         android:layout_height="@dimen/_200sdp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/imageView12"
         app:layout_constraintEnd_toEndOf="@+id/marginGame"
         app:layout_constraintStart_toStartOf="@+id/marginGame"
         app:layout_constraintTop_toTopOf="@+id/marginGame"
         app:layout_constraintVertical_bias="0.835">
+
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_200sdp"
+                android:orientation="vertical">
+
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+
+
+
+
+
+
+
 
 
     </LinearLayout>
