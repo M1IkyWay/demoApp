@@ -9,8 +9,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="закінчила 22.10 о 21:12">
+    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="почала 22.10 о 22:52">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/EventEnd.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotScroll.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/Utils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/slot_image_scroll.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/HotGameActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/HotGameActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_hot_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_hot_game.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,9 +76,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="valueResourceFile" />
-        <option value="layoutResourceFile" />
-        <option value="Kotlin Class" />
         <option value="resourceFile" />
+        <option value="Kotlin Object" />
+        <option value="Kotlin Class" />
+        <option value="Kotlin Interface" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -124,9 +136,10 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotMachineView.kt_SELECTED": "SlotMachineView",
     "android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotMashineView.kt_SELECTED": "SlotMashineView",
+    "android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotScroll.kt_SELECTED": "SlotScroll",
     "cidr.known.project.marker": "true",
     "com.android.tools.idea.devicemanager.tab": "Physical",
-    "last_opened_file_path": "/home/milkyway/AndroidStudioProjects/TestSlotMachine",
+    "last_opened_file_path": "/home/milkyway/AndroidStudioProjects/SlotMachine",
     "recommended.upgrade.do.not.ask.for.project": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.pluginManager"
@@ -146,6 +159,9 @@
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
     </key>
     <key name="android.template.200639021">
+      <recent name="com.example.cashluckpatrol" />
+    </key>
+    <key name="android.template.1035993248">
       <recent name="com.example.cashluckpatrol" />
     </key>
     <key name="android.template.-898720048">
@@ -250,13 +266,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696791005397</updated>
-    </task>
-    <task id="LOCAL-00003" summary="first commit">
-      <created>1696847181606</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1696847181606</updated>
     </task>
     <task id="LOCAL-00004" summary="first commit">
       <created>1696847188047</created>
@@ -594,7 +603,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697998341581</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="почала 22.10 о 22:52">
+      <created>1698004359637</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1698004359638</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -630,7 +646,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/f-283/f-283" />
     </ignored-roots>
-    <MESSAGE value="почала 15.10 о 11:29" />
     <MESSAGE value="закінчила 15.10 о 12:44" />
     <MESSAGE value="почала 15.10 о 13:51" />
     <MESSAGE value="закінчила 15.10 о 15:54" />
@@ -655,6 +670,7 @@
     <MESSAGE value="закінчила 22.10 о 00:56, бо вибухи" />
     <MESSAGE value="почала 22.10 о 16:19" />
     <MESSAGE value="закінчила 22.10 о 21:12" />
-    <option name="LAST_COMMIT_MESSAGE" value="закінчила 22.10 о 21:12" />
+    <MESSAGE value="почала 22.10 о 22:52" />
+    <option name="LAST_COMMIT_MESSAGE" value="почала 22.10 о 22:52" />
   </component>
 </project>
