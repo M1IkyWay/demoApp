@@ -9,14 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="почала 22.10 о 00:45">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/FlashGame2Activity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_flash2 .png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_flash_game2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-    </list>
+    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="закінчила 22.10 о 00:56, бо вибухи" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -589,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697924732601</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="закінчила 22.10 о 00:56, бо вибухи">
+      <created>1697925413076</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1697925413076</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -625,7 +625,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/f-283/f-283" />
     </ignored-roots>
-    <MESSAGE value="почала 14.10 о 00:34" />
     <MESSAGE value="закінчила 14.10 о 01:21" />
     <MESSAGE value="почала 14.10 о 12:15" />
     <MESSAGE value="почала 15.10 о 11:29" />
@@ -650,6 +649,7 @@
     <MESSAGE value="почала 21.10 о 21:57" />
     <MESSAGE value="закінчила 21.10 о 23:43" />
     <MESSAGE value="почала 22.10 о 00:45" />
-    <option name="LAST_COMMIT_MESSAGE" value="почала 22.10 о 00:45" />
+    <MESSAGE value="закінчила 22.10 о 00:56, бо вибухи" />
+    <option name="LAST_COMMIT_MESSAGE" value="закінчила 22.10 о 00:56, бо вибухи" />
   </component>
 </project>
