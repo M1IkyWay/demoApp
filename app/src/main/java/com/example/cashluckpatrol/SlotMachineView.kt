@@ -14,7 +14,7 @@ class SlotMachineView private constructor (context : Context, attributeSet: Attr
      }
 
     init {
-        columnCount = rawsNunb
+
 
 
 
