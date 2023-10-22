@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2757d52b-c165-4083-a69c-86fce52acbeb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/a_lit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/btn_down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/btn_spin_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/btn_up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flash_first.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image 5569 (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/j_lit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k_lit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nice_bg_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/num_lit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/q_lit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btn_decr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/btn_incr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/btn_spin_long.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nice_bg_score_long.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/privacy_policy.png" beforeDir="false" afterPath="$PROJECT_DIR$/privacy_policy_0.5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register_to_unlock.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Register-to-unlock-12-10-2023.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/round_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slot_first.png" beforeDir="false" afterPath="$PROJECT_DIR$/slot1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slot_game_second.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slot_game_third.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spin_btn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/star_bar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stars_bar.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/status_bar0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/status_bar1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transparent_background.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="3599fa8b-cad0-4810-8cf0-e79cedd03b73" />
+  </component>
+  <component name="ProjectId" id="2X81g5IVvF0eILhlGJaPwWPChKC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "/home/milkyway/AndroidStudioProjects/Kawaiityanalarm",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2757d52b-c165-4083-a69c-86fce52acbeb" name="Changes" comment="" />
+      <created>1697996000443</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697996000443</updated>
+    </task>
+    <servers />
+  </component>
+</project>

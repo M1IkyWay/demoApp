@@ -130,7 +130,7 @@
                     android:id="@+id/slot1"
                     android:layout_width="@dimen/_125sdp"
                     android:layout_height="@dimen/_110sdp"
-                    android:src="@drawable/slot_first" />
+                    android:src="@drawable/slot1" />
 
                 <ImageView
                     android:id="@+id/playButtonSlot1"
@@ -172,7 +172,7 @@
                 android:focusable="true"
                 android:layout_width="@dimen/_125sdp"
                 android:layout_height="@dimen/_110sdp"
-                android:src="@drawable/slot_game_second" />
+                android:src="@drawable/slot2_anon" />
 
 
             <ImageView
@@ -181,7 +181,7 @@
                 android:focusable="true"
                 android:layout_width="@dimen/_125sdp"
                 android:layout_height="@dimen/_110sdp"
-                android:src="@drawable/slot_game_third" />
+                android:src="@drawable/slot3" />
 
         </LinearLayout>
     </HorizontalScrollView>
