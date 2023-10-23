@@ -171,6 +171,8 @@
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_60sdp"
                 android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
                 android:background="@drawable/transparent_background"
                 android:scaleType="fitCenter"
                 android:textAlignment="center"
@@ -221,10 +223,12 @@
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_60sdp"
                 android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
                 android:background="@drawable/transparent_background"
                 android:scaleType="fitCenter"
                 android:textAlignment="center"
-                app:srcCompat="@drawable/btn_incr" />
+                android:src="@drawable/btn_incr"/>
 
 
         </LinearLayout>
