@@ -19,557 +19,568 @@
         app:srcCompat="@drawable/background" />
 
 
-    <LinearLayout
-        android:layout_width="@dimen/_245sdp"
-        android:layout_height="@dimen/_210sdp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/imageView12"
-        app:layout_constraintEnd_toEndOf="@+id/marginGame"
-        app:layout_constraintStart_toStartOf="@+id/marginGame"
-        app:layout_constraintTop_toTopOf="@+id/marginGame"
-        app:layout_constraintVertical_bias="0.902">
+<!--    <LinearLayout-->
+<!--        android:layout_width="@dimen/_245sdp"-->
+<!--        android:layout_height="@dimen/_210sdp"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/imageView12"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/marginGame"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/marginGame"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/marginGame"-->
+<!--        app:layout_constraintVertical_bias="0.902">-->
 
 
-        <ScrollView
-            android:id="@+id/column1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingVertical="@dimen/_5sdp">
+<!--        <ScrollView-->
+<!--            android:id="@+id/column1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:paddingVertical="@dimen/_5sdp">-->
 
-            <LinearLayout
-                android:id="@+id/scrollContentColumn1"
-                android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_200sdp"
-                android:layout_gravity="center"
-                android:orientation="vertical">
-
-
-                <ImageView
-                    android:id="@+id/column1Ima"
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/hot_im1" />
-
-                <ImageView
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/hot_im2" />
-
-                <ImageView
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/hot_im3" />
-
-                <ImageView
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/hot_im4" />
-
-                <ImageView
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/hot_im5" />
-
-            </LinearLayout>
-        </ScrollView>
+<!--            <LinearLayout-->
+<!--                android:id="@+id/scrollContentColumn1"-->
+<!--                android:layout_width="@dimen/_70sdp"-->
+<!--                android:layout_height="@dimen/_200sdp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:orientation="vertical">-->
 
 
-        <ScrollView
-            android:id="@+id/column2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingVertical="@dimen/_5sdp"
-            android:layout_weight="1">
+<!--                <ImageView-->
+<!--                    android:id="@+id/column1Ima"-->
+<!--                    android:layout_width="@dimen/_70sdp"-->
+<!--                    android:layout_height="@dimen/_70sdp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:src="@drawable/hot_im1" />-->
 
-            <LinearLayout
-                android:id="@+id/scrollContentColumn2"
-                android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_200sdp"
-                android:layout_gravity="center"
-                android:orientation="vertical">
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/_70sdp"-->
+<!--                    android:layout_height="@dimen/_70sdp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:src="@drawable/hot_im2" />-->
 
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/_70sdp"-->
+<!--                    android:layout_height="@dimen/_70sdp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:src="@drawable/hot_im3" />-->
 
-                <ImageView
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/hot_im5" />
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/_70sdp"-->
+<!--                    android:layout_height="@dimen/_70sdp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:src="@drawable/hot_im4" />-->
 
-                <ImageView
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/hot_im4" />
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/_70sdp"-->
+<!--                    android:layout_height="@dimen/_70sdp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:src="@drawable/hot_im5" />-->
 
-                <ImageView
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/hot_im3" />
-
-                <ImageView
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/hot_im2" />
-
-                <ImageView
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/hot_im1" />
-
-            </LinearLayout>
-        </ScrollView>
-
-        <ScrollView
-            android:id="@+id/column3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingVertical="@dimen/_5sdp"
-            android:layout_weight="1">
-
-            <LinearLayout
-                android:id="@+id/scrollContentColumn3"
-                android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_200sdp"
-                android:layout_gravity="center"
-                android:orientation="vertical">
+<!--            </LinearLayout>-->
+<!--        </ScrollView>-->
 
 
-                <ImageView
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/hot_im4" />
+<!--        <ScrollView-->
+<!--            android:id="@+id/column2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:paddingVertical="@dimen/_5sdp"-->
+<!--            android:layout_weight="1">-->
 
-                <ImageView
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/hot_im3" />
-
-                <ImageView
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/hot_im5" />
-
-                <ImageView
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/hot_im1" />
-
-                <ImageView
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/hot_im2" />
+<!--            <LinearLayout-->
+<!--                android:id="@+id/scrollContentColumn2"-->
+<!--                android:layout_width="@dimen/_70sdp"-->
+<!--                android:layout_height="@dimen/_200sdp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:orientation="vertical">-->
 
 
-            </LinearLayout>
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/_70sdp"-->
+<!--                    android:layout_height="@dimen/_70sdp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:src="@drawable/hot_im5" />-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/_70sdp"-->
+<!--                    android:layout_height="@dimen/_70sdp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:src="@drawable/hot_im4" />-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/_70sdp"-->
+<!--                    android:layout_height="@dimen/_70sdp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:src="@drawable/hot_im3" />-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/_70sdp"-->
+<!--                    android:layout_height="@dimen/_70sdp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:src="@drawable/hot_im2" />-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/_70sdp"-->
+<!--                    android:layout_height="@dimen/_70sdp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:src="@drawable/hot_im1" />-->
+
+<!--            </LinearLayout>-->
+<!--        </ScrollView>-->
+
+<!--        <ScrollView-->
+<!--            android:id="@+id/column3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:paddingVertical="@dimen/_5sdp"-->
+<!--            android:layout_weight="1">-->
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/scrollContentColumn3"-->
+<!--                android:layout_width="@dimen/_70sdp"-->
+<!--                android:layout_height="@dimen/_200sdp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:orientation="vertical">-->
 
 
-        </ScrollView>
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/_70sdp"-->
+<!--                    android:layout_height="@dimen/_70sdp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:src="@drawable/hot_im4" />-->
 
-    </LinearLayout>
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/_70sdp"-->
+<!--                    android:layout_height="@dimen/_70sdp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:src="@drawable/hot_im3" />-->
 
-    <ImageView
-        android:id="@+id/marginGame"
-        android:layout_width="400dp"
-        android:layout_height="404dp"
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/_70sdp"-->
+<!--                    android:layout_height="@dimen/_70sdp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:src="@drawable/hot_im5" />-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/_70sdp"-->
+<!--                    android:layout_height="@dimen/_70sdp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:src="@drawable/hot_im1" />-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/_70sdp"-->
+<!--                    android:layout_height="@dimen/_70sdp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:src="@drawable/hot_im2" />-->
+
+
+<!--            </LinearLayout>-->
+
+
+<!--        </ScrollView>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/marginGame"-->
+<!--        android:layout_width="400dp"-->
+<!--        android:layout_height="404dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.454"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.091"-->
+<!--        app:srcCompat="@drawable/hot_field" />-->
+
+
+    <com.example.cashluckpatrol.SlotMachineView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationZ="@dimen/_2sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091"
-        app:srcCompat="@drawable/hot_field" />
-
+        app:layout_constraintVertical_bias="0.021" />
 
     <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="116dp"
-        android:layout_height="121dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.614"
-        app:srcCompat="@drawable/cop" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="235dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:paddingHorizontal="@dimen/_15sdp">
-
+            android:id="@+id/imageView12"
+            android:layout_width="116dp"
+            android:layout_height="121dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.614"
+            app:srcCompat="@drawable/cop" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_60sdp"
-            android:orientation="horizontal">
+            android:id="@+id/linearLayout"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="235dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            android:paddingHorizontal="@dimen/_15sdp">
 
-            <FrameLayout
-                android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_weight="1">
 
-                <ImageButton
-                    android:id="@+id/bet50"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:orientation="horizontal">
+
+                <FrameLayout
                     android:layout_width="@dimen/_70sdp"
                     android:layout_height="@dimen/_50sdp"
-                    android:scaleType="fitCenter"
-                    android:textAlignment="center"
-                    android:background="@drawable/transparent_background"
-                    app:srcCompat="@drawable/btn_bet" />
+                    android:layout_weight="1">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:translationZ="@dimen/_2sdp"
-                    android:textAlignment="center"
-                    android:text="50"
-                    android:layout_marginEnd="@dimen/_3sdp"
-                    android:paddingVertical="@dimen/_13sdp"
-                    android:textSize="@dimen/_16sdp"
-                    android:fontFamily="@font/air_millhouse_italic"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center"
-                    />
+                    <ImageButton
+                        android:id="@+id/bet50"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:scaleType="fitCenter"
+                        android:textAlignment="center"
+                        android:background="@drawable/transparent_background"
+                        app:srcCompat="@drawable/btn_bet" />
 
-            </FrameLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:translationZ="@dimen/_2sdp"
+                        android:textAlignment="center"
+                        android:text="50"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:paddingVertical="@dimen/_13sdp"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/air_millhouse_italic"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"
+                        />
 
-            <FrameLayout
-                android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_weight="1">
+                </FrameLayout>
 
-                <ImageButton
-                    android:id="@+id/bet100"
+                <FrameLayout
                     android:layout_width="@dimen/_70sdp"
                     android:layout_height="@dimen/_50sdp"
-                    android:scaleType="fitCenter"
-                    android:textAlignment="center"
-                    android:background="@drawable/transparent_background"
-                    app:srcCompat="@drawable/btn_bet" />
+                    android:layout_weight="1">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:translationZ="@dimen/_2sdp"
-                    android:textAlignment="center"
-                    android:text="100"
-                    android:layout_marginEnd="@dimen/_3sdp"
-                    android:paddingVertical="@dimen/_13sdp"
-                    android:textSize="@dimen/_16sdp"
-                    android:fontFamily="@font/air_millhouse_italic"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center" />
+                    <ImageButton
+                        android:id="@+id/bet100"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:scaleType="fitCenter"
+                        android:textAlignment="center"
+                        android:background="@drawable/transparent_background"
+                        app:srcCompat="@drawable/btn_bet" />
 
-            </FrameLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:translationZ="@dimen/_2sdp"
+                        android:textAlignment="center"
+                        android:text="100"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:paddingVertical="@dimen/_13sdp"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/air_millhouse_italic"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center" />
 
-            <FrameLayout
-                android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_weight="1">
+                </FrameLayout>
 
-                <ImageButton
-                    android:id="@+id/bet150"
+                <FrameLayout
                     android:layout_width="@dimen/_70sdp"
                     android:layout_height="@dimen/_50sdp"
-                    android:scaleType="fitCenter"
-                    android:textAlignment="center"
-                    android:background="@drawable/transparent_background"
-                    app:srcCompat="@drawable/btn_bet" />
+                    android:layout_weight="1">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:translationZ="@dimen/_2sdp"
-                    android:textAlignment="center"
-                    android:text="150"
-                    android:layout_marginEnd="@dimen/_3sdp"
-                    android:paddingVertical="@dimen/_13sdp"
-                    android:textSize="@dimen/_16sdp"
-                    android:fontFamily="@font/air_millhouse_italic"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center" />
+                    <ImageButton
+                        android:id="@+id/bet150"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:scaleType="fitCenter"
+                        android:textAlignment="center"
+                        android:background="@drawable/transparent_background"
+                        app:srcCompat="@drawable/btn_bet" />
 
-            </FrameLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:translationZ="@dimen/_2sdp"
+                        android:textAlignment="center"
+                        android:text="150"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:paddingVertical="@dimen/_13sdp"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/air_millhouse_italic"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center" />
 
-            <FrameLayout
-                android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_weight="1">
+                </FrameLayout>
 
-                <ImageButton
-                    android:id="@+id/bet200"
+                <FrameLayout
                     android:layout_width="@dimen/_70sdp"
                     android:layout_height="@dimen/_50sdp"
-                    android:scaleType="fitCenter"
-                    android:textAlignment="center"
-                    android:background="@drawable/transparent_background"
-                    app:srcCompat="@drawable/btn_bet" />
+                    android:layout_weight="1">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:translationZ="@dimen/_2sdp"
-                    android:textAlignment="center"
-                    android:text="200"
-                    android:layout_marginEnd="@dimen/_3sdp"
-                    android:paddingVertical="@dimen/_13sdp"
-                    android:textSize="@dimen/_16sdp"
-                    android:fontFamily="@font/air_millhouse_italic"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center" />
+                    <ImageButton
+                        android:id="@+id/bet200"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:scaleType="fitCenter"
+                        android:textAlignment="center"
+                        android:background="@drawable/transparent_background"
+                        app:srcCompat="@drawable/btn_bet" />
 
-            </FrameLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:translationZ="@dimen/_2sdp"
+                        android:textAlignment="center"
+                        android:text="200"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:paddingVertical="@dimen/_13sdp"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/air_millhouse_italic"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center" />
+
+                </FrameLayout>
 
 
-        </LinearLayout>
+            </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_60sdp"
-            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:orientation="horizontal">
 
-            <FrameLayout
-                android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_weight="1">
-
-                <ImageButton
-                    android:id="@+id/bet250"
+                <FrameLayout
                     android:layout_width="@dimen/_70sdp"
                     android:layout_height="@dimen/_50sdp"
-                    android:scaleType="fitCenter"
-                    android:textAlignment="center"
-                    android:background="@drawable/transparent_background"
-                    app:srcCompat="@drawable/btn_bet" />
+                    android:layout_weight="1">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:translationZ="@dimen/_2sdp"
-                    android:textAlignment="center"
-                    android:text="250"
-                    android:layout_marginEnd="@dimen/_3sdp"
-                    android:paddingVertical="@dimen/_13sdp"
-                    android:textSize="@dimen/_16sdp"
-                    android:fontFamily="@font/air_millhouse_italic"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center"
-                    />
+                    <ImageButton
+                        android:id="@+id/bet250"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:scaleType="fitCenter"
+                        android:textAlignment="center"
+                        android:background="@drawable/transparent_background"
+                        app:srcCompat="@drawable/btn_bet" />
 
-            </FrameLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:translationZ="@dimen/_2sdp"
+                        android:textAlignment="center"
+                        android:text="250"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:paddingVertical="@dimen/_13sdp"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/air_millhouse_italic"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"
+                        />
 
-            <FrameLayout
-                android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_weight="1">
+                </FrameLayout>
 
-                <ImageButton
-                    android:id="@+id/bet300"
+                <FrameLayout
                     android:layout_width="@dimen/_70sdp"
                     android:layout_height="@dimen/_50sdp"
-                    android:scaleType="fitCenter"
-                    android:textAlignment="center"
-                    android:background="@drawable/transparent_background"
-                    app:srcCompat="@drawable/btn_bet" />
+                    android:layout_weight="1">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:translationZ="@dimen/_2sdp"
-                    android:textAlignment="center"
-                    android:text="300"
-                    android:layout_marginEnd="@dimen/_3sdp"
-                    android:paddingVertical="@dimen/_13sdp"
-                    android:textSize="@dimen/_16sdp"
-                    android:fontFamily="@font/air_millhouse_italic"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center" />
+                    <ImageButton
+                        android:id="@+id/bet300"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:scaleType="fitCenter"
+                        android:textAlignment="center"
+                        android:background="@drawable/transparent_background"
+                        app:srcCompat="@drawable/btn_bet" />
 
-            </FrameLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:translationZ="@dimen/_2sdp"
+                        android:textAlignment="center"
+                        android:text="300"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:paddingVertical="@dimen/_13sdp"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/air_millhouse_italic"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center" />
 
-            <FrameLayout
-                android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_weight="1">
+                </FrameLayout>
 
-                <ImageButton
-                    android:id="@+id/bet350"
+                <FrameLayout
                     android:layout_width="@dimen/_70sdp"
                     android:layout_height="@dimen/_50sdp"
-                    android:scaleType="fitCenter"
-                    android:textAlignment="center"
-                    android:background="@drawable/transparent_background"
-                    app:srcCompat="@drawable/btn_bet" />
+                    android:layout_weight="1">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:translationZ="@dimen/_2sdp"
-                    android:textAlignment="center"
-                    android:text="350"
-                    android:layout_marginEnd="@dimen/_3sdp"
-                    android:paddingVertical="@dimen/_13sdp"
-                    android:textSize="@dimen/_16sdp"
-                    android:fontFamily="@font/air_millhouse_italic"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center" />
+                    <ImageButton
+                        android:id="@+id/bet350"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:scaleType="fitCenter"
+                        android:textAlignment="center"
+                        android:background="@drawable/transparent_background"
+                        app:srcCompat="@drawable/btn_bet" />
 
-            </FrameLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:translationZ="@dimen/_2sdp"
+                        android:textAlignment="center"
+                        android:text="350"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:paddingVertical="@dimen/_13sdp"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/air_millhouse_italic"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center" />
 
-            <FrameLayout
-                android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_weight="1">
+                </FrameLayout>
 
-                <ImageButton
-                    android:id="@+id/bet500"
+                <FrameLayout
                     android:layout_width="@dimen/_70sdp"
                     android:layout_height="@dimen/_50sdp"
-                    android:scaleType="fitCenter"
-                    android:textAlignment="center"
-                    android:background="@drawable/transparent_background"
-                    app:srcCompat="@drawable/btn_bet" />
+                    android:layout_weight="1">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:translationZ="@dimen/_2sdp"
-                    android:textAlignment="center"
-                    android:text="500"
-                    android:layout_marginEnd="@dimen/_3sdp"
-                    android:paddingVertical="@dimen/_13sdp"
-                    android:textSize="@dimen/_16sdp"
-                    android:fontFamily="@font/air_millhouse_italic"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center" />
+                    <ImageButton
+                        android:id="@+id/bet500"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:scaleType="fitCenter"
+                        android:textAlignment="center"
+                        android:background="@drawable/transparent_background"
+                        app:srcCompat="@drawable/btn_bet" />
 
-            </FrameLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:translationZ="@dimen/_2sdp"
+                        android:textAlignment="center"
+                        android:text="500"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:paddingVertical="@dimen/_13sdp"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/air_millhouse_italic"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center" />
+
+                </FrameLayout>
 
 
-        </LinearLayout>
+            </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <RelativeLayout
-                android:layout_width="@dimen/_130sdp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_gravity="center"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:gravity="center">
 
-
-                <ImageView
-                    android:id="@+id/imageView14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/bet_bg" />
-
-                <ImageView
-                    android:id="@+id/betBgr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/bet_mgn" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Bet"
-                    android:textColor="@color/white"
-
-                    android:fontFamily="@font/air_millhouse_italic"
-                    android:textSize="@dimen/_21sdp"
-                    android:layout_alignStart="@id/betBgr"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="@dimen/_15sdp"
-                    />
-
-                <TextView
-                    android:id="@+id/choosenBet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="200 "
-                    android:textColor="@color/white"
-
-                    android:fontFamily="@font/air_millhouse_italic"
-                    android:textSize="@dimen/_20sdp"
-                    android:layout_alignEnd="@id/betBgr"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="@dimen/_15sdp"
-                    />
+                <RelativeLayout
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_gravity="center"
+                    android:gravity="center">
 
 
-            </RelativeLayout>
+                    <ImageView
+                        android:id="@+id/imageView14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/bet_bg" />
 
-            <RelativeLayout
-                android:layout_width="@dimen/_130sdp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_2sdp">
+                    <ImageView
+                        android:id="@+id/betBgr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/bet_mgn" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bet"
+                        android:textColor="@color/white"
+
+                        android:fontFamily="@font/air_millhouse_italic"
+                        android:textSize="@dimen/_21sdp"
+                        android:layout_alignStart="@id/betBgr"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        />
+
+                    <TextView
+                        android:id="@+id/choosenBet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="200 "
+                        android:textColor="@color/white"
+
+                        android:fontFamily="@font/air_millhouse_italic"
+                        android:textSize="@dimen/_20sdp"
+                        android:layout_alignEnd="@id/betBgr"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        />
 
 
-                <ImageView
-                    android:id="@+id/btnSpin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:srcCompat="@drawable/btn_spin" />
+                </RelativeLayout>
 
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Spin"
-                    android:textColor="@color/white"
-
-                    android:fontFamily="@font/air_millhouse_italic"
-                    android:textSize="@dimen/_26sdp"
-                    android:layout_alignStart="@id/btnSpin"
-                    android:layout_alignEnd="@id/btnSpin"
-                    android:layout_alignBottom="@id/btnSpin"
-                    android:layout_alignTop="@id/btnSpin"
+                <RelativeLayout
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_gravity="center"
                     android:gravity="center"
-                    android:layout_marginBottom="@dimen/_5sdp"
-                    android:layout_centerVertical="true"
-                    />
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_2sdp">
+
+
+                    <ImageView
+                        android:id="@+id/btnSpin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:srcCompat="@drawable/btn_spin" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Spin"
+                        android:textColor="@color/white"
+
+                        android:fontFamily="@font/air_millhouse_italic"
+                        android:textSize="@dimen/_26sdp"
+                        android:layout_alignStart="@id/btnSpin"
+                        android:layout_alignEnd="@id/btnSpin"
+                        android:layout_alignBottom="@id/btnSpin"
+                        android:layout_alignTop="@id/btnSpin"
+                        android:gravity="center"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_centerVertical="true"
+                        />
 
 
 
 
-            </RelativeLayout>
+                </RelativeLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
 
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>

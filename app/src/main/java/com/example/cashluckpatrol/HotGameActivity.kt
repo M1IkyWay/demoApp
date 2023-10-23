@@ -15,6 +15,9 @@ class HotGameActivity : AppCompatActivity() {
         binding = ActivityHotGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val slotMachine = SlotMachineView(this)
+
+
         binding.btnSpin.setOnClickListener{
 
 

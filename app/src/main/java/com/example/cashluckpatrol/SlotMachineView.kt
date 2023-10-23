@@ -1,10 +1,12 @@
 package com.example.cashluckpatrol
 
+import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Canvas
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -27,11 +29,13 @@ class SlotMachineView (context : Context) : LinearLayout (context) {
 
 
     var imagesList = mutableListOf (image0, image1, image2, image3, image4)
+    val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+    val binding = SlotImageScrollBinding.inflate(inflater) //если что, это все было в блоке инит
+
 
         init {
-            val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             inflater.inflate(R.layout.slot_image_scroll, this, true)
-            val binding = SlotImageScrollBinding.inflate(inflater)
+
 
             binding.column1.children.forEach { view ->
                 imagesList.shuffle()
@@ -40,6 +44,7 @@ class SlotMachineView (context : Context) : LinearLayout (context) {
                     view.setImageDrawable(imagesList[i]?.image)
                 }
             }
+
 
             binding.column2.children.forEach { view ->
                 imagesList.shuffle()
@@ -58,9 +63,23 @@ class SlotMachineView (context : Context) : LinearLayout (context) {
             }
 
 
-
         }
 
+
+    fun startScrollAnimation () {
+
+        val animator = ValueAnimator.ofInt(0, height)
+        animator.duration = 4000
+        animator.interpolator = AccelerateDecelerateInterpolator()
+
+        animator.addUpdateListener {
+            animation ->
+            val value = animation.animatedValue as Int
+            scrollTo(0, value)
+        }
+
+        animator.start()
+    }
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
 
@@ -69,7 +88,8 @@ class SlotMachineView (context : Context) : LinearLayout (context) {
     }
 
 
-    }
+
+}
 
 
 

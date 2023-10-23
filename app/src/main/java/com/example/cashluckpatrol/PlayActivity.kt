@@ -15,8 +15,10 @@ class PlayActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.playButton.setOnClickListener{
-            val intent = Intent(this, SignUpActivity::class.java)
+            val intent = Intent(this, HotGameActivity::class.java)
             startActivity(intent)
         }
     }
 }
+
+
