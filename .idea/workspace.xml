@@ -9,9 +9,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="закінчила 23.10 о 01:06">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="почала 23.10 о 10:16">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotMachineView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotMachineView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/slot_image_scroll.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/slot_image_scroll.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,9 +69,9 @@
         <option value="valueResourceFile" />
         <option value="resourceFile" />
         <option value="Kotlin Object" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Interface" />
         <option value="layoutResourceFile" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -257,13 +257,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696791005397</updated>
-    </task>
-    <task id="LOCAL-00005" summary="first commit">
-      <created>1696847188712</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1696847188712</updated>
     </task>
     <task id="LOCAL-00006" summary="first commit">
       <created>1696847189345</created>
@@ -601,7 +594,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698012414552</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="почала 23.10 о 10:16">
+      <created>1698045669290</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1698045669290</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -637,7 +637,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/f-283/f-283" />
     </ignored-roots>
-    <MESSAGE value="почала 15.10 о 13:51" />
     <MESSAGE value="закінчила 15.10 о 15:54" />
     <MESSAGE value="почала 17.10 о 11:06" />
     <MESSAGE value="закінчила 17.10 о 13:47" />
@@ -662,6 +661,7 @@
     <MESSAGE value="закінчила 22.10 о 21:12" />
     <MESSAGE value="почала 22.10 о 22:52" />
     <MESSAGE value="закінчила 23.10 о 01:06" />
-    <option name="LAST_COMMIT_MESSAGE" value="закінчила 23.10 о 01:06" />
+    <MESSAGE value="почала 23.10 о 10:16" />
+    <option name="LAST_COMMIT_MESSAGE" value="почала 23.10 о 10:16" />
   </component>
 </project>
