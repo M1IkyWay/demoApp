@@ -27,8 +27,11 @@ drawable bg_input
 drawable bt_play_small
 drawable btn_bet
 drawable btn_bg
+drawable btn_decr
 drawable btn_down
+drawable btn_incr
 drawable btn_spin
+drawable btn_spin_long
 drawable btn_spin_round
 drawable btn_up
 drawable cop
@@ -44,6 +47,8 @@ drawable hot_im2
 drawable hot_im3
 drawable hot_im4
 drawable hot_im5
+drawable ic_launcher_background
+drawable ic_launcher_foreground
 drawable j_lit
 drawable k_lit
 drawable man_lit
@@ -68,7 +73,6 @@ font try_clother_bold
 font you20133
 id accept
 id acceptButton
-id action_settings
 id andTerms
 id back
 id backgr
@@ -121,8 +125,6 @@ id imageView3
 id imageView4
 id imageView6
 id imageView7
-id imageView8
-id imageView9
 id incremBet
 id layout
 id level
@@ -140,6 +142,7 @@ id playButtonSlot2
 id playHotButton
 id privPolButton
 id privPolText
+id privPolicyButton
 id privacyPolicy
 id registerButton
 id removeAccountButton
@@ -153,6 +156,7 @@ id slot2
 id slot2_non_anon
 id slot3
 id slotGames
+id slotMachine
 id smBtnPlay
 id smBtnPlayFlash
 id smBtnPlayFlash1
@@ -161,6 +165,7 @@ id smBtnPlaySlot
 id smBtnPlaySlot1
 id smBtnPlaySlot2
 id soundSet
+id vdrade8
 id vgrade1
 id vgrade2
 id vgrade3
@@ -173,6 +178,7 @@ id vibrationText
 id vibroSet
 id winsAmount
 id winsWord
+id yes
 id yesButton
 layout activity_agreement
 layout activity_choosing_mode
@@ -187,11 +193,11 @@ layout activity_privacy_policy
 layout activity_settings
 layout slot_image_scroll
 layout splash_screen
-menu menu_privacy_policy
 mipmap ic_launcher
 mipmap ic_launcher_round
 raw stars_bar
 string accept
+string accept_agr
 string action_settings
 string and_terms
 string anonymous_mode

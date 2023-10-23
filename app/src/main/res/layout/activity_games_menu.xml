@@ -467,7 +467,7 @@
                 android:layout_width="match_parent"
                 android:scaleType="fitCenter"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/nice_bg_score_long" />
+                app:srcCompat="@drawable/bg_default" />
 
             <TextView
                 android:id="@+id/balanceText"
@@ -477,7 +477,7 @@
                 android:layout_alignTop="@id/balance"
                 android:layout_alignEnd="@id/balance"
                 android:layout_alignBottom="@id/balance"
-                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_6sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -486,7 +486,7 @@
                 android:maxWidth="@dimen/_180sdp"
                 android:text="Balance 123456"
                 android:textColor="@color/input_color"
-                android:textSize="@dimen/_13sdp" />
+                android:textSize="@dimen/_14sdp" />
         </RelativeLayout>
 
     </LinearLayout>

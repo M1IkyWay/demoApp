@@ -39,7 +39,7 @@
             android:layout_height="@dimen/_40sdp"
             android:layout_weight="1"
             android:scaleType="fitCenter"
-            android:src="@drawable/star_bar"
+            android:src="@drawable/non_active_rect"
             android:layout_marginEnd="@dimen/_2sdp"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
@@ -50,7 +50,7 @@
             android:layout_height="@dimen/_40sdp"
             android:layout_weight="1"
             android:scaleType="fitCenter"
-            android:src="@drawable/star_bar"
+            android:src="@drawable/non_active_rect"
             android:layout_marginEnd="@dimen/_2sdp"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
@@ -61,7 +61,7 @@
             android:layout_height="@dimen/_40sdp"
             android:layout_weight="1"
             android:scaleType="fitCenter"
-            android:src="@drawable/star_bar"
+            android:src="@drawable/non_active_rect"
             android:layout_marginEnd="@dimen/_2sdp"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
@@ -72,7 +72,7 @@
             android:layout_height="@dimen/_40sdp"
             android:layout_weight="1"
             android:scaleType="fitCenter"
-            android:src="@drawable/star_bar"
+            android:src="@drawable/non_active_rect"
             android:layout_marginEnd="@dimen/_2sdp"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
@@ -83,12 +83,23 @@
             android:layout_height="@dimen/_40sdp"
             android:layout_weight="1"
             android:scaleType="fitCenter"
-            android:src="@drawable/star_bar"
+            android:src="@drawable/non_active_rect"
             android:layout_marginEnd="@dimen/_2sdp"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
 
+
+        <ImageView
+            android:id="@+id/vgrade6"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/non_active_rect"
+            android:layout_marginEnd="@dimen/_2sdp"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
 
         <ImageView
             android:id="@+id/vgrade7"
@@ -96,26 +107,19 @@
             android:layout_height="@dimen/_40sdp"
             android:layout_weight="1"
             android:scaleType="fitCenter"
-            android:src="@drawable/star_bar"
-            android:layout_marginEnd="@dimen/_2sdp"
+            android:src="@drawable/non_active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
         <ImageView
-            android:id="@+id/vgrade8"
+            android:id="@+id/vdrade8"
             android:layout_width="0dp"
             android:layout_height="@dimen/_40sdp"
             android:layout_weight="1"
             android:scaleType="fitCenter"
-            android:src="@drawable/star_bar"
+            android:src="@drawable/non_active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
-
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/stars_bar" />
 
     </LinearLayout>
 
@@ -131,16 +135,5 @@
     app:layout_constraintVertical_bias="1.0"
     app:srcCompat="@drawable/cop"
     android:layout_marginBottom="-10dp"/>
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/stars_bar" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

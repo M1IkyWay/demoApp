@@ -44,10 +44,11 @@
             tools:layout_editor_absoluteY="389dp" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_100sdp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:gravity="center"
             android:shadowColor="@color/shadow_color"
             android:shadowDx="3"
             android:shadowDy="3"

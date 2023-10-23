@@ -47,11 +47,6 @@ class GamesMenuAnonActivity : AppCompatActivity() {
             val intent = Intent()
             startActivity(intent)
         }
-        binding.registerButton.setOnClickListener {
-            val intent = Intent(this, SignUpActivity ::class.java)
-            startActivity(intent)
-        }
-
     }
 
 }

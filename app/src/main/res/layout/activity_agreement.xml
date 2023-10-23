@@ -19,41 +19,12 @@
         app:srcCompat="@drawable/background"
         android:contentDescription="@string/background_city" />
 
-    <ImageButton
-        android:id="@+id/privPolButton"
-        android:layout_width="316dp"
-        android:layout_height="118dp"
-        android:background="@drawable/transparent_background"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.371"
-        android:focusable="true"
-        app:srcCompat="@drawable/privacy_policy_button"
-        android:contentDescription="@string/privacy_policy_button" />
-
-    <ImageButton
-        android:id="@+id/yesButton"
-        android:layout_width="130dp"
-        android:layout_height="120dp"
-        android:background="@drawable/transparent_background"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.931"
-        app:srcCompat="@drawable/button_yes"
-        android:contentDescription="@string/yes_button" />
 
     <TextView
         android:id="@+id/privacyPolicy"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/_250sdp"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:fontFamily="@font/air_millhouse_italic"
         android:text="@string/privacy_policy"
         android:textSize="@dimen/_45sdp"
@@ -88,23 +59,104 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.148" />
 
-    <TextView
-        android:id="@+id/accept"
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.381">
+
+        <ImageButton
+            android:id="@+id/privPolButton"
+            android:layout_width="316dp"
+            android:layout_height="118dp"
+            android:background="@drawable/transparent_background"
+            android:scaleType="fitCenter"
+            android:focusable="true"
+            android:clickable="true"
+            app:srcCompat="@drawable/btn_bg"
+            android:contentDescription="@string/privacy_policy_button" />
+
+        <TextView
+            android:id="@+id/privPolicyButton"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/air_millhouse_italic"
+            android:text="@string/privacy_policy"
+            android:textSize="@dimen/_35sdp"
+            android:textColor="@color/white"
+            android:shadowColor="@color/shadow_color"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="5"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/accept"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/air_millhouse_italic"
+        android:gravity="center"
+        android:shadowColor="@color/shadow_color"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
         android:text="@string/accept"
+        android:textColor="@color/white"
         android:textSize="@dimen/_45sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.656" />
+
+    <FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.498"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.931">
+
+    <ImageButton
+        android:id="@+id/yesButton"
+        android:layout_width="130dp"
+        android:layout_height="120dp"
+        android:background="@drawable/transparent_background"
+        android:scaleType="fitCenter"
+        android:clickable="true"
+        android:focusable="true"
+        app:srcCompat="@drawable/bt_play_small"
+        android:contentDescription="@string/yes_button" />
+
+    <TextView
+        android:id="@+id/yes"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/air_millhouse_italic"
+        android:text="@string/yes_button"
+        android:textSize="@dimen/_30sdp"
         android:textColor="@color/white"
         android:shadowColor="@color/shadow_color"
         android:shadowDx="5"
         android:shadowDy="5"
         android:shadowRadius="5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.662" />
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_gravity="center"/>
+
+</FrameLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

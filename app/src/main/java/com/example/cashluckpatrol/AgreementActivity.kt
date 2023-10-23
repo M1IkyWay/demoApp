@@ -1,11 +1,31 @@
 package com.example.cashluckpatrol
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.cashluckpatrol.databinding.ActivityAgreementBinding
 
 class AgreementActivity : AppCompatActivity() {
+
+    lateinit var binding : ActivityAgreementBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_agreement)
+        binding = ActivityAgreementBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
+        binding.privPolButton.setOnClickListener {
+            //animation
+            val intent = Intent(this, PrivacyPolicy::class.java)
+            startActivity(intent)
+        }
+
+        binding.yesButton.setOnClickListener {
+            //animation
+            val intent = Intent(this, GamesMenuActivity::class.java)
+            startActivity(intent)
+        }
     }
+
+
 }
