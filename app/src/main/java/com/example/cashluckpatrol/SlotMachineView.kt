@@ -8,6 +8,7 @@ import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
+import androidx.core.view.children
 import com.example.cashluckpatrol.databinding.SlotImageScrollBinding
 
 class SlotMachineView (context : Context) : LinearLayout (context) {
@@ -30,11 +31,15 @@ class SlotMachineView (context : Context) : LinearLayout (context) {
             inflater.inflate(R.layout.slot_image_scroll, this, true)
             val binding = SlotImageScrollBinding.inflate(inflater)
 
+            binding.column1.children.forEach {
+
+
+            }
+
         }
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
-
 
 
 
