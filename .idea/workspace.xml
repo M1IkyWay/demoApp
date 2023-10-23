@@ -9,22 +9,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="почала 23.10 о 20:25">
+    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="закінчила 23.10 о 21:28">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/EnteringEmailActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/EnteringPhoneActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/HotGameActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/HotGameActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/PlayActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/PlayActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SignUpActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotMachineView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotMachineView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/Utils.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/anim/scroll_anim.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_entering_email.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_entering_phone.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_hot_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_hot_game.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotScroll.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,20 +256,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696791005397</updated>
-    </task>
-    <task id="LOCAL-00010" summary="почала 11.10 о 18:28">
-      <created>1697038124927</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1697038124928</updated>
-    </task>
-    <task id="LOCAL-00011" summary="закінчила 11.10 о 19:11">
-      <created>1697040726403</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1697040726403</updated>
     </task>
     <task id="LOCAL-00012" summary="почала 12.10 о 00:04">
       <created>1697058304027</created>
@@ -613,7 +586,21 @@
       <option name="project" value="LOCAL" />
       <updated>1698081946138</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="закінчила 23.10 о 21:28">
+      <created>1698085746495</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1698085746495</updated>
+    </task>
+    <task id="LOCAL-00060" summary="закінчила 23.10 о 21:28">
+      <created>1698085758034</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1698085758034</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -649,7 +636,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/f-283/f-283" />
     </ignored-roots>
-    <MESSAGE value="закінчила 17.10 о 21:22" />
     <MESSAGE value="почала 17.10 о 22:02" />
     <MESSAGE value="закінчила 17.10 о 22:45" />
     <MESSAGE value="почала 18.10 о 21:25" />
@@ -674,6 +660,7 @@
     <MESSAGE value="почала 23.10 о 12:25" />
     <MESSAGE value="закінчила 23.10 о 13:16" />
     <MESSAGE value="почала 23.10 о 20:25" />
-    <option name="LAST_COMMIT_MESSAGE" value="почала 23.10 о 20:25" />
+    <MESSAGE value="закінчила 23.10 о 21:28" />
+    <option name="LAST_COMMIT_MESSAGE" value="закінчила 23.10 о 21:28" />
   </component>
 </project>
