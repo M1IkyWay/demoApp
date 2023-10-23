@@ -8,6 +8,9 @@
         android:minSdkVersion="26"
         android:targetSdkVersion="33" />
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
     <permission
         android:name="com.example.cashluckpatrol.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
@@ -27,6 +30,21 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.CashLuckPatrol" >
+        <activity
+            android:name="com.example.cashluckpatrol.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.cashluckpatrol.FlashGame2Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.cashluckpatrol.FlashGame1Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.cashluckpatrol.ComingSoonActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.cashluckpatrol.HotGameActivity"
+            android:exported="false" />
         <activity
             android:name="com.example.cashluckpatrol.SignUpActivity"
             android:exported="false" />
