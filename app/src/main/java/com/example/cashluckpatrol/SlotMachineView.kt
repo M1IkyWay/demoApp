@@ -33,6 +33,7 @@ class SlotMachineView (context : Context, attributeSet: AttributeSet?) : LinearL
     val binding = SlotImageScrollBinding.inflate(inflater)
 
 
+
     override fun performClick(): Boolean {
         super.performClick()
         return true
