@@ -18,8 +18,6 @@ class HotGameActivity : AppCompatActivity() {
         binding = ActivityHotGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
         val selectedBet : ImageButton? = null
 
         val slotMachine = SlotMachineView(this, null)
@@ -38,8 +36,16 @@ class HotGameActivity : AppCompatActivity() {
                 betClicked(it)
 
             }
-
         }
+
+
+
+
+
+
+
+
+
 
 
 

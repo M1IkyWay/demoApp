@@ -9,9 +9,23 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="закінчила 25.10 о 00:37">
+    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="почала 25.10 о 12:36">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/Callback.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/ScrollListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotsBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotsView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SpeedManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_hot_game_prev.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/TryScrollAgain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/TryScrollAgain.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/HotGameActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/HotGameActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/TryScrollAgain.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_hot_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_hot_game.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_try_scroll_again.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,9 +82,9 @@
         <option value="valueResourceFile" />
         <option value="Kotlin Object" />
         <option value="Kotlin Interface" />
-        <option value="layoutResourceFile" />
-        <option value="Kotlin Class" />
         <option value="resourceFile" />
+        <option value="Kotlin Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -127,9 +141,11 @@
     "android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotMachineView.kt_SELECTED": "SlotMachineView",
     "android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotMashineView.kt_SELECTED": "SlotMashineView",
     "android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotScroll.kt_SELECTED": "SlotScroll",
+    "android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotView.kt_SELECTED": "SlotView",
+    "android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotsView.kt_SELECTED": "SlotsView",
     "cidr.known.project.marker": "true",
     "com.android.tools.idea.devicemanager.tab": "Physical",
-    "last_opened_file_path": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2",
+    "last_opened_file_path": "/home/milkyway/previous versions of projects/CashLuckPatrol2forListView",
     "recommended.upgrade.do.not.ask.for.project": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
@@ -259,13 +275,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696791005397</updated>
-    </task>
-    <task id="LOCAL-00017" summary="закінчила 12.10 о 14:53">
-      <created>1697111592280</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1697111592280</updated>
     </task>
     <task id="LOCAL-00018" summary="почала 13.10 о 16:27">
       <created>1697203686805</created>
@@ -603,7 +612,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698183475762</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="почала 25.10 о 12:36">
+      <created>1698226585662</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1698226585662</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -639,7 +655,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/f-283/f-283" />
     </ignored-roots>
-    <MESSAGE value="закінчила 19.10 о 01:03" />
     <MESSAGE value="почала 20.10 о 00:48" />
     <MESSAGE value="закінчила 20.10 о 02:31" />
     <MESSAGE value="почала 21.10 о 20:17" />
@@ -664,6 +679,7 @@
     <MESSAGE value="закінчила 24.10 о 02:45" />
     <MESSAGE value="почала 24.10 о 19:41" />
     <MESSAGE value="закінчила 25.10 о 00:37" />
-    <option name="LAST_COMMIT_MESSAGE" value="закінчила 25.10 о 00:37" />
+    <MESSAGE value="почала 25.10 о 12:36" />
+    <option name="LAST_COMMIT_MESSAGE" value="почала 25.10 о 12:36" />
   </component>
 </project>
