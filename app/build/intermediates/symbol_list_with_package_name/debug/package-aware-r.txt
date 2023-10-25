@@ -3644,10 +3644,6 @@ id clip_vertical
 id clockwise
 id closest
 id collapseActionView
-id column1
-id column1Ima
-id column2
-id column3
 id compress
 id confirm_button
 id constraint
@@ -3931,9 +3927,6 @@ id sawtooth
 id scale
 id screen
 id scroll
-id scrollContentColumn1
-id scrollContentColumn2
-id scrollContentColumn3
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
@@ -3968,7 +3961,6 @@ id slot2
 id slot2_non_anon
 id slot3
 id slotGames
-id slotMachine
 id slot_one
 id slot_three
 id slot_two
@@ -4192,7 +4184,6 @@ layout activity_flash_game2
 layout activity_games_menu
 layout activity_games_menu_anon
 layout activity_hot_game
-layout activity_hot_game_prev
 layout activity_play
 layout activity_privacy_policy
 layout activity_settings
@@ -4272,7 +4263,6 @@ layout sdp_example
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
-layout slot_image_scroll
 layout splash_screen
 layout support_simple_spinner_dropdown_item
 layout test_action_chip

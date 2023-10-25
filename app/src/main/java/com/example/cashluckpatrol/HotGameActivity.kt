@@ -1,6 +1,5 @@
 package com.example.cashluckpatrol
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
@@ -101,7 +100,7 @@ class HotGameActivity : AppCompatActivity() {
                 R.drawable.hot_im4,
                 R.drawable.hot_im5
             )
-            .setScrollTimePerInch(1f)
+            .setScrollTimePerInch(0.5f)
             .setDockingTimePerInch(0f)
             .setScrollTime(500 + SecureRandom().nextInt(1500))
             .setChildIncTime(1000)
