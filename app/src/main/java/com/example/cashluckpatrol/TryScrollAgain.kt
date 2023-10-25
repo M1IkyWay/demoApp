@@ -64,9 +64,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         private fun setImagenes() {
-            slot1 = random.nextInt(5)
-            slot2 = random.nextInt(5)
-            slot3 = random.nextInt(5)
+           var slot1 =
+            var slot2 = random.nextInt(5)
+            var slot3 = random.nextInt(5)
 
 
             when (slot1) {
@@ -94,25 +94,25 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        private fun obtenerPutuacion() {
-            if ((slot1 == slot2) && (slot2 == slot3)) {
-                var snackBar =
-                    Snackbar.make(mainActivityRl, "Has ganado 100000", Snackbar.LENGTH_SHORT)
-                var snackBarView = snackBar.view
-                snackBarView.setBackgroundColor(resources.getColor(R.color.colorPrimary))
-                snackBar.show()
-                ganancias = ganancias + 100000
-            } else if ((slot1 == slot2) || (slot2 == slot3) || (slot1 == slot3)) {
-                var snackBar =
-                    Snackbar.make(mainActivityRl, "Has ganado 5000", Snackbar.LENGTH_SHORT)
-                var snackBarView = snackBar.view
-                snackBarView.setBackgroundColor(resources.getColor(R.color.colorAccent))
-                snackBar.show()
-                ganancias = ganancias + 5000
-            }
-
-            ganancias = ganancias - 1000
-            binding.mainActivityTvGanancias.text = binding.ganancias.toString()
+//        private fun obtenerPutuacion() {
+//            if ((slot1 == slot2) && (slot2 == slot3)) {
+//                var snackBar =
+//                    Snackbar.make(mainActivityRl, "Has ganado 100000", Snackbar.LENGTH_SHORT)
+//                var snackBarView = snackBar.view
+//                snackBarView.setBackgroundColor(resources.getColor(R.color.colorPrimary))
+//                snackBar.show()
+//                ganancias = ganancias + 100000
+//            } else if ((slot1 == slot2) || (slot2 == slot3) || (slot1 == slot3)) {
+//                var snackBar =
+//                    Snackbar.make(mainActivityRl, "Has ganado 5000", Snackbar.LENGTH_SHORT)
+//                var snackBarView = snackBar.view
+//                snackBarView.setBackgroundColor(resources.getColor(R.color.colorAccent))
+//                snackBar.show()
+//                ganancias = ganancias + 5000
+//            }
+//
+//            ganancias = ganancias - 1000
+//            binding.mainActivityTvGanancias.text = binding.ganancias.toString()
         }
     }
 }
