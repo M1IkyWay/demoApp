@@ -38,7 +38,7 @@ class HotGameActivity : AppCompatActivity() {
             }
         }
 
-
+ґґ
 
 
 
