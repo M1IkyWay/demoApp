@@ -15,6 +15,7 @@ dimen fab_margin
 dimen text_margin
 drawable a_lit
 drawable active_rect
+drawable animation
 drawable background
 drawable bet_bg
 drawable bet_mgn
@@ -91,6 +92,7 @@ id betBgr
 id betMrg
 id bg
 id bgBet
+id box
 id btnPlay
 id btnSpin
 id choosenBet
@@ -117,6 +119,7 @@ id grade8
 id horizontalScrollView
 id horizontalScrollView2
 id hotGames
+id imageView
 id imageView10
 id imageView12
 id imageView13
@@ -131,6 +134,7 @@ id level
 id levelText
 id levelView
 id linearLayout
+id linear_slots
 id marginGame
 id musicText
 id numberInput
@@ -147,6 +151,7 @@ id privacyPolicy
 id registerButton
 id removeAccountButton
 id resetScoreText
+id resultBalance
 id scrollContentColumn1
 id scrollContentColumn2
 id scrollContentColumn3
@@ -157,6 +162,9 @@ id slot2_non_anon
 id slot3
 id slotGames
 id slotMachine
+id slot_one
+id slot_three
+id slot_two
 id smBtnPlay
 id smBtnPlayFlash
 id smBtnPlayFlash1
@@ -188,9 +196,11 @@ layout activity_flash_game2
 layout activity_games_menu
 layout activity_games_menu_anon
 layout activity_hot_game
+layout activity_hot_game_prev
 layout activity_play
 layout activity_privacy_policy
 layout activity_settings
+layout item_list
 layout slot_image_scroll
 layout splash_screen
 mipmap ic_launcher

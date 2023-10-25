@@ -31,9 +31,6 @@
         android:testOnly="true"
         android:theme="@style/Theme.CashLuckPatrol" >
         <activity
-            android:name="com.example.cashluckpatrol.MainActivity"
-            android:exported="false" />
-        <activity
             android:name="com.example.cashluckpatrol.FlashGame2Activity"
             android:exported="false" />
         <activity
@@ -46,9 +43,6 @@
             android:name="com.example.cashluckpatrol.HotGameActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.cashluckpatrol.SignUpActivity"
-            android:exported="false" />
-        <activity
             android:name="com.example.cashluckpatrol.GamesMenuActivity"
             android:exported="false" />
         <activity
@@ -56,12 +50,6 @@
             android:exported="false" />
         <activity
             android:name="com.example.cashluckpatrol.SettingsActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.cashluckpatrol.EnteringEmailActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.cashluckpatrol.EnteringPhoneActivity"
             android:exported="false" />
         <activity
             android:name="com.example.cashluckpatrol.ChoosingModeActivity"
