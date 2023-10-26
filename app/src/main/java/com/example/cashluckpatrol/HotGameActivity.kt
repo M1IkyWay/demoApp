@@ -109,14 +109,15 @@ class HotGameActivity : AppCompatActivity() {
                 override fun onFinishListener() {
                     Log.d("жжжжжжжжжжжжжжжжжжжжж", "результат гета ")
                     val layoutManagers = getLayoutManagers()
+
                     //до этой строки не доходит, останавливается раньше
                     val match = HashMap<Int, Int>()
                     for (i in 0 until 3) {
-                        Log.d(layoutManagers.get(i).toString(), "есть ли что-то в лейаутменеджере")
+                        Log.d(layoutManagers.size.toString(), "есть ли что-то в лейаутменеджере")
                         val imageView = layoutManagers.get(i)
                             .findViewByPosition(
                                 (layoutManagers.get(i)
-                                    .findFirstVisibleItemPosition() + 3)
+                                    .findFirstVisibleItemPosition() ) //+3
                             ) as ImageView
                         val drawableId = imageView.tag as Int
 

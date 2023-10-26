@@ -60,8 +60,8 @@ class SlotsBuilder {
                 slotView.smoothScrollToPosition(layoutManager.findLastVisibleItemPosition() + 100)
                 val handler = Handler()
                 val runnable = Runnable {
-                    val layoutManager1 = (slotView.layoutManager as LinearLayoutManager) //где-то тут должна быть ошибка
-                    val vs = layoutManager1.findLastVisibleItemPosition() + 3
+//                    val layoutManager1 = (slotView.layoutManager as LinearLayoutManager) //где-то тут должна быть ошибка
+                    val vs = layoutManager.findLastVisibleItemPosition() + 3
                     slotView.smoothScrollToPosition(vs)
                     isWork = false
                 }
