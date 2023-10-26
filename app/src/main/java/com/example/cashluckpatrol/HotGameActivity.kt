@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
@@ -106,12 +107,14 @@ class HotGameActivity : AppCompatActivity() {
             .setChildIncTime(1000)
             .setOnFinishListener(object : Callback() {
                 override fun onFinishListener() {
+                    Log.d("жжжжжжжжжжжжжжжжжжжжж", "результат гета ")
                     val layoutManagers = getLayoutManagers()
+                    //до этой строки не доходит, останавливается раньше
                     val match = HashMap<Int, Int>()
-
                     for (i in 0 until 3) {
-                        val imageView = layoutManagers?.get(i)
-                            ?.findViewByPosition(
+                        Log.d(layoutManagers.get(i).toString(), "есть ли что-то в лейаутменеджере")
+                        val imageView = layoutManagers.get(i)
+                            .findViewByPosition(
                                 (layoutManagers.get(i)
                                     .findFirstVisibleItemPosition() + 3)
                             ) as ImageView

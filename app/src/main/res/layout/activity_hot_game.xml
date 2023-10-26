@@ -144,7 +144,7 @@
             android:id="@+id/marginGame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"
+            android:scaleType="fitCenter"
             android:src="@drawable/hot_field" />
 
 <!--        <com.example.cashluckpatrol.SlotMachineView-->
@@ -157,10 +157,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
             android:gravity="center"
             android:layout_marginTop="@dimen/_7sdp"
-            android:paddingHorizontal="@dimen/_25sdp"
-            android:paddingVertical="@dimen/_30sdp"
+            android:paddingHorizontal="@dimen/_35sdp"
+            android:paddingVertical="@dimen/_20sdp"
             android:layout_alignTop="@id/marginGame"
             android:layout_alignBottom="@id/marginGame"
             android:layout_alignEnd="@id/marginGame"
@@ -171,22 +173,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_180sdp"
                 android:scrollbars="none"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
                 android:layout_weight="1"/>
 
             <com.example.cashluckpatrol.SlotView
                 android:id="@+id/slot_two"
-                android:paddingHorizontal="@dimen/_5sdp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_180sdp"
                 android:scrollbars="none"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
                 android:layout_weight="1"/>
 
             <com.example.cashluckpatrol.SlotView
                 android:id="@+id/slot_three"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_180sdp"
                 android:scrollbars="none"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
                 android:layout_weight="1"/>
 
 
@@ -214,7 +226,7 @@
         android:layout_height="235dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"

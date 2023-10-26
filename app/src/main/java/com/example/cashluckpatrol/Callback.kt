@@ -5,13 +5,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 abstract class Callback {
     abstract fun onFinishListener()
 
-    private var layoutManagers: List<LinearLayoutManager>? = null
+    private var layoutManagers: List<LinearLayoutManager> = emptyList()
 
-    fun setLayoutManagers(layoutManagers: List<LinearLayoutManager>) {
-        this.layoutManagers = layoutManagers
+    fun setLayoutManagers(_layoutManagers: List<LinearLayoutManager>) {
+        this.layoutManagers = _layoutManagers
     }
 
-    fun getLayoutManagers(): List<LinearLayoutManager>? {
+    fun getLayoutManagers(): List<LinearLayoutManager> {
         return layoutManagers
     }
 

@@ -36,15 +36,16 @@ class SlotsBuilder {
             val mLayoutManager = SpeedManager(activity)
             slotView.layoutManager = mLayoutManager
             layoutManagers.add(mLayoutManager as LinearLayoutManager)
-            val mAdapter = SlotAdapter(drawableIds)
+            val mAdapter = SlotAdapter(drawableIds.shuffled())
             Log.d("${drawableIds.size}", "количество айдишников изображений, передаваемых в адаптер внутри билдера в СлотсБилдер")
             slotView.adapter = mAdapter
             timePerInch += dockingTimePerInch
         }
         callback.setLayoutManagers(layoutManagers)
+        Log.d("${callback.getLayoutManagers().size}", "в слотсбилдере перед передачей в колбек - отработало правильно")
         slotViews.last().addOnScrollListener(ScrollListener(callback))
 //        drawableIds.clear()
-        drawableIds.shuffled()
+//        drawableIds.shuffled()
         Log.d("${drawableIds.size}", "айдишники удалены в билдере в СлотсБилдер")
     }
 
@@ -55,11 +56,12 @@ class SlotsBuilder {
             slotViews.forEach { slotView ->
                 tempTime += childIncTime
                 val layoutManager = (slotView.layoutManager as LinearLayoutManager)
+                Log.d("$layoutManager.size}", "в слоtstart 00000000000000000000000000000000000000000000000000")
                 slotView.smoothScrollToPosition(layoutManager.findLastVisibleItemPosition() + 100)
                 val handler = Handler()
                 val runnable = Runnable {
-                    val layoutManager1 = (slotView.layoutManager as LinearLayoutManager)
-                    val vs = layoutManager1.findLastVisibleItemPosition() + 5
+                    val layoutManager1 = (slotView.layoutManager as LinearLayoutManager) //где-то тут должна быть ошибка
+                    val vs = layoutManager1.findLastVisibleItemPosition() + 3
                     slotView.smoothScrollToPosition(vs)
                     isWork = false
                 }

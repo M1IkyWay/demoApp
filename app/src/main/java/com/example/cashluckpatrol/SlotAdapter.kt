@@ -25,7 +25,7 @@ class SlotAdapter(val myDataset: List<Int>) : RecyclerView.Adapter<SlotAdapter.V
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val dataIndex = myDataset[position % myDataset.size]
         val TAG = "${myDataset.size}"
-        Log.d(TAG, "количество элементов в датасете в слотАдаптере")//изменила деление с процентом на умножение
+        Log.d(TAG, "количество элементов в датасете в слотАдаптере")
         holder.mImageView.setImageResource(dataIndex)
         holder.mImageView.tag = dataIndex
     }
