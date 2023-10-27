@@ -23,10 +23,13 @@ anim btn_radio_to_off_mtrl_ring_outer_path_animation
 anim btn_radio_to_on_mtrl_dot_group_animation
 anim btn_radio_to_on_mtrl_ring_outer_animation
 anim btn_radio_to_on_mtrl_ring_outer_path_animation
+anim button_clicked_anim
 anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
+anim fade_anim
+anim fade_out
 anim fragment_fast_out_extra_slow_in
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
@@ -1765,6 +1768,7 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color pressed_color
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -3151,6 +3155,7 @@ drawable btn_spin
 drawable btn_spin_long
 drawable btn_spin_round
 drawable btn_up
+drawable button_pressed_background
 drawable cop
 drawable country_flag_ad
 drawable country_flag_ae
@@ -3720,6 +3725,7 @@ id flip
 id floating
 id forever
 id fragment_container_view_tag
+id frame500
 id frost
 id ghost_view
 id ghost_view_holder
@@ -4315,6 +4321,7 @@ string accept
 string accept_agr
 string action_settings
 string and_terms
+string android_animations_lib_name
 string androidx_startup
 string anonymous_mode
 string app_name

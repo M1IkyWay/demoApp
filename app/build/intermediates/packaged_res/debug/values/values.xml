@@ -6,6 +6,7 @@
     <color name="hint_color">#ADADAC</color>
     <color name="input_color">#1A12D9</color>
     <color name="invalidity_color">#FF1414</color>
+    <color name="pressed_color">#2200C8</color>
     <color name="shadow_color">#ADADAC</color>
     <color name="validity_color">#2DBA00</color>
     <color name="white">#FFFFFF</color>

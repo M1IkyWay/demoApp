@@ -20,6 +20,7 @@ MERGED from [androidx.loader:loader:1.0.0] /home/milkyway/.gradle/caches/transfo
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /home/milkyway/.gradle/caches/transforms-3/fcf437baf11781143369fb3060b9ad0e/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /home/milkyway/.gradle/caches/transforms-3/bd6465edd748fa4c19a64f965d8d41e1/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [com.intuit.sdp:sdp-android:1.1.0] /home/milkyway/.gradle/caches/transforms-3/f05d8533aefe3205c5a9a294f46e2f2b/transformed/jetified-sdp-android-1.1.0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.daimajia.androidanimations:library:2.4] /home/milkyway/.gradle/caches/transforms-3/eecac6632c013ee860b15fa321e8c9c1/transformed/jetified-library-2.4/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/milkyway/.gradle/caches/transforms-3/1452c5ce5223e97b85d02203f90d97b7/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/milkyway/.gradle/caches/transforms-3/d8c3637c01e595e65022bcb7a6be1ead/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.transition:transition:1.2.0] /home/milkyway/.gradle/caches/transforms-3/8435d4200ff5fcccab18de9551f97d12/transformed/transition-1.2.0/AndroidManifest.xml:17:1-24:12
@@ -231,6 +232,8 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /home/milk
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /home/milkyway/.gradle/caches/transforms-3/bd6465edd748fa4c19a64f965d8d41e1/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:20:5-22:41
 MERGED from [com.intuit.sdp:sdp-android:1.1.0] /home/milkyway/.gradle/caches/transforms-3/f05d8533aefe3205c5a9a294f46e2f2b/transformed/jetified-sdp-android-1.1.0/AndroidManifest.xml:7:5-9:41
 MERGED from [com.intuit.sdp:sdp-android:1.1.0] /home/milkyway/.gradle/caches/transforms-3/f05d8533aefe3205c5a9a294f46e2f2b/transformed/jetified-sdp-android-1.1.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.daimajia.androidanimations:library:2.4] /home/milkyway/.gradle/caches/transforms-3/eecac6632c013ee860b15fa321e8c9c1/transformed/jetified-library-2.4/AndroidManifest.xml:7:5-9:41
+MERGED from [com.daimajia.androidanimations:library:2.4] /home/milkyway/.gradle/caches/transforms-3/eecac6632c013ee860b15fa321e8c9c1/transformed/jetified-library-2.4/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/milkyway/.gradle/caches/transforms-3/1452c5ce5223e97b85d02203f90d97b7/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/milkyway/.gradle/caches/transforms-3/1452c5ce5223e97b85d02203f90d97b7/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/milkyway/.gradle/caches/transforms-3/d8c3637c01e595e65022bcb7a6be1ead/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41

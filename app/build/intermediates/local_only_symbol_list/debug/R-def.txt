@@ -1,5 +1,8 @@
 R_DEF: Internal format may change without notice
 local
+anim button_clicked_anim
+anim fade_anim
+anim fade_out
 anim shake
 color bg_for_input
 color black
@@ -7,6 +10,7 @@ color border_for_input
 color hint_color
 color input_color
 color invalidity_color
+color pressed_color
 color shadow_color
 color validity_color
 color white
@@ -35,6 +39,7 @@ drawable btn_spin
 drawable btn_spin_long
 drawable btn_spin_round
 drawable btn_up
+drawable button_pressed_background
 drawable cop
 drawable flash1
 drawable flash2_non_anon
@@ -104,6 +109,7 @@ id flash2
 id flash2_non_anon
 id flash3
 id flashGames
+id frame500
 id grade1
 id grade2
 id grade3

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.cashluckpatrol.app-mergeDebugResources-30:/values-v23/values-v23.xml",
+            "outputFile": "com.example.cashluckpatrol.app-mergeDebugResources-31:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "/home/milkyway/.gradle/caches/transforms-3/8252598d654cfabc60b651b45a08cd05/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",

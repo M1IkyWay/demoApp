@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.cashluckpatrol.app-mergeDebugResources-30:/values-be/values-be.xml",
+            "outputFile": "com.example.cashluckpatrol.app-mergeDebugResources-31:/values-be/values-be.xml",
             "map": [
                 {
                     "source": "/home/milkyway/.gradle/caches/transforms-3/3442b491be1019a2d5bfaa8797a65871/transformed/core-1.9.0/res/values-be/values-be.xml",

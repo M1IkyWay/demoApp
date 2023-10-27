@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
+import android.view.animation.AnimationSet
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -23,8 +25,11 @@ class HotGameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHotGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        var bet = 200
 
-//        val selectedBet : ImageButton? = null
+//        val selectedBet : Image
+//
+//       Button? = null
 
         fun betClicked (imageButton : View) {
             val bet = imageButton.tag.toString()
@@ -34,13 +39,26 @@ class HotGameActivity : AppCompatActivity() {
 
         val betList = listOf(binding.bet50, binding.bet100, binding.bet150, binding.bet200, binding.bet250,
             binding.bet300, binding.bet350, binding.bet500)
+        betList.forEach {
+            var isPressed = false
+        }
+
+        fun counter =
 
         betList.forEach {
             it.setOnClickListener {
                 betClicked(it)
+            AnimationHelper.pressingAnimation(it)
+            val result = AnimationHelper.buttonIsPressed(it)
+
 
             }
         }
+        binding.frame500.setOnClickListener {
+            AnimationHelper.pressingAnimation(it)
+
+        }
+
         spinButton = binding.btnSpin
 //        if (savedInstanceState == null) {
 //            mScores = resources.getInteger(R.integer.default_score)

@@ -22,10 +22,13 @@ int anim btn_radio_to_off_mtrl_ring_outer_path_animation 0x7f010014
 int anim btn_radio_to_on_mtrl_dot_group_animation 0x7f010015
 int anim btn_radio_to_on_mtrl_ring_outer_animation 0x7f010016
 int anim btn_radio_to_on_mtrl_ring_outer_path_animation 0x7f010017
+int anim button_clicked_anim 0x7f010021
 int anim design_bottom_sheet_slide_in 0x7f010018
 int anim design_bottom_sheet_slide_out 0x7f010019
 int anim design_snackbar_in 0x7f01001a
 int anim design_snackbar_out 0x7f01001b
+int anim fade_anim 0x7f010022
+int anim fade_out 0x7f010023
 int anim fragment_fast_out_extra_slow_in 0x7f01001c
 int anim mtrl_bottom_sheet_slide_in 0x7f01001d
 int anim mtrl_bottom_sheet_slide_out 0x7f01001e
@@ -1764,6 +1767,7 @@ int color mtrl_textinput_focused_box_stroke_color 0x7f050234
 int color mtrl_textinput_hovered_box_stroke_color 0x7f050235
 int color notification_action_color_filter 0x7f050236
 int color notification_icon_bg_color 0x7f050237
+int color pressed_color 0x7f050255
 int color primary_dark_material_dark 0x7f050238
 int color primary_dark_material_light 0x7f050239
 int color primary_material_dark 0x7f05023a
@@ -3150,6 +3154,7 @@ int drawable btn_spin 0x7f070071
 int drawable btn_spin_long 0x7f070072
 int drawable btn_spin_round 0x7f070073
 int drawable btn_up 0x7f070074
+int drawable button_pressed_background 0x7f0701c7
 int drawable cop 0x7f070075
 int drawable country_flag_ad 0x7f070076
 int drawable country_flag_ae 0x7f070077
@@ -3719,6 +3724,7 @@ int id flip 0x7f0900e0
 int id floating 0x7f0900e1
 int id forever 0x7f0900e2
 int id fragment_container_view_tag 0x7f0900e3
+int id frame500 0x7f09025c
 int id frost 0x7f0900e4
 int id ghost_view 0x7f0900e5
 int id ghost_view_holder 0x7f0900e6
@@ -4314,6 +4320,7 @@ int string accept 0x7f10001b
 int string accept_agr 0x7f10001c
 int string action_settings 0x7f10001d
 int string and_terms 0x7f10001e
+int string android_animations_lib_name 0x7f1000a7
 int string androidx_startup 0x7f10001f
 int string anonymous_mode 0x7f100020
 int string app_name 0x7f100021
