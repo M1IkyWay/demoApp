@@ -3599,6 +3599,7 @@ id backgr
 id balance
 id balanceText
 id balanceView
+id balanceW
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -4094,6 +4095,7 @@ id visible
 id visible_removing_fragment_view_tag
 id west
 id winsAmount
+id winsCount
 id winsWord
 id withText
 id withinBounds

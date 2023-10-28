@@ -3598,6 +3598,7 @@ int id backgr 0x7f09005c
 int id balance 0x7f09005d
 int id balanceText 0x7f09005e
 int id balanceView 0x7f09005f
+int id balanceW 0x7f090264
 int id barrier 0x7f090060
 int id baseline 0x7f090061
 int id beginOnFirstDraw 0x7f090062
@@ -4093,6 +4094,7 @@ int id visible 0x7f090245
 int id visible_removing_fragment_view_tag 0x7f090246
 int id west 0x7f090247
 int id winsAmount 0x7f090248
+int id winsCount 0x7f090263
 int id winsWord 0x7f090249
 int id withText 0x7f09024a
 int id withinBounds 0x7f09024b

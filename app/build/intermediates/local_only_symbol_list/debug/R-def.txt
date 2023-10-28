@@ -88,6 +88,7 @@ id backgr
 id balance
 id balanceText
 id balanceView
+id balanceW
 id bet100
 id bet150
 id bet200
@@ -192,6 +193,7 @@ id vgrade8
 id vibrationText
 id vibroSet
 id winsAmount
+id winsCount
 id winsWord
 id yes
 id yesButton

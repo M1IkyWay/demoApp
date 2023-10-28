@@ -12,9 +12,14 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProviders
 import com.example.cashluckpatrol.databinding.ActivityHotGameBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.security.SecureRandom
 import java.util.HashMap
 import kotlin.properties.Delegates
@@ -31,10 +36,26 @@ class HotGameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHotGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //
         successGame = false
         currentBet = 200
         var lastPressedBet : View? = null
+        var winsCount = 0
+        val scope = CoroutineScope (Dispatchers.Main)
 
+       suspend fun updateWinsCount (isWin : Boolean) {
+            if (isWin) {
+                winsCount+=1
+                binding.winsCount.setText("${winsCount}")
+                val toast = Toast.makeText (this, "You win!", Toast.LENGTH_SHORT)
+                toast.show()
+            }
+            else {
+                val toast = Toast.makeText (this, "You lose!", Toast.LENGTH_SHORT)
+                toast.show()
+            }
+
+        }
 
         val betList = listOf(binding.bet50, binding.bet100, binding.bet150, binding.bet200, binding.bet250,
             binding.bet300, binding.bet350, binding.bet500)
@@ -43,12 +64,14 @@ class HotGameActivity : AppCompatActivity() {
         }
 
         scoreViewModel.score.observe( this, { newscore ->
-            binding.resultBalance.text = "$newscore"
+            binding.resultBalance.setText("$newscore")
         }) //ERROR IS HERE IN SETTEX
+
         betList.forEach {
             it.setOnClickListener {
                 val bet = it.tag.toString()
                 currentBet = bet.toInt()
+                Log.d("$currentBet", "the currentBet is nowwwwwwwwwwwwwwwwwwwwwwwww")
                 binding.choosenBet.setText(bet)
             AnimationHelper.pressingAnimation(it, null)
             AnimationHelper.buttonIsPressed(it, lastPressedBet)
@@ -56,56 +79,21 @@ class HotGameActivity : AppCompatActivity() {
             }
         }
 
+        val slots = setupSlotsMachine()
         spinButton = binding.btnSpin
-//        if (savedInstanceState == null) {
-//            mScores = resources.getInteger(R.integer.default_score)
-//            setScoreAmounts()
-//        }
+        spinButton.setOnClickListener {
 
-        setupSlotsMachine()
+            scope.launch {
+                slots.start()
+                delay(5500)
+                updateWinsCount(successGame)
+            }
 
+        }
 
     }
 
-//    override fun onBackPressed() {
-//        super.onBackPressed()
-//        finish()
-//    }
-
-//    override fun onSaveInstanceState(outState: Bundle) {
-//        super.onSaveInstanceState(outState)
-//        outState.putInt(CREDIT_EXTRA, mScores)
-//        outState.putInt(BET_INDEX_EXTRA, mBetIndex)
-//    }
-
-//    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-//        super.onRestoreInstanceState(savedInstanceState)
-//        mScores = savedInstanceState.getInt(CREDIT_EXTRA)
-//        mBetIndex = savedInstanceState.getInt(BET_INDEX_EXTRA)
-//        setScoreAmounts()
-//    }
-
-//    private fun decreaseScores() {
-//        mScores -= mBets[mBetIndex]
-//        if (mBets[mBetIndex] > mScores) mBetIndex = 0
-//        setScoreAmounts()
-//        if (mScores == 0) mSpinButton.isEnabled = false
-//    }
-
-//    private fun updateBet() {
-//        val size = mBets.size
-//        mBetIndex = if (mBetIndex >= size - 1) 0 else mBetIndex + 1
-//        if (mBets[mBetIndex] > mScores) mBetIndex = 0
-//        setScoreAmounts()
-//    }
-
-//    private fun setScoreAmounts() {
-//        mCreditView.text = mScores.toString()
-//        mBetView.text = mBets[mBetIndex].toString()
-//    }
-
-
-    private fun setupSlotsMachine() {
+    private fun setupSlotsMachine() : SlotsBuilder {
         val builder = SlotsBuilder().Builder(this)
         val slots = builder
             .addSlots(R.id.slot_one, R.id.slot_two, R.id.slot_three)
@@ -145,74 +133,29 @@ class HotGameActivity : AppCompatActivity() {
                     if (resultMatch == 3 && !binding.btnSpin.isEnabled) {
                         binding.btnSpin.isEnabled = true
                         successGame = true
-                        scoreViewModel.countResult(currentBet, 2, successGame)
-                        Log.d("${scoreViewModel.countResult(currentBet, 2, successGame)}", "здесь посчитан результат")
-                        //add visual changes
-                    }
 
+                        scoreViewModel.countResult(currentBet, 2, successGame)
+
+                        Log.d("${scoreViewModel.countResult(currentBet, 2, successGame)}", "здесь добавлен результат")
+                        //add visual changes
+
+                    }
+                    else {
+                        binding.btnSpin.isEnabled = true
+                        successGame = false
+                        scoreViewModel.countResult(currentBet, 2, successGame)
+                        Log.d("${scoreViewModel.countResult(currentBet, 2, successGame)}", "здесь посчитан в минус результат $successGame")
+                    }
                 }
             })
             .build()
-
-        spinButton.setOnClickListener {
-            slots.start()
-
-
-        }
-
+        return slots
     }
 
+
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        findViewById<Button>(R.id.btn_menu).setOnClickListener {
-//            startActivity(Intent(this, MenuActivity::class.java))
-//        }
-//        findViewById<Button>(R.id.btn_bet).setOnClickListener { updateBet() }
-//
-//        mSpinButton.setOnClickListener {
-//            decreaseScores()
-//            slots.start()
-//        }
-
-//    private fun showScoresDialog() {
-//        val dialog = AlertDialog.Builder(this)
-//            .setMessage(getString(R.string.scores_dialog_text))
-//            .setPositiveButton(
-//                getString(R.string.play_btn_title)) { dialog, whicn ->
-//                startActivity(GameActivity::class.java)
-//            }
-//            .setNegativeButton(
-//                getString(R.string.menu_btn_title)) {dialog, whicn ->
-//                startActivity(MenuActivity::class.java)
-//
-//            }
-//
-//        dialog.setCancelable(false)
-//        dialog.show()
-//    }
-
-
-
-
-
-
-
 
 
 

@@ -44,19 +44,17 @@ class SlotsBuilder {
         callback.setLayoutManagers(layoutManagers)
         Log.d("${callback.getLayoutManagers().size}", "в слотсбилдере перед передачей в колбек - отработало правильно")
         slotViews.last().addOnScrollListener(ScrollListener(callback))
-//        drawableIds.clear()
-//        drawableIds.shuffled()
-        Log.d("${drawableIds.size}", "айдишники удалены в билдере в СлотсБилдер")
+        drawableIds.clear()
+
     }
 
-    fun start(): Boolean {
+   suspend fun start(): Boolean {
         if (!isWork) {
             isWork = true
             var tempTime = scrollTime
             slotViews.forEach { slotView ->
                 tempTime += childIncTime
                 val layoutManager = (slotView.layoutManager as LinearLayoutManager)
-                Log.d("$layoutManager.size}", "в слоtstart 00000000000000000000000000000000000000000000000000")
                 slotView.smoothScrollToPosition(layoutManager.findLastVisibleItemPosition() + 100)
                 val handler = Handler()
                 val runnable = Runnable {

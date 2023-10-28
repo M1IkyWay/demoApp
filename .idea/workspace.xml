@@ -9,15 +9,33 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="закінчила 28.10 о 04:15">
+    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="почала 28.10 о 20:14">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/local_only_symbol_list/debug/R-def.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/local_only_symbol_list/debug/R-def.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/HotGameActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/HotGameActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/ScoreViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/ScoreViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotsBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotsBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_hot_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_hot_game.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[adb-4LBYPFIJNZE6X495-UtNA0g._adb-tls-connect._tcp]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -265,13 +283,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696791005397</updated>
-    </task>
-    <task id="LOCAL-00030" summary="почала 17.10 о 11:06">
-      <created>1697530130658</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1697530130658</updated>
     </task>
     <task id="LOCAL-00031" summary="закінчила 17.10 о 13:47">
       <created>1697539641283</created>
@@ -609,7 +620,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698455757738</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="почала 28.10 о 20:14">
+      <created>1698513291326</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1698513291326</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -645,7 +663,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/f-283/f-283" />
     </ignored-roots>
-    <MESSAGE value="закінчила 23.10 о 01:06" />
     <MESSAGE value="почала 23.10 о 10:16" />
     <MESSAGE value="закінчила 23.10 о 11:40" />
     <MESSAGE value="почала 23.10 о 12:25" />
@@ -670,6 +687,7 @@
     <MESSAGE value="закінчила 27.10 о 03:21" />
     <MESSAGE value="почала 27.10 о 23:28" />
     <MESSAGE value="закінчила 28.10 о 04:15" />
-    <option name="LAST_COMMIT_MESSAGE" value="закінчила 28.10 о 04:15" />
+    <MESSAGE value="почала 28.10 о 20:14" />
+    <option name="LAST_COMMIT_MESSAGE" value="почала 28.10 о 20:14" />
   </component>
 </project>
