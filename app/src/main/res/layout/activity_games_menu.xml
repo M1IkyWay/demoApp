@@ -477,22 +477,34 @@
 
             <TextView
                 android:id="@+id/balanceText"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/_50sdp"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@id/balance"
-                android:layout_alignTop="@id/balance"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/air_millhouse_italic"
+                android:gravity="center"
+                android:text="Balance"
+                android:textColor="@color/input_color"
+                android:textSize="@dimen/_16sdp" />
+
+            <TextView
+                android:id="@+id/currentBal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/balanceText"
                 android:layout_alignEnd="@id/balance"
-                android:layout_alignBottom="@id/balance"
-                android:layout_marginStart="@dimen/_6sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_2sdp"
                 android:fontFamily="@font/air_millhouse_italic"
                 android:gravity="center"
                 android:maxWidth="@dimen/_180sdp"
-                android:text="Balance 123456"
+                android:text="123456"
                 android:textColor="@color/input_color"
                 android:textSize="@dimen/_14sdp" />
+
         </RelativeLayout>
 
     </LinearLayout>

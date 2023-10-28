@@ -102,10 +102,10 @@ id betMrg
 id bg
 id bgBet
 id box
-id btnPlay
 id btnSpin
 id choosenBet
 id cop
+id currentBal
 id decremBet
 id downloadSet
 id flash1

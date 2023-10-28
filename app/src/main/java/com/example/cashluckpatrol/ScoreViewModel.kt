@@ -23,29 +23,18 @@ class ScoreViewModel : ViewModel() {
         }
     }
 
-
     fun updateScore (newScore : Int) {
         score.value = newScore
     }
 
     fun countResult (bet : Int, multiplier : Int, win : Boolean) {
-
-        if (win) {
-            val result = bet * multiplier
-           updateScore(getScore() + result)
-            Log.d("the code works as it is true win", "wiiiiiiiiiiiin, ${getScore() + result}")
-        }
+       if (win) {
+                val result = bet * multiplier
+                updateScore(getScore() + result)
+            }
         else {
-            Log.d("the code works ", "код зашел в блок елс в каунт резалт, ${getScore()}")
-            if (getScore() > bet) {
-                updateScore(getScore() - bet)
-                Log.d("the code works as it is not win", "wiiiiiiiiiiiiiiiiiiiin, ${getScore() - bet}")
-            }
-            else {
-                updateScore(0)
-            }
+           updateScore(getScore() - bet)
+        }
         }
     }
 
-
-}

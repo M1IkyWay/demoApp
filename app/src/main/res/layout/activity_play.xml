@@ -22,7 +22,6 @@
         app:srcCompat="@drawable/background" />
 
     <RelativeLayout
-        android:id="@+id/btnPlay"
         android:layout_width="303dp"
         android:layout_height="130dp"
         android:layout_marginTop="144dp"

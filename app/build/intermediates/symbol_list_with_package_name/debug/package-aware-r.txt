@@ -3624,7 +3624,6 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id box
-id btnPlay
 id btnSpin
 id buttonPanel
 id cache_measures
@@ -3665,6 +3664,7 @@ id coordinator
 id cop
 id cos
 id counterclockwise
+id currentBal
 id currentState
 id custom
 id customPanel

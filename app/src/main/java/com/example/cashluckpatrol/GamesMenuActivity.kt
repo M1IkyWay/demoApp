@@ -7,11 +7,17 @@ import com.example.cashluckpatrol.databinding.ActivityGamesMenuBinding
 
 class GamesMenuActivity : AppCompatActivity() {
 
+    lateinit var scoreViewModel : ScoreViewModel
     lateinit var binding : ActivityGamesMenuBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGamesMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        scoreViewModel = (application as MyApplication).scoreViewModel
+
+        scoreViewModel.score.observe( this, { newscore ->
+            binding.currentBal.setText("$newscore")
+        })
 
         binding.playHotButton.setOnClickListener {
             AnimationHelper.pressingAnimation(it, binding.hotPlayText)
@@ -55,4 +61,5 @@ class GamesMenuActivity : AppCompatActivity() {
     }
 
 
+    //Are you sure you want to leave
 }

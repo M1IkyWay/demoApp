@@ -104,7 +104,7 @@
                 android:fontFamily="@font/air_millhouse_italic"
                 android:gravity="center"
                 android:layout_alignStart="@id/balance"
-                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_7sdp"
                 android:layout_marginBottom="@dimen/_3sdp"
                 android:layout_alignBottom="@id/balance"
                 android:layout_alignTop="@id/balance"
