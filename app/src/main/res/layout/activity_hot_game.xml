@@ -122,7 +122,7 @@
                 android:layout_marginEnd="@dimen/_7sdp"
                 android:text="123456"
                 android:textColor="@color/input_color"
-                android:textSize="@dimen/_14sdp" />
+                android:textSize="@dimen/_13sdp" />
 
         </RelativeLayout>
 

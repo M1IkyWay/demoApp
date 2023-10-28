@@ -13,29 +13,28 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProviders
 import com.example.cashluckpatrol.databinding.ActivityHotGameBinding
 import java.security.SecureRandom
 import java.util.HashMap
+import kotlin.properties.Delegates
 
 class HotGameActivity : AppCompatActivity() {
 
+    private val scoreViewModel by lazy { ViewModelProviders.of(this).get(ScoreViewModel::class.java)}
     lateinit var spinButton : ImageView
     lateinit var binding : ActivityHotGameBinding
+    var successGame by Delegates.notNull<Boolean>()
+    var currentBet by Delegates.notNull<Int>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHotGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        var bet = 200
+        successGame = false
+        currentBet = 200
+        var lastPressedBet : View? = null
 
-//        val selectedBet : Image
-//
-//       Button? = null
-
-        fun betClicked (imageButton : View) {
-            val bet = imageButton.tag.toString()
-            binding.choosenBet.setText(bet)
-
-        }
 
         val betList = listOf(binding.bet50, binding.bet100, binding.bet150, binding.bet200, binding.bet250,
             binding.bet300, binding.bet350, binding.bet500)
@@ -43,20 +42,18 @@ class HotGameActivity : AppCompatActivity() {
             var isPressed = false
         }
 
-        fun counter =
-
+        scoreViewModel.score.observe( this, { newscore ->
+            binding.resultBalance.text = "$newscore"
+        }) //ERROR IS HERE IN SETTEX
         betList.forEach {
             it.setOnClickListener {
-                betClicked(it)
-            AnimationHelper.pressingAnimation(it)
-            val result = AnimationHelper.buttonIsPressed(it)
-
-
+                val bet = it.tag.toString()
+                currentBet = bet.toInt()
+                binding.choosenBet.setText(bet)
+            AnimationHelper.pressingAnimation(it, null)
+            AnimationHelper.buttonIsPressed(it, lastPressedBet)
+            lastPressedBet = it
             }
-        }
-        binding.frame500.setOnClickListener {
-            AnimationHelper.pressingAnimation(it)
-
         }
 
         spinButton = binding.btnSpin
@@ -125,17 +122,13 @@ class HotGameActivity : AppCompatActivity() {
             .setChildIncTime(1000)
             .setOnFinishListener(object : Callback() {
                 override fun onFinishListener() {
-                    Log.d("жжжжжжжжжжжжжжжжжжжжж", "результат гета ")
                     val layoutManagers = getLayoutManagers()
-
-                    //до этой строки не доходит, останавливается раньше
                     val match = HashMap<Int, Int>()
                     for (i in 0 until 3) {
-                        Log.d(layoutManagers.size.toString(), "есть ли что-то в лейаутменеджере")
                         val imageView = layoutManagers.get(i)
                             .findViewByPosition(
                                 (layoutManagers.get(i)
-                                    .findFirstVisibleItemPosition() ) //+3
+                                    .findFirstVisibleItemPosition()) //+3
                             ) as ImageView
                         val drawableId = imageView.tag as Int
 
@@ -143,29 +136,50 @@ class HotGameActivity : AppCompatActivity() {
                     }
 
                     var resultMatch = 0
-                    match.values.forEach {
-                            value ->
-                        if (resultMatch < value ) {
+                    match.values.forEach { value ->
+                        if (resultMatch < value) {
                             resultMatch = value
                         }
                     }
 
                     if (resultMatch == 3 && !binding.btnSpin.isEnabled) {
                         binding.btnSpin.isEnabled = true
-                    //bet * 2
-
-                    //add visual changes
+                        successGame = true
+                        scoreViewModel.countResult(currentBet, 2, successGame)
+                        Log.d("${scoreViewModel.countResult(currentBet, 2, successGame)}", "здесь посчитан результат")
+                        //add visual changes
                     }
 
-//                    setScoreAmounts()
                 }
             })
             .build()
 
         spinButton.setOnClickListener {
-
             slots.start()
+
+
         }
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //        findViewById<Button>(R.id.btn_menu).setOnClickListener {
 //            startActivity(Intent(this, MenuActivity::class.java))
 //        }
@@ -175,7 +189,6 @@ class HotGameActivity : AppCompatActivity() {
 //            decreaseScores()
 //            slots.start()
 //        }
-    }
 
 //    private fun showScoresDialog() {
 //        val dialog = AlertDialog.Builder(this)
@@ -193,13 +206,6 @@ class HotGameActivity : AppCompatActivity() {
 //        dialog.setCancelable(false)
 //        dialog.show()
 //    }
-
-//    private fun startActivity(targetActivity: Class<out AppCompatActivity>) {
-//        val intent = Intent(this, targetActivity)
-//        startActivity(intent)
-//        finish()
-//    }
-}
 
 
 

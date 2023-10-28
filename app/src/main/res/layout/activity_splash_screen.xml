@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/background"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/downloadSet"
+        android:layout_width="@dimen/_280sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.424">
+
+        <ImageView
+            android:id="@+id/vgrade1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/non_active_rect"
+            android:layout_marginEnd="@dimen/_2sdp"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vgrade2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/non_active_rect"
+            android:layout_marginEnd="@dimen/_2sdp"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vgrade3"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/non_active_rect"
+            android:layout_marginEnd="@dimen/_2sdp"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vgrade4"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/non_active_rect"
+            android:layout_marginEnd="@dimen/_2sdp"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vgrade5"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/non_active_rect"
+            android:layout_marginEnd="@dimen/_2sdp"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+
+
+        <ImageView
+            android:id="@+id/vgrade6"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/non_active_rect"
+            android:layout_marginEnd="@dimen/_2sdp"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vgrade7"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/non_active_rect"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <ImageView
+            android:id="@+id/vdrade8"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/non_active_rect"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/cop"
+        android:layout_width="240dp"
+        android:layout_height="309dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/cop"
+        android:layout_marginBottom="-10dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,12 +29,15 @@ anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
 anim fade_anim
+anim fade_in
 anim fade_out
 anim fragment_fast_out_extra_slow_in
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
 anim shake
+anim slide_in
+anim slide_out
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -3659,7 +3662,6 @@ id contiguous
 id continuousVelocity
 id coordinator
 id cop
-id copImage
 id cos
 id counterclockwise
 id currentState
@@ -3687,6 +3689,7 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id disjoint
+id downloadSet
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -3758,6 +3761,7 @@ id horizontalScrollView
 id horizontalScrollView2
 id horizontal_only
 id hotGames
+id hotPlay_text
 id icon
 id icon_group
 id ifRoom
@@ -4028,6 +4032,10 @@ id test_radiobutton_app_button_tint
 id text
 id text2
 id textEnd
+id textFlash1
+id textFlash2
+id textSlot1
+id textSlot2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
@@ -4193,6 +4201,9 @@ layout activity_hot_game
 layout activity_play
 layout activity_privacy_policy
 layout activity_settings
+layout activity_slot_game1
+layout activity_slot_game2
+layout activity_splash_screen
 layout bottom_sheet_country_picker
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -4269,7 +4280,6 @@ layout sdp_example
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
-layout splash_screen
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_chip_zero_corner_radius

@@ -3,6 +3,8 @@ package com.example.cashluckpatrol
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.daimajia.androidanimations.library.Techniques
+import com.daimajia.androidanimations.library.YoYo
 import com.example.cashluckpatrol.databinding.ActivityPlayBinding
 
 class PlayActivity : AppCompatActivity() {
@@ -15,8 +17,10 @@ class PlayActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.playButton.setOnClickListener{
-            val intent = Intent(this, HotGameActivity::class.java)
+            AnimationHelper.pressingAnimation(it, binding.text)
+            val intent = Intent(this, GamesMenuActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in, R.anim.slide_out)
         }
     }
 }

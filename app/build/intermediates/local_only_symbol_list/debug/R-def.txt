@@ -2,8 +2,11 @@ R_DEF: Internal format may change without notice
 local
 anim button_clicked_anim
 anim fade_anim
+anim fade_in
 anim fade_out
 anim shake
+anim slide_in
+anim slide_out
 color bg_for_input
 color black
 color border_for_input
@@ -102,8 +105,8 @@ id btnPlay
 id btnSpin
 id choosenBet
 id cop
-id copImage
 id decremBet
+id downloadSet
 id flash1
 id flash2
 id flash2_non_anon
@@ -121,6 +124,7 @@ id grade8
 id horizontalScrollView
 id horizontalScrollView2
 id hotGames
+id hotPlay_text
 id imageView
 id imageView10
 id imageView12
@@ -171,6 +175,11 @@ id smBtnPlaySlot
 id smBtnPlaySlot1
 id smBtnPlaySlot2
 id soundSet
+id text
+id textFlash1
+id textFlash2
+id textSlot1
+id textSlot2
 id vdrade8
 id vgrade1
 id vgrade2
@@ -197,8 +206,10 @@ layout activity_hot_game
 layout activity_play
 layout activity_privacy_policy
 layout activity_settings
+layout activity_slot_game1
+layout activity_slot_game2
+layout activity_splash_screen
 layout item_list
-layout splash_screen
 mipmap ic_launcher
 mipmap ic_launcher_round
 raw stars_bar

@@ -14,6 +14,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -78,6 +79,7 @@
             tools:layout_editor_absoluteY="116dp" />
 
         <TextView
+            android:id="@+id/hotPlay_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -159,6 +161,7 @@
                     tools:layout_editor_absoluteY="116dp" />
 
                 <TextView
+                    android:id="@+id/textSlot1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -212,6 +215,7 @@
                     tools:layout_editor_absoluteY="116dp" />
 
                 <TextView
+                    android:id="@+id/textSlot2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -313,6 +317,7 @@
                     tools:layout_editor_absoluteY="116dp" />
 
                 <TextView
+                    android:id="@+id/textFlash1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -366,6 +371,7 @@
                     tools:layout_editor_absoluteY="116dp" />
 
                 <TextView
+                    android:id="@+id/textFlash2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"

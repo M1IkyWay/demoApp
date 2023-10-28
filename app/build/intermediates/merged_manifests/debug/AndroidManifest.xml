@@ -31,6 +31,21 @@
         android:testOnly="true"
         android:theme="@style/Theme.CashLuckPatrol" >
         <activity
+            android:name="com.example.cashluckpatrol.SlotGame2Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.cashluckpatrol.SlotGame1Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.cashluckpatrol.SplashScreen"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="com.example.cashluckpatrol.FlashGame2Activity"
             android:exported="false" />
         <activity
@@ -64,13 +79,7 @@
             android:theme="@style/Theme.CashLuckPatrol.NoActionBar" />
         <activity
             android:name="com.example.cashluckpatrol.PlayActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

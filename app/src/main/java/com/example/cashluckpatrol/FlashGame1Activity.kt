@@ -3,10 +3,12 @@ package com.example.cashluckpatrol
 import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProviders
 import com.example.cashluckpatrol.databinding.ActivityFlashGame1Binding
 
 class FlashGame1Activity : AppCompatActivity() {
 
+    private val userViewModel by lazy { ViewModelProviders.of(this).get(ScoreViewModel::class.java)}
     lateinit var binding : ActivityFlashGame1Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

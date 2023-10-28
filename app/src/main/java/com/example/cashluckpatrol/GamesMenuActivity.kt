@@ -14,7 +14,8 @@ class GamesMenuActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.playHotButton.setOnClickListener {
-            val intent = Intent()
+            AnimationHelper.pressingAnimation(it, binding.hotPlayText)
+            val intent = Intent(this, HotGameActivity ::class.java)
             startActivity(intent)
         }
 
@@ -24,6 +25,7 @@ class GamesMenuActivity : AppCompatActivity() {
         }
 
         binding.playButtonSlot2.setOnClickListener {
+
             val intent = Intent()
             startActivity(intent)
         }

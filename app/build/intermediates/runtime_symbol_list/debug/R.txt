@@ -28,12 +28,15 @@ int anim design_bottom_sheet_slide_out 0x7f010019
 int anim design_snackbar_in 0x7f01001a
 int anim design_snackbar_out 0x7f01001b
 int anim fade_anim 0x7f010022
+int anim fade_in 0x7f010026
 int anim fade_out 0x7f010023
 int anim fragment_fast_out_extra_slow_in 0x7f01001c
 int anim mtrl_bottom_sheet_slide_in 0x7f01001d
 int anim mtrl_bottom_sheet_slide_out 0x7f01001e
 int anim mtrl_card_lowers_interpolator 0x7f01001f
 int anim shake 0x7f010020
+int anim slide_in 0x7f010024
+int anim slide_out 0x7f010025
 int animator design_appbar_state_list_animator 0x7f020000
 int animator design_fab_hide_motion_spec 0x7f020001
 int animator design_fab_show_motion_spec 0x7f020002
@@ -3658,7 +3661,6 @@ int id contiguous 0x7f09009e
 int id continuousVelocity 0x7f09009f
 int id coordinator 0x7f0900a0
 int id cop 0x7f0900a1
-int id copImage 0x7f0900a2
 int id cos 0x7f0900a3
 int id counterclockwise 0x7f0900a4
 int id currentState 0x7f0900a5
@@ -3686,6 +3688,7 @@ int id disableIntraAutoTransition 0x7f0900ba
 int id disablePostScroll 0x7f0900bb
 int id disableScroll 0x7f0900bc
 int id disjoint 0x7f0900bd
+int id downloadSet 0x7f09025d
 int id dragAnticlockwise 0x7f0900be
 int id dragClockwise 0x7f0900bf
 int id dragDown 0x7f0900c0
@@ -3757,6 +3760,7 @@ int id horizontalScrollView 0x7f090100
 int id horizontalScrollView2 0x7f090101
 int id horizontal_only 0x7f090102
 int id hotGames 0x7f090103
+int id hotPlay_text 0x7f09025e
 int id icon 0x7f090104
 int id icon_group 0x7f090105
 int id ifRoom 0x7f090106
@@ -4027,6 +4031,10 @@ int id test_radiobutton_app_button_tint 0x7f09020b
 int id text 0x7f09020c
 int id text2 0x7f09020d
 int id textEnd 0x7f09020e
+int id textFlash1 0x7f09025f
+int id textFlash2 0x7f090260
+int id textSlot1 0x7f090261
+int id textSlot2 0x7f090262
 int id textSpacerNoButtons 0x7f09020f
 int id textSpacerNoTitle 0x7f090210
 int id textStart 0x7f090211
@@ -4192,6 +4200,9 @@ int layout activity_hot_game 0x7f0c0023
 int layout activity_play 0x7f0c0024
 int layout activity_privacy_policy 0x7f0c0025
 int layout activity_settings 0x7f0c0026
+int layout activity_slot_game1 0x7f0c0087
+int layout activity_slot_game2 0x7f0c0088
+int layout activity_splash_screen 0x7f0c0086
 int layout bottom_sheet_country_picker 0x7f0c0027
 int layout custom_dialog 0x7f0c0028
 int layout design_bottom_navigation_item 0x7f0c0029
@@ -4268,7 +4279,6 @@ int layout sdp_example 0x7f0c006e
 int layout select_dialog_item_material 0x7f0c006f
 int layout select_dialog_multichoice_material 0x7f0c0070
 int layout select_dialog_singlechoice_material 0x7f0c0071
-int layout splash_screen 0x7f0c0073
 int layout support_simple_spinner_dropdown_item 0x7f0c0074
 int layout test_action_chip 0x7f0c0075
 int layout test_chip_zero_corner_radius 0x7f0c0076
