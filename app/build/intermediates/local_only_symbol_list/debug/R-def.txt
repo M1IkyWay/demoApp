@@ -214,6 +214,7 @@ layout activity_splash_screen
 layout item_list
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw launcher
 raw stars_bar
 string accept
 string accept_agr
