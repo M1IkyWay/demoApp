@@ -32,8 +32,10 @@ class GamesMenuActivity : AppCompatActivity() {
 
         if (!isServiceRunning(MusicService::class.java)) {
                 val soundVolume = scoreViewModel.getSoundVolume()
-                val musicService = MusicService(soundVolume, R.raw.launcher)
+                val musicService = MusicService()
             val intent = Intent (this, MusicService::class.java)
+            intent.putExtra("soundVolume", soundVolume)
+            intent.putExtra("musicResourse", R.raw.launcher)
             startService(intent)
 
 

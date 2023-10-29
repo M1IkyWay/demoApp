@@ -6,20 +6,27 @@ import android.media.MediaPlayer
 import android.os.IBinder
 import android.util.Log
 
-class MusicService (volume : Float, soundId : Int) : Service() {
+class MusicService () : Service() {
+
+//    class MusicService (volume : Float, soundId : Int) : Service() {
 
     private lateinit var mediaplayer : MediaPlayer
-    private var currentResourseId = soundId
-    private var _volume = volume
+    private var currentResourseId = 0
+    private  var _volume = 1.0f
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
 //        return super.onStartCommand(intent, flags, startId)
-        val volume = intent?.getFloatExtra("soundVolume")
-        val musicResourse = intent?.getIntExtra("musicResourse")
+        val volume = intent?.getFloatExtra("soundVolume", 1.0f)
+        val musicResourse = intent?.getIntExtra("musicResourse", R.raw.launcher)
+        _volume = volume ?: 1.0f
+        currentResourseId = musicResourse ?: R.raw.launcher
 
         return START_STICKY
 
     }
+
+
+
     override fun onBind(intent: Intent?): IBinder? {
         return null
     }

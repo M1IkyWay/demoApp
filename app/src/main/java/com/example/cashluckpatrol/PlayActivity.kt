@@ -41,8 +41,8 @@ class PlayActivity : AppCompatActivity() {
 
             YoYo.with(Techniques.SlideOutLeft).duration(1000).playOn(binding.playButton)
             YoYo.with(Techniques.SlideOutLeft).duration(1000).playOn(binding.text)
-            val intent = Intent(this, GamesMenuActivity::class.java)
-            startActivity(intent)
+            val intentAct = Intent(this, GamesMenuActivity::class.java)
+            startActivity(intentAct)
             overridePendingTransition(R.anim.slide_in, R.anim.slide_out)
 
             finish()
