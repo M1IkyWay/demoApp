@@ -163,9 +163,6 @@ class HotGameActivity : AppCompatActivity() {
         return slots
     }
 
-
-
-
 }
 
 
