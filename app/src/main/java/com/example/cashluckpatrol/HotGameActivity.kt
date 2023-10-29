@@ -59,18 +59,18 @@ class HotGameActivity : AppCompatActivity() {
             }
 
         }
-
-        val betList = listOf(binding.bet50, binding.bet100, binding.bet150, binding.bet200, binding.bet250,
-            binding.bet300, binding.bet350, binding.bet500)
-        betList.forEach {
-            var isPressed = false
-        }
-
-        scoreViewModel.score.observe( this, { newscore ->
+            scoreViewModel.score.observe( this, { newscore ->
             binding.resultBalance.setText("$newscore")
         })
 
+        val betList = listOf(binding.bet50, binding.bet100, binding.bet150, binding.bet200, binding.bet250,
+            binding.bet300, binding.bet350, binding.bet500)
+
+
+
         betList.forEach {
+            var isPressed = false
+            Log.d("$isPressed", "all buttons have isPressed value now")
             it.setOnClickListener {
                 val bet = it.tag.toString()
                 currentBet = bet.toInt()
@@ -78,7 +78,9 @@ class HotGameActivity : AppCompatActivity() {
 
             AnimationHelper.updateScoreOrBetTextViewAnimation(binding.choosenBet, bet)
             AnimationHelper.pressingAnimation(it, null)
+
             AnimationHelper.buttonIsPressed(it, lastPressedBet)
+
             lastPressedBet = it
             }
         }

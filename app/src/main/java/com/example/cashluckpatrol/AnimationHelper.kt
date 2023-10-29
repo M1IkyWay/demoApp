@@ -22,28 +22,35 @@ object AnimationHelper {
 
     fun changingButtonUI (view: View) {
         if (view.isPressed) {
-            view.setBackgroundResource(R.drawable.transparent_background)
+            view.setBackgroundResource(R.drawable.button_pressed_background)
+//            view.layoutParams.width = (view.width * 0.9).toInt()
+//            view.layoutParams.height = (view.height * 0.9).toInt()
             view.requestLayout()
-            view.isPressed = false
+            Log.d(view.tag.toString(), "ui of pressed view was changed")
+
+//            view.isPressed = false
         }
         else {
-            view.setBackgroundResource(R.drawable.button_pressed_background)
-            view.layoutParams.width = (view.width * 0.9).toInt()
-            view.layoutParams.height = (view.height * 0.9).toInt()
+            view.setBackgroundResource(R.drawable.transparent_background)
             view.requestLayout()
-            view.isPressed = true
+
+//
+//            view.isPressed = true
+            Log.d(view.tag.toString(), "ui of prevbutton was changed")
         }
     }
 
     fun buttonIsPressed(view: View, prevPressedView : View?) {
-        if (prevPressedView!=null) {
+        if (prevPressedView!=null &&  prevPressedView!=view) {
             prevPressedView.isPressed = false
+            Log.d("prevView", "has now ${prevPressedView.isPressed}")
             changingButtonUI(prevPressedView)
-            Log.d(prevPressedView?.tag.toString(), "ui of prevbutton was changed button was changed")
+
 
         }
+        view.isPressed = true
         changingButtonUI(view)
-        Log.d(view.tag.toString(), "ui of pressed button was changed")
+        Log.d("currentView", "has now ${view.isPressed}")
 
     }
 
