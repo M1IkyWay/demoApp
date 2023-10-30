@@ -24,7 +24,7 @@ import kotlin.properties.Delegates
 
 class HotGameActivity : AppCompatActivity() {
 
-
+    lateinit var musicService : MusicService
     lateinit var scoreViewModel : ScoreViewModel
     lateinit var spinButton : ImageView
     lateinit var binding : ActivityHotGameBinding
@@ -43,6 +43,10 @@ class HotGameActivity : AppCompatActivity() {
         var lastPressedBet : View? = null
         var winsCount = 0
         val scope = CoroutineScope (Dispatchers.Main)
+        val soundVolume = scoreViewModel.getSoundVolume()
+
+
+        musicService = MusicService(soundVolume, R.raw.launcher, this)
 
        suspend fun updateWinsCount (isWin : Boolean) {
             if (isWin) {
