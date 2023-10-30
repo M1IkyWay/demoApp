@@ -31,33 +31,6 @@ class GamesMenuActivity : AppCompatActivity() {
             binding.currentBal.setText("$newscore")
         })
 
-//        fun isServiceRunning(serviceClass: Class<MusicService>) : Boolean {
-//            val manager = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
-//            var isPlayed = false
-//            for (service in manager.getRunningServices(Integer.MAX_VALUE)) {
-//                if (serviceClass.name == service.service.className) {
-//                    isPlayed =  true
-//                }
-//                else isPlayed = false
-//            }
-//            return isPlayed
-//        }
-//
-//        if (!isServiceRunning(MusicService::class.java)) {
-//                val soundVolume = scoreViewModel.getSoundVolume()
-//                val musicService = MusicService()
-//            val intent = Intent (this, MusicService::class.java)
-//            intent.putExtra("soundVolume", soundVolume)
-//            intent.putExtra("musicResourse", R.raw.launcher)
-//            startService(intent)
-//
-//        }
-//        fun closeMusicService () {
-//            val serviceIntent = Intent (this, MusicService::class.java)
-//            stopService(serviceIntent)
-//        }
-
-
         binding.playHotButton.setOnClickListener {
             AnimationHelper.pressingAnimation(it, binding.hotPlayText)
             val intent = Intent(this, HotGameActivity ::class.java)

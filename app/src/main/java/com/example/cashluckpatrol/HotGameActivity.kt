@@ -30,9 +30,8 @@ class HotGameActivity : AppCompatActivity() {
     lateinit var binding : ActivityHotGameBinding
     var successGame by Delegates.notNull<Boolean>()
     var currentBet by Delegates.notNull<Int>()
-
+    var theEnd = 0
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         binding = ActivityHotGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -43,10 +42,9 @@ class HotGameActivity : AppCompatActivity() {
         var lastPressedBet : View? = null
         var winsCount = 0
         val scope = CoroutineScope (Dispatchers.Main)
-        val soundVolume = scoreViewModel.getSoundVolume()
-
-
-        musicService = MusicService(soundVolume, R.raw.launcher, this)
+        val soundVolume = scoreViewModel.getSoundVolume()*0.7f
+        musicService = MusicService(soundVolume, R.raw.hot_game, this)
+        musicService.playMusic(0)
 
        suspend fun updateWinsCount (isWin : Boolean) {
             if (isWin) {
@@ -167,6 +165,20 @@ class HotGameActivity : AppCompatActivity() {
         return slots
     }
 
+
+    override fun onPause() {
+        super.onPause()
+        theEnd = musicService.findTheEnd()
+        musicService.stopMusic()
+
+    }
+    override fun onResume() {
+        super.onResume()
+        musicService.playMusic(theEnd)
+    }
+
+
+    //событие нажатия н акнопку назад
 }
 
 

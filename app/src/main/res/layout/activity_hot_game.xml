@@ -15,7 +15,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:scaleType="fitXY"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/background" />
@@ -59,7 +58,7 @@
                 android:layout_marginBottom="@dimen/_3sdp"
                 android:layout_alignBottom="@id/winsAmount"
                 android:layout_alignTop="@id/winsAmount"
-                android:text="WIN"
+                android:text="WINS"
                 android:textColor="@color/input_color"
                 android:textSize="@dimen/_15sdp" />
 
@@ -72,10 +71,13 @@
                 android:layout_toEndOf="@id/winsWord"
                 android:fontFamily="@font/air_millhouse_italic"
                 android:gravity="center"
+
+
+
                 android:layout_centerVertical="true"
                 android:text="0"
                 android:textColor="@color/input_color"
-                android:textSize="@dimen/_14sdp" />
+                android:textSize="@dimen/_16sdp" />
 
 
         </RelativeLayout>
@@ -149,11 +151,6 @@
             android:layout_height="match_parent"
             android:scaleType="fitCenter"
             android:src="@drawable/hot_field" />
-
-<!--        <com.example.cashluckpatrol.SlotMachineView-->
-<!--            android:id="@+id/slotMachine"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content" />-->
 
         <com.example.cashluckpatrol.SlotsView
             android:id="@+id/linear_slots"

@@ -24,6 +24,7 @@ drawable a_lit
 drawable active_rect
 drawable animation
 drawable background
+drawable backgrpond_land
 drawable bet_bg
 drawable bet_mgn
 drawable bg_btn_flash1
@@ -181,6 +182,7 @@ id textFlash1
 id textFlash2
 id textSlot1
 id textSlot2
+id upperPlace
 id vdrade8
 id vgrade1
 id vgrade2
@@ -214,6 +216,7 @@ layout activity_splash_screen
 layout item_list
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw hot_game
 raw launcher
 raw stars_bar
 string accept

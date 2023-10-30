@@ -3133,6 +3133,7 @@ drawable animation
 drawable avd_hide_password
 drawable avd_show_password
 drawable background
+drawable backgrpond_land
 drawable bet_bg
 drawable bet_mgn
 drawable bg_btn_flash1
@@ -4079,6 +4080,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id upperPlace
 id useLogo
 id vdrade8
 id vertical_only
@@ -4317,6 +4319,7 @@ layout text_view_without_line_height
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+raw hot_game
 raw launcher
 raw stars_bar
 string abc_action_bar_home_description
