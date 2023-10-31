@@ -6,4 +6,271 @@
     android:layout_height="match_parent"
     tools:context=".SlotGame2Activity">
 
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/background_slot2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_250sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13"
+        app:layout_constraintHorizontal_bias="0.5">
+
+        <ImageView
+            android:id="@+id/backCircle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/back_main_circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"/>
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/indicator"
+            android:translationZ="@dimen/_2sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.1" />
+
+
+        <ImageView
+            android:id="@+id/foregroundCircle"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_200sdp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/completed_circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <ImageView
+        android:id="@+id/cop"
+        android:layout_width="104dp"
+        android:layout_height="110dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.78"
+        app:srcCompat="@drawable/cop" />
+
+    <LinearLayout
+        android:id="@+id/bet_block"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/cop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.864">
+
+        <ImageView
+            android:id="@+id/btn_up"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:src="@drawable/btn_up"
+            android:clickable="true"
+            android:scaleType="center"
+            android:focusable="true"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/betNumber"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_20sdp"
+            android:fontFamily="@font/air_millhouse_italic"
+            android:shadowColor="@color/shadow_color"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="5"
+            android:text="123456"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textColor="@color/white"/>
+
+
+        <ImageView
+            android:id="@+id/btn_down"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:src="@drawable/btn_down"
+            android:clickable="true"
+            android:scaleType="center"
+            android:focusable="true"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/bet_block"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.788">
+
+        <ImageView
+            android:id="@+id/btnRotate"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_rotate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"/>
+
+        <ImageView
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:src="@drawable/arrow_rotate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80sdp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1">
+
+        <LinearLayout
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/balanceW"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_20sdp"
+                android:fontFamily="@font/air_millhouse_italic"
+                android:shadowColor="@color/shadow_color"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="5"
+                android:text="Balance"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/balance"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_17sdp"
+                android:fontFamily="@font/air_millhouse_italic"
+                android:shadowColor="@color/shadow_color"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="5"
+                android:text="1234567"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textColor="@color/white"/>
+
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/winW"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_20sdp"
+                android:fontFamily="@font/air_millhouse_italic"
+                android:shadowColor="@color/shadow_color"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="5"
+                android:text="Total win"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/scoreWin"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_17sdp"
+                android:fontFamily="@font/air_millhouse_italic"
+                android:shadowColor="@color/shadow_color"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="5"
+                android:text="1234567"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textColor="@color/white"/>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

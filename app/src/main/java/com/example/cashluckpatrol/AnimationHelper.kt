@@ -68,6 +68,11 @@ object AnimationHelper {
 
     }
 
+    fun wrongInputAnimation (view : View ) {
+
+
+    }
+
 }
 
 

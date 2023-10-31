@@ -9,7 +9,19 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="закінчила 30.10 о 18:24" />
+    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="почала 30.10 о 22:41">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/arrow_rotate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/back_main_circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/background_slot2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_rotate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/completed_circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/indicator.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/AnimationHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/AnimationHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/ScoreViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/ScoreViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotGame2Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotGame2Activity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_slot_game2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_slot_game2.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -264,13 +276,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696791005397</updated>
-    </task>
-    <task id="LOCAL-00045" summary="почала 21.10 о 21:57">
-      <created>1697914646406</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1697914646406</updated>
     </task>
     <task id="LOCAL-00046" summary="закінчила 21.10 о 23:43">
       <created>1697921028656</created>
@@ -608,7 +613,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698683049264</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="почала 30.10 о 22:41">
+      <created>1698698516240</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1698698516240</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -644,7 +656,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/f-283/f-283" />
     </ignored-roots>
-    <MESSAGE value="закінчила 25.10 о 15:34" />
     <MESSAGE value="почала 26.10 о 01:14" />
     <MESSAGE value="закінчила 26.10 о 03:14" />
     <MESSAGE value="почала 26.10 о 20:55" />
@@ -669,6 +680,7 @@
     <MESSAGE value="почала 30.10 о 10:41" />
     <MESSAGE value="закінчила 30.10 о 15:15" />
     <MESSAGE value="закінчила 30.10 о 18:24" />
-    <option name="LAST_COMMIT_MESSAGE" value="закінчила 30.10 о 18:24" />
+    <MESSAGE value="почала 30.10 о 22:41" />
+    <option name="LAST_COMMIT_MESSAGE" value="почала 30.10 о 22:41" />
   </component>
 </project>

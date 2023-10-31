@@ -62,4 +62,14 @@ class ScoreViewModel : ViewModel() {
         soundVolume.value = newVolume
     }
 
+    fun countScoreSlot2 (bet : Int, multiplier : Float) {
+        when {
+            multiplier == 0.0f -> updateScore(getScore()-bet)
+            multiplier > 1.0f -> updateScore((getScore()+(multiplier*bet).toInt()))
+            else -> updateScore(getScore())
+        }
+
+
+    }
+
 }
