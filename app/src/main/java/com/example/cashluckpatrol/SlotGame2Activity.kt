@@ -10,8 +10,6 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProviders
-import com.example.cashluckpatrol.databinding.ActivityHotGameBinding
 import com.example.cashluckpatrol.databinding.ActivitySlotGame2Binding
 import kotlin.random.Random
 
