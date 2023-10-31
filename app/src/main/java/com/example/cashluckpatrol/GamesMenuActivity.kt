@@ -48,7 +48,7 @@ class GamesMenuActivity : AppCompatActivity() {
 
         binding.playButtonSlot2.setOnClickListener {
 
-            val intent = Intent()
+            val intent = Intent(this, SlotGame2Activity::class.java)
             startActivity(intent)
 
         }

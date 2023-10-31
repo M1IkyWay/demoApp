@@ -50,6 +50,9 @@ class PlayActivity : AppCompatActivity() {
 
     }
 
+
+
+
     override fun onPause() {
         super.onPause()
         theEnd = musicService.findTheEnd()
