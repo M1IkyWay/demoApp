@@ -6,26 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".FlashGame1Activity">
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_60sdp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/imageView13"
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/flash_back1" />
+
+
+    <LinearLayout
+        android:id="@+id/upperPlace"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_10sdp"
         android:translationZ="@dimen/_2sdp"
-        android:paddingHorizontal="@dimen/_15sdp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
-            android:layout_width="@dimen/_130sdp"
-            android:layout_height="@dimen/_55sdp"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_marginEnd="@dimen/_5sdp">
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="0.5"
+            android:gravity="center">
 
 
             <ImageView
@@ -34,45 +46,62 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/bg_default" />
 
-            <TextView
-                android:id="@+id/winsWord"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/air_millhouse_italic"
-                android:gravity="center"
                 android:layout_alignStart="@id/winsAmount"
-                android:layout_marginStart="@dimen/_40sdp"
-                android:layout_marginBottom="@dimen/_3sdp"
-                android:layout_alignBottom="@id/winsAmount"
                 android:layout_alignTop="@id/winsAmount"
-                android:text="WIN  "
-                android:textColor="@color/input_color"
-                android:textSize="@dimen/_15sdp" />
+                android:layout_alignEnd="@id/winsAmount"
+                android:layout_alignBottom="@id/winsAmount"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/air_millhouse_italic"
-                android:gravity="center"
-                android:layout_alignTop="@id/winsAmount"
-                android:layout_alignBottom="@id/winsAmount"
-                android:layout_toEndOf="@id/winsWord"
-                android:layout_marginEnd="@dimen/_40sdp"
-                android:text="1 "
-                android:textColor="@color/input_color"
-                android:textSize="@dimen/_14sdp" />
+                <TextView
+                    android:id="@+id/winsWord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:fontFamily="@font/air_millhouse_italic"
+                    android:gravity="center"
+                    android:text="WINS "
+                    android:textColor="@color/input_color"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <TextView
+                    android:id="@+id/winsCount"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/winsWord"
+                    android:fontFamily="@font/air_millhouse_italic"
+                    android:text="0"
+                    android:textColor="@color/input_color"
+                    android:textSize="@dimen/_16sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.15"
+                    app:layout_constraintStart_toEndOf="@id/winsWord"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </RelativeLayout>
 
-
         <RelativeLayout
-            android:layout_width="@dimen/_130sdp"
-            android:layout_height="@dimen/_55sdp"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_marginStart="@dimen/_5sdp">
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.5"
+            android:gravity="center">
 
 
             <ImageView
@@ -81,85 +110,67 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/bg_default" />
 
-
-            <TextView
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/air_millhouse_italic"
-                android:gravity="center"
                 android:layout_alignStart="@id/balance"
-                android:layout_marginStart="@dimen/_7sdp"
-                android:layout_marginBottom="@dimen/_3sdp"
-                android:layout_alignBottom="@id/balance"
                 android:layout_alignTop="@id/balance"
-                android:text="Balance "
-                android:textColor="@color/input_color"
-                android:textSize="@dimen/_18sdp" />
-
-            <TextView
-                android:id="@+id/resultBalance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/air_millhouse_italic"
-                android:gravity="center"
-                android:layout_alignTop="@id/balance"
-                android:layout_alignBottom="@id/balance"
                 android:layout_alignEnd="@id/balance"
-                android:layout_marginEnd="@dimen/_7sdp"
-                android:text="123456"
-                android:textColor="@color/input_color"
-                android:textSize="@dimen/_14sdp" />
+                android:layout_alignBottom="@id/balance"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
 
+                <TextView
+                    android:id="@+id/balanceW"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:fontFamily="@font/air_millhouse_italic"
+                    android:gravity="center"
+                    android:text="Balance"
+                    android:textColor="@color/input_color"
+                    android:textSize="@dimen/_18sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.05"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.45" />
+
+                <TextView
+                    android:id="@+id/resultBalance"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/balanceW"
+                    android:fontFamily="@font/air_millhouse_italic"
+                    android:text="123456"
+                    android:textColor="@color/input_color"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.15"
+                    app:layout_constraintStart_toEndOf="@id/balanceW"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </RelativeLayout>
 
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-       />
-
-    <ImageView
-        android:id="@+id/marginGame"
-        android:layout_width="400dp"
-        android:layout_height="404dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.584"
-        app:srcCompat="@drawable/hot_field" />
-
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="175dp"
-        android:layout_height="149dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.183"
-        app:srcCompat="@drawable/cop" />
-
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_130sdp"
         android:orientation="vertical"
-        android:paddingHorizontal="@dimen/_15sdp"
+        android:paddingHorizontal="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.987">
+        app:layout_constraintVertical_bias="0.971">
 
 
         <LinearLayout
@@ -167,18 +178,19 @@
             android:layout_height="@dimen/_60sdp"
             android:orientation="horizontal">
 
+
             <ImageButton
                 android:id="@+id/decremBet"
                 android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_height="@dimen/_58sdp"
+                android:layout_marginTop="@dimen/_3sdp"
                 android:layout_weight="1"
+                android:background="@drawable/transparent_background"
                 android:clickable="true"
                 android:focusable="true"
-                android:background="@drawable/transparent_background"
                 android:scaleType="fitCenter"
                 android:textAlignment="center"
-                app:srcCompat="@drawable/btn_decr" />
-
+                app:srcCompat="@drawable/btn_decrement_purple" />
 
             <RelativeLayout
                 android:layout_width="@dimen/_130sdp"
@@ -222,14 +234,15 @@
             <ImageButton
                 android:id="@+id/incremBet"
                 android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_height="@dimen/_58sdp"
+                android:layout_marginTop="@dimen/_3sdp"
                 android:layout_weight="1"
+                android:background="@drawable/transparent_background"
                 android:clickable="true"
                 android:focusable="true"
-                android:background="@drawable/transparent_background"
                 android:scaleType="fitCenter"
-                android:textAlignment="center"
-                android:src="@drawable/btn_incr"/>
+                android:src="@drawable/btn_increment_purple"
+                android:textAlignment="center" />
 
 
         </LinearLayout>
@@ -244,7 +257,8 @@
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/_55sdp"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_5sdp"
                 android:layout_gravity="center"
                 android:gravity="center">
 
@@ -253,7 +267,7 @@
                     android:id="@+id/btnSpin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/btn_spin_long" />
+                    app:srcCompat="@drawable/btn_spin_purple" />
 
 
                 <TextView
@@ -265,11 +279,11 @@
                     android:layout_alignBottom="@id/btnSpin"
                     android:layout_centerVertical="true"
                     android:layout_marginBottom="@dimen/_5sdp"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:fontFamily="@font/air_millhouse_italic"
                     android:gravity="center"
                     android:text="Spin"
-                    android:clickable="true"
-                    android:focusable="true"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_30sdp" />
 
@@ -279,5 +293,859 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45">
+
+        <LinearLayout
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/firstIn1"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/firstIn1T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+300"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/secondIn1"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/secondIn1T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/thirdIn1"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/thirdIn1T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/fourthIn1"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/fourthIn1T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/firstIn2"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/firstIn2T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+300"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/secondIn2"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/secondIn2T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/thirdIn2"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/thirdIn2T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/fourthIn2"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/fourthIn2T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/firstIn3"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/firstIn3T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+300"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/secondIn3"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/secondIn3T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/thirdIn3"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/thirdIn3T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/fourthIn3"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/fourthIn3T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/line4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/firstIn4"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/firstIn4T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+300"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/secondIn4"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/secondIn4T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/thirdIn4"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/thirdIn4T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/fourthIn4"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/fourthIn4T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/line5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/firstIn5"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/firstIn5T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+300"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/secondIn5"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/secondIn5T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/thirdIn5"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/thirdIn5T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/fourthIn5"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butt_flash1" />
+
+                <TextView
+                    android:id="@+id/fourthIn5T"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/unineueheavy_italic"
+                    android:gravity="center"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="10"
+                    android:text="+0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginEnd="@dimen/_8sdp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintVertical_bias="0.45"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttons"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_2sdp"
+            android:paddingVertical="@dimen/_2sdp">
+
+            <ImageView
+                android:id="@+id/rectangle1"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/grey_rectangle" />
+
+            <TextView
+                android:id="@+id/sum1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:fontFamily="@font/unineueheavy_italic"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:shadowColor="@color/shadow_color"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="Win 600"
+                android:textColor="@color/hint_color"
+                android:textSize="@dimen/_14sdp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_2sdp"
+            android:paddingVertical="@dimen/_2sdp">
+
+            <ImageView
+                android:id="@+id/rectangle2"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/grey_rectangle" />
+
+            <TextView
+                android:id="@+id/sum2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:fontFamily="@font/unineueheavy_italic"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:shadowColor="@color/shadow_color"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="Win 600"
+                android:textColor="@color/hint_color"
+                android:textSize="@dimen/_14sdp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_2sdp"
+            android:paddingVertical="@dimen/_2sdp">
+
+            <ImageView
+                android:id="@+id/rectangle3"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/grey_rectangle" />
+
+            <TextView
+                android:id="@+id/sum3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:fontFamily="@font/unineueheavy_italic"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:shadowColor="@color/shadow_color"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="Win 600"
+                android:textColor="@color/hint_color"
+                android:textSize="@dimen/_14sdp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_2sdp"
+            android:paddingVertical="@dimen/_2sdp">
+
+            <ImageView
+                android:id="@+id/rectangle4"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/grey_rectangle" />
+
+            <TextView
+                android:id="@+id/sum4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:fontFamily="@font/unineueheavy_italic"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:shadowColor="@color/shadow_color"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="Win 600"
+                android:textColor="@color/hint_color"
+                android:textSize="@dimen/_14sdp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_2sdp"
+            android:paddingVertical="@dimen/_2sdp">
+
+            <ImageView
+                android:id="@+id/rectangle5"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/grey_rectangle" />
+
+            <TextView
+                android:id="@+id/sum5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:fontFamily="@font/unineueheavy_italic"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:shadowColor="@color/shadow_color"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="Win 600"
+                android:textColor="@color/hint_color"
+                android:textSize="@dimen/_14sdp" />
+        </FrameLayout>
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
