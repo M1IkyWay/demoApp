@@ -1,7 +1,10 @@
 package com.example.cashluckpatrol
 
+import android.content.Context
+import android.graphics.Color
 import android.util.Log
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
@@ -12,15 +15,15 @@ import com.daimajia.androidanimations.library.YoYo
 object AnimationHelper {
 
 
-    fun pressingAnimation(viewBase: View, viewText : View?) {
+    fun pressingAnimation(viewBase: View, viewText: View?) {
         YoYo.with(Techniques.Pulse).duration(300).playOn(viewBase)
-        viewText?.let{
+        viewText?.let {
 //            YoYo.with(Techniques.FadeOut).duration(300).playOn(viewText)
             YoYo.with(Techniques.FadeIn).duration(150).playOn(viewText)
         }
-        }
+    }
 
-    fun changingButtonUI (view: View) {
+    fun changingButtonUI(view: View) {
         if (view.isPressed) {
             view.setBackgroundResource(R.drawable.button_pressed_background)
 //            view.layoutParams.width = (view.width * 0.9).toInt()
@@ -29,8 +32,7 @@ object AnimationHelper {
             Log.d(view.tag.toString(), "ui of pressed view was changed")
 
 //            view.isPressed = false
-        }
-        else {
+        } else {
             view.setBackgroundResource(R.drawable.transparent_background)
             view.requestLayout()
 
@@ -40,8 +42,8 @@ object AnimationHelper {
         }
     }
 
-    fun buttonIsPressed(view: View, prevPressedView : View?) {
-        if (prevPressedView!=null &&  prevPressedView!=view) {
+    fun buttonIsPressed(view: View, prevPressedView: View?) {
+        if (prevPressedView != null && prevPressedView != view) {
             prevPressedView.isPressed = false
             Log.d("prevView", "has now ${prevPressedView.isPressed}")
             changingButtonUI(prevPressedView)
@@ -56,24 +58,34 @@ object AnimationHelper {
 
     ////разобраться с анимацией,которая не работает нормально
 
-    fun updateScoreOrBetTextViewAnimation (textView: TextView, number : String) {
+    fun updateScoreOrBetTextViewAnimation(textView: TextView, number: String) {
         YoYo.with(Techniques.BounceInUp).duration(300).playOn(textView)
         textView.setText(number)
         YoYo.with(Techniques.BounceInDown).duration(300).playOn(textView)
     }
 
-    fun appearingButton (button: ImageView, text : TextView) {
+    fun appearingButton(button: ImageView, text: TextView) {
         YoYo.with(Techniques.BounceInDown).duration(1200).playOn(button)
         YoYo.with(Techniques.BounceInDown).duration(1200).playOn(text)
 
     }
 
-    fun wrongInputAnimation (view : View ) {
 
+    fun clickView (view:View, context: Context) {
+        val scaleUpAnim = AnimationUtils.loadAnimation(context, R.anim.scale_up)
+        val scaleDownAnim = AnimationUtils.loadAnimation(context, R.anim.scale_down)
+        view.startAnimation(scaleUpAnim)
+
+        view.startAnimation(scaleDownAnim)
+
+    }
+
+    fun wrongInputAnimation(view: TextView) {
+        view.setTextColor(Color.RED)
+        YoYo.with(Techniques.Shake).duration(500).playOn(view)
+//        view.setTextColor(Color.WHITE)
 
     }
 
 }
-
-
 

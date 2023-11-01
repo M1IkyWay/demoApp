@@ -34,9 +34,14 @@ int anim fragment_fast_out_extra_slow_in 0x7f010020
 int anim mtrl_bottom_sheet_slide_in 0x7f010021
 int anim mtrl_bottom_sheet_slide_out 0x7f010022
 int anim mtrl_card_lowers_interpolator 0x7f010023
+int anim rotate 0x7f010029
+int anim scale_down 0x7f01002a
+int anim scale_up 0x7f01002b
 int anim shake 0x7f010024
+int anim slide_down 0x7f010027
 int anim slide_in 0x7f010025
 int anim slide_out 0x7f010026
+int anim slide_up 0x7f010028
 int animator design_appbar_state_list_animator 0x7f020000
 int animator design_fab_hide_motion_spec 0x7f020001
 int animator design_fab_show_motion_spec 0x7f020002
@@ -3502,6 +3507,7 @@ int drawable test_level_drawable 0x7f0701ca
 int drawable tooltip_frame_dark 0x7f0701cb
 int drawable tooltip_frame_light 0x7f0701cc
 int drawable transparent_background 0x7f0701cd
+int drawable you_win_ 0x7f0701ce
 int font air_millhouse_italic 0x7f080000
 int font bamf_italic4 0x7f080001
 int font drpeppers2 0x7f080002
@@ -3792,6 +3798,7 @@ int id imageView10 0x7f090117
 int id imageView12 0x7f090118
 int id imageView13 0x7f090119
 int id imageView14 0x7f09011a
+int id imageView2 0x7f09026f
 int id imageView3 0x7f09011b
 int id imageView4 0x7f09011c
 int id imageView5 0x7f09011d
@@ -3951,6 +3958,7 @@ int id right 0x7f0901b6
 int id rightToLeft 0x7f0901b7
 int id right_icon 0x7f0901b8
 int id right_side 0x7f0901b9
+int id roundArrow 0x7f090270
 int id rounded 0x7f0901ba
 int id row_index_key 0x7f0901bb
 int id save_non_transition_alpha 0x7f0901bc
@@ -4312,6 +4320,7 @@ int layout notification_template_media 0x7f0c0077
 int layout notification_template_media_custom 0x7f0c0078
 int layout notification_template_part_chronometer 0x7f0c0079
 int layout notification_template_part_time 0x7f0c007a
+int layout popup_slot2 0x7f0c008f
 int layout sdp_example 0x7f0c007b
 int layout select_dialog_item_material 0x7f0c007c
 int layout select_dialog_multichoice_material 0x7f0c007d

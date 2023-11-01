@@ -1,19 +1,28 @@
 package com.example.cashluckpatrol
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewGroup
 import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.RotateAnimation
 import android.widget.ImageView
+import android.widget.PopupWindow
 import android.widget.TextView
 import android.widget.Toast
+import com.daimajia.androidanimations.library.Techniques
+import com.daimajia.androidanimations.library.YoYo
 import com.example.cashluckpatrol.databinding.ActivitySlotGame2Binding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -35,8 +44,11 @@ class SlotGame2Activity : AppCompatActivity() {
     private var resultMultiplier = 0f
 
     private fun updateValue(view: View) {
+
+
         when (view) {
             binding.btnUp -> {
+                betText.setTextColor(Color.WHITE)
                 bet += increment
                 betText.setText(bet.toString())
             }
@@ -111,6 +123,31 @@ class SlotGame2Activity : AppCompatActivity() {
             return multiplier
         }
 
+        val slideUpAnimation = AnimationUtils.loadAnimation(this, R.anim.slide_up)
+        val slideDownAnimation = AnimationUtils.loadAnimation(this, R.anim.slide_down)
+
+        fun createPopup (multiplier: Float) {
+            if (multiplier > 1.0f) {
+                val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+                val view = inflater.inflate(R.layout.popup_slot2, null)
+
+                val popupWindow = PopupWindow (
+                    view,
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    true)
+
+                popupWindow.contentView.startAnimation(slideUpAnimation)
+                popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0)
+                handler.postDelayed({
+//                    popupWindow.dismiss()}, 1000)
+
+                popupWindow.contentView.startAnimation(slideDownAnimation)
+                    handler.postDelayed({
+                        popupWindow.dismiss()},
+                        slideDownAnimation.duration.toLong())}, 1000)
+    }
+            }
 
         fun spinCircle(): Float {
             val circles = Random.nextInt(6, 10)
@@ -132,27 +169,40 @@ class SlotGame2Activity : AppCompatActivity() {
         }
 
 
+
         binding.btnRotate.setOnClickListener {
-        it.isEnabled = false
+            it.isEnabled = false
+            val rotate = AnimationUtils.loadAnimation(this, R.anim.rotate)
+
+            binding.arrow.startAnimation(rotate)
+            AnimationHelper.clickView(it, this)
+            binding.roundArrow.startAnimation(rotate)
+
 
             if (bet == 0) {
                 val toast = Toast.makeText(this, "Set the bet, please!", Toast.LENGTH_SHORT)
                 toast.show()
+                AnimationHelper.wrongInputAnimation(binding.betNumber)
+                it.isEnabled = true
+
             } else {
                 scope.launch {
-                val multiplier = spinCircle()
+                    val multiplier = spinCircle()
                     delay(5500)
-                val thisWin = (bet * multiplier).toInt()
+                    val thisWin = (bet * multiplier).toInt()
                     Log.d("there is multiplier", "mupliplier is $multiplier aaaaaaaaaaaaaaaaaa")
-                totalWin += thisWin
-                AnimationHelper.updateScoreOrBetTextViewAnimation(
-                    binding.scoreWin,
-                    totalWin.toString()
-                )
-                scoreViewModel.countScoreSlot2(bet, multiplier)
+                    totalWin += thisWin
+                    AnimationHelper.updateScoreOrBetTextViewAnimation(
+                        binding.scoreWin,
+                        totalWin.toString()
+                    )
+                    scoreViewModel.countScoreSlot2(bet, multiplier)
+                    createPopup(multiplier)
+                }
+                it.isEnabled = true
+
+
             }
-            it.isEnabled = true
         }
-    }
     }
 }

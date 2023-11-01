@@ -35,9 +35,14 @@ anim fragment_fast_out_extra_slow_in
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
+anim rotate
+anim scale_down
+anim scale_up
 anim shake
+anim slide_down
 anim slide_in
 anim slide_out
+anim slide_up
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -3503,6 +3508,7 @@ drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable transparent_background
+drawable you_win_
 font air_millhouse_italic
 font bamf_italic4
 font drpeppers2
@@ -3793,6 +3799,7 @@ id imageView10
 id imageView12
 id imageView13
 id imageView14
+id imageView2
 id imageView3
 id imageView4
 id imageView5
@@ -3952,6 +3959,7 @@ id right
 id rightToLeft
 id right_icon
 id right_side
+id roundArrow
 id rounded
 id row_index_key
 id save_non_transition_alpha
@@ -4313,6 +4321,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout popup_slot2
 layout sdp_example
 layout select_dialog_item_material
 layout select_dialog_multichoice_material

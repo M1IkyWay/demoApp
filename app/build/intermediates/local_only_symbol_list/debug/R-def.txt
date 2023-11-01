@@ -4,9 +4,14 @@ anim button_clicked_anim
 anim fade_anim
 anim fade_in
 anim fade_out
+anim rotate
+anim scale_down
+anim scale_up
 anim shake
+anim slide_down
 anim slide_in
 anim slide_out
+anim slide_up
 color bg_for_input
 color black
 color border_for_input
@@ -79,6 +84,7 @@ drawable slot2_anon
 drawable slot2_non_anon
 drawable slot3
 drawable transparent_background
+drawable you_win_
 font air_millhouse_italic
 font bamf_italic4
 font drpeppers2
@@ -145,6 +151,7 @@ id imageView10
 id imageView12
 id imageView13
 id imageView14
+id imageView2
 id imageView3
 id imageView4
 id imageView5
@@ -175,6 +182,7 @@ id registerButton
 id removeAccountButton
 id resetScoreText
 id resultBalance
+id roundArrow
 id scoreWin
 id setingsText
 id slot1
@@ -231,6 +239,7 @@ layout activity_slot_game1
 layout activity_slot_game2
 layout activity_splash_screen
 layout item_list
+layout popup_slot2
 mipmap ic_launcher
 mipmap ic_launcher_round
 raw hot_game
