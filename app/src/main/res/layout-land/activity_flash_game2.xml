@@ -3,27 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".FlashGame2Activity">
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back_flash2" />
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/upperPlace"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_60sdp"
+        android:layout_height="@dimen/_45sdp"
         android:layout_marginTop="4dp"
         android:orientation="horizontal"
-        android:paddingHorizontal="@dimen/_15sdp"
+        android:paddingHorizontal="@dimen/_105sdp"
         android:translationZ="@dimen/_2sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -41,19 +29,21 @@
 
             <ImageView
                 android:id="@+id/winsAmount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
                 app:srcCompat="@drawable/area_gold" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_alignStart="@id/winsAmount"
                 android:layout_alignTop="@id/winsAmount"
                 android:layout_alignEnd="@id/winsAmount"
                 android:layout_alignBottom="@id/winsAmount"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true">
+                android:layout_centerInParent="true"
+                android:layout_marginStart="-9dp"
+                android:layout_marginTop="-10dp">
 
                 <TextView
                     android:id="@+id/winsWord"
@@ -62,11 +52,11 @@
                     android:layout_alignParentBottom="true"
                     android:fontFamily="@font/air_millhouse_italic"
                     android:gravity="center"
-                    android:text="WINS "
                     android:shadowColor="@color/white"
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="5"
+                    android:text="WINS "
                     android:textColor="@color/input_color"
                     android:textSize="@dimen/_15sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -74,7 +64,7 @@
                     app:layout_constraintHorizontal_bias="0.4"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.5" />
+                    app:layout_constraintVertical_bias="0.55" />
 
                 <TextView
                     android:id="@+id/winsCount"
@@ -82,11 +72,11 @@
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/winsWord"
                     android:fontFamily="@font/air_millhouse_italic"
-                    android:text="0"
                     android:shadowColor="@color/white"
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="5"
+                    android:text="0"
                     android:textColor="@color/input_color"
                     android:textSize="@dimen/_16sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -94,7 +84,7 @@
                     app:layout_constraintHorizontal_bias="0.15"
                     app:layout_constraintStart_toEndOf="@id/winsWord"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.5" />
+                    app:layout_constraintVertical_bias="0.55" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -113,13 +103,14 @@
 
             <ImageView
                 android:id="@+id/balance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
                 app:srcCompat="@drawable/area_gold" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_alignStart="@id/balance"
                 android:layout_alignTop="@id/balance"
                 android:layout_alignEnd="@id/balance"
@@ -150,15 +141,16 @@
 
                 <TextView
                     android:id="@+id/resultBalance"
-                    android:layout_width="@dimen/_80sdp"
+                    android:layout_width="@dimen/_70sdp"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/balanceW"
                     android:fontFamily="@font/air_millhouse_italic"
-                    android:text="123456"
                     android:shadowColor="@color/white"
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="5"
+                    android:ems="6"
+                    android:text="123456"
                     android:textColor="@color/input_color"
                     android:textSize="@dimen/_14sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -177,26 +169,26 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="@dimen/_240sdp"
-        android:layout_height="@dimen/_240sdp"
+        android:layout_width="@dimen/_210sdp"
+        android:layout_height="@dimen/_210sdp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22">
+        app:layout_constraintVertical_bias="0.82">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_height="@dimen/_70sdp"
             android:layout_gravity="center"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/num1"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
@@ -204,8 +196,8 @@
 
             <ImageView
                 android:id="@+id/num2"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
@@ -213,8 +205,8 @@
 
             <ImageView
                 android:id="@+id/num3"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
@@ -223,14 +215,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_height="@dimen/_70sdp"
             android:layout_gravity="center"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/num4"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
@@ -238,8 +230,8 @@
 
             <ImageView
                 android:id="@+id/num5"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
@@ -247,8 +239,8 @@
 
             <ImageView
                 android:id="@+id/num6"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
@@ -258,14 +250,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_height="@dimen/_70sdp"
             android:layout_gravity="center"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/num7"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
@@ -273,8 +265,8 @@
 
             <ImageView
                 android:id="@+id/num8"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
@@ -282,8 +274,8 @@
 
             <ImageView
                 android:id="@+id/num9"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
@@ -297,29 +289,30 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_130sdp"
+        android:layout_width="638dp"
+        android:layout_height="278dp"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971">
+        app:layout_constraintVertical_bias="0.909">
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_60sdp"
+            android:layout_height="@dimen/_58sdp"
             android:orientation="horizontal">
 
 
             <ImageButton
                 android:id="@+id/decremBet"
-                android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_58sdp"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
                 android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:background="@drawable/transparent_background"
                 android:clickable="true"
@@ -329,19 +322,22 @@
                 app:srcCompat="@drawable/btn_decr_viol" />
 
             <RelativeLayout
-                android:layout_width="@dimen/_130sdp"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_width="@dimen/_95sdp"
+                android:layout_height="@dimen/_50sdp"
                 android:layout_gravity="center"
+
                 android:layout_weight="2"
                 android:gravity="center">
 
 
                 <ImageView
                     android:id="@+id/bgBet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY"
+                    android:translationZ="@dimen/_260sdp"
                     app:srcCompat="@drawable/bet_gold" />
-
 
 
                 <TextView
@@ -355,21 +351,23 @@
                     android:layout_centerVertical="true"
                     android:fontFamily="@font/air_millhouse_italic"
                     android:gravity="center"
-                    android:text="200"
+                    android:translationZ="@dimen/_300sdp"
                     android:shadowColor="@color/white"
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="5"
+                    android:text="200"
                     android:textColor="@color/input_color"
-                    android:textSize="@dimen/_25sdp" />
+                    android:textSize="@dimen/_20sdp" />
 
 
             </RelativeLayout>
 
             <ImageButton
                 android:id="@+id/incremBet"
-                android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_58sdp"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_3sdp"
                 android:layout_weight="1"
                 android:background="@drawable/transparent_background"
@@ -385,29 +383,28 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
             android:gravity="center"
             android:orientation="horizontal">
 
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
                 android:layout_gravity="center"
                 android:gravity="center">
 
 
                 <ImageView
                     android:id="@+id/btnSpin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_350sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/spin_viol" />
 
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_60sdp"
                     android:layout_alignStart="@id/btnSpin"
                     android:layout_alignTop="@id/btnSpin"
                     android:layout_alignEnd="@id/btnSpin"
@@ -420,7 +417,7 @@
                     android:gravity="center"
                     android:text="Spin"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_30sdp" />
+                    android:textSize="@dimen/_27sdp" />
 
 
             </RelativeLayout>
@@ -430,16 +427,15 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="120dp"
-        android:layout_height="122dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        android:id="@+id/imageView22"
+        android:layout_width="315dp"
+        android:layout_height="295dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.374"
         app:srcCompat="@drawable/cop" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
