@@ -311,6 +311,7 @@
                     android:layout_centerVertical="true"
                     android:fontFamily="@font/air_millhouse_italic"
                     android:gravity="center"
+                    android:ems="6"
                     android:text="200"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_25sdp" />

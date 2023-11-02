@@ -36,47 +36,49 @@ class GamesMenuActivity : AppCompatActivity() {
             val intent = Intent(this, HotGameActivity ::class.java)
             startActivity(intent)
             musicService.stopMusic()
-
-
         }
 
         binding.playButtonSlot1.setOnClickListener {
-            val intent = Intent()
+            AnimationHelper.clickView(it, this)
+            val intent = Intent(this, SlotGame1Activity::class.java)
             startActivity(intent)
-
+            musicService.stopMusic()
         }
 
         binding.playButtonSlot2.setOnClickListener {
-
+            AnimationHelper.clickView(it, this)
             val intent = Intent(this, SlotGame2Activity::class.java)
             startActivity(intent)
-
+            musicService.stopMusic()
         }
 
         binding.playButtonFlash1.setOnClickListener {
-            val intent = Intent()
+            AnimationHelper.clickView(it, this)
+            val intent = Intent(this, FlashGame1Activity::class.java)
             startActivity(intent)
-
+            musicService.stopMusic()
         }
 
         binding.playButtonFlash2.setOnClickListener {
-            val intent = Intent()
+            AnimationHelper.clickView(it, this)
+            val intent = Intent(this, FlashGame2Activity::class.java)
             startActivity(intent)
-
+            musicService.stopMusic()
         }
 
         binding.slot3.setOnClickListener {
-            val intent = Intent()
+            AnimationHelper.clickView(it, this)
+            val intent = Intent(this, ComingSoonActivity::class.java)
             startActivity(intent)
 
         }
 
         binding.flash3.setOnClickListener {
+            AnimationHelper.clickView(it, this)
             val intent = Intent(this, ComingSoonActivity::class.java)
             val name = "name"
             intent.putExtra("name",name)
             startActivity(intent)
-
         }
 
     }

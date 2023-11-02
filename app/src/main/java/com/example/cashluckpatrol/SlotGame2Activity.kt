@@ -89,6 +89,7 @@ class SlotGame2Activity : AppCompatActivity() {
 
 //warning was supressed
         btnUp.setOnTouchListener { view, event ->
+            AnimationHelper.clickView(view, this)
             if (event.action == MotionEvent.ACTION_DOWN) {
                 handler.postDelayed(RepeatAction(view), 200)
             } else if (event.action == MotionEvent.ACTION_UP) {
@@ -98,6 +99,7 @@ class SlotGame2Activity : AppCompatActivity() {
         }
 
         btnDown.setOnTouchListener { view, event ->
+            AnimationHelper.clickView(view, this)
             if (event.action == MotionEvent.ACTION_DOWN) {
                 handler.postDelayed(RepeatAction(view), 200)
             } else if (event.action == MotionEvent.ACTION_UP) {
@@ -150,8 +152,10 @@ class SlotGame2Activity : AppCompatActivity() {
             }
 
         fun spinCircle(): Float {
-            val circles = Random.nextInt(6, 10)
-            val degrees = Random.nextInt(0, 360)
+            val seed = System.currentTimeMillis()
+            val random = Random(seed)
+            val circles = random.nextInt(6, 10)
+            val degrees = random.nextInt(0, 360)
             val totalDegrees = circles*360 + degrees
             Log.d("there is degreeeees", "degrees are $degrees aaaaaaaaaaaaaaaaaaaaaaaaaa")
 
@@ -169,12 +173,14 @@ class SlotGame2Activity : AppCompatActivity() {
         }
 
 
+        val rotate = AnimationUtils.loadAnimation(this, R.anim.rotate)
+        val rotateABit = AnimationUtils.loadAnimation(this, R.anim.rotate_a_bit)
+
+
 
         binding.btnRotate.setOnClickListener {
             it.isEnabled = false
-            val rotate = AnimationUtils.loadAnimation(this, R.anim.rotate)
-
-            binding.arrow.startAnimation(rotate)
+            binding.arrow.startAnimation(rotateABit)
             AnimationHelper.clickView(it, this)
             binding.roundArrow.startAnimation(rotate)
 

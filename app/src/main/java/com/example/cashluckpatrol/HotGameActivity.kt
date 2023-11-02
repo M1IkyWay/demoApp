@@ -80,9 +80,7 @@ class HotGameActivity : AppCompatActivity() {
 
             AnimationHelper.updateScoreOrBetTextViewAnimation(binding.choosenBet, bet)
             AnimationHelper.pressingAnimation(it, null)
-
             AnimationHelper.buttonIsPressed(it, lastPressedBet)
-
             lastPressedBet = it
             }
         }
