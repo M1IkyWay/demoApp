@@ -88,9 +88,9 @@ object AnimationHelper {
     }
 
     fun updateAnotherBetOrScore (number : Int, textView: TextView) {
-        YoYo.with(Techniques.RotateIn).duration(300).playOn(textView)
-        textView.setText(number)
-        YoYo.with(Techniques.RotateOut).duration(300).playOn(textView)
+        YoYo.with(Techniques.ZoomOut).duration(300).playOn(textView)
+        textView.setText(number.toString())
+        YoYo.with(Techniques.ZoomIn).duration(300).playOn(textView)
 
 
     }

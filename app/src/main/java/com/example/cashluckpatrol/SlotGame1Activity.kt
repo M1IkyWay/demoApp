@@ -65,10 +65,11 @@ class SlotGame1Activity : AppCompatActivity() {
         binding.decremBet.setOnClickListener {
             AnimationHelper.clickSLot1(this, it)
             if (currentBet>50) {
-                currentBet=-50
+                currentBet-=50
                 AnimationHelper.updateAnotherBetOrScore(currentBet, binding.choosenBet)
             }
             else {
+
                 AnimationHelper.wrongInputAnimation(binding.choosenBet)
                 val toast = Toast.makeText(this, "Minimal bet is 50", Toast.LENGTH_SHORT)
             }
@@ -82,10 +83,14 @@ class SlotGame1Activity : AppCompatActivity() {
             }
 
         val slots = setupSlotsMachine()
+
+
         binding.btnSpin.setOnClickListener {
+            AnimationHelper.clickSLot1(this, binding.btnSpin)
             it.isEnabled = false
             AnimationHelper.clickSLot1(this, it)
             if (scoreViewModel.getScore()>=currentBet) {
+                SoundHelper.slotMachineSound(this, soundVolume)
                 scope.launch {
                     slots.start()
                     delay(5500)

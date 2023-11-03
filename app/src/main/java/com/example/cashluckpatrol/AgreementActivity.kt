@@ -22,7 +22,7 @@ class AgreementActivity : AppCompatActivity() {
 
         binding.yesButton.setOnClickListener {
             //animation
-            val intent = Intent(this, Se::class.java)
+            val intent = Intent(this, GamesMenuActivity::class.java)
             startActivity(intent)
         }
     }

@@ -89,6 +89,7 @@ class HotGameActivity : AppCompatActivity() {
         spinButton = binding.btnSpin
         spinButton.setOnClickListener {
             if (scoreViewModel.getScore()>=currentBet) {
+                SoundHelper.slotMachineSound(this, soundVolume)
                 scope.launch {
                     slots.start()
                     delay(5500)
