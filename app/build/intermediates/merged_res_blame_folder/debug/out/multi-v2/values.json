@@ -36,9 +36,11 @@
                 {
                     "source": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/res/values/colors.xml",
                     "from": {
-                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
-                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
-                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+                        "startLines": "-1,-1,-1,10,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,4,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,426,-1,-1,-1,-1,-1,-1",
+                        "endColumns": "-1,-1,-1,44,-1,-1,-1,-1,-1,-1",
+                        "endOffsets": "-1,-1,-1,466,-1,-1,-1,-1,-1,-1"
                     },
                     "to": {
                         "startLines": "587,588,589,647,648,649,803,818,826,827",
@@ -172,12 +174,9 @@
                 {
                     "source": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/res/values/themes.xml",
                     "from": {
-                        "startLines": "2,7,-1,-1,-1",
-                        "startColumns": "4,4,-1,-1,-1",
-                        "startOffsets": "53,282,-1,-1,-1",
-                        "endLines": "5,10,-1,-1,-1",
-                        "endColumns": "12,12,-1,-1,-1",
-                        "endOffsets": "276,496,-1,-1,-1"
+                        "startLines": "-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1"
                     },
                     "to": {
                         "startLines": "2781,6236,6240,6241,6245",

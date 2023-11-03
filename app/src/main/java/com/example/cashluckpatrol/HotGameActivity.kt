@@ -88,6 +88,7 @@ class HotGameActivity : AppCompatActivity() {
         val slots = setupSlotsMachine()
         spinButton = binding.btnSpin
         spinButton.setOnClickListener {
+            AnimationHelper.clickView ( it, this)
             if (scoreViewModel.getScore()>=currentBet) {
                 SoundHelper.slotMachineSound(this, soundVolume)
                 scope.launch {

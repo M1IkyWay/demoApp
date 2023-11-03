@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="закінчила 3.11 о 23:46">
+    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="почала 4.11 о 00:19">
       <change beforePath="$PROJECT_DIR$/.gradle/7.6/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.bin" afterDir="false" />
@@ -19,7 +19,6 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/local_only_symbol_list/debug/R-def.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/local_only_symbol_list/debug/R-def.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json" afterDir="false" />
@@ -29,6 +28,9 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/AnimationHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/AnimationHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/HotGameActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/HotGameActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotGame1Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotGame1Activity.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,28 +136,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ResourceManagerPrefKey.ResourceType": "LAYOUT",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "android-custom-view/home/milkyway/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED": "RecyclerView",
-    "android-custom-view/home/milkyway/Android/Sdk/sources/android-33/android/widget/TextView.java_SELECTED": "TextView",
-    "android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotMachineView.kt_SELECTED": "SlotMachineView",
-    "android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotMashineView.kt_SELECTED": "SlotMashineView",
-    "android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotScroll.kt_SELECTED": "SlotScroll",
-    "android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotView.kt_SELECTED": "SlotView",
-    "android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotsView.kt_SELECTED": "SlotsView",
-    "cidr.known.project.marker": "true",
-    "com.android.tools.idea.devicemanager.tab": "Physical",
-    "last_opened_file_path": "/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/res/raw",
-    "recommended.upgrade.do.not.ask.for.project": "true",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ResourceManagerPrefKey.ResourceType&quot;: &quot;LAYOUT&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;android-custom-view/home/milkyway/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED&quot;: &quot;RecyclerView&quot;,
+    &quot;android-custom-view/home/milkyway/Android/Sdk/sources/android-33/android/widget/TextView.java_SELECTED&quot;: &quot;TextView&quot;,
+    &quot;android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotMachineView.kt_SELECTED&quot;: &quot;SlotMachineView&quot;,
+    &quot;android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotMashineView.kt_SELECTED&quot;: &quot;SlotMashineView&quot;,
+    &quot;android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotScroll.kt_SELECTED&quot;: &quot;SlotScroll&quot;,
+    &quot;android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotView.kt_SELECTED&quot;: &quot;SlotView&quot;,
+    &quot;android-custom-view/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/java/com/example/cashluckpatrol/SlotsView.kt_SELECTED&quot;: &quot;SlotsView&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.android.tools.idea.devicemanager.tab&quot;: &quot;Physical&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/res/raw&quot;,
+    &quot;recommended.upgrade.do.not.ask.for.project&quot;: &quot;true&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/res/raw" />
@@ -285,13 +287,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696791005397</updated>
-    </task>
-    <task id="LOCAL-00062" summary="почала 23.10 о 23:26">
-      <created>1698092810677</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1698092810678</updated>
     </task>
     <task id="LOCAL-00063" summary="закінчила 24.10 о 02:45">
       <created>1698104719820</created>
@@ -629,7 +624,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699048018979</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="почала 4.11 о 00:19">
+      <created>1699049981699</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1699049981699</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -665,7 +667,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/f-283/f-283" />
     </ignored-roots>
-    <MESSAGE value="почала 29.10 о 16:43" />
     <MESSAGE value="закінчила 29.10 о 19:56" />
     <MESSAGE value="почала 29.10 о 23:04" />
     <MESSAGE value="закінчила 30.10 о 02:49" />
@@ -690,6 +691,7 @@
     <MESSAGE value="закінчила 3.11 о 01:54" />
     <MESSAGE value="почала 3.11 о 21:48" />
     <MESSAGE value="закінчила 3.11 о 23:46" />
-    <option name="LAST_COMMIT_MESSAGE" value="закінчила 3.11 о 23:46" />
+    <MESSAGE value="почала 4.11 о 00:19" />
+    <option name="LAST_COMMIT_MESSAGE" value="почала 4.11 о 00:19" />
   </component>
 </project>

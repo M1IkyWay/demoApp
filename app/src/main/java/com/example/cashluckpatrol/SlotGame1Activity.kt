@@ -63,7 +63,7 @@ class SlotGame1Activity : AppCompatActivity() {
         })
 
         binding.decremBet.setOnClickListener {
-            AnimationHelper.clickSLot1(this, it)
+            AnimationHelper.clickView ( it, this)
             if (currentBet>50) {
                 currentBet-=50
                 AnimationHelper.updateAnotherBetOrScore(currentBet, binding.choosenBet)
@@ -76,7 +76,7 @@ class SlotGame1Activity : AppCompatActivity() {
         }
 
         binding.incremBet.setOnClickListener {
-            AnimationHelper.clickSLot1(this, it)
+            AnimationHelper.clickView ( it, this)
             binding.choosenBet.setTextColor(Color.WHITE)
                 currentBet += 50
             AnimationHelper.updateAnotherBetOrScore(currentBet, binding.choosenBet)
@@ -87,6 +87,7 @@ class SlotGame1Activity : AppCompatActivity() {
 
         binding.btnSpin.setOnClickListener {
             AnimationHelper.clickSLot1(this, binding.btnSpin)
+            AnimationHelper.clickView ( it, this)
             it.isEnabled = false
             AnimationHelper.clickSLot1(this, it)
             if (scoreViewModel.getScore()>=currentBet) {

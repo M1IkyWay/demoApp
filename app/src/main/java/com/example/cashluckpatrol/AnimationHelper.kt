@@ -96,7 +96,8 @@ object AnimationHelper {
     }
 
     fun clickSLot1 (context: Context, view: View) {
-        YoYo.with(Techniques.ZoomOut).duration(300).playOn(view)
+        YoYo.with(Techniques.ZoomOut).duration(200).playOn(view)
+        YoYo.with(Techniques.ZoomIn).duration(200).playOn(view)
 
     }
 
