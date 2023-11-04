@@ -12,6 +12,7 @@ class GamesMenuActivity : AppCompatActivity() {
     lateinit var scoreViewModel : ScoreViewModel
     lateinit var binding : ActivityGamesMenuBinding
     lateinit var musicService : MusicService
+    lateinit var soundHelper: SoundHelper
     var theEnd = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +21,7 @@ class GamesMenuActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val endOfLast = intent.getIntExtra("endOfSong", 1000)
-
+        soundHelper = (application as MyApplication).soundHelper
         scoreViewModel = (application as MyApplication).scoreViewModel
         val soundVolume = scoreViewModel.getSoundVolume()
         musicService = MusicService(soundVolume, R.raw.launcher, this)
@@ -32,6 +33,7 @@ class GamesMenuActivity : AppCompatActivity() {
         })
 
         binding.playHotButton.setOnClickListener {
+            soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
             AnimationHelper.pressingAnimation(it, binding.hotPlayText)
             val intent = Intent(this, HotGameActivity ::class.java)
             startActivity(intent)
@@ -39,6 +41,7 @@ class GamesMenuActivity : AppCompatActivity() {
         }
 
         binding.playButtonSlot1.setOnClickListener {
+            soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
             AnimationHelper.clickView(it, this)
             val intent = Intent(this, SlotGame1Activity::class.java)
             startActivity(intent)
@@ -46,6 +49,7 @@ class GamesMenuActivity : AppCompatActivity() {
         }
 
         binding.playButtonSlot2.setOnClickListener {
+            soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
             AnimationHelper.clickView(it, this)
             val intent = Intent(this, SlotGame2Activity::class.java)
             startActivity(intent)
@@ -53,6 +57,7 @@ class GamesMenuActivity : AppCompatActivity() {
         }
 
         binding.playButtonFlash1.setOnClickListener {
+            soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
             AnimationHelper.clickView(it, this)
             val intent = Intent(this, FlashGame1Activity::class.java)
             startActivity(intent)
@@ -60,6 +65,7 @@ class GamesMenuActivity : AppCompatActivity() {
         }
 
         binding.playButtonFlash2.setOnClickListener {
+            soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
             AnimationHelper.clickView(it, this)
             val intent = Intent(this, FlashGame2Activity::class.java)
             startActivity(intent)
@@ -67,6 +73,7 @@ class GamesMenuActivity : AppCompatActivity() {
         }
 
         binding.slot3.setOnClickListener {
+            soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
             AnimationHelper.clickView(it, this)
             val intent = Intent(this, ComingSoonActivity::class.java)
             startActivity(intent)
@@ -74,6 +81,7 @@ class GamesMenuActivity : AppCompatActivity() {
         }
 
         binding.flash3.setOnClickListener {
+            soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
             AnimationHelper.clickView(it, this)
             val intent = Intent(this, ComingSoonActivity::class.java)
             val name = "name"

@@ -8,9 +8,10 @@ class MyApplication : Application() {
 val scoreViewModel : ScoreViewModel by lazy {
     ViewModelProvider.AndroidViewModelFactory.getInstance(this).create(ScoreViewModel::class.java)
 }
+    lateinit var soundHelper : SoundHelper
     override fun onCreate() {
         super.onCreate()
-
+        soundHelper = SoundHelper(this)
 
 
     }

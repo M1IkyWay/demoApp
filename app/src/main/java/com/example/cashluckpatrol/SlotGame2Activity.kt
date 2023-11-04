@@ -1,5 +1,6 @@
 package com.example.cashluckpatrol
 
+import android.animation.AnimatorSet
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
@@ -14,6 +15,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
+import android.view.animation.AnimationSet
 import android.view.animation.AnimationUtils
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.RotateAnimation
@@ -31,7 +33,7 @@ import kotlinx.coroutines.launch
 import kotlin.random.Random
 
 class SlotGame2Activity : AppCompatActivity() {
-
+    var theEnd = 0
     lateinit var betText : TextView
     lateinit var btnUp : ImageView
     lateinit var btnDown : ImageView
@@ -42,7 +44,8 @@ class SlotGame2Activity : AppCompatActivity() {
     private var handler = Handler(Looper.getMainLooper())
     private var increment = 5
     private var resultMultiplier = 0f
-
+    lateinit var soundHelper : SoundHelper
+    lateinit var musicService: MusicService
     private fun updateValue(view: View) {
 
 
@@ -75,12 +78,14 @@ class SlotGame2Activity : AppCompatActivity() {
         setContentView(binding.root)
 
         scoreViewModel = (application as MyApplication).scoreViewModel
-
+        val soundVolume = scoreViewModel.getSoundVolume()
+        soundHelper = (application as MyApplication).soundHelper
         scoreViewModel.score.observe(this) { newScore ->
             val newTextScore = newScore.toString()
             AnimationHelper.updateScoreOrBetTextViewAnimation(binding.balance, newTextScore)
         }
-
+        musicService = MusicService(soundVolume, R.raw.slot2back, this)
+        musicService.playMusic(0)
         btnDown = binding.btnDown
         btnUp = binding.btnUp
         betText = binding.betNumber
@@ -89,6 +94,7 @@ class SlotGame2Activity : AppCompatActivity() {
 
 //warning was supressed
         btnUp.setOnTouchListener { view, event ->
+            soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
             AnimationHelper.clickView(view, this)
             if (event.action == MotionEvent.ACTION_DOWN) {
                 handler.postDelayed(RepeatAction(view), 200)
@@ -99,6 +105,7 @@ class SlotGame2Activity : AppCompatActivity() {
         }
 
         btnDown.setOnTouchListener { view, event ->
+            soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
             AnimationHelper.clickView(view, this)
             if (event.action == MotionEvent.ACTION_DOWN) {
                 handler.postDelayed(RepeatAction(view), 200)
@@ -127,6 +134,10 @@ class SlotGame2Activity : AppCompatActivity() {
 
         val slideUpAnimation = AnimationUtils.loadAnimation(this, R.anim.slide_up)
         val slideDownAnimation = AnimationUtils.loadAnimation(this, R.anim.slide_down)
+        val fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_out)
+        val animationSet = AnimationSet(true)
+        animationSet.addAnimation(slideDownAnimation)
+        animationSet.addAnimation(fadeAnimation)
 
         fun createPopup (multiplier: Float) {
             if (multiplier > 1.0f) {
@@ -138,16 +149,16 @@ class SlotGame2Activity : AppCompatActivity() {
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     true)
-
+                soundHelper.slot2winSound(this, soundVolume)
                 popupWindow.contentView.startAnimation(slideUpAnimation)
                 popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0)
                 handler.postDelayed({
-//                    popupWindow.dismiss()}, 1000)
 
-                popupWindow.contentView.startAnimation(slideDownAnimation)
+
+//                popupWindow.contentView.startAnimation(animationSet)
                     handler.postDelayed({
                         popupWindow.dismiss()},
-                        slideDownAnimation.duration.toLong())}, 1000)
+                        animationSet.duration.toLong())}, 1000)
     }
             }
 
@@ -176,14 +187,12 @@ class SlotGame2Activity : AppCompatActivity() {
         val rotate = AnimationUtils.loadAnimation(this, R.anim.rotate)
         val rotateABit = AnimationUtils.loadAnimation(this, R.anim.rotate_a_bit)
 
-
-
         binding.btnRotate.setOnClickListener {
+            soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
             it.isEnabled = false
             binding.arrow.startAnimation(rotateABit)
             AnimationHelper.clickView(it, this)
             binding.roundArrow.startAnimation(rotate)
-
 
             if (bet == 0) {
                 val toast = Toast.makeText(this, "Set the bet, please!", Toast.LENGTH_SHORT)
@@ -192,25 +201,34 @@ class SlotGame2Activity : AppCompatActivity() {
                 it.isEnabled = true
 
             } else {
-                SoundHelper.slotMachineSound(this, 0.5f)
+                soundHelper.wheelSpinSound(this, soundVolume)
                 scope.launch {
                     val multiplier = spinCircle()
                     delay(5500)
                     val thisWin = (bet * multiplier).toInt()
-                    Log.d("there is multiplier", "mupliplier is $multiplier aaaaaaaaaaaaaaaaaa")
-                    totalWin += thisWin
-                    AnimationHelper.updateScoreOrBetTextViewAnimation(
-                        binding.scoreWin,
-                        totalWin.toString()
-                    )
+                    if (thisWin > bet) {
+                        totalWin += thisWin
+                        AnimationHelper.updateScoreOrBetTextViewAnimation(
+                            binding.scoreWin,
+                            totalWin.toString()
+                        )
+                    }
                     scoreViewModel.countScoreSlot2(bet, multiplier)
                     createPopup(multiplier)
                     it.isEnabled = true
                 }
-
-
-
             }
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        theEnd = musicService.findTheEnd()
+        musicService.stopMusic()
+
+    }
+    override fun onResume() {
+        super.onResume()
+        musicService.playMusic(theEnd)
     }
 }

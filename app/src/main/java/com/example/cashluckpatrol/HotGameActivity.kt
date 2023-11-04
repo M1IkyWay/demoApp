@@ -30,20 +30,22 @@ class HotGameActivity : AppCompatActivity() {
     lateinit var binding : ActivityHotGameBinding
     var successGame by Delegates.notNull<Boolean>()
     var currentBet by Delegates.notNull<Int>()
+    lateinit var soundHelper: SoundHelper
     var theEnd = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHotGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        soundHelper = (application as MyApplication).soundHelper
         scoreViewModel = (application as MyApplication).scoreViewModel
         successGame = false
         currentBet = 200
         var lastPressedBet : View? = null
         var winsCount = 0
         val scope = CoroutineScope (Dispatchers.Main)
-        val soundVolume = scoreViewModel.getSoundVolume()*0.7f
-        musicService = MusicService(soundVolume, R.raw.hot_game, this)
+        val soundVolume = scoreViewModel.getSoundVolume()
+        musicService = MusicService(soundVolume*0.7f, R.raw.hot_game, this)
         musicService.playMusic(0)
 
        suspend fun updateWinsCount (isWin : Boolean) {
@@ -51,11 +53,13 @@ class HotGameActivity : AppCompatActivity() {
                 winsCount+=1
                 binding.winsCount.setText("${winsCount}")
                 val toast = Toast.makeText (this, "You win!", Toast.LENGTH_SHORT)
+                soundHelper.winSound(this, soundVolume)
                 toast.show()
  //add music and vibro
             }
             else {
                 val toast = Toast.makeText (this, "You lose!", Toast.LENGTH_SHORT)
+                soundHelper.loseSound(this, soundVolume)
                 toast.show()
 //add music and vibro
             }
@@ -76,8 +80,7 @@ class HotGameActivity : AppCompatActivity() {
             it.setOnClickListener {
                 val bet = it.tag.toString()
                 currentBet = bet.toInt()
-                Log.d("$currentBet", "the currentBet is nowwwwwwwwwwwwwwwwwwwwwwwww")
-
+                soundHelper.clickSound2(this, soundVolume)
             AnimationHelper.updateScoreOrBetTextViewAnimation(binding.choosenBet, bet)
             AnimationHelper.pressingAnimation(it, null)
             AnimationHelper.buttonIsPressed(it, lastPressedBet)
@@ -88,19 +91,23 @@ class HotGameActivity : AppCompatActivity() {
         val slots = setupSlotsMachine()
         spinButton = binding.btnSpin
         spinButton.setOnClickListener {
+            it.isEnabled = false
+            soundHelper.clickSound2(this, soundVolume)
             AnimationHelper.clickView ( it, this)
             if (scoreViewModel.getScore()>=currentBet) {
-                SoundHelper.slotMachineSound(this, soundVolume)
+                soundHelper.slotMachineSound(this, soundVolume)
                 scope.launch {
                     slots.start()
                     delay(5500)
                     updateWinsCount(successGame)
+                    it.isEnabled = true
                 }
             }
             else {
                 val toast = Toast.makeText(this, "You don`t have enough money!", Toast.LENGTH_SHORT)
                 toast.show()
                 //add some vibro here
+                it.isEnabled = true
             }
 
         }
@@ -146,16 +153,13 @@ class HotGameActivity : AppCompatActivity() {
                     if (resultMatch == 3 && !binding.btnSpin.isEnabled) {
                         successGame = true
                         scoreViewModel.countResult(currentBet, 2, successGame)
-//                        Log.d("${scoreViewModel.countResult(currentBet, 2, successGame)}", "здесь добавлен результат")
                         //add visual changes
                         binding.btnSpin.isEnabled = true
                         AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
                     }
                     else {
-                        Log.d("${successGame}", "тут зашли в элс часть проигрыша, $currentBet")
                         successGame = false
                         scoreViewModel.countResult(currentBet, 2, successGame)
-//                        Log.d("${scoreViewModel.countResult(currentBet, 2, successGame)}", "здесь посчитан в минус результат $successGame")
                         binding.btnSpin.isEnabled = true
                     }
                     AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())

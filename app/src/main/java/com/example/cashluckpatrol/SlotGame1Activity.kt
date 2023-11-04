@@ -26,12 +26,13 @@ class SlotGame1Activity : AppCompatActivity() {
     lateinit var spinButton : ImageView
     var successGame by Delegates.notNull<Boolean>()
     var currentBet by Delegates.notNull<Int>()
+    lateinit var soundHelper: SoundHelper
     var theEnd = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySlotGame1Binding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        soundHelper = (application as MyApplication).soundHelper
         scoreViewModel = (application as MyApplication).scoreViewModel
         successGame = false
         currentBet = 200
@@ -93,7 +94,7 @@ class SlotGame1Activity : AppCompatActivity() {
             it.isEnabled = false
             AnimationHelper.clickSLot1(this, it)
             if (scoreViewModel.getScore()>=currentBet) {
-                SoundHelper.slotMachineSound(this, soundVolume)
+                soundHelper.slotMachineSound(this, soundVolume)
                 scope.launch {
                     slots.start()
                     delay(5500)
