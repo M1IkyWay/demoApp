@@ -192,6 +192,7 @@ class SlotGame2Activity : AppCompatActivity() {
                 it.isEnabled = true
 
             } else {
+                SoundHelper.slotMachineSound(this, 0.5f)
                 scope.launch {
                     val multiplier = spinCircle()
                     delay(5500)
@@ -204,8 +205,9 @@ class SlotGame2Activity : AppCompatActivity() {
                     )
                     scoreViewModel.countScoreSlot2(bet, multiplier)
                     createPopup(multiplier)
+                    it.isEnabled = true
                 }
-                it.isEnabled = true
+
 
 
             }

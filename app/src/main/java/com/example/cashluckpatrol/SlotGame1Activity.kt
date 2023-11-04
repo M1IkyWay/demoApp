@@ -42,6 +42,7 @@ class SlotGame1Activity : AppCompatActivity() {
         musicService = MusicService(soundVolume, R.raw.slot1, this)
         musicService.playMusic(0)
 
+        spinButton = binding.btnSpin
 
         suspend fun updateWinsCount (isWin : Boolean) {
             if (isWin) {
@@ -85,7 +86,8 @@ class SlotGame1Activity : AppCompatActivity() {
         val slots = setupSlotsMachine()
 
 
-        binding.btnSpin.setOnClickListener {
+        spinButton.setOnClickListener {
+            Log.d("spin button was clicked", "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")
             AnimationHelper.clickSLot1(this, binding.btnSpin)
             AnimationHelper.clickView ( it, this)
             it.isEnabled = false
@@ -108,6 +110,7 @@ class SlotGame1Activity : AppCompatActivity() {
         }
 
     private fun setupSlotsMachine() : SlotsBuilder {
+        Log.d("slot machine was set up", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
         val builder = SlotsBuilder().Builder(this)
         val slots = builder
             .addSlots(R.id.slot_one, R.id.slot_two, R.id.slot_three)
@@ -153,7 +156,7 @@ class SlotGame1Activity : AppCompatActivity() {
                         AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
                     }
                     else {
-                        Log.d("${successGame}", "тут зашли в элс часть проигрыша, $currentBet")
+
                         successGame = false
                         scoreViewModel.countResult(currentBet, 2, successGame)
 //                        Log.d("${scoreViewModel.countResult(currentBet, 2, successGame)}", "здесь посчитан в минус результат $successGame")
