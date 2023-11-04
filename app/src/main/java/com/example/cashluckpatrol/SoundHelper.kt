@@ -26,6 +26,14 @@ object SoundHelper {
         Log.d("The music started ", " aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
     }
 
+    fun slotMachineSound (context: Context, loud : Float) {
+        val winSound = soundPool.load(context, R.raw.slot_machine, 1)
+        soundPool.play(winSound, loud, loud, 1, 0, 1.0f)
+        Log.d("The music started ", " aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    }
+
+
+
 
     fun  release () {
         soundPool.release()
