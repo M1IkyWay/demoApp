@@ -8,5 +8,4 @@
     android:duration="1000"
     android:interpolator="@android:anim/accelerate_decelerate_interpolator">
 
-
 </translate>
