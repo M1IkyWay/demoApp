@@ -14,6 +14,7 @@ class PlayActivity : AppCompatActivity() {
     lateinit var scoreViewModel : ScoreViewModel
     lateinit var musicService : MusicService
     var theEnd = 0
+    var endOfSong = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,34 +26,39 @@ class PlayActivity : AppCompatActivity() {
         val sound = R.raw.launcher
 
 
+        fun openNextActivity (intent: Intent) {
+            intent.putExtra("endOfSong", endOfSong)
+            startActivity(intent)
+//            overridePendingTransition(R.anim.slide_in, R.anim.slide_out)
+            musicService.onDestroy()
+            finish()
+        }
 
         AnimationHelper.appearingButton(binding.playButton, binding.text)
         musicService = MusicService(soundVolume, sound, this)
         musicService.playMusic(0)
 
 
+        val isPrivacyAccepted = scoreViewModel.getPrivacyPolicyAccepted()
+
         binding.playButton.setOnClickListener{
             AnimationHelper.pressingAnimation(it, binding.text)
-
             YoYo.with(Techniques.SlideOutLeft).duration(1000).playOn(binding.playButton)
             YoYo.with(Techniques.SlideOutLeft).duration(1000).playOn(binding.text)
 
-            val endOfSong = musicService.findTheEnd()
+            endOfSong = musicService.findTheEnd()
             musicService.stopMusic()
-            val intent = Intent(this, GamesMenuActivity::class.java)
-            intent.putExtra("endOfSong", endOfSong)
-            startActivity(intent)
-            overridePendingTransition(R.anim.slide_in, R.anim.slide_out)
 
-            musicService.onDestroy()
-            finish()
+            if (isPrivacyAccepted) {
+                openNextActivity(Intent(this, GamesMenuActivity::class.java))
+            }
+            else {
+                openNextActivity(Intent(this, AgreementActivity::class.java))
+
+            }
         }
 
     }
-
-
-
-
     override fun onPause() {
         super.onPause()
         theEnd = musicService.findTheEnd()
@@ -63,6 +69,8 @@ class PlayActivity : AppCompatActivity() {
         super.onResume()
         musicService.playMusic(theEnd)
     }
+
+
 }
 
 

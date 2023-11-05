@@ -1,3 +1,0 @@
-com.example.cashluckpatrol.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme

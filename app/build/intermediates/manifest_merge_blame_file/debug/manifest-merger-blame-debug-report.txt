@@ -19,170 +19,173 @@
 13    <uses-permission android:name="android.permission.WAKE_LOCK" />
 13-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:7:5-68
 13-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:7:22-65
-14
-15    <permission
-15-->[androidx.core:core:1.9.0] /home/milkyway/.gradle/caches/transforms-3/3442b491be1019a2d5bfaa8797a65871/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
-16        android:name="com.example.cashluckpatrol.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-16-->[androidx.core:core:1.9.0] /home/milkyway/.gradle/caches/transforms-3/3442b491be1019a2d5bfaa8797a65871/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
-17        android:protectionLevel="signature" />
-17-->[androidx.core:core:1.9.0] /home/milkyway/.gradle/caches/transforms-3/3442b491be1019a2d5bfaa8797a65871/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
-18
-19    <uses-permission android:name="com.example.cashluckpatrol.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-19-->[androidx.core:core:1.9.0] /home/milkyway/.gradle/caches/transforms-3/3442b491be1019a2d5bfaa8797a65871/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
-19-->[androidx.core:core:1.9.0] /home/milkyway/.gradle/caches/transforms-3/3442b491be1019a2d5bfaa8797a65871/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
-20
-21    <application
-21-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:12:5-79:19
-22        android:name="com.example.cashluckpatrol.MyApplication"
-22-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:13:9-38
-23        android:allowBackup="true"
-23-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:14:9-35
-24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-24-->[androidx.core:core:1.9.0] /home/milkyway/.gradle/caches/transforms-3/3442b491be1019a2d5bfaa8797a65871/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
-25        android:dataExtractionRules="@xml/data_extraction_rules"
-25-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:15:9-65
-26        android:debuggable="true"
-27        android:extractNativeLibs="false"
-28        android:fullBackupContent="@xml/backup_rules"
-28-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:16:9-54
-29        android:icon="@mipmap/ic_launcher"
-29-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:17:9-43
-30        android:label="@string/app_name"
-30-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:18:9-41
-31        android:roundIcon="@mipmap/ic_launcher_round"
-31-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:19:9-54
-32        android:supportsRtl="true"
-32-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:20:9-35
-33        android:testOnly="true"
-34        android:theme="@style/Theme.CashLuckPatrol" >
-34-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:21:9-52
-35
-36        <!-- <service -->
-37        <!-- android:name=".MusicService" -->
-38        <!-- android:enabled="true" -->
-39        <!-- android:exported="false"/> -->
-40
-41        <activity
-41-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:29:9-31:40
-42            android:name="com.example.cashluckpatrol.SlotGame2Activity"
-42-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:30:13-46
-43            android:exported="false" />
-43-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:31:13-37
-44        <activity
-44-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:32:9-34:40
-45            android:name="com.example.cashluckpatrol.SlotGame1Activity"
-45-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:33:13-46
-46            android:exported="false" />
-46-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:34:13-37
-47        <activity
-47-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:35:9-43:20
-48            android:name="com.example.cashluckpatrol.SplashScreen"
-48-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:36:13-41
-49            android:exported="true" >
-49-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:37:13-36
-50            <intent-filter>
-50-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:38:13-42:29
-51                <action android:name="android.intent.action.MAIN" />
-51-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:39:17-69
-51-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:39:25-66
-52
-53                <category android:name="android.intent.category.LAUNCHER" />
-53-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:41:17-77
-53-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:41:27-74
-54            </intent-filter>
-55        </activity>
-56        <activity
-56-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:44:9-46:40
-57            android:name="com.example.cashluckpatrol.FlashGame2Activity"
-57-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:45:13-47
-58            android:exported="false" />
-58-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:46:13-37
-59        <activity
-59-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:47:9-49:40
-60            android:name="com.example.cashluckpatrol.FlashGame1Activity"
-60-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:48:13-47
-61            android:exported="false" />
-61-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:49:13-37
-62        <activity
-62-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:50:9-52:40
-63            android:name="com.example.cashluckpatrol.ComingSoonActivity"
-63-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:51:13-47
-64            android:exported="false" />
-64-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:52:13-37
-65        <activity
-65-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:53:9-55:40
-66            android:name="com.example.cashluckpatrol.HotGameActivity"
-66-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:54:13-44
-67            android:exported="false" />
-67-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:55:13-37
-68        <activity
-68-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:56:9-58:40
-69            android:name="com.example.cashluckpatrol.GamesMenuActivity"
-69-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:57:13-46
-70            android:exported="false" />
-70-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:58:13-37
-71        <activity
-71-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:59:9-61:40
-72            android:name="com.example.cashluckpatrol.GamesMenuAnonActivity"
-72-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:60:13-50
-73            android:exported="false" />
-73-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:61:13-37
-74        <activity
-74-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:62:9-64:40
-75            android:name="com.example.cashluckpatrol.SettingsActivity"
-75-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:63:13-45
-76            android:exported="false" />
-76-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:64:13-37
-77        <activity
-77-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:65:9-67:40
-78            android:name="com.example.cashluckpatrol.ChoosingModeActivity"
-78-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:66:13-49
-79            android:exported="false" />
-79-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:67:13-37
-80        <activity
-80-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:68:9-70:40
-81            android:name="com.example.cashluckpatrol.AgreementActivity"
-81-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:69:13-46
-82            android:exported="false" />
-82-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:70:13-37
-83        <activity
-83-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:71:9-75:71
-84            android:name="com.example.cashluckpatrol.PrivacyPolicy"
-84-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:72:13-42
-85            android:exported="false"
-85-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:73:13-37
-86            android:label="@string/title_activity_privacy_policy"
-86-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:74:13-66
-87            android:theme="@style/Theme.CashLuckPatrol.NoActionBar" />
-87-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:75:13-68
-88        <activity
-88-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:76:9-78:40
-89            android:name="com.example.cashluckpatrol.PlayActivity"
-89-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:77:13-41
-90            android:exported="false" />
-90-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:78:13-37
-91
-92        <provider
-92-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
-93            android:name="androidx.startup.InitializationProvider"
-93-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
-94            android:authorities="com.example.cashluckpatrol.androidx-startup"
-94-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
-95            android:exported="false" >
-95-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
-96            <meta-data
-96-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-97                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-97-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
-98                android:value="androidx.startup" />
-98-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
-99            <meta-data
-99-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/milkyway/.gradle/caches/transforms-3/4589dead2f7179888e07ccebc2200270/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
-100                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-100-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/milkyway/.gradle/caches/transforms-3/4589dead2f7179888e07ccebc2200270/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
-101                android:value="androidx.startup" />
-101-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/milkyway/.gradle/caches/transforms-3/4589dead2f7179888e07ccebc2200270/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
-102        </provider>
-103    </application>
-104
-105</manifest>
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:8:5-67
+14-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:8:22-64
+15
+16    <permission
+16-->[androidx.core:core:1.9.0] /home/milkyway/.gradle/caches/transforms-3/3442b491be1019a2d5bfaa8797a65871/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+17        android:name="com.example.cashluckpatrol.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+17-->[androidx.core:core:1.9.0] /home/milkyway/.gradle/caches/transforms-3/3442b491be1019a2d5bfaa8797a65871/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+18        android:protectionLevel="signature" />
+18-->[androidx.core:core:1.9.0] /home/milkyway/.gradle/caches/transforms-3/3442b491be1019a2d5bfaa8797a65871/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+19
+20    <uses-permission android:name="com.example.cashluckpatrol.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+20-->[androidx.core:core:1.9.0] /home/milkyway/.gradle/caches/transforms-3/3442b491be1019a2d5bfaa8797a65871/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+20-->[androidx.core:core:1.9.0] /home/milkyway/.gradle/caches/transforms-3/3442b491be1019a2d5bfaa8797a65871/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+21
+22    <application
+22-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:13:5-80:19
+23        android:name="com.example.cashluckpatrol.MyApplication"
+23-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:14:9-38
+24        android:allowBackup="true"
+24-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:15:9-35
+25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+25-->[androidx.core:core:1.9.0] /home/milkyway/.gradle/caches/transforms-3/3442b491be1019a2d5bfaa8797a65871/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+26        android:dataExtractionRules="@xml/data_extraction_rules"
+26-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:16:9-65
+27        android:debuggable="true"
+28        android:extractNativeLibs="false"
+29        android:fullBackupContent="@xml/backup_rules"
+29-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:17:9-54
+30        android:icon="@mipmap/ic_launcher"
+30-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:18:9-43
+31        android:label="@string/app_name"
+31-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:19:9-41
+32        android:roundIcon="@mipmap/ic_launcher_round"
+32-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:20:9-54
+33        android:supportsRtl="true"
+33-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:21:9-35
+34        android:testOnly="true"
+35        android:theme="@style/Theme.CashLuckPatrol" >
+35-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:22:9-52
+36
+37        <!-- <service -->
+38        <!-- android:name=".MusicService" -->
+39        <!-- android:enabled="true" -->
+40        <!-- android:exported="false"/> -->
+41
+42        <activity
+42-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:30:9-32:40
+43            android:name="com.example.cashluckpatrol.SlotGame2Activity"
+43-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:31:13-46
+44            android:exported="false" />
+44-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:32:13-37
+45        <activity
+45-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:33:9-35:40
+46            android:name="com.example.cashluckpatrol.SlotGame1Activity"
+46-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:34:13-46
+47            android:exported="false" />
+47-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:35:13-37
+48        <activity
+48-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:36:9-44:20
+49            android:name="com.example.cashluckpatrol.SplashScreen"
+49-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:37:13-41
+50            android:exported="true" >
+50-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:38:13-36
+51            <intent-filter>
+51-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:39:13-43:29
+52                <action android:name="android.intent.action.MAIN" />
+52-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:40:17-69
+52-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:40:25-66
+53
+54                <category android:name="android.intent.category.LAUNCHER" />
+54-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:42:17-77
+54-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:42:27-74
+55            </intent-filter>
+56        </activity>
+57        <activity
+57-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:45:9-47:40
+58            android:name="com.example.cashluckpatrol.FlashGame2Activity"
+58-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:46:13-47
+59            android:exported="false" />
+59-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:47:13-37
+60        <activity
+60-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:48:9-50:40
+61            android:name="com.example.cashluckpatrol.FlashGame1Activity"
+61-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:49:13-47
+62            android:exported="false" />
+62-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:50:13-37
+63        <activity
+63-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:51:9-53:40
+64            android:name="com.example.cashluckpatrol.ComingSoonActivity"
+64-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:52:13-47
+65            android:exported="false" />
+65-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:53:13-37
+66        <activity
+66-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:54:9-56:40
+67            android:name="com.example.cashluckpatrol.HotGameActivity"
+67-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:55:13-44
+68            android:exported="false" />
+68-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:56:13-37
+69        <activity
+69-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:57:9-59:40
+70            android:name="com.example.cashluckpatrol.GamesMenuActivity"
+70-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:58:13-46
+71            android:exported="false" />
+71-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:59:13-37
+72        <activity
+72-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:60:9-62:40
+73            android:name="com.example.cashluckpatrol.GamesMenuAnonActivity"
+73-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:61:13-50
+74            android:exported="false" />
+74-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:62:13-37
+75        <activity
+75-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:63:9-65:40
+76            android:name="com.example.cashluckpatrol.SettingsActivity"
+76-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:64:13-45
+77            android:exported="false" />
+77-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:65:13-37
+78        <activity
+78-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:66:9-68:40
+79            android:name="com.example.cashluckpatrol.ChoosingModeActivity"
+79-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:67:13-49
+80            android:exported="false" />
+80-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:68:13-37
+81        <activity
+81-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:69:9-71:40
+82            android:name="com.example.cashluckpatrol.AgreementActivity"
+82-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:70:13-46
+83            android:exported="false" />
+83-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:71:13-37
+84        <activity
+84-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:72:9-76:71
+85            android:name="com.example.cashluckpatrol.PrivacyPolicy"
+85-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:73:13-42
+86            android:exported="false"
+86-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:74:13-37
+87            android:label="@string/title_activity_privacy_policy"
+87-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:75:13-66
+88            android:theme="@style/Theme.CashLuckPatrol.NoActionBar" />
+88-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:76:13-68
+89        <activity
+89-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:77:9-79:40
+90            android:name="com.example.cashluckpatrol.PlayActivity"
+90-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:78:13-41
+91            android:exported="false" />
+91-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:79:13-37
+92
+93        <provider
+93-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+94            android:name="androidx.startup.InitializationProvider"
+94-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+95            android:authorities="com.example.cashluckpatrol.androidx-startup"
+95-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+96            android:exported="false" >
+96-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+97            <meta-data
+97-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+98                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+98-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+99                android:value="androidx.startup" />
+99-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+100            <meta-data
+100-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/milkyway/.gradle/caches/transforms-3/4589dead2f7179888e07ccebc2200270/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+101                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+101-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/milkyway/.gradle/caches/transforms-3/4589dead2f7179888e07ccebc2200270/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+102                android:value="androidx.startup" />
+102-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/milkyway/.gradle/caches/transforms-3/4589dead2f7179888e07ccebc2200270/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+103        </provider>
+104    </application>
+105
+106</manifest>

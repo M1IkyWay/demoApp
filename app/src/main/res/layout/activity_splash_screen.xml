@@ -108,6 +108,7 @@
             android:layout_height="@dimen/_40sdp"
             android:layout_weight="1"
             android:scaleType="fitCenter"
+            android:layout_marginEnd="@dimen/_2sdp"
             android:src="@drawable/non_active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />

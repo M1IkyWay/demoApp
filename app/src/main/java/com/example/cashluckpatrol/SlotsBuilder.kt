@@ -37,7 +37,6 @@ class SlotsBuilder {
             slotView.layoutManager = mLayoutManager
             layoutManagers.add(mLayoutManager as LinearLayoutManager)
             val mAdapter = SlotAdapter(drawableIds.shuffled())
-            Log.d("${drawableIds.size}", "количество айдишников изображений, передаваемых в адаптер внутри билдера в СлотсБилдер")
             slotView.adapter = mAdapter
             timePerInch += dockingTimePerInch
         }

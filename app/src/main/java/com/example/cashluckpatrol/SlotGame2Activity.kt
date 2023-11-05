@@ -136,8 +136,8 @@ class SlotGame2Activity : AppCompatActivity() {
         val slideDownAnimation = AnimationUtils.loadAnimation(this, R.anim.slide_down)
         val fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_out)
         val animationSet = AnimationSet(true)
-        animationSet.addAnimation(slideDownAnimation)
         animationSet.addAnimation(fadeAnimation)
+        animationSet.addAnimation(slideDownAnimation)
 
         fun createPopup (multiplier: Float) {
             if (multiplier > 1.0f) {
@@ -153,12 +153,12 @@ class SlotGame2Activity : AppCompatActivity() {
                 popupWindow.contentView.startAnimation(slideUpAnimation)
                 popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0)
                 handler.postDelayed({
-
-
-//                popupWindow.contentView.startAnimation(animationSet)
+////////////make an animation longer
+                popupWindow.contentView.startAnimation(slideDownAnimation)
                     handler.postDelayed({
                         popupWindow.dismiss()},
-                        animationSet.duration.toLong())}, 1000)
+                        animationSet.duration
+                    )}, 1000)
     }
             }
 
@@ -190,9 +190,7 @@ class SlotGame2Activity : AppCompatActivity() {
         binding.btnRotate.setOnClickListener {
             soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
             it.isEnabled = false
-            binding.arrow.startAnimation(rotateABit)
             AnimationHelper.clickView(it, this)
-            binding.roundArrow.startAnimation(rotate)
 
             if (bet == 0) {
                 val toast = Toast.makeText(this, "Set the bet, please!", Toast.LENGTH_SHORT)
@@ -201,6 +199,8 @@ class SlotGame2Activity : AppCompatActivity() {
                 it.isEnabled = true
 
             } else {
+                binding.roundArrow.startAnimation(rotate)
+                binding.arrow.startAnimation(rotateABit)
                 soundHelper.wheelSpinSound(this, soundVolume)
                 scope.launch {
                     val multiplier = spinCircle()

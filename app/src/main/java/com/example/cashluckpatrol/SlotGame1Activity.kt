@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProviders
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
@@ -32,6 +33,8 @@ class SlotGame1Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySlotGame1Binding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        spinButton = binding.btnSpin
         soundHelper = (application as MyApplication).soundHelper
         scoreViewModel = (application as MyApplication).scoreViewModel
         successGame = false
@@ -40,22 +43,26 @@ class SlotGame1Activity : AppCompatActivity() {
         var winsCount = 0
         val scope = CoroutineScope (Dispatchers.Main)
         val soundVolume = scoreViewModel.getSoundVolume()*0.7f
-        musicService = MusicService(soundVolume, R.raw.slot1, this)
+        musicService = MusicService(soundVolume*0.7f, R.raw.slot1, this)
         musicService.playMusic(0)
 
-        spinButton = binding.btnSpin
+
 
         suspend fun updateWinsCount (isWin : Boolean) {
             if (isWin) {
                 winsCount+=1
                 binding.winsCount.setText("${winsCount}")
                 val toast = Toast.makeText (this, "You win!", Toast.LENGTH_SHORT)
+
                 toast.show()
                 //add music and vibro
+
             }
             else {
+                binding.confetti.isVisible = true
                 val toast = Toast.makeText (this, "You lose!", Toast.LENGTH_SHORT)
                 toast.show()
+                binding.confetti.isVisible = false
 //add music and vibro
             }
 
@@ -65,19 +72,21 @@ class SlotGame1Activity : AppCompatActivity() {
         })
 
         binding.decremBet.setOnClickListener {
+            soundHelper.clickSound2(this, soundVolume)
             AnimationHelper.clickView ( it, this)
             if (currentBet>50) {
                 currentBet-=50
                 AnimationHelper.updateAnotherBetOrScore(currentBet, binding.choosenBet)
             }
             else {
-
                 AnimationHelper.wrongInputAnimation(binding.choosenBet)
+                soundHelper.wrongInputSound(this, soundVolume)
                 val toast = Toast.makeText(this, "Minimal bet is 50", Toast.LENGTH_SHORT)
             }
         }
 
         binding.incremBet.setOnClickListener {
+            soundHelper.clickSound2(this, soundVolume)
             AnimationHelper.clickView ( it, this)
             binding.choosenBet.setTextColor(Color.WHITE)
                 currentBet += 50
@@ -88,23 +97,28 @@ class SlotGame1Activity : AppCompatActivity() {
 
 
         spinButton.setOnClickListener {
-            Log.d("spin button was clicked", "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")
-            AnimationHelper.clickSLot1(this, binding.btnSpin)
-            AnimationHelper.clickView ( it, this)
+            binding.choosenBet.setTextColor(Color.WHITE)
+            soundHelper.clickSound2(this, soundVolume)
             it.isEnabled = false
-            AnimationHelper.clickSLot1(this, it)
+
             if (scoreViewModel.getScore()>=currentBet) {
+                binding.resultBalance.setTextColor(resources.getColor(R.color.input_color))
+                AnimationHelper.smallClickView(it, this)
                 soundHelper.slotMachineSound(this, soundVolume)
                 scope.launch {
                     slots.start()
                     delay(5500)
                     updateWinsCount(successGame)
+                    it.isEnabled = true
                 }
             }
             else {
+                AnimationHelper.wrongInputAnimation(binding.resultBalance)
+                soundHelper.wrongInputSound(this, soundVolume)
                 val toast = Toast.makeText(this, "You don`t have enough money!", Toast.LENGTH_SHORT)
                 toast.show()
                 //add some vibro here
+                it.isEnabled = true
             }
         }
 
@@ -175,12 +189,18 @@ class SlotGame1Activity : AppCompatActivity() {
         super.onPause()
         theEnd = musicService.findTheEnd()
         musicService.stopMusic()
+        soundHelper.pause()
 
     }
     override fun onResume() {
         super.onResume()
         musicService.playMusic(theEnd)
+        soundHelper.resume()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        soundHelper.pause()
+    }
 
 }

@@ -37,12 +37,16 @@ anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
 anim rotate
 anim rotate_a_bit
+anim rotate_forward
+anim rotate_vertical
 anim scale_down
 anim scale_up
 anim slide_down
 anim slide_in
 anim slide_out
 anim slide_up
+anim small_scale_down
+anim small_scale_up
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -3180,6 +3184,7 @@ drawable btn_up
 drawable butt_flash1
 drawable button_pressed_background
 drawable completed_circle
+drawable confetti
 drawable cop
 drawable country_flag_ad
 drawable country_flag_ae
@@ -3694,6 +3699,7 @@ id clockwise
 id closest
 id collapseActionView
 id compress
+id confetti
 id confirm_button
 id constraint
 id container
@@ -3950,6 +3956,8 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id no
+id noButton
 id noScroll
 id noState
 id none
@@ -4434,6 +4442,7 @@ mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 raw click2
 raw click_default
+raw confetti
 raw defeat_1
 raw hot_game
 raw launcher
@@ -4445,6 +4454,7 @@ raw slot_machine
 raw stars_bar
 raw wheel_spin
 raw win
+raw wrong_input
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -4589,6 +4599,7 @@ string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string mtrl_timepicker_confirm
 string music
+string no
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through

@@ -98,7 +98,7 @@ class HotGameActivity : AppCompatActivity() {
                 soundHelper.slotMachineSound(this, soundVolume)
                 scope.launch {
                     slots.start()
-                    delay(5500)
+                    delay(6000)
                     updateWinsCount(successGame)
                     it.isEnabled = true
                 }

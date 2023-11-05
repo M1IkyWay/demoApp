@@ -12,12 +12,13 @@ class ScoreViewModel : ViewModel() {
 
    var soundVolume : MutableLiveData<Float> = MutableLiveData()
 
-
+   private var isPrivacyPolicyAccepted : MutableLiveData<Boolean> = MutableLiveData()
 
     init {
         score = MutableLiveData(2000)
         vibroIntensity = MutableLiveData(1.0f)
         soundVolume = MutableLiveData(1.0f)
+        isPrivacyPolicyAccepted = MutableLiveData(false)
     }
 
 
@@ -68,8 +69,19 @@ class ScoreViewModel : ViewModel() {
             multiplier > 1.0f -> updateScore((getScore()+(multiplier*bet).toInt()))
             else -> updateScore(getScore())
         }
-
-
     }
+
+    fun getPrivacyPolicyAccepted() : Boolean {
+        val value : Boolean? = isPrivacyPolicyAccepted.value
+        if (value!==null) return value
+        else return false
+    }
+
+    fun setIsPrivacyPolicyAccepted(accepted : Boolean) {
+        isPrivacyPolicyAccepted.value = accepted
+    }
+
+
+
 
 }

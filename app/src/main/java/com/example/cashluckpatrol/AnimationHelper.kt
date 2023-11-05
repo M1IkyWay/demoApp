@@ -75,10 +75,19 @@ object AnimationHelper {
         val scaleUpAnim = AnimationUtils.loadAnimation(context, R.anim.scale_up)
         val scaleDownAnim = AnimationUtils.loadAnimation(context, R.anim.scale_down)
         view.startAnimation(scaleUpAnim)
-
         view.startAnimation(scaleDownAnim)
 
     }
+
+    fun smallClickView (view:View, context: Context) {
+        val scaleUpAnim = AnimationUtils.loadAnimation(context, R.anim.small_scale_up)
+        val scaleDownAnim = AnimationUtils.loadAnimation(context, R.anim.small_scale_down)
+        view.startAnimation(scaleUpAnim)
+        view.startAnimation(scaleDownAnim)
+
+    }
+
+
 
     fun wrongInputAnimation(view: TextView) {
         view.setTextColor(Color.RED)
@@ -101,5 +110,31 @@ object AnimationHelper {
 
     }
 
+    fun rotateAndChangeView (context: Context, view: View, targetImage : Int) {
+        view as ImageView
+        val rotateAnimation = AnimationUtils.loadAnimation(context, R.anim.rotate_vertical)
+        view.startAnimation(rotateAnimation)
+        view.setImageResource(targetImage)
+    }
+
+    fun slowRotateOpeningView () {
+
+    }
+
+    fun rotateForward (context: Context, view: View) {
+        view as ImageView
+        val rotateAnimation = AnimationUtils.loadAnimation(context, R.anim.rotate_forward)
+        view.startAnimation(rotateAnimation)
+        view.setImageResource(R.drawable.quest)
+
+
+
+    }
+
+    fun rotateBackward () {
+
+
+
+    }
 }
 

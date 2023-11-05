@@ -201,7 +201,7 @@
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:gravity="center"
-            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_2sdp"
             android:paddingHorizontal="@dimen/_35sdp"
             android:paddingVertical="@dimen/_20sdp"
             android:layout_alignTop="@id/marginGame"
@@ -268,8 +268,9 @@
 
             <ImageButton
                 android:id="@+id/decremBet"
+                android:layout_marginTop="@dimen/_3sdp"
                 android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_height="@dimen/_58sdp"
                 android:layout_weight="1"
                 android:background="@drawable/transparent_background"
                 android:clickable="true"
@@ -322,7 +323,8 @@
             <ImageButton
                 android:id="@+id/incremBet"
                 android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_height="@dimen/_58sdp"
+                android:layout_marginTop="@dimen/_3sdp"
                 android:layout_weight="1"
                 android:background="@drawable/transparent_background"
                 android:clickable="true"
@@ -369,8 +371,6 @@
                     android:layout_alignBottom="@id/btnSpin"
                     android:layout_centerVertical="true"
                     android:layout_marginBottom="@dimen/_5sdp"
-                    android:clickable="true"
-                    android:focusable="true"
                     android:fontFamily="@font/air_millhouse_italic"
                     android:gravity="center"
                     android:text="Spin"
@@ -383,4 +383,23 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/confetti"
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="@dimen/_270sdp"
+        app:lottie_rawRes="@raw/confetti"
+        app:lottie_autoPlay="true"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="parent"
+        android:translationZ="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.5"
+        app:lottie_loop="false"/>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
