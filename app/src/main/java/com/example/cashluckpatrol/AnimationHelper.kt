@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.Color
 import android.util.Log
 import android.view.View
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.AnimationUtils
 import android.widget.ImageButton
@@ -74,19 +75,20 @@ object AnimationHelper {
 
 
     fun clickView (view:View, context: Context) {
-        val scaleUpAnim = AnimationUtils.loadAnimation(context, R.anim.scale_up)
         val scaleDownAnim = AnimationUtils.loadAnimation(context, R.anim.scale_down)
-        view.startAnimation(scaleUpAnim)
+        val scaleUpAnim = AnimationUtils.loadAnimation(context, R.anim.scale_up)
+
         view.startAnimation(scaleDownAnim)
+        view.startAnimation(scaleUpAnim)
+
 
     }
 
     fun smallClickView (view:View, context: Context) {
         val scaleUpAnim = AnimationUtils.loadAnimation(context, R.anim.small_scale_up)
         val scaleDownAnim = AnimationUtils.loadAnimation(context, R.anim.small_scale_down)
-        view.startAnimation(scaleUpAnim)
         view.startAnimation(scaleDownAnim)
-
+        view.startAnimation(scaleUpAnim)
     }
 
 
@@ -117,7 +119,7 @@ object AnimationHelper {
         view as ImageView
         val rotateAnimation = ObjectAnimator.ofFloat(view, "rotationY", 0.0f, 180f)
         rotateAnimation.setDuration(800)
-        rotateAnimation.interpolator = AccelerateInterpolator()
+        rotateAnimation.interpolator = AccelerateDecelerateInterpolator()
         rotateAnimation.start()
     }
 
@@ -125,7 +127,7 @@ object AnimationHelper {
         view as ImageView
         val rotateAnimation = ObjectAnimator.ofFloat(view, "rotationY", 180f, 0.0f)
         rotateAnimation.setDuration(800)
-        rotateAnimation.interpolator = AccelerateInterpolator()
+        rotateAnimation.interpolator = AccelerateDecelerateInterpolator()
         rotateAnimation.start()
 
 

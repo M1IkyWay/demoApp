@@ -34,11 +34,18 @@ class SlotGame1Activity : AppCompatActivity() {
         binding = ActivitySlotGame1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        fun getStartBet (score: Int) : Int {
+            val currentBet = ((score/100)*5)
+            val roundedBet = kotlin.math.round(currentBet/10.0) * 10
+            return roundedBet.toInt()
+        }
+        currentBet = getStartBet(scoreViewModel.getScore())
+        binding.choosenBet.setText(currentBet.toString())
         spinButton = binding.btnSpin
         soundHelper = (application as MyApplication).soundHelper
         scoreViewModel = (application as MyApplication).scoreViewModel
         successGame = false
-        currentBet = 200
+
 
         var winsCount = 0
         val scope = CoroutineScope (Dispatchers.Main)
@@ -74,14 +81,14 @@ class SlotGame1Activity : AppCompatActivity() {
         binding.decremBet.setOnClickListener {
             soundHelper.clickSound2(this, soundVolume)
             AnimationHelper.clickView ( it, this)
-            if (currentBet>50) {
-                currentBet-=50
+            if (currentBet>19) {
+                currentBet-=10
                 AnimationHelper.updateAnotherBetOrScore(currentBet, binding.choosenBet)
             }
             else {
                 AnimationHelper.wrongInputAnimation(binding.choosenBet)
                 soundHelper.wrongInputSound(this, soundVolume)
-                val toast = Toast.makeText(this, "Minimal bet is 50", Toast.LENGTH_SHORT)
+                val toast = Toast.makeText(this, "Minimal bet is 10", Toast.LENGTH_SHORT)
             }
         }
 
@@ -89,7 +96,7 @@ class SlotGame1Activity : AppCompatActivity() {
             soundHelper.clickSound2(this, soundVolume)
             AnimationHelper.clickView ( it, this)
             binding.choosenBet.setTextColor(Color.WHITE)
-                currentBet += 50
+                currentBet += 10
             AnimationHelper.updateAnotherBetOrScore(currentBet, binding.choosenBet)
             }
 

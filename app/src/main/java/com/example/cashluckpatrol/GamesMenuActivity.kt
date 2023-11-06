@@ -11,21 +11,18 @@ class GamesMenuActivity : AppCompatActivity() {
 
     lateinit var scoreViewModel : ScoreViewModel
     lateinit var binding : ActivityGamesMenuBinding
-    lateinit var musicService : MusicService
     lateinit var soundHelper: SoundHelper
-    var theEnd = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGamesMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val endOfLast = intent.getIntExtra("endOfSong", 1000)
+
         soundHelper = (application as MyApplication).soundHelper
         scoreViewModel = (application as MyApplication).scoreViewModel
         val soundVolume = scoreViewModel.getSoundVolume()
-        musicService = MusicService(soundVolume, R.raw.launcher, this)
-        musicService.playMusic(endOfLast)
 
 
         scoreViewModel.score.observe( this, { newscore ->
@@ -33,73 +30,69 @@ class GamesMenuActivity : AppCompatActivity() {
         })
 
         binding.playHotButton.setOnClickListener {
-            soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
-            AnimationHelper.pressingAnimation(it, binding.hotPlayText)
+            soundHelper.clickSound(this, soundVolume)
+            AnimationHelper.smallClickView(it, this)
             val intent = Intent(this, HotGameActivity ::class.java)
             startActivity(intent)
-            musicService.stopMusic()
         }
 
         binding.playButtonSlot1.setOnClickListener {
-            soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
-            AnimationHelper.clickView(it, this)
+            soundHelper.clickSound(this, soundVolume)
+            AnimationHelper.smallClickView(it, this)
             val intent = Intent(this, SlotGame1Activity::class.java)
             startActivity(intent)
-            musicService.stopMusic()
         }
 
         binding.playButtonSlot2.setOnClickListener {
-            soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
-            AnimationHelper.clickView(it, this)
+            soundHelper.clickSound(this, soundVolume)
+            AnimationHelper.smallClickView(it, this)
             val intent = Intent(this, SlotGame2Activity::class.java)
             startActivity(intent)
-            musicService.stopMusic()
         }
 
         binding.playButtonFlash1.setOnClickListener {
-            soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
-            AnimationHelper.clickView(it, this)
+            soundHelper.clickSound(this, soundVolume)
+            AnimationHelper.smallClickView(it, this)
             val intent = Intent(this, FlashGame1Activity::class.java)
             startActivity(intent)
-            musicService.stopMusic()
         }
 
         binding.playButtonFlash2.setOnClickListener {
-            soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
-            AnimationHelper.clickView(it, this)
+            soundHelper.clickSound(this, soundVolume)
+            AnimationHelper.smallClickView(it, this)
             val intent = Intent(this, FlashGame2Activity::class.java)
             startActivity(intent)
-            musicService.stopMusic()
+
         }
 
         binding.slot3.setOnClickListener {
-            soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
-            AnimationHelper.clickView(it, this)
-            val intent = Intent(this, ComingSoonActivity::class.java)
-            startActivity(intent)
+            soundHelper.clickSound(this, soundVolume)
+            AnimationHelper.smallClickView(it, this)
+            startActivity(Intent(this, ComingSoonActivity::class.java))
 
         }
 
         binding.flash3.setOnClickListener {
-            soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
-            AnimationHelper.clickView(it, this)
-            val intent = Intent(this, ComingSoonActivity::class.java)
-            val name = "name"
-            intent.putExtra("name",name)
-            startActivity(intent)
+            soundHelper.clickSound(this, soundVolume)
+            AnimationHelper.smallClickView(it, this)
+            startActivity(Intent(this, ComingSoonActivity::class.java))
         }
 
     }
 
     override fun onPause() {
         super.onPause()
-        theEnd = musicService.findTheEnd()
-        musicService.stopMusic()
-
+        val soundService = Intent (this, SoundService::class.java)
+        soundService.action = "pauseMusic"
+        startService(soundService)
     }
+
     override fun onResume() {
         super.onResume()
-        musicService.playMusic(theEnd)
+        val soundService = Intent (this, SoundService::class.java)
+        soundService.action = "resumeMusic"
+        startService(soundService)
     }
+
     //Are you sure you want to leave
 }

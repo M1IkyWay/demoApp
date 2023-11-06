@@ -12,42 +12,39 @@ class PlayActivity : AppCompatActivity() {
 
     lateinit var binding : ActivityPlayBinding
     lateinit var scoreViewModel : ScoreViewModel
-    lateinit var musicService : MusicService
-    var theEnd = 0
-    var endOfSong = 0
+    lateinit var soundHelper: SoundHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPlayBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val soundService = Intent (this, SoundService::class.java)
+        startService(soundService)
+
+        soundHelper = (application as MyApplication).soundHelper
         scoreViewModel = (application as MyApplication).scoreViewModel
         val soundVolume = scoreViewModel.getSoundVolume()
-        val sound = R.raw.launcher
 
 
         fun openNextActivity (intent: Intent) {
-            intent.putExtra("endOfSong", endOfSong)
             startActivity(intent)
 //            overridePendingTransition(R.anim.slide_in, R.anim.slide_out)
-            musicService.onDestroy()
+
             finish()
         }
 
         AnimationHelper.appearingButton(binding.playButton, binding.text)
-        musicService = MusicService(soundVolume, sound, this)
-        musicService.playMusic(0)
 
 
         val isPrivacyAccepted = scoreViewModel.getPrivacyPolicyAccepted()
 
         binding.playButton.setOnClickListener{
             AnimationHelper.pressingAnimation(it, binding.text)
+            soundHelper.clickSound(this, soundVolume)
             YoYo.with(Techniques.SlideOutLeft).duration(1000).playOn(binding.playButton)
             YoYo.with(Techniques.SlideOutLeft).duration(1000).playOn(binding.text)
 
-            endOfSong = musicService.findTheEnd()
-            musicService.stopMusic()
 
             if (isPrivacyAccepted) {
                 openNextActivity(Intent(this, GamesMenuActivity::class.java))
@@ -61,13 +58,15 @@ class PlayActivity : AppCompatActivity() {
     }
     override fun onPause() {
         super.onPause()
-        theEnd = musicService.findTheEnd()
-        musicService.stopMusic()
-
+        val soundService = Intent (this, SoundService::class.java)
+        soundService.action = "pauseMusic"
+        startService(soundService)
     }
     override fun onResume() {
         super.onResume()
-        musicService.playMusic(theEnd)
+        val soundService = Intent (this, SoundService::class.java)
+        soundService.action = "resumeMusic"
+        startService(soundService)
     }
 
 

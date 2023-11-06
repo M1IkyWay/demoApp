@@ -33,11 +33,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.CashLuckPatrol" >
-
-        <!-- <service -->
-        <!-- android:name=".MusicService" -->
-        <!-- android:enabled="true" -->
-        <!-- android:exported="false"/> -->
+        <service
+            android:name="com.example.cashluckpatrol.SoundService"
+            android:enabled="true"
+            android:exported="false" />
 
         <activity
             android:name="com.example.cashluckpatrol.SlotGame2Activity"

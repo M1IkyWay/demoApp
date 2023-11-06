@@ -131,6 +131,14 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/milkyway/.gradle/cach
 		ADDED from /home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:16:9-65
 	android:name
 		ADDED from /home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:14:9-38
+service#com.example.cashluckpatrol.SoundService
+ADDED from /home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:25:9-28:39
+	android:enabled
+		ADDED from /home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:27:13-35
+	android:exported
+		ADDED from /home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:28:13-37
+	android:name
+		ADDED from /home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:26:13-41
 activity#com.example.cashluckpatrol.SlotGame2Activity
 ADDED from /home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:30:9-32:40
 	android:exported

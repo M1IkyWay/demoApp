@@ -15,6 +15,10 @@ class SoundHelper (context: Context) {
     private var slot2win : Int = 0
     private var wheelSpin : Int = 0
     private var wrongInput : Int = 0
+    private var explosion : Int = 0
+    private var mistake : Int = 0
+    private var rotate : Int = 0
+    private var correctInput : Int = 0
 
    init {
        val audioAttributes = AudioAttributes.Builder()
@@ -38,6 +42,10 @@ class SoundHelper (context: Context) {
         winSound = soundPool.load(context, R.raw.win, 1)
         wheelSpin = soundPool.load(context, R.raw.wheel_spin, 1)
         wrongInput = soundPool.load(context, R.raw.wrong_input, 1)
+        explosion = soundPool.load(context, R.raw.explosion, 1)
+        mistake = soundPool.load(context, R.raw.mistake_choice, 2)
+        rotate = soundPool.load(context, R.raw.rotate, 1)
+        correctInput = soundPool.load(context, R.raw.correct_input, 1)
    }
 
 
@@ -81,6 +89,19 @@ class SoundHelper (context: Context) {
 
     }
 
+    fun explosionSound (context: Context, loud: Float) {
+        soundPool.play(explosion, loud, loud, 1, 0, 1.0f)
+        soundPool.play(mistake, loud, loud, 1, 0, 1.0f)
+
+    }
+
+    fun rotateSound (context: Context, loud: Float) {
+        soundPool.play(rotate, loud, loud, 1, 0, 1.0f)
+    }
+
+    fun correctInputSound (context: Context, loud: Float) {
+        soundPool.play(correctInput, loud, loud, 1, 0, 1.0f)
+    }
 
 
     fun  release () {

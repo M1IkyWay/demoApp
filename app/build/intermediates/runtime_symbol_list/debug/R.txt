@@ -3516,6 +3516,7 @@ int drawable num_lit 0x7f0701d1
 int drawable privacy_policy 0x7f0701d2
 int drawable q_lit 0x7f0701d3
 int drawable quest 0x7f0701d4
+int drawable quest_reversed 0x7f0701e1
 int drawable register_to_unlock 0x7f0701d5
 int drawable slot1 0x7f0701d6
 int drawable slot2_anon 0x7f0701d7
@@ -3845,7 +3846,6 @@ int id imageView14 0x7f090131
 int id imageView15 0x7f090132
 int id imageView2 0x7f090133
 int id imageView22 0x7f090134
-int id imageView3 0x7f090135
 int id imageView4 0x7f090136
 int id imageView5 0x7f090137
 int id imageView6 0x7f090138
@@ -4319,7 +4319,6 @@ int layout abc_search_view 0x7f0c0019
 int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
 int layout activity_agreement 0x7f0c001c
-int layout activity_choosing_mode 0x7f0c001d
 int layout activity_coming_soon 0x7f0c001e
 int layout activity_flash_game1 0x7f0c001f
 int layout activity_flash_game2 0x7f0c0020
@@ -4440,9 +4439,14 @@ int plurals mtrl_badge_content_description 0x7f0e0000
 int raw click2 0x7f0f0000
 int raw click_default 0x7f0f0001
 int raw confetti 0x7f0f0002
+int raw correct_input 0x7f0f000f
 int raw defeat_1 0x7f0f0003
+int raw explosion 0x7f0f0010
+int raw flash_2 0x7f0f0013
 int raw hot_game 0x7f0f0004
 int raw launcher 0x7f0f0005
+int raw mistake_choice 0x7f0f0011
+int raw rotate 0x7f0f0012
 int raw slot1 0x7f0f0006
 int raw slot1_win 0x7f0f0007
 int raw slot2_win 0x7f0f0008

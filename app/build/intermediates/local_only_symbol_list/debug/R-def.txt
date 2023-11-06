@@ -97,6 +97,7 @@ drawable num_lit
 drawable privacy_policy
 drawable q_lit
 drawable quest
+drawable quest_reversed
 drawable register_to_unlock
 drawable slot1
 drawable slot2_anon
@@ -198,7 +199,6 @@ id imageView14
 id imageView15
 id imageView2
 id imageView22
-id imageView3
 id imageView4
 id imageView5
 id imageView6
@@ -320,7 +320,6 @@ id winsWord
 id yes
 id yesButton
 layout activity_agreement
-layout activity_choosing_mode
 layout activity_coming_soon
 layout activity_flash_game1
 layout activity_flash_game2
@@ -340,9 +339,14 @@ mipmap ic_launcher_round
 raw click2
 raw click_default
 raw confetti
+raw correct_input
 raw defeat_1
+raw explosion
+raw flash_2
 raw hot_game
 raw launcher
+raw mistake_choice
+raw rotate
 raw slot1
 raw slot1_win
 raw slot2_win

@@ -43,7 +43,6 @@ class SplashScreen : AppCompatActivity() {
 }
     override fun onStart() {
         super.onStart()
-        val intent = Intent( this, PlayActivity ::class.java)
-        startDownloading(intent)
+        startDownloading(Intent(this, PlayActivity::class.java))
     }
     }

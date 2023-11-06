@@ -1,15 +1,20 @@
 package com.example.cashluckpatrol
 
+import android.content.Context
+import android.graphics.Color
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.lifecycle.ViewModelProviders
+import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.example.cashluckpatrol.databinding.ActivityFlashGame2Binding
 import com.example.cashluckpatrol.databinding.ActivityHotGameBinding
@@ -25,86 +30,195 @@ class FlashGame2Activity : AppCompatActivity() {
     lateinit var musicService: MusicService
     lateinit var scoreViewModel: ScoreViewModel
     lateinit var spinButton: ImageView
+    lateinit var incremBut : ImageView
+    lateinit var decremBut : ImageView
     lateinit var binding: ActivityFlashGame2Binding
     var successGame by Delegates.notNull<Boolean>()
-    var currentBet by Delegates.notNull<Int>()
+    var currentBet = 200
     lateinit var soundHelper: SoundHelper
-    private var handler = Handler(Looper.getMainLooper())
     var theEnd = 0
     var count = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFlashGame2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-        val scope = CoroutineScope(Dispatchers.Main)
         spinButton = binding.btnSpin
 
-        val listOfButtons = mutableListOf<ImageView>(
+        scoreViewModel = (application as MyApplication).scoreViewModel
+        val soundVolume = scoreViewModel.getSoundVolume()
+        musicService = MusicService(soundVolume*0.7f, R.raw.flash_2, this)
+        musicService.playMusic(0)
+        spinButton.isEnabled = true
+        val scope = CoroutineScope(Dispatchers.Main)
+        soundHelper = (application as MyApplication).soundHelper
+
+        val context : Context = this
+        incremBut = binding.incremBet
+        decremBut = binding.decremBet
+
+
+        scoreViewModel.score.observe( this) { newScore ->
+            binding.resultBalance.setText("$newScore")
+            AnimationHelper.updateScoreOrBetTextViewAnimation(binding.winsCount, count.toString())
+        }
+
+       decremBut.setOnClickListener {
+            soundHelper.clickSound2(this, soundVolume)
+            AnimationHelper.clickView ( it, this)
+            if (currentBet>50) {
+                currentBet-=50
+                AnimationHelper.updateAnotherBetOrScore(currentBet, binding.choosenBet)
+            }
+            else {
+                AnimationHelper.wrongInputAnimation(binding.choosenBet)
+                soundHelper.wrongInputSound(this, soundVolume)
+                val toast = Toast.makeText(this, "Minimal bet is 50", Toast.LENGTH_SHORT)
+            }
+        }
+
+       incremBut.setOnClickListener {
+            binding.choosenBet.setTextColor(resources.getColor(R.color.input_color))
+            soundHelper.clickSound2(this, soundVolume)
+            AnimationHelper.clickView ( it, this)
+            currentBet += 50
+            AnimationHelper.updateAnotherBetOrScore(currentBet, binding.choosenBet)
+
+
+        }
+
+        val listOfButtons = mutableListOf(
             binding.num1, binding.num2, binding.num3,
             binding.num4, binding.num5, binding.num6, binding.num7, binding.num8, binding.num9
         )
+        val listOfImages = mutableListOf(1, 1, 0, 1, 0, 0, 1, 1, 0)
+        listOfImages.shuffle()
+
+        fun getImage (tag : String) : Int {
+            return listOfImages[tag.toInt()]
+        }
+
+        fun openRestImages () {
+            listOfButtons.forEach {
+                if (it.isEnabled) {
+                    it.isEnabled = false
+                }
+                    val drawable: Drawable
+                    val image = getImage(it.tag.toString())
+
+                    if (image == 0) {
+                        drawable = AppCompatResources.getDrawable(this, R.drawable.bomb)!!
+                        scope.launch {
+                            AnimationHelper.rotateBackward(it)
+                            delay(400)
+                            it.setImageDrawable(drawable)
+                        }
+
+                    } else {
+                        drawable = AppCompatResources.getDrawable(this, R.drawable.money)!!
+                        scope.launch {
+                            AnimationHelper.rotateBackward(it)
+                            delay(400)
+                            it.setImageDrawable(drawable)
+                        }
+                }
+            }
+        }
+
+        fun setImageForView (it : View) {
+            val drawable: Drawable
+            val image = getImage(it.tag.toString())
+            val view = it as ImageView
+
+            if (image == 0) {
+                drawable = AppCompatResources.getDrawable(this, R.drawable.bomb)!!
+                scope.launch {
+                    AnimationHelper.rotateBackward(it)
+                    delay(400)
+                    view.setImageDrawable(drawable)
+                    soundHelper.explosionSound(context, soundVolume)
+                    YoYo.with(Techniques.Shake).duration(500).playOn(view)
+
+
+                    val defeat = scoreViewModel.getScore() - currentBet
+                    scoreViewModel.updateScore(defeat)
+                    delay(400)
+                    count = 0
+                    AnimationHelper.updateScoreOrBetTextViewAnimation(binding.winsCount, count.toString())
+                    openRestImages()
+                    incremBut.isEnabled = true
+                    decremBut.isEnabled = true
+                }
+
+            } else {
+                drawable = AppCompatResources.getDrawable(this, R.drawable.money)!!
+                scope.launch {
+                    AnimationHelper.rotateBackward(it)
+                    delay(400)
+                    soundHelper.correctInputSound(context, soundVolume)
+                    view.setImageDrawable(drawable)
+                    count += 1
+                    AnimationHelper.updateScoreOrBetTextViewAnimation(binding.winsCount, count.toString())
+                }
+            }
+            if (count == 4) {
+                val win = currentBet*2 + scoreViewModel.getScore()
+                scoreViewModel.updateScore(win)
+                count = 0
+                incremBut.isEnabled = true
+                decremBut.isEnabled = true
+
+            }
+        }
 
         listOfButtons.forEach {
             it.setOnClickListener {
                 it.isEnabled = false
-
-                val seed = System.currentTimeMillis()
-                val random = Random(seed)
-                val image = random.nextInt(0, 1)
-                val drawable: Drawable
-
-                if (image == 0) {
-                    drawable = AppCompatResources.getDrawable(this, R.drawable.bomb)!!
-                } else {
-                    drawable = AppCompatResources.getDrawable(this, R.drawable.money)!!
-                }
-                val view = it as ImageView
-                scope.launch {
-                    AnimationHelper.rotateBackward(it)
-                    delay(600)
-                    view.setImageDrawable(drawable)
-                }
-
-                if (image == 1) {
-                    count += 1
-                }
-                else {
-                    //sad music
-                //open all buttons
-
-
-                   //take bet back
-                    }
-
-                if (count == 4) {
-                    //bet*2
-
-
-
-                }
-
-
-
+                setImageForView(it)
+            }
             }
 
+
             fun spinViews() {
+                listOfImages.shuffle()
+                soundHelper.rotateSound(context, soundVolume)
                 listOfButtons.forEach {
                     scope.launch {
                         AnimationHelper.rotateForward(it)
-                        delay(600)
-                        it.setImageResource(R.drawable.quest)
+                        delay(400)
+                        it.setImageResource(R.drawable.quest_reversed)
                         it.isEnabled = true
                     }
                 }
             }
 
             spinButton.setOnClickListener {
+                binding.choosenBet.setTextColor(resources.getColor(R.color.input_color))
+                AnimationHelper.clickView ( it, this)
+                soundHelper.clickSound2(this, soundVolume)
+                binding.incremBet.isEnabled = false
+                binding.decremBet.isEnabled = false
+                it.isEnabled = false
                 spinViews()
+                it.isEnabled = true
             }
-
         }
 
+    override fun onPause() {
+        super.onPause()
+        theEnd = musicService.findTheEnd()
+        musicService.stopMusic()
+        soundHelper.pause()
 
     }
+    override fun onResume() {
+        super.onResume()
+        musicService.playMusic(theEnd)
+        soundHelper.resume()
+    }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        soundHelper.pause()
+    }
 }
+

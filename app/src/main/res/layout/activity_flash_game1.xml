@@ -969,7 +969,7 @@
 
 
     <LinearLayout
-        android:layout_width="@dimen/_80sdp"
+        android:layout_width="@dimen/_73sdp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
@@ -984,7 +984,6 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/_2sdp"
             android:paddingVertical="@dimen/_2sdp">
 
             <ImageView
@@ -1017,7 +1016,6 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/_2sdp"
             android:paddingVertical="@dimen/_2sdp">
 
             <ImageView
@@ -1050,7 +1048,6 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/_2sdp"
             android:paddingVertical="@dimen/_2sdp">
 
             <ImageView
@@ -1083,7 +1080,6 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/_2sdp"
             android:paddingVertical="@dimen/_2sdp">
 
             <ImageView
@@ -1116,7 +1112,6 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/_2sdp"
             android:paddingVertical="@dimen/_2sdp">
 
             <ImageView

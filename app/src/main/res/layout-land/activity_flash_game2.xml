@@ -190,27 +190,30 @@
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
+                android:tag="0"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
-                android:src="@drawable/money" />
+                android:src="@drawable/quest" />
 
             <ImageView
                 android:id="@+id/num2"
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
+                android:tag="1"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
-                android:src="@drawable/money" />
+                android:src="@drawable/quest" />
 
             <ImageView
                 android:id="@+id/num3"
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
+                android:tag="2"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
-                android:src="@drawable/money" />
+                android:src="@drawable/quest" />
         </LinearLayout>
 
         <LinearLayout
@@ -224,27 +227,30 @@
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
+                android:tag="3"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
-                android:src="@drawable/money" />
+                android:src="@drawable/quest" />
 
             <ImageView
                 android:id="@+id/num5"
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
+                android:tag="4"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
-                android:src="@drawable/money" />
+                android:src="@drawable/quest" />
 
             <ImageView
                 android:id="@+id/num6"
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
+                android:tag="5"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
-                android:src="@drawable/money" />
+                android:src="@drawable/quest" />
 
         </LinearLayout>
 
@@ -259,27 +265,30 @@
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
+                android:tag="6"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
-                android:src="@drawable/money" />
+                android:src="@drawable/quest" />
 
             <ImageView
                 android:id="@+id/num8"
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
+                android:tag="7"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
-                android:src="@drawable/money" />
+                android:src="@drawable/quest" />
 
             <ImageView
                 android:id="@+id/num9"
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
+                android:tag="8"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:paddingVertical="@dimen/_5sdp"
-                android:src="@drawable/money" />
+                android:src="@drawable/quest" />
 
 
         </LinearLayout>
@@ -399,6 +408,8 @@
                     android:layout_width="@dimen/_350sdp"
                     android:layout_height="@dimen/_40sdp"
                     android:scaleType="fitXY"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:srcCompat="@drawable/spin_viol" />
 
 
