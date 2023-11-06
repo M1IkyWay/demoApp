@@ -12,7 +12,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/flash_back1_hor" />
 
@@ -205,6 +205,7 @@
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:tag="0"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
 
@@ -236,6 +237,7 @@
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:tag="1"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
 
@@ -267,6 +269,7 @@
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:tag="2"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
 
@@ -297,6 +300,7 @@
                     android:layout_width="@dimen/_50sdp"
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
+                    android:tag="3"
                     android:focusable="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
@@ -336,6 +340,7 @@
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:tag="0"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
 
@@ -367,6 +372,7 @@
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:tag="1"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
 
@@ -397,6 +403,7 @@
                     android:layout_width="@dimen/_50sdp"
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
+                    android:tag="2"
                     android:focusable="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
@@ -429,6 +436,7 @@
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:tag="3"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
 
@@ -466,6 +474,7 @@
                     android:layout_width="@dimen/_50sdp"
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
+                    android:tag="0"
                     android:focusable="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
@@ -498,6 +507,7 @@
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:tag="1"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
 
@@ -528,6 +538,7 @@
                     android:layout_width="@dimen/_50sdp"
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
+                    android:tag="2"
                     android:focusable="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
@@ -559,6 +570,7 @@
                     android:layout_width="@dimen/_50sdp"
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
+                    android:tag="3"
                     android:focusable="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
@@ -599,6 +611,7 @@
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:tag="0"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
 
@@ -629,6 +642,7 @@
                     android:layout_width="@dimen/_50sdp"
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
+                    android:tag="1"
                     android:focusable="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
@@ -661,6 +675,7 @@
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:tag="2"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
 
@@ -692,6 +707,7 @@
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:tag="3"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
 
@@ -730,6 +746,7 @@
                     android:layout_width="@dimen/_50sdp"
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
+                    android:tag="0"
                     android:focusable="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
@@ -762,6 +779,7 @@
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:tag="1"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
 
@@ -793,6 +811,7 @@
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:tag="2"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />
 
@@ -823,6 +842,7 @@
                     android:layout_width="@dimen/_50sdp"
                     android:layout_height="@dimen/_50sdp"
                     android:clickable="true"
+                    android:tag="3"
                     android:focusable="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/butt_flash1" />

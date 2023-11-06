@@ -130,7 +130,9 @@ object AnimationHelper {
         rotateAnimation.interpolator = AccelerateDecelerateInterpolator()
         rotateAnimation.start()
 
+    }
 
+    fun openButtonFlash1 (view: View,) {
 
     }
 }

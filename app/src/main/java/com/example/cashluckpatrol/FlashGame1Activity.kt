@@ -1,9 +1,11 @@
 package com.example.cashluckpatrol
 
+import android.graphics.Color
 import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import com.example.cashluckpatrol.databinding.ActivityFlashGame1Binding
 import com.example.cashluckpatrol.databinding.ActivitySlotGame1Binding
@@ -45,6 +47,16 @@ class FlashGame1Activity : AppCompatActivity() {
         musicService.playMusic(0)
 
 
+        var line1 = mutableListOf(binding.firstIn1, binding.secondIn1, binding.thirdIn1, binding.fourthIn1)
+        var line2 = mutableListOf(binding.firstIn2, binding.secondIn2, binding.thirdIn2, binding.fourthIn2)
+        var line3 = mutableListOf(binding.firstIn3, binding.secondIn3, binding.thirdIn3, binding.fourthIn3)
+        var line4 = mutableListOf(binding.firstIn4, binding.secondIn4, binding.thirdIn4, binding.fourthIn4)
+        var line5 = mutableListOf(binding.firstIn5, binding.secondIn5, binding.thirdIn5, binding.fourthIn5)
+
+
+
+
+
         scoreViewModel.score.observe( this, { newscore ->
             binding.resultBalance.setText("$newscore")
         })
@@ -77,20 +89,37 @@ class FlashGame1Activity : AppCompatActivity() {
             }
         }
 
+
         binding.decremBet.setOnClickListener {
-            //animation on touch
-            if (currentBet <= 100) {
-                currentBet -= 50
-                binding.choosenBet.setText(currentBet.toString())
-            } else {
-                //animation shake
+            soundHelper.clickSound2(this, soundVolume)
+            AnimationHelper.clickView ( it, this)
+            if (currentBet>19) {
+                currentBet-=10
+                AnimationHelper.updateAnotherBetOrScore(currentBet, binding.choosenBet)
+            }
+            else {
+                AnimationHelper.wrongInputAnimation(binding.choosenBet)
+                soundHelper.wrongInputSound(this, soundVolume)
+                val toast = Toast.makeText(this, "Minimal bet is 10", Toast.LENGTH_SHORT)
             }
         }
 
+        binding.incremBet.setOnClickListener {
+            soundHelper.clickSound2(this, soundVolume)
+            AnimationHelper.clickView ( it, this)
+            binding.choosenBet.setTextColor(Color.WHITE)
+            currentBet += 10
+            AnimationHelper.updateAnotherBetOrScore(currentBet, binding.choosenBet)
+        }
+
+
         binding.btnSpin.setOnClickListener{
-            //animation on touch + inactive during some time
-            //и какой множитель должен быть в случае победы
-            scroll(currentBet)
+
+
+
+
+
+
         }
 
     }
