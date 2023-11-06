@@ -50,7 +50,6 @@ class FlashGame1Activity : AppCompatActivity() {
         })
 
 
-
         fun scroll (currentBet : Int) {
             var win = false
 
