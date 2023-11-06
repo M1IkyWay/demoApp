@@ -37,8 +37,6 @@ anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
 anim rotate
 anim rotate_a_bit
-anim rotate_forward
-anim rotate_vertical
 anim scale_down
 anim scale_up
 anim slide_down

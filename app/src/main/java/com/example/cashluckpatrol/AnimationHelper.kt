@@ -1,9 +1,11 @@
 package com.example.cashluckpatrol
 
+import android.animation.ObjectAnimator
 import android.content.Context
 import android.graphics.Color
 import android.util.Log
 import android.view.View
+import android.view.animation.AccelerateInterpolator
 import android.view.animation.AnimationUtils
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -110,28 +112,21 @@ object AnimationHelper {
 
     }
 
-    fun rotateAndChangeView (context: Context, view: View, targetImage : Int) {
+
+    fun rotateForward (view: View) {
         view as ImageView
-        val rotateAnimation = AnimationUtils.loadAnimation(context, R.anim.rotate_vertical)
-        view.startAnimation(rotateAnimation)
-        view.setImageResource(targetImage)
+        val rotateAnimation = ObjectAnimator.ofFloat(view, "rotationY", 0.0f, 180f)
+        rotateAnimation.setDuration(800)
+        rotateAnimation.interpolator = AccelerateInterpolator()
+        rotateAnimation.start()
     }
 
-    fun slowRotateOpeningView () {
-
-    }
-
-    fun rotateForward (context: Context, view: View) {
+    fun rotateBackward (view: View) {
         view as ImageView
-        val rotateAnimation = AnimationUtils.loadAnimation(context, R.anim.rotate_forward)
-        view.startAnimation(rotateAnimation)
-        view.setImageResource(R.drawable.quest)
-
-
-
-    }
-
-    fun rotateBackward () {
+        val rotateAnimation = ObjectAnimator.ofFloat(view, "rotationY", 180f, 0.0f)
+        rotateAnimation.setDuration(800)
+        rotateAnimation.interpolator = AccelerateInterpolator()
+        rotateAnimation.start()
 
 
 
