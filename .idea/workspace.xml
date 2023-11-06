@@ -9,14 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="почала 6.11 о 21:45">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/AnimationHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/AnimationHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/FlashGame1Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/FlashGame1Activity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_flash_game1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_flash_game1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_agreement.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_agreement.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_flash_game1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_flash_game1.xml" afterDir="false" />
-    </list>
+    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="закінчила 6.11 о 22:08" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -272,13 +265,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696791005397</updated>
-    </task>
-    <task id="LOCAL-00076" summary="закінчила 27.10 о 03:21">
-      <created>1698366134158</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1698366134158</updated>
     </task>
     <task id="LOCAL-00077" summary="почала 27.10 о 23:28">
       <created>1698439147701</created>
@@ -616,7 +602,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699298791797</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="закінчила 6.11 о 22:08">
+      <created>1699301343009</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1699301343009</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -652,7 +645,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/f-283/f-283" />
     </ignored-roots>
-    <MESSAGE value="почала 1.11 о 23:30" />
     <MESSAGE value="закінчила 2.11 о 01:26" />
     <MESSAGE value="почала 2.11 о 11:04" />
     <MESSAGE value="закінчила 2.11 о 11:29" />
@@ -677,6 +669,7 @@
     <MESSAGE value="почала 6.11 о 11:19" />
     <MESSAGE value="закінчила 6.11 о 20:04" />
     <MESSAGE value="почала 6.11 о 21:45" />
-    <option name="LAST_COMMIT_MESSAGE" value="почала 6.11 о 21:45" />
+    <MESSAGE value="закінчила 6.11 о 22:08" />
+    <option name="LAST_COMMIT_MESSAGE" value="закінчила 6.11 о 22:08" />
   </component>
 </project>
