@@ -6,10 +6,13 @@ import android.graphics.drawable.Drawable
 import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProviders
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
@@ -25,12 +28,12 @@ class FlashGame1Activity : AppCompatActivity() {
 
     lateinit var musicService: MusicService
     lateinit var scoreViewModel: ScoreViewModel
-    lateinit var spinButton: ImageView
+    lateinit var spinBtn : ImageView
     var successGame by Delegates.notNull<Boolean>()
     var currentBet by Delegates.notNull<Int>()
     lateinit var soundHelper: SoundHelper
     var theEnd = 0
-    var count = 0
+    private var count = 0
     var gameWin = 0
     private val userViewModel by lazy {
         ViewModelProviders.of(this).get(ScoreViewModel::class.java)
@@ -40,6 +43,8 @@ class FlashGame1Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFlashGame1Binding.inflate(layoutInflater)
         setContentView(binding.root)
+        spinBtn = binding.btnSpin
+        spinBtn.isEnabled = true
         scoreViewModel = (application as MyApplication).scoreViewModel
 
         fun getStartBet(score: Int): Int {
@@ -52,8 +57,7 @@ class FlashGame1Activity : AppCompatActivity() {
 
         binding.choosenBet.setText(currentBet.toString())
         val context: Context = this
-        spinButton = binding.btnSpin
-        spinButton.isEnabled = true
+
         soundHelper = (application as MyApplication).soundHelper
 
 
@@ -124,7 +128,13 @@ class FlashGame1Activity : AppCompatActivity() {
             )
         }
 
+        fun updateCount (newValue : Int) {
+            count = newValue
+        }
 
+        fun getCount () : Int {
+            return count
+        }
 //        binding.incremBet.setOnClickListener {
 //            //animation on touch
 //            if (currentBet<=4950) {
@@ -159,6 +169,15 @@ class FlashGame1Activity : AppCompatActivity() {
         }
 
 
+        suspend fun rotator (level : LevelFlash1, view: View, textResult : String, num : Int, drawable: Drawable) {
+            level.textList[num].text = textResult
+            view as ImageView
+            AnimationHelper.rotateBackward(view)
+            delay(400)
+            view.setImageDrawable(drawable)
+            level.textList[num].isVisible = true
+        }
+
 
 
         fun openOthersInLine(levelFlash1: LevelFlash1, listOfSenses: List<String>) {
@@ -166,84 +185,83 @@ class FlashGame1Activity : AppCompatActivity() {
                 if (it.isEnabled) {
                     val num = it.tag.toString().toInt()
                     val textResult: String = listOfSenses[num]
+                    val drawable : Drawable = AppCompatResources.getDrawable(this, R.drawable.butt_flash1)!!
                     scope.launch {
-                        AnimationHelper.rotateBackward(it)
+                        rotator(levelFlash1, it, textResult, num, drawable)
                         delay(400)
-                        levelFlash1.textList[num].text = textResult
-                        delay(500)
-                        AnimationHelper.updateScoreOrBetTextViewAnimation(
-                            levelFlash1.levelScore,
-                            "Win 0"
-                        )
+//                        AnimationHelper.updateScoreOrBetTextViewAnimation(
+//                            levelFlash1.levelScore,
+//                            "Win 0"
+//                        )
                     }
                 }
             }
         }
 
         fun openOtherLines(levelFlash1: LevelFlash1, listOfSenses: MutableList<String>) {
-            listOfLevels.shuffled()
             levelFlash1.imageList.forEach {
+                listOfPoints.shuffled()
                 if (it.isEnabled) {
                     val num = it.tag.toString().toInt()
-                    val textResult: String = listOfSenses[num]
+                    val textResult: String = listOfPoints[num]
+                    val drawable : Drawable = AppCompatResources.getDrawable(this, R.drawable.butt_flash1)!!
                     scope.launch {
-                        AnimationHelper.rotateBackward(it)
-                        delay(400)
-                        levelFlash1.textList[num].text = textResult
-                        delay(500)
+                        rotator(levelFlash1, it, textResult, num, drawable)
                         AnimationHelper.updateScoreOrBetTextViewAnimation(
                             levelFlash1.levelScore,
                             "Win 0"
                         )
+                        binding.incremBet.isEnabled = true
+                        binding.decremBet.isEnabled = true
+                        spinBtn.isEnabled = true
                     }
                 }
             }
         }
 
 
-        fun setResultAndCount(level: LevelFlash1) {
+
+        fun setResultAndCount(level: LevelFlash1) : Int {
+            var resulOfCounting : Int
             level.imageList.forEach { it ->
                 val listOfSenses = listOfPoints.shuffled()
                 it.setOnClickListener {
                     it.isEnabled = false
                     val num = it.tag.toString().toInt()
                     val textResult: String = listOfSenses[num]
+                    val drawable : Drawable = AppCompatResources.getDrawable(this, R.drawable.butt_flash1)!!
+
+                    fun returnResult () : Int {
 
                     when (textResult) {
                         "+0" -> scope.launch {
-                            AnimationHelper.rotateBackward(it)
+                            rotator(level, it, textResult, num, drawable)
                             delay(400)
-                            level.textList[num].text = textResult
                             soundHelper.defeatFlash1(context, soundVolume)
                             YoYo.with(Techniques.Shake).duration(500).playOn(it)
-
 
                             val defeat = scoreViewModel.getScore() - currentBet
                             scoreViewModel.updateScore(defeat)
                             delay(400)
-                            count = 0
+                            updateCount(0)
                             AnimationHelper.updateScoreOrBetTextViewAnimation(
                                 binding.winsCount,
-                                count.toString()
+                                getCount().toString()
                             )
                             openOthersInLine(level, listOfSenses)
-
-                            for (i in 0 until level.currentLevel - 2) {
+                            for (i in level.currentLevel until listOfLevels.size) {
                                 openOtherLines(listOfLevels[i], listOfPoints)
                             }
                             scoreViewModel.updateScore(scoreViewModel.getScore() - currentBet)
-                            binding.incremBet.isEnabled = true
-                            binding.decremBet.isEnabled = true
                             gameWin = 0
+
                         }
 
 
                         "+${(currentBet / 2).toInt()}" -> scope.launch {
-                            AnimationHelper.rotateBackward(it)
-                            delay(400)
-                            level.textList[num].text = textResult
+                            rotator(level, it, textResult, num, drawable)
                             //findCorrectSound
-                            delay(300)
+                            delay(400)
                             it as ImageView
                             AnimationHelper.onRotatedCorrect(it, level.textList[num])
                             AnimationHelper.updateScoreOrBetTextViewAnimation(
@@ -252,31 +270,33 @@ class FlashGame1Activity : AppCompatActivity() {
                             )
                             gameWin += textResult.toInt()
                             openOthersInLine(level, listOfSenses)
-                            count += 1
+                            updateCount(getCount()+1)
 
                             AnimationHelper.updateScoreOrBetTextViewAnimation(
                                 binding.winsCount,
-                                count.toString()
+                                getCount().toString()
                             )
-                            if (count == 5) {
+
+                            resulOfCounting = getCount()
+
+                            if (getCount() == 5) {
                                 scoreViewModel.updateScore(scoreViewModel.getScore() + gameWin)
-                                count = 0
+                                updateCount(0)
                                 AnimationHelper.updateScoreOrBetTextViewAnimation(
                                     binding.winsCount,
-                                    count.toString()
+                                    getCount().toString()
                                 )
                                 binding.incremBet.isEnabled = true
                                 binding.decremBet.isEnabled = true
+                                spinBtn.isEnabled = true
                                 //sound and popup and vibration
                             }
                         }
 
                         "+$currentBet" -> scope.launch {
-                            AnimationHelper.rotateBackward(it)
-                            delay(400)
-                            level.textList[num].text = textResult
+                            rotator(level, it, textResult, num, drawable)
                             //findCorrectSound
-                            delay(300)
+                            delay(400)
                             it as ImageView
                             AnimationHelper.onRotatedCorrect(it, level.textList[num])
                             AnimationHelper.updateScoreOrBetTextViewAnimation(
@@ -285,35 +305,43 @@ class FlashGame1Activity : AppCompatActivity() {
                             )
                             gameWin += textResult.toInt()
                             openOthersInLine(level, listOfSenses)
-                            count += 1
+                            updateCount(getCount()+1)
 
                             AnimationHelper.updateScoreOrBetTextViewAnimation(
                                 binding.winsCount,
-                                count.toString()
+                                getCount().toString()
                             )
-                            if (count == 5) {
+                            if (getCount() == 5) {
                                 scoreViewModel.updateScore(scoreViewModel.getScore() + gameWin)
-                                count = 0
+                                updateCount(0)
                                 AnimationHelper.updateScoreOrBetTextViewAnimation(
                                     binding.winsCount,
-                                    count.toString()
+                                    getCount().toString()
                                 )
                                 binding.incremBet.isEnabled = true
                                 binding.decremBet.isEnabled = true
+                                spinBtn.isEnabled = true
                                 //sound and popup and vibration
+                                resulOfCounting = getCount()
                             }
                         }
                     }
                 }
             }
+            Log.d ("$count", "aaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+            return resulOfCounting
+
         }
 
         fun controller () {
-            setResultAndCount(level1)
-            setResultAndCount(level2)
-            setResultAndCount(level3)
-            setResultAndCount(level4)
-            setResultAndCount(level5)
+           var result = setResultAndCount(level1)
+
+            for (i in 1 until listOfLevels.size - 1)
+                if (result > 0) {
+                    result = setResultAndCount(listOfLevels[i])
+                }
+
+
 
         }
 
@@ -328,26 +356,62 @@ class FlashGame1Activity : AppCompatActivity() {
                 }
             }
         }
-            spinButton.setOnClickListener {
-                binding.choosenBet.setTextColor(resources.getColor(R.color.white))
-                AnimationHelper.clickView(it, this)
-                soundHelper.clickSound2(this, soundVolume)
-                binding.incremBet.isEnabled = false
-                binding.decremBet.isEnabled = false
-                it.isEnabled = false
-                listOfLines.forEach {
-                    spinViews(it)
-                    setResultAndCount(level1)
-                    setResultAndCount(level2)
-                    setResultAndCount(level3)
-                    setResultAndCount(level4)
-                    setResultAndCount(level5)
+           spinBtn.setOnClickListener {
+               binding.choosenBet.setTextColor(resources.getColor(R.color.white))
+               AnimationHelper.clickView(it, this)
+               soundHelper.clickSound2(this, soundVolume)
+               binding.incremBet.isEnabled = false
+               binding.decremBet.isEnabled = false
+               it.isEnabled = false
 
-                }
-                it.isEnabled = true
+               scope.launch {
+                   listOfLevels.forEach {
+                       delay(50)
+                       it.textList.forEach {
+                           it.isVisible = false
+                       }
+                       spinViews(it.imageList)
+                       it.levelScore.text = "Win 0"
+                   }
+
+               }
+                   it.isEnabled = true
+
+                   controller()
+
+//               listOfLines.forEach {
+//
+//                   setResultAndCount(level1)
+//                   setResultAndCount(level2)
+//                   setResultAndCount(level3)
+//                   setResultAndCount(level4)
+//                   setResultAndCount(level5)
+//
+//               }
+
+               }
+
             }
 
 
-        }
+
+
+    override fun onPause() {
+        super.onPause()
+        theEnd = musicService.findTheEnd()
+        musicService.stopMusic()
+        soundHelper.pause()
 
     }
+    override fun onResume() {
+        super.onResume()
+        musicService.playMusic(theEnd)
+        soundHelper.resume()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        soundHelper.pause()
+    }
+}
+

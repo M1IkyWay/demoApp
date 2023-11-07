@@ -266,6 +266,8 @@
                 <ImageView
                     android:id="@+id/btnSpin"
                     android:layout_width="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/btn_spin_purple" />
 
@@ -279,8 +281,6 @@
                     android:layout_alignBottom="@id/btnSpin"
                     android:layout_centerVertical="true"
                     android:layout_marginBottom="@dimen/_5sdp"
-                    android:clickable="true"
-                    android:focusable="true"
                     android:fontFamily="@font/air_millhouse_italic"
                     android:gravity="center"
                     android:text="Spin"
@@ -341,7 +341,7 @@
                     android:shadowDy="3"
                     android:tag="t0"
                     android:shadowRadius="10"
-                    android:text="+300"
+                    android:text=""
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -373,7 +373,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+0"
+                    android:text=""
                     android:tag="t1"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -406,7 +406,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+0"
+                    android:text=""
                     android:tag="t2"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -439,7 +439,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+0"
+                    android:text=""
                     android:tag="t3"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -479,7 +479,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+300"
+                    android:text=""
                     android:tag="t0"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -512,7 +512,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+0"
+                    android:text=""
                     android:tag="t1"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -545,7 +545,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+0"
+                    android:text=""
                     android:tag="t2"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -578,7 +578,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+0"
+                    android:text=""
                     android:tag="t3"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -618,7 +618,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+300"
+                    android:text=""
                     android:tag="t0"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -651,7 +651,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+0"
+                    android:text=""
                     android:tag="t1"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -684,7 +684,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+0"
+                    android:text=""
                     android:tag="t2"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -717,7 +717,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+0"
+                    android:text=""
                     android:tag="t3"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -758,7 +758,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+300"
+                    android:text=""
                     android:tag="t0"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -791,7 +791,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+0"
+                    android:text=""
                     android:tag="t1"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -824,7 +824,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+0"
+                    android:text=""
                     android:tag="t2"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -857,7 +857,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+0"
+                    android:text=""
                     android:tag="t3"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -898,7 +898,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+300"
+                    android:text=""
                     android:tag="t0"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -931,7 +931,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+0"
+                    android:text=""
                     android:tag="t1"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -964,7 +964,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+0"
+                    android:text=""
                     android:tag="t2"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -997,7 +997,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="10"
-                    android:text="+0"
+                    android:text=""
                     android:tag="t3"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
@@ -1048,7 +1048,7 @@
                 android:shadowDx="2"
                 android:shadowDy="2"
                 android:shadowRadius="2"
-                android:text="Win 600"
+                android:text=""
                 android:textColor="@color/hint_color"
                 android:textSize="@dimen/_14sdp" />
         </FrameLayout>
@@ -1080,7 +1080,7 @@
                 android:shadowDx="2"
                 android:shadowDy="2"
                 android:shadowRadius="2"
-                android:text="Win 600"
+                android:text=""
                 android:textColor="@color/hint_color"
                 android:textSize="@dimen/_14sdp" />
         </FrameLayout>
@@ -1112,7 +1112,7 @@
                 android:shadowDx="2"
                 android:shadowDy="2"
                 android:shadowRadius="2"
-                android:text="Win 600"
+                android:text=""
                 android:textColor="@color/hint_color"
                 android:textSize="@dimen/_14sdp" />
         </FrameLayout>
@@ -1144,7 +1144,7 @@
                 android:shadowDx="2"
                 android:shadowDy="2"
                 android:shadowRadius="2"
-                android:text="Win 600"
+                android:text=""
                 android:textColor="@color/hint_color"
                 android:textSize="@dimen/_14sdp" />
         </FrameLayout>
@@ -1176,7 +1176,7 @@
                 android:shadowDx="2"
                 android:shadowDy="2"
                 android:shadowRadius="2"
-                android:text="Win 600"
+                android:text=""
                 android:textColor="@color/hint_color"
                 android:textSize="@dimen/_14sdp" />
         </FrameLayout>
