@@ -19,6 +19,7 @@ class SoundHelper (context: Context) {
     private var mistake : Int = 0
     private var rotate : Int = 0
     private var correctInput : Int = 0
+    private var defeatFlash1 : Int = 0
 
    init {
        val audioAttributes = AudioAttributes.Builder()
@@ -46,6 +47,7 @@ class SoundHelper (context: Context) {
         mistake = soundPool.load(context, R.raw.mistake_choice, 2)
         rotate = soundPool.load(context, R.raw.rotate, 1)
         correctInput = soundPool.load(context, R.raw.correct_input, 1)
+        defeatFlash1 = soundPool.load(context, R.raw.defeat_flash1, 1)
    }
 
 
@@ -103,6 +105,9 @@ class SoundHelper (context: Context) {
         soundPool.play(correctInput, loud, loud, 1, 0, 1.0f)
     }
 
+    fun defeatFlash1 (context: Context, loud: Float) {
+        soundPool.play(defeatFlash1, loud, loud, 1, 0, 1.0f)
+    }
 
     fun  release () {
         soundPool.release()

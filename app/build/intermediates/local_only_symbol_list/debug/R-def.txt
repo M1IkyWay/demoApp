@@ -341,7 +341,9 @@ raw click_default
 raw confetti
 raw correct_input
 raw defeat_1
+raw defeat_flash1
 raw explosion
+raw flash_1
 raw flash_2
 raw hot_game
 raw launcher

@@ -74,6 +74,13 @@ object AnimationHelper {
     }
 
 
+    fun onRotatedCorrect (button: ImageView, text: TextView) {
+        YoYo.with(Techniques.BounceInUp).duration(300).playOn(button)
+        YoYo.with(Techniques.BounceInDown).duration(300).playOn(text)
+
+    }
+
+
     fun clickView (view:View, context: Context) {
         val scaleDownAnim = AnimationUtils.loadAnimation(context, R.anim.scale_down)
         val scaleUpAnim = AnimationUtils.loadAnimation(context, R.anim.scale_up)

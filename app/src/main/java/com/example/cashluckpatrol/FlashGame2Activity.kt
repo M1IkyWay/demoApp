@@ -59,7 +59,7 @@ class FlashGame2Activity : AppCompatActivity() {
 
         scoreViewModel.score.observe( this) { newScore ->
             binding.resultBalance.setText("$newScore")
-            AnimationHelper.updateScoreOrBetTextViewAnimation(binding.winsCount, count.toString())
+            AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, newScore.toString())
         }
 
        decremBut.setOnClickListener {

@@ -339,6 +339,7 @@
                     android:shadowColor="@color/shadow_color"
                     android:shadowDx="3"
                     android:shadowDy="3"
+                    android:tag="t0"
                     android:shadowRadius="10"
                     android:text="+300"
                     android:textColor="@color/white"
@@ -373,6 +374,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+0"
+                    android:tag="t1"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -405,6 +407,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+0"
+                    android:tag="t2"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -437,6 +440,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+0"
+                    android:tag="t3"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -476,6 +480,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+300"
+                    android:tag="t0"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -508,6 +513,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+0"
+                    android:tag="t1"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -540,6 +546,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+0"
+                    android:tag="t2"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -572,6 +579,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+0"
+                    android:tag="t3"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -611,6 +619,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+300"
+                    android:tag="t0"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -643,6 +652,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+0"
+                    android:tag="t1"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -675,6 +685,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+0"
+                    android:tag="t2"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -707,6 +718,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+0"
+                    android:tag="t3"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -747,6 +759,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+300"
+                    android:tag="t0"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -779,6 +792,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+0"
+                    android:tag="t1"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -811,6 +825,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+0"
+                    android:tag="t2"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -843,6 +858,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+0"
+                    android:tag="t3"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -883,6 +899,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+300"
+                    android:tag="t0"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -915,6 +932,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+0"
+                    android:tag="t1"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -947,6 +965,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+0"
+                    android:tag="t2"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
@@ -979,6 +998,7 @@
                     android:shadowDy="3"
                     android:shadowRadius="10"
                     android:text="+0"
+                    android:tag="t3"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp" />
             </FrameLayout>
