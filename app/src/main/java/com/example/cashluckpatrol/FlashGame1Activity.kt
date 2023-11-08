@@ -49,9 +49,7 @@ class FlashGame1Activity : AppCompatActivity() {
             currentBet = savedInstanceState.getInt("currentBet")
             count = savedInstanceState.getInt("count")
             theEnd = savedInstanceState.getInt("theEndOfMusic")
-
-
-            // и остальные
+        // и остальные
         }
 
 
@@ -202,6 +200,7 @@ class FlashGame1Activity : AppCompatActivity() {
         fun openOthersInLine(levelFlash1: LevelFlash1, listOfSenses: List<String>) {
             levelFlash1.imageList.forEach {
                 if (it.isEnabled) {
+                    it.isEnabled = false
                     val num = it.tag.toString().toInt()
                     val textResult: String = listOfSenses[num]
                     val drawable: Drawable =
@@ -219,9 +218,10 @@ class FlashGame1Activity : AppCompatActivity() {
         }
 
         fun openOtherLines(levelFlash1: LevelFlash1, listOfSenses: MutableList<String>) {
+            listOfPoints.shuffled()
             levelFlash1.imageList.forEach {
-                listOfPoints.shuffled()
                 if (it.isEnabled) {
+                    it.isEnabled = false
                     val num = it.tag.toString().toInt()
                     val textResult: String = listOfPoints[num]
                     val drawable: Drawable =
@@ -246,8 +246,10 @@ class FlashGame1Activity : AppCompatActivity() {
 
         fun setResultAndCount(level: LevelFlash1): Int {
             var resultOfCounting = 0
+            val listOfSenses = listOfPoints.shuffled()
+            Log.d("retresult and count", "set result and count are working nowaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
             level.imageList.forEach { it ->
-                val listOfSenses = listOfPoints.shuffled()
+                it.isEnabled = true
                 val num = it.tag.toString().toInt()
                 val textResult: String = listOfSenses[num]
                 resultOfCounting = returnResult(textResult)
@@ -355,15 +357,34 @@ class FlashGame1Activity : AppCompatActivity() {
             }
 
             fun controller() {
-                var result = setResultAndCount(level1)
 
-                for (i in 1 until listOfLevels.size - 1)
-                    if (result > 0) {
-                        result = setResultAndCount(listOfLevels[i])
+//                var res2 : Int
+//                var res3 : Int
+//                var res4 : Int
+//                var res5 : Int
+//
+//
+//                var res1 = setResultAndCount(level1)
+//                    if (res1 > 0) {
+//                        res2 = setResultAndCount(level2)
+//                    }
+//                    if (res2 > 0) {
+//
+        for (i in 0 until listOfLevels.size) {
+                    var result = setResultAndCount(listOfLevels[i])
+                    Log.d("$result", "aaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+                    if (result == 0) {
+                        spinBtn.isEnabled = true
+                        break
                     }
+            }
+
+
+
 
 
             }
+
 
             fun spinViews(list: MutableList<ImageView>) {
                 soundHelper.rotateSound(context, soundVolume)
@@ -372,7 +393,7 @@ class FlashGame1Activity : AppCompatActivity() {
                         AnimationHelper.rotateForward(it)
                         delay(400)
                         it.setImageResource(R.drawable.quest_reversed)
-                        it.isEnabled = true
+                        it.isEnabled = false
                     }
                 }
             }
@@ -386,6 +407,9 @@ class FlashGame1Activity : AppCompatActivity() {
 
                 scope.launch {
                     listOfLevels.forEach {
+                        it.textList.forEach {
+                            it.isVisible = false
+                        }
                         delay(50)
                         it.textList.forEach {
                             it.isVisible = false
@@ -397,8 +421,6 @@ class FlashGame1Activity : AppCompatActivity() {
 
 
                 controller()
-
-                it.isEnabled = true
 //               listOfLines.forEach {
 //
 //                   setResultAndCount(level1)
