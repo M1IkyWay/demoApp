@@ -172,6 +172,7 @@
      <LinearLayout
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
+         android:layout_gravity="center"
          android:orientation="horizontal">
 
     <LinearLayout
@@ -201,8 +202,8 @@
 
                 <ImageView
                     android:id="@+id/firstIn1"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:focusable="true"
                     android:tag="0"
@@ -211,7 +212,7 @@
 
                 <TextView
                     android:id="@+id/firstIn1T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -234,8 +235,8 @@
 
                 <ImageView
                     android:id="@+id/secondIn1"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:focusable="true"
                     android:tag="1"
@@ -244,7 +245,7 @@
 
                 <TextView
                     android:id="@+id/secondIn1T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -267,8 +268,8 @@
 
                 <ImageView
                     android:id="@+id/thirdIn1"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:focusable="true"
                     android:tag="2"
@@ -277,7 +278,7 @@
 
                 <TextView
                     android:id="@+id/thirdIn1T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -300,8 +301,8 @@
 
                 <ImageView
                     android:id="@+id/fourthIn1"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:tag="3"
                     android:focusable="true"
@@ -310,7 +311,7 @@
 
                 <TextView
                     android:id="@+id/fourthIn1T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -340,8 +341,8 @@
 
                 <ImageView
                     android:id="@+id/firstIn2"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:focusable="true"
                     android:tag="0"
@@ -350,7 +351,7 @@
 
                 <TextView
                     android:id="@+id/firstIn2T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -373,8 +374,8 @@
 
                 <ImageView
                     android:id="@+id/secondIn2"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:focusable="true"
                     android:tag="1"
@@ -383,7 +384,7 @@
 
                 <TextView
                     android:id="@+id/secondIn2T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -406,8 +407,8 @@
 
                 <ImageView
                     android:id="@+id/thirdIn2"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:tag="2"
                     android:focusable="true"
@@ -416,7 +417,7 @@
 
                 <TextView
                     android:id="@+id/thirdIn2T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -439,8 +440,8 @@
 
                 <ImageView
                     android:id="@+id/fourthIn2"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:focusable="true"
                     android:tag="3"
@@ -449,7 +450,7 @@
 
                 <TextView
                     android:id="@+id/fourthIn2T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -479,8 +480,8 @@
 
                 <ImageView
                     android:id="@+id/firstIn3"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:tag="0"
                     android:focusable="true"
@@ -489,7 +490,7 @@
 
                 <TextView
                     android:id="@+id/firstIn3T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -512,8 +513,8 @@
 
                 <ImageView
                     android:id="@+id/secondIn3"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:focusable="true"
                     android:tag="1"
@@ -522,7 +523,7 @@
 
                 <TextView
                     android:id="@+id/secondIn3T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -545,8 +546,8 @@
 
                 <ImageView
                     android:id="@+id/thirdIn3"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:tag="2"
                     android:focusable="true"
@@ -555,7 +556,7 @@
 
                 <TextView
                     android:id="@+id/thirdIn3T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -578,8 +579,8 @@
 
                 <ImageView
                     android:id="@+id/fourthIn3"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:tag="3"
                     android:focusable="true"
@@ -588,7 +589,7 @@
 
                 <TextView
                     android:id="@+id/fourthIn3T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -619,8 +620,8 @@
 
                 <ImageView
                     android:id="@+id/firstIn4"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:focusable="true"
                     android:tag="0"
@@ -629,7 +630,7 @@
 
                 <TextView
                     android:id="@+id/firstIn4T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -652,8 +653,8 @@
 
                 <ImageView
                     android:id="@+id/secondIn4"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:tag="1"
                     android:focusable="true"
@@ -662,7 +663,7 @@
 
                 <TextView
                     android:id="@+id/secondIn4T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -685,8 +686,8 @@
 
                 <ImageView
                     android:id="@+id/thirdIn4"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:focusable="true"
                     android:tag="2"
@@ -695,7 +696,7 @@
 
                 <TextView
                     android:id="@+id/thirdIn4T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -718,8 +719,8 @@
 
                 <ImageView
                     android:id="@+id/fourthIn4"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:focusable="true"
                     android:tag="3"
@@ -728,7 +729,7 @@
 
                 <TextView
                     android:id="@+id/fourthIn4T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -759,8 +760,8 @@
 
                 <ImageView
                     android:id="@+id/firstIn5"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:tag="0"
                     android:focusable="true"
@@ -769,7 +770,7 @@
 
                 <TextView
                     android:id="@+id/firstIn5T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -792,8 +793,8 @@
 
                 <ImageView
                     android:id="@+id/secondIn5"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:focusable="true"
                     android:tag="1"
@@ -802,7 +803,7 @@
 
                 <TextView
                     android:id="@+id/secondIn5T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -825,8 +826,8 @@
 
                 <ImageView
                     android:id="@+id/thirdIn5"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:focusable="true"
                     android:tag="2"
@@ -835,7 +836,7 @@
 
                 <TextView
                     android:id="@+id/thirdIn5T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -858,8 +859,8 @@
 
                 <ImageView
                     android:id="@+id/fourthIn5"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_47sdp"
                     android:clickable="true"
                     android:tag="3"
                     android:focusable="true"
@@ -868,7 +869,7 @@
 
                 <TextView
                     android:id="@+id/fourthIn5T"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="@dimen/_47sdp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/unineueheavy_italic"
@@ -910,7 +911,7 @@
             <ImageView
                 android:id="@+id/rectangle1"
                 android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_50sdp"
+                android:layout_height="@dimen/_47sdp"
                 android:layout_gravity="center"
                 android:clickable="true"
                 android:focusable="true"
@@ -943,7 +944,7 @@
             <ImageView
                 android:id="@+id/rectangle2"
                 android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_50sdp"
+                android:layout_height="@dimen/_47sdp"
                 android:layout_gravity="center"
                 android:clickable="true"
                 android:focusable="true"
@@ -976,7 +977,7 @@
             <ImageView
                 android:id="@+id/rectangle3"
                 android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_50sdp"
+                android:layout_height="@dimen/_47sdp"
                 android:layout_gravity="center"
                 android:clickable="true"
                 android:focusable="true"
@@ -1009,7 +1010,7 @@
             <ImageView
                 android:id="@+id/rectangle4"
                 android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_50sdp"
+                android:layout_height="@dimen/_47sdp"
                 android:layout_gravity="center"
                 android:clickable="true"
                 android:focusable="true"
@@ -1042,7 +1043,7 @@
             <ImageView
                 android:id="@+id/rectangle5"
                 android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_50sdp"
+                android:layout_height="@dimen/_47sdp"
                 android:layout_gravity="center"
                 android:clickable="true"
                 android:focusable="true"
@@ -1072,7 +1073,8 @@
      <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-         android:paddingHorizontal="@dimen/_5sdp">
+         android:paddingHorizontal="@dimen/_5sdp"
+         android:layout_gravity="center">
 
 
          <LinearLayout
@@ -1182,6 +1184,8 @@
                          android:id="@+id/btnSpin"
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
+                         android:clickable="true"
+                         android:focusable="true"
                          app:srcCompat="@drawable/btn_spin_purple" />
 
 
@@ -1194,8 +1198,6 @@
                          android:layout_alignBottom="@id/btnSpin"
                          android:layout_centerVertical="true"
                          android:layout_marginBottom="@dimen/_5sdp"
-                         android:clickable="true"
-                         android:focusable="true"
                          android:fontFamily="@font/air_millhouse_italic"
                          android:gravity="center"
                          android:text="Spin"

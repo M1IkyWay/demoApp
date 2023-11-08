@@ -78,6 +78,12 @@ class SlotGame2Activity : AppCompatActivity() {
         setContentView(binding.root)
 
         scoreViewModel = (application as MyApplication).scoreViewModel
+        fun getStartBet(score: Int): Int {
+            val currentBet = ((score / 100) * 5)
+            val roundedBet = kotlin.math.round(currentBet / 10.0) * 10
+            return roundedBet.toInt()
+        }
+        bet = getStartBet(scoreViewModel.getScore())
         val soundVolume = scoreViewModel.getSoundVolume()
         soundHelper = (application as MyApplication).soundHelper
         scoreViewModel.score.observe(this) { newScore ->

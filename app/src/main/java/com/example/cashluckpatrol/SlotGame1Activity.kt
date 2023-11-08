@@ -29,10 +29,23 @@ class SlotGame1Activity : AppCompatActivity() {
     var currentBet by Delegates.notNull<Int>()
     lateinit var soundHelper: SoundHelper
     var theEnd = 0
+    var winsCount by Delegates.notNull<Int>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySlotGame1Binding.inflate(layoutInflater)
         setContentView(binding.root)
+        winsCount = 0
+
+        if (savedInstanceState!=null) {
+            currentBet = savedInstanceState.getInt("currentBet")
+            winsCount = savedInstanceState.getInt("count")
+            theEnd = savedInstanceState.getInt("theEndOfMusic")
+
+
+            // и остальные
+        }
+
 
         fun getStartBet (score: Int) : Int {
             val currentBet = ((score/100)*5)
@@ -47,7 +60,7 @@ class SlotGame1Activity : AppCompatActivity() {
         successGame = false
 
 
-        var winsCount = 0
+
         val scope = CoroutineScope (Dispatchers.Main)
         val soundVolume = scoreViewModel.getSoundVolume()*0.7f
         musicService = MusicService(soundVolume*0.7f, R.raw.slot1, this)
@@ -191,6 +204,16 @@ class SlotGame1Activity : AppCompatActivity() {
         return slots
     }
 
+
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt("currentBet", currentBet)
+        outState.putInt("winsCount", winsCount)
+        outState.putInt("theEndOfMusic", theEnd)
+
+        super.onSaveInstanceState(outState)
+
+    }
 
     override fun onPause() {
         super.onPause()

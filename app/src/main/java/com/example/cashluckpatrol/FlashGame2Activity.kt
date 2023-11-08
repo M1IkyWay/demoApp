@@ -43,8 +43,13 @@ class FlashGame2Activity : AppCompatActivity() {
         binding = ActivityFlashGame2Binding.inflate(layoutInflater)
         setContentView(binding.root)
         spinButton = binding.btnSpin
-
         scoreViewModel = (application as MyApplication).scoreViewModel
+        fun getStartBet(score: Int): Int {
+            val currentBet = ((score / 100) * 5)
+            val roundedBet = kotlin.math.round(currentBet / 10.0) * 10
+            return roundedBet.toInt()
+        }
+        currentBet = getStartBet(scoreViewModel.getScore())
         val soundVolume = scoreViewModel.getSoundVolume()
         musicService = MusicService(soundVolume*0.7f, R.raw.flash_2, this)
         musicService.playMusic(0)
