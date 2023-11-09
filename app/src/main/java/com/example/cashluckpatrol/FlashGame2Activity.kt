@@ -1,6 +1,7 @@
 package com.example.cashluckpatrol
 
 import android.content.Context
+import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
@@ -34,7 +35,7 @@ class FlashGame2Activity : AppCompatActivity() {
     lateinit var decremBut : ImageView
     lateinit var binding: ActivityFlashGame2Binding
     var successGame by Delegates.notNull<Boolean>()
-    var currentBet = 200
+    var currentBet by Delegates.notNull<Int>()
     lateinit var soundHelper: SoundHelper
     var theEnd = 0
     var count = 0
@@ -44,12 +45,14 @@ class FlashGame2Activity : AppCompatActivity() {
         setContentView(binding.root)
         spinButton = binding.btnSpin
         scoreViewModel = (application as MyApplication).scoreViewModel
+
         fun getStartBet(score: Int): Int {
             val currentBet = ((score / 100) * 5)
             val roundedBet = kotlin.math.round(currentBet / 10.0) * 10
             return roundedBet.toInt()
         }
         currentBet = getStartBet(scoreViewModel.getScore())
+        binding.choosenBet.setText(currentBet.toString())
         val soundVolume = scoreViewModel.getSoundVolume()
         musicService = MusicService(soundVolume*0.7f, R.raw.flash_2, this)
         musicService.playMusic(0)
@@ -70,8 +73,8 @@ class FlashGame2Activity : AppCompatActivity() {
        decremBut.setOnClickListener {
             soundHelper.clickSound2(this, soundVolume)
             AnimationHelper.clickView ( it, this)
-            if (currentBet>50) {
-                currentBet-=50
+            if (currentBet>19) {
+                currentBet-=10
                 AnimationHelper.updateAnotherBetOrScore(currentBet, binding.choosenBet)
             }
             else {
@@ -85,7 +88,7 @@ class FlashGame2Activity : AppCompatActivity() {
             binding.choosenBet.setTextColor(resources.getColor(R.color.input_color))
             soundHelper.clickSound2(this, soundVolume)
             AnimationHelper.clickView ( it, this)
-            currentBet += 50
+            currentBet += 10
             AnimationHelper.updateAnotherBetOrScore(currentBet, binding.choosenBet)
 
 
@@ -143,7 +146,6 @@ class FlashGame2Activity : AppCompatActivity() {
                     soundHelper.explosionSound(context, soundVolume)
                     YoYo.with(Techniques.Shake).duration(500).playOn(view)
 
-
                     val defeat = scoreViewModel.getScore() - currentBet
                     scoreViewModel.updateScore(defeat)
                     delay(400)
@@ -152,6 +154,7 @@ class FlashGame2Activity : AppCompatActivity() {
                     openRestImages()
                     incremBut.isEnabled = true
                     decremBut.isEnabled = true
+                    requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
                 }
 
             } else {
@@ -171,6 +174,7 @@ class FlashGame2Activity : AppCompatActivity() {
                 count = 0
                 incremBut.isEnabled = true
                 decremBut.isEnabled = true
+                requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
             }
         }
@@ -197,16 +201,28 @@ class FlashGame2Activity : AppCompatActivity() {
             }
 
             spinButton.setOnClickListener {
+                binding.incremBet.isEnabled = false
+                binding.decremBet.isEnabled = false
+                requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LOCKED
+                it.isEnabled = false
                 binding.choosenBet.setTextColor(resources.getColor(R.color.input_color))
                 AnimationHelper.clickView ( it, this)
                 soundHelper.clickSound2(this, soundVolume)
-                binding.incremBet.isEnabled = false
-                binding.decremBet.isEnabled = false
-                it.isEnabled = false
+
                 spinViews()
                 it.isEnabled = true
+
             }
         }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt("currentBet", currentBet)
+        outState.putInt("count", count)
+        outState.putInt("theEndOfMusic", theEnd)
+
+        super.onSaveInstanceState(outState)
+    }
+
 
     override fun onPause() {
         super.onPause()

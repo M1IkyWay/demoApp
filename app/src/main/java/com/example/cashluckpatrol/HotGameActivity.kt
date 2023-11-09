@@ -62,7 +62,7 @@ class HotGameActivity : AppCompatActivity() {
         val scope = CoroutineScope (Dispatchers.Main)
         val soundVolume = scoreViewModel.getSoundVolume()
         musicService = MusicService(soundVolume*0.7f, R.raw.hot_game, this)
-        musicService.playMusic(0)
+        musicService.playMusic(theEnd)
 
        suspend fun updateWinsCount (isWin : Boolean) {
             if (isWin) {

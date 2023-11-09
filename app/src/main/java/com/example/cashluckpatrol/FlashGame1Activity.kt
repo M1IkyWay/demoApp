@@ -45,11 +45,12 @@ class FlashGame1Activity : AppCompatActivity() {
     var resultG = 1
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFlashGame1Binding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LOCKED
 
         if (savedInstanceState != null) {
             currentBet = savedInstanceState.getInt("currentBet")
@@ -82,7 +83,7 @@ class FlashGame1Activity : AppCompatActivity() {
         val scope = CoroutineScope(Dispatchers.Main)
         val soundVolume = scoreViewModel.getSoundVolume() * 0.7f
         musicService = MusicService(soundVolume * 0.7f, R.raw.flash_1, this)
-        musicService.playMusic(0)
+        musicService.playMusic(theEnd)
 
 
         val line1 =

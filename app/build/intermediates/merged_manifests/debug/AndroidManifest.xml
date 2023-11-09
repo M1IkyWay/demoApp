@@ -40,13 +40,15 @@
 
         <activity
             android:name="com.example.cashluckpatrol.SlotGame2Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.cashluckpatrol.SlotGame1Activity"
             android:exported="false" />
         <activity
             android:name="com.example.cashluckpatrol.SplashScreen"
-            android:exported="true" >
+            android:exported="true"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -61,25 +63,26 @@
             android:exported="false" />
         <activity
             android:name="com.example.cashluckpatrol.ComingSoonActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.cashluckpatrol.HotGameActivity"
             android:exported="false" />
         <activity
             android:name="com.example.cashluckpatrol.GamesMenuActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.cashluckpatrol.GamesMenuAnonActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.cashluckpatrol.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.cashluckpatrol.ChoosingModeActivity"
-            android:exported="false" />
-        <activity
             android:name="com.example.cashluckpatrol.AgreementActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.cashluckpatrol.PrivacyPolicy"
             android:exported="false"
@@ -87,7 +90,8 @@
             android:theme="@style/Theme.CashLuckPatrol.NoActionBar" />
         <activity
             android:name="com.example.cashluckpatrol.PlayActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

@@ -3,6 +3,7 @@ package com.example.cashluckpatrol
 import android.animation.AnimatorSet
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.pm.ActivityInfo
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -77,6 +78,16 @@ class SlotGame2Activity : AppCompatActivity() {
         binding = ActivitySlotGame2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LOCKED
+
+        if (savedInstanceState != null) {
+            bet = savedInstanceState.getInt("currentBet")
+            totalWin = savedInstanceState.getInt("count")
+            theEnd = savedInstanceState.getInt("theEndOfMusic")
+            // и остальные
+        }
+
+
         scoreViewModel = (application as MyApplication).scoreViewModel
         fun getStartBet(score: Int): Int {
             val currentBet = ((score / 100) * 5)
@@ -91,7 +102,7 @@ class SlotGame2Activity : AppCompatActivity() {
             AnimationHelper.updateScoreOrBetTextViewAnimation(binding.balance, newTextScore)
         }
         musicService = MusicService(soundVolume, R.raw.slot2back, this)
-        musicService.playMusic(0)
+        musicService.playMusic(theEnd)
         btnDown = binding.btnDown
         btnUp = binding.btnUp
         betText = binding.betNumber
@@ -227,6 +238,15 @@ class SlotGame2Activity : AppCompatActivity() {
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt("currentBet", bet)
+        outState.putInt("scoreWin", totalWin)
+        outState.putInt("theEndOfMusic", theEnd)
+
+        super.onSaveInstanceState(outState)
+
+    }
+
     override fun onPause() {
         super.onPause()
         theEnd = musicService.findTheEnd()
@@ -236,5 +256,10 @@ class SlotGame2Activity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         musicService.playMusic(theEnd)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        soundHelper.pause()
     }
 }

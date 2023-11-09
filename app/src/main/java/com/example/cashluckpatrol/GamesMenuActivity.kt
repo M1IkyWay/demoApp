@@ -29,6 +29,15 @@ class GamesMenuActivity : AppCompatActivity() {
             binding.currentBal.setText("$newscore")
         })
 
+
+        binding.settindsButton.setOnClickListener {
+            soundHelper.clickSound(this, soundVolume)
+            AnimationHelper.smallClickView(it, this)
+            val intent = Intent(this, SettingsActivity ::class.java)
+            startActivity(intent)
+        }
+
+
         binding.playHotButton.setOnClickListener {
             soundHelper.clickSound(this, soundVolume)
             AnimationHelper.smallClickView(it, this)

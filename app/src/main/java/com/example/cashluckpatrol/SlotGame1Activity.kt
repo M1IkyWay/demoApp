@@ -64,7 +64,7 @@ class SlotGame1Activity : AppCompatActivity() {
         val scope = CoroutineScope (Dispatchers.Main)
         val soundVolume = scoreViewModel.getSoundVolume()*0.7f
         musicService = MusicService(soundVolume*0.7f, R.raw.slot1, this)
-        musicService.playMusic(0)
+        musicService.playMusic(theEnd)
 
 
 

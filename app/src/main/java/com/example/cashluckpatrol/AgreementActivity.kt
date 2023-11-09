@@ -1,6 +1,7 @@
 package com.example.cashluckpatrol
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.cashluckpatrol.databinding.ActivityAgreementBinding
@@ -16,6 +17,7 @@ class AgreementActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAgreementBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         scoreViewModel = (application as MyApplication).scoreViewModel
         val soundVolume = scoreViewModel.getSoundVolume()

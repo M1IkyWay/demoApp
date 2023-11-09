@@ -29,13 +29,15 @@
 
         <activity
             android:name=".SlotGame2Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SlotGame1Activity"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -50,25 +52,26 @@
             android:exported="false" />
         <activity
             android:name=".ComingSoonActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".HotGameActivity"
             android:exported="false" />
         <activity
             android:name=".GamesMenuActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".GamesMenuAnonActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".ChoosingModeActivity"
-            android:exported="false" />
-        <activity
             android:name=".AgreementActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".PrivacyPolicy"
             android:exported="false"
@@ -76,6 +79,7 @@
             android:theme="@style/Theme.CashLuckPatrol.NoActionBar" />
         <activity
             android:name=".PlayActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
     </application>
 
