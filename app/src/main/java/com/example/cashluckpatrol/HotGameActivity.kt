@@ -31,6 +31,7 @@ class HotGameActivity : AppCompatActivity() {
     var successGame by Delegates.notNull<Boolean>()
     var currentBet by Delegates.notNull<Int>()
     var winsCount by Delegates.notNull<Int>()
+
     lateinit var soundHelper: SoundHelper
     var theEnd = 0
     override fun onCreate(savedInstanceState: Bundle?) {
