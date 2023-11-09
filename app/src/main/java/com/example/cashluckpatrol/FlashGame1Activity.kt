@@ -1,6 +1,7 @@
 package com.example.cashluckpatrol
 
 import android.content.Context
+import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
@@ -185,10 +186,10 @@ class FlashGame1Activity : AppCompatActivity() {
             AnimationHelper.updateAnotherBetOrScore(currentBet, binding.choosenBet)
         }
 
-fun randomizeList () : List<String> {
-    val usableList = listOfPoints.shuffled()
-    return usableList
-}
+        fun randomizeList(): List<String> {
+            val usableList = listOfPoints.shuffled()
+            return usableList
+        }
 
         suspend fun rotator(
             level: LevelFlash1,
@@ -204,7 +205,10 @@ fun randomizeList () : List<String> {
             delay(400)
             view.setImageDrawable(drawable)
             level.textList[num].isVisible = true
-            Log.d("aaaaaaaaaaaaa in openOtherLines", "in rotator text is ${level.textList[num].isVisible}")
+            Log.d(
+                "aaaaaaaaaaaaa in openOtherLines",
+                "in rotator text is ${level.textList[num].isVisible}"
+            )
             Log.d("aaaaaaaaaaaaaaaaaaaa", "textlist became visible")
         }
 
@@ -233,44 +237,47 @@ fun randomizeList () : List<String> {
 
             for (i in levelFlash1.currentLevel until listOfLevels.size) {
 
+                val list = randomizeList()
 
-               val list = randomizeList()
+                Log.d(
+                    "aaaaaaaaaaaaa",
+                    "this is list of strings in level ${list.forEach { it.toString() }}"
+                )
+                listOfLevels[i].imageList.forEach {
+                    scope.launch {
+                        it.isEnabled = false
+                        val num = it.tag.toString().toInt()
+                        val drawable: Drawable =
+                            AppCompatResources.getDrawable(context, R.drawable.butt_flash1)!!
+                        val textResult: String = list[num]
 
-
-                Log.d("aaaaaaaaaaaaa", "this is list of strings in level ${list.forEach {it.toString()}}")
-            listOfLevels[i].imageList.forEach {
-                scope.launch {
-                    it.isEnabled = false
-                    val num = it.tag.toString().toInt()
-                    val drawable: Drawable =
-                        AppCompatResources.getDrawable(context, R.drawable.butt_flash1)!!
-                    val textResult: String = list[num]
-
-                    listOfLevels[i].textList[num].text = textResult
-                    Log.d("aaaaaaaaaaaaaaaaaaaa", "textresult is $textResult")
-                    AnimationHelper.rotateBackward(it)
-                    delay(400)
-                    it.setImageDrawable(drawable)
-                    listOfLevels[i].textList[num].isVisible = true
+                        listOfLevels[i].textList[num].text = textResult
+                        Log.d("aaaaaaaaaaaaaaaaaaaa", "textresult is $textResult")
+                        AnimationHelper.rotateBackward(it)
+                        delay(400)
+                        it.setImageDrawable(drawable)
+                        listOfLevels[i].textList[num].isVisible = true
                         delay(300)
-                        Log.d("aaaaaaaaaaaaa in openOtherLines", "in scope text is ${listOfLevels[i].textList[num].isVisible}")
-                    listOfLevels.forEach {
-                        AnimationHelper.updateScoreOrBetTextViewAnimation(
-                            it.levelScore,
-                            "Win 0"
+                        Log.d(
+                            "aaaaaaaaaaaaa in openOtherLines",
+                            "in scope text is ${listOfLevels[i].textList[num].isVisible}"
                         )
+                        listOfLevels.forEach {
+                            AnimationHelper.updateScoreOrBetTextViewAnimation(
+                                it.levelScore,
+                                "Win 0"
+                            )
+                        }
+
                     }
-
-
-                    }
-
                 }
-        }
+            }
             binding.incremBet.isEnabled = true
             binding.decremBet.isEnabled = true
             spinBtn.isEnabled = true
 
-    }
+        }
+
         fun updateResult(resultL: String) {
             if (resultL.equals("+0")) {
                 resultG = 0
@@ -285,23 +292,14 @@ fun randomizeList () : List<String> {
         }
 
 
-
-
-
-
-
-
-
         suspend fun setResultAndCount(level: LevelFlash1) {
 
-            fun openNext(prevLevel: LevelFlash1, doingBusiness: (LevelFlash1) -> Unit){
+            fun openNext(prevLevel: LevelFlash1, doingBusiness: (LevelFlash1) -> Unit) {
                 Log.d("in open next now", "aaaaaaaaaaaa, opennexttttttttttttttttt")
                 val indexCurr = prevLevel.currentLevel
-                val currentLevel =listOfLevels[indexCurr]
+                val currentLevel = listOfLevels[indexCurr]
                 doingBusiness(currentLevel)
-
             }
-
 
             fun doBusiness(level: LevelFlash1) {
                 val listOfP = randomizeList()
@@ -336,17 +334,19 @@ fun randomizeList () : List<String> {
                                 YoYo.with(Techniques.Shake).duration(500).playOn(it)
 
                                 val defeat = scoreViewModel.getScore() - currentBet
-                                scoreViewModel.updateScore(defeat)
+
                                 delay(800)
                                 updateCount(0)
+                                scoreViewModel.updateScore(defeat)
                                 AnimationHelper.updateScoreOrBetTextViewAnimation(
                                     binding.winsCount,
                                     getCount().toString()
                                 )
                                 openOthersInLine(level, listOfPoints)
                                 openOtherLines(level)
+                                requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
                             }
-                            scoreViewModel.updateScore(scoreViewModel.getScore() - currentBet)
+//                            scoreViewModel.updateScore(scoreViewModel.getScore() - currentBet)
                             gameWin = 0
                             updateResult(textResult)
 
@@ -379,56 +379,35 @@ fun randomizeList () : List<String> {
                                     binding.winsCount,
                                     getCount().toString()
                                 )
+
+                                if (getCount() == 5) {
+                                    scoreViewModel.updateScore(scoreViewModel.getScore() + gameWin)
+                                    updateCount(0)
+                                    AnimationHelper.updateScoreOrBetTextViewAnimation(
+                                        binding.winsCount,
+                                        getCount().toString()
+                                    )
+                                    binding.incremBet.isEnabled = true
+                                    binding.decremBet.isEnabled = true
+                                    spinBtn.isEnabled = true
+                                    requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+                                    //sound and popup and vibration
+                                } else {
+
+                                    openNext(level, ::doBusiness)
+                                }
                             }
-
-                            openNext(level, ::doBusiness)
-
-                            if (getCount() == 5) {
-                                scoreViewModel.updateScore(scoreViewModel.getScore() + gameWin)
-                                updateCount(0)
-                                AnimationHelper.updateScoreOrBetTextViewAnimation(
-                                    binding.winsCount,
-                                    getCount().toString()
-                                )
-                                binding.incremBet.isEnabled = true
-                                binding.decremBet.isEnabled = true
-                                spinBtn.isEnabled = true
-                                //sound and popup and vibration
-                            }
-
                         }
-
                     }
-
                 }
-
-//            for (i in 0 until listOfLevels.size) {
-//                if (previousWin == true) {
-//                    previousWin = doBusiness(listOfLevels[i])
-//                    Log.d(
-//                        "in for now",
-//                        "it was $i nowaaaaaaaaaaaaaaaaaaaaaaaaaaaa, $previousWin}"
-//                    )
-//                }
-//                else {
-//                openOtherLines(listOfLevels[i])
-//                }
-//            }
-
-
-
             }
 
             doBusiness(level)
 
-
-
 //            binding.decremBet.isEnabled = true
 //            binding.incremBet.isEnabled = true
-//            binding.btnSpin.isEnabled = true
+
         }
-
-
 
 
 //        suspend fun controller() {
@@ -450,9 +429,6 @@ fun randomizeList () : List<String> {
 //            }
 
 
-
-
-
         fun spinViews(list: MutableList<ImageView>) {
             soundHelper.rotateSound(context, soundVolume)
             list.forEach {
@@ -461,6 +437,11 @@ fun randomizeList () : List<String> {
                     AnimationHelper.rotateForward(it)
                     delay(400)
                     it.setImageResource(R.drawable.quest_reversed)
+                    listOfLevels.forEach {
+                        it.textList.forEach {
+                            it.isVisible = false
+                        }
+                    }
                 }
                 level1.imageList.forEach {
                     it.isEnabled = true
@@ -469,33 +450,42 @@ fun randomizeList () : List<String> {
             }
         }
 
+        var isAllowedExecute = true
+
         spinBtn.setOnClickListener {
-            resultG = 0
-            updateCount(0)
-            binding.choosenBet.setTextColor(resources.getColor(R.color.white))
-            AnimationHelper.clickView(it, this)
-            soundHelper.clickSound2(this, soundVolume)
-            binding.incremBet.isEnabled = false
-            binding.decremBet.isEnabled = false
-            it.isEnabled = false
 
-            scope.launch {
-                listOfLevels.forEach {
+            if (isAllowedExecute) {
+                isAllowedExecute = false
 
 
-                    it.textList.forEach {
-                        it.isVisible = false
+
+                it.isEnabled = false
+                binding.incremBet.isEnabled = false
+                binding.decremBet.isEnabled = false
+                resultG = 0
+                updateCount(0)
+                binding.choosenBet.setTextColor(resources.getColor(R.color.white))
+                AnimationHelper.clickView(it, this)
+                soundHelper.clickSound2(this, soundVolume)
+
+                scope.launch {
+                    requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LOCKED
+                    listOfLevels.forEach {
+
+
+                        it.textList.forEach {
+                            it.isVisible = false
+                        }
+                        delay(50)
+                        it.textList.forEach {
+                            it.isVisible = false
+                        }
+                        spinViews(it.imageList)
+                        it.levelScore.text = "Win 0"
+
                     }
-                    delay(50)
-                    it.textList.forEach {
-                        it.isVisible = false
-                    }
-                    spinViews(it.imageList)
-                    it.levelScore.text = "Win 0"
 
-                }
-
-                setResultAndCount(level1)
+                    setResultAndCount(level1)
 
 //                scope.launch {
 //                    val pred = 1
@@ -549,16 +539,23 @@ fun randomizeList () : List<String> {
 //                        openOtherLines(level3, listOfPoints)
 //                        openOtherLines(level4, listOfPoints)
 //                        openOtherLines(level5, listOfPoints)
-//
-                    }
+                    Log.d("bbbbbbbbbbbbbbbbb", "the button spin finished it's work ")
+                    isAllowedExecute = true
+//            binding.decremBet.isEnabled = true
+
+
+                }
 //                    it.isEnabled = true
 //            binding.incremBet.isEnabled = true
-//            Log.d("bbbbbbbbbbbbbbbbb", "the button spin was opened ")
-//            binding.decremBet.isEnabled = true
-                }
+//
 
-//          }  controller()
+
             }
+
+
+
+        }
+    }
 
         override fun onPause() {
             super.onPause()
@@ -581,8 +578,8 @@ fun randomizeList () : List<String> {
             super.onResume()
             musicService.playMusic(theEnd)
             soundHelper.resume()
-        }
 
+}
         override fun onDestroy() {
             super.onDestroy()
             soundHelper.pause()

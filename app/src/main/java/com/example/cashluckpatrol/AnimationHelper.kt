@@ -139,8 +139,5 @@ object AnimationHelper {
 
     }
 
-    fun openButtonFlash1 (view: View,) {
-
-    }
 }
 
