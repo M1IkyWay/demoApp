@@ -273,7 +273,9 @@ class FlashGame1Activity : AppCompatActivity() {
                         it.isEnabled = true
                         val num = it.tag.toString().toInt()
                         val textResult: String = listOfP[num]
-                        it.setOnClickListener {
+
+                        fun inListener (it : View) : Boolean{
+
                             it.isEnabled = false
                             Log.d(
                                 "in setonclick listener",
@@ -312,12 +314,13 @@ class FlashGame1Activity : AppCompatActivity() {
                                 }
                                 updateResult(textResult)
 
+                                return false
+
                             } else {
                                 previousWin = true
-                            }
                             Log.d(
                                 "in result else",
-                                "it was norm nowaaaaaaaaaaaaaaaaaaaaaaaaaaaa, ${getResult()}"
+                                "it was norm nowaaaaaaaaaaaaaaaaaaaaaaaaaaaa, $previousWin"
                             )
 
                             updateResult(textResult)
@@ -342,20 +345,31 @@ class FlashGame1Activity : AppCompatActivity() {
                                     binding.winsCount,
                                     getCount().toString()
                                 )
-
-                                if (getCount() == 5) {
-                                    scoreViewModel.updateScore(scoreViewModel.getScore() + gameWin)
-                                    updateCount(0)
-                                    AnimationHelper.updateScoreOrBetTextViewAnimation(
-                                        binding.winsCount,
-                                        getCount().toString()
-                                    )
-                                    binding.incremBet.isEnabled = true
-                                    binding.decremBet.isEnabled = true
-                                    spinBtn.isEnabled = true
-                                    //sound and popup and vibration
-                                }
                             }
+                                return true
+
+
+                            }
+
+                        }
+
+                        it.setOnClickListener {
+                            inListener(it)
+                            if (getCount() == 5) {
+                                scoreViewModel.updateScore(scoreViewModel.getScore() + gameWin)
+                                updateCount(0)
+                                AnimationHelper.updateScoreOrBetTextViewAnimation(
+                                    binding.winsCount,
+                                    getCount().toString()
+                                )
+                                binding.incremBet.isEnabled = true
+                                binding.decremBet.isEnabled = true
+                                spinBtn.isEnabled = true
+                                //sound and popup and vibration
+                            }
+
+
+
                         }
                     }
 
@@ -364,7 +378,7 @@ class FlashGame1Activity : AppCompatActivity() {
 
             for (i in 0 until listOfLevels.size) {
                 if (previousWin == true) {
-                previousWin = doBusiness(listOfLevels[i])
+                    previousWin = doBusiness(listOfLevels[i])
                     Log.d(
                         "in for now",
                         "it was $i nowaaaaaaaaaaaaaaaaaaaaaaaaaaaa, $previousWin}"
