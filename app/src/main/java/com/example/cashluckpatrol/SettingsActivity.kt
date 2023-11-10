@@ -1,6 +1,7 @@
 package com.example.cashluckpatrol
 
 import android.content.Context
+import android.content.Intent
 import android.media.AudioManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -35,7 +36,7 @@ class SettingsActivity : AppCompatActivity() {
 
         val maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
 
-        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, maxVolume, 0)
+//        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, maxVolume, 0)
 
 
 
@@ -48,42 +49,55 @@ class SettingsActivity : AppCompatActivity() {
           val sLevel7 = SoundVibroViewClass(binding.grade7, 7, false)
           val sLevel8 = SoundVibroViewClass(binding.grade8, 8, false)
 
-        val listOfSoundLevels = listOf<SoundVibroViewClass>(sLevel1, sLevel2, sLevel3,
+            val listOfSoundLevels = listOf<SoundVibroViewClass>(sLevel1, sLevel2, sLevel3,
             sLevel4, sLevel5, sLevel6, sLevel7, sLevel8)
 
 
 
-
-        fun onVolumeClick () {
-           listOfSoundLevels.forEach {
-               it.square.setOnClickListener {
-                   val itsLevel = it.tag.toString().toInt()
-                   it as ImageView
-                   it.setImageResource(R.drawable.active_rect)
-                   val newSoundLevel = (maxVolume / 8 * itsLevel).toFloat()
-                   scoreViewModel.updateSoundVolume(newSoundLevel)
+            fun soundSettings () {
 
 
-                   if (listOfSoundLevels[itsLevel-1].wasClicked == false && itsLevel == 1) {
-                       it.setImageResource(R.drawable.non_active_rect)
-                       scoreViewModel.updateSoundVolume(0f)
-                       listOfSoundLevels[itsLevel-1].wasClicked = true
-                   }
+                listOfSoundLevels.forEach {
+                    it.square.setOnClickListener {
+                        val itsLevel = it.tag.toString().toInt()
+                        it as ImageView
+
+                        if (itsLevel == 1 && listOfSoundLevels[0].wasClicked == true) {
+                            listOfSoundLevels.forEach {
+                                it.square.setImageResource(R.drawable.non_active_rect)
+                            }
+                            scoreViewModel.updateSoundVolume(0f)
+                            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 0, 0)
+                        } else {
+                            it.setImageResource(R.drawable.active_rect)
+                            val newSoundLevel = (maxVolume / 8 * itsLevel).toFloat()
+                            scoreViewModel.updateSoundVolume(newSoundLevel)
+                            audioManager.setStreamVolume(
+                                AudioManager.STREAM_MUSIC,
+                                newSoundLevel.toInt(),
+                                0
+                            )
+                            for (i in 0 until itsLevel) {
+                                listOfSoundLevels[i].square.setImageResource(R.drawable.active_rect)
+                            }
+                            if (itsLevel<8) {
+                                for (i in itsLevel until 8) {
+                                    listOfSoundLevels[i].square.setImageResource(R.drawable.non_active_rect)
+                                }
+                            }
+
+                        }
+                        if (listOfSoundLevels[itsLevel - 1].wasClicked == true) {
+                            listOfSoundLevels[itsLevel - 1].wasClicked = false
+                        } else {
+                            listOfSoundLevels[itsLevel - 1].wasClicked = true
+                        }
+                    }
+                }
+            }
 
 
-
-
-
-
-
-               }
-
-
-           }
-
-        }
-
-
+        soundSettings()
 
 //        scoreViewModel.soundVolume.observe( this, { newLevel ->
 //            currentVolume = newLevel
@@ -146,23 +160,38 @@ class SettingsActivity : AppCompatActivity() {
         }
 
 
-        val maxAmplitude = 250
-
-        vibrationStrengthLevels.forEachIndexed {index, vibrationLevel ->
-            vibrationLevel.setOnClickListener {
-                val newVibrationLevel =  (index + 1) / 8 * maxAmplitude
-                vibrationLevel.setImageResource(R.drawable.active_rect)
-                for (i in 0  until index ) {
-                    vibrationStrengthLevels[i].setImageResource(R.drawable.active_rect)
-                }
-                for (i in index+1 until volumeLevels.size-1) {
-                    vibrationStrengthLevels[i].setImageResource(R.drawable.non_active_rect)
-                }
-                VibrationEffect.createOneShot(100L, newVibrationLevel)
-
-            }
-        }
+//        val maxAmplitude = 250
+//
+//        vibrationStrengthLevels.forEachIndexed {index, vibrationLevel ->
+//            vibrationLevel.setOnClickListener {
+//                val newVibrationLevel =  (index + 1) / 8 * maxAmplitude
+//                vibrationLevel.setImageResource(R.drawable.active_rect)
+//                for (i in 0  until index ) {
+//                    vibrationStrengthLevels[i].setImageResource(R.drawable.active_rect)
+//                }
+//                for (i in index+1 until volumeLevels.size-1) {
+//                    vibrationStrengthLevels[i].setImageResource(R.drawable.non_active_rect)
+//                }
+//                VibrationEffect.createOneShot(100L, newVibrationLevel)
+//
+//            }
+//        }
 
 //написати як повністю вимкнути вібро і звук при подвійному танисканні
+    }
+
+
+    override fun onPause() {
+        super.onPause()
+        val soundService = Intent (this, SoundService::class.java)
+        soundService.action = "pauseMusic"
+        startService(soundService)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val soundService = Intent (this, SoundService::class.java)
+        soundService.action = "resumeMusic"
+        startService(soundService)
     }
 }

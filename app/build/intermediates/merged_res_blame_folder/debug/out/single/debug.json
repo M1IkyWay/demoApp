@@ -212,12 +212,12 @@
         "source": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-main-36:/font/you20133.ttf"
     },
     {
-        "merged": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-merged_res-34:/raw_slot2_win.wav.flat",
-        "source": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-main-36:/raw/slot2_win.wav"
-    },
-    {
         "merged": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-merged_res-34:/raw_win.wav.flat",
         "source": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-main-36:/raw/win.wav"
+    },
+    {
+        "merged": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-merged_res-34:/raw_slot2_win.wav.flat",
+        "source": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-main-36:/raw/slot2_win.wav"
     },
     {
         "merged": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-merged_res-34:/layout-land_activity_flash_game1.xml.flat",
@@ -340,10 +340,6 @@
         "source": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-main-36:/drawable/slot2_anon.png"
     },
     {
-        "merged": "com.example.cashluckpatrol.app-merged_res-34:/layout_activity_games_menu.xml.flat",
-        "source": "com.example.cashluckpatrol.app-main-36:/layout/activity_games_menu.xml"
-    },
-    {
         "merged": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-merged_res-34:/xml_backup_rules.xml.flat",
         "source": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-main-36:/xml/backup_rules.xml"
     },
@@ -362,6 +358,10 @@
     {
         "merged": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-merged_res-34:/drawable_butt_flash1.png.flat",
         "source": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-main-36:/drawable/butt_flash1.png"
+    },
+    {
+        "merged": "com.example.cashluckpatrol.app-merged_res-34:/layout_activity_settings.xml.flat",
+        "source": "com.example.cashluckpatrol.app-main-36:/layout/activity_settings.xml"
     },
     {
         "merged": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-merged_res-34:/drawable_area_gold.png.flat",
@@ -488,8 +488,8 @@
         "source": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-main-36:/drawable/quest.png"
     },
     {
-        "merged": "com.example.cashluckpatrol.app-merged_res-34:/drawable_settings.png.flat",
-        "source": "com.example.cashluckpatrol.app-main-36:/drawable/settings.png"
+        "merged": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-merged_res-34:/drawable_settings.png.flat",
+        "source": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-main-36:/drawable/settings.png"
     },
     {
         "merged": "/home/milkyway/.gradle/daemon/7.6/com.example.cashluckpatrol.app-merged_res-34:/layout_activity_agreement.xml.flat",

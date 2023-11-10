@@ -4016,7 +4016,6 @@ int id rectangle5 0x7f0901da
 int id rectangles 0x7f0901db
 int id recyclerView 0x7f0901dc
 int id registerButton 0x7f0901dd
-int id removeAccountButton 0x7f0901de
 int id resetScoreText 0x7f0901df
 int id restart 0x7f0901e0
 int id resultBalance 0x7f0901e1

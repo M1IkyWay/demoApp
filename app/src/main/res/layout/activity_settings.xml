@@ -25,6 +25,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/air_millhouse_italic"
+        android:shadowColor="@color/shadow_color"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="5"
+        android:textColor="@color/white"
         android:text="@string/settings"
         android:textSize="@dimen/_60sdp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,21 +37,26 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.082" />
+        app:layout_constraintVertical_bias="0.05" />
+
 
     <TextView
         android:id="@+id/musicText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/air_millhouse_italic"
+        android:shadowColor="@color/shadow_color"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="5"
         android:text="@string/music"
+        android:textColor="@color/white"
         android:textSize="@dimen/_45sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.292" />
-
+        app:layout_constraintVertical_bias="0.306" />
 
     <LinearLayout
         android:id="@+id/soundSet"
@@ -108,7 +118,7 @@
             android:focusable="true"
             android:tag="4"
             android:scaleType="fitCenter"
-            android:src="@drawable/active_rect"
+            android:src="@drawable/non_active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
@@ -121,7 +131,7 @@
             android:focusable="true"
             android:tag="5"
             android:scaleType="fitCenter"
-            android:src="@drawable/active_rect"
+            android:src="@drawable/non_active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
@@ -134,7 +144,7 @@
             android:focusable="true"
             android:tag="6"
             android:scaleType="fitCenter"
-            android:src="@drawable/active_rect"
+            android:src="@drawable/non_active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
@@ -147,7 +157,7 @@
             android:tag="7"
             android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/active_rect"
+            android:src="@drawable/non_active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
@@ -160,7 +170,7 @@
             android:focusable="true"
             android:tag="8"
             android:scaleType="fitCenter"
-            android:src="@drawable/active_rect"
+            android:src="@drawable/non_active_rect"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
     </LinearLayout>
@@ -170,14 +180,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/air_millhouse_italic"
+        android:shadowColor="@color/shadow_color"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="5"
         android:text="@string/vibration"
+        android:textColor="@color/white"
         android:textSize="@dimen/_45sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.564" />
+        app:layout_constraintVertical_bias="0.603" />
 
     <LinearLayout
         android:id="@+id/vibroSet"
@@ -189,7 +204,7 @@
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.702">
+        app:layout_constraintVertical_bias="0.73">
 
         <ImageView
             android:id="@+id/vgrade1"
@@ -198,9 +213,9 @@
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
-            android:tag="1v"
             android:scaleType="fitCenter"
             android:src="@drawable/active_rect"
+            android:tag="1v"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
@@ -210,10 +225,10 @@
             android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
             android:clickable="true"
-            android:tag="2v"
             android:focusable="true"
             android:scaleType="fitCenter"
             android:src="@drawable/active_rect"
+            android:tag="2v"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
@@ -224,9 +239,9 @@
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
-            android:tag="3v"
             android:scaleType="fitCenter"
             android:src="@drawable/active_rect"
+            android:tag="3v"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
@@ -237,9 +252,9 @@
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
-            android:tag="4v"
             android:scaleType="fitCenter"
-            android:src="@drawable/active_rect"
+            android:src="@drawable/non_active_rect"
+            android:tag="4v"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
@@ -250,9 +265,9 @@
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
-            android:tag="5v"
             android:scaleType="fitCenter"
-            android:src="@drawable/active_rect"
+            android:src="@drawable/non_active_rect"
+            android:tag="5v"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
@@ -262,10 +277,10 @@
             android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
             android:clickable="true"
-            android:tag="6v"
             android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/active_rect"
+            android:src="@drawable/non_active_rect"
+            android:tag="6v"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
@@ -276,9 +291,9 @@
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
-            android:tag="7v"
             android:scaleType="fitCenter"
-            android:src="@drawable/active_rect"
+            android:src="@drawable/non_active_rect"
+            android:tag="7v"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
 
@@ -288,10 +303,10 @@
             android:layout_height="@dimen/_32sdp"
             android:layout_weight="1"
             android:clickable="true"
-            android:tag="8v"
             android:focusable="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/active_rect"
+            android:src="@drawable/non_active_rect"
+            android:tag="8v"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="280dp" />
     </LinearLayout>
@@ -301,26 +316,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/air_millhouse_italic"
+        android:shadowColor="@color/shadow_color"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="5"
         android:text="@string/reset_score"
+        android:textColor="@color/white"
         android:textSize="@dimen/_35sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.825" />
+        app:layout_constraintVertical_bias="0.873" />
 
-    <TextView
-        android:id="@+id/removeAccountButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/air_millhouse_italic"
-        android:text="@string/removeaccount"
-        android:textSize="@dimen/_35sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925" />
+    />
 
 
 

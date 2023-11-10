@@ -249,7 +249,6 @@ id rectangle3
 id rectangle4
 id rectangle5
 id registerButton
-id removeAccountButton
 id resetScoreText
 id resultBalance
 id roundArrow

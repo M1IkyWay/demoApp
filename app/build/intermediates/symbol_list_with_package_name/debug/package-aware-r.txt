@@ -4017,7 +4017,6 @@ id rectangle5
 id rectangles
 id recyclerView
 id registerButton
-id removeAccountButton
 id resetScoreText
 id restart
 id resultBalance

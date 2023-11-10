@@ -31,7 +31,7 @@
     <string name="music">Music</string>
     <string name="vibration">Vibration</string>
     <string name="removeaccount">RemoveAccount</string>
-    <string name="reset_score">Reset score</string>
+    <string name="reset_score">Reset score </string>
     <string name="accept_agr">Accept</string>
     <string name="no">No </string>
 </resources>
