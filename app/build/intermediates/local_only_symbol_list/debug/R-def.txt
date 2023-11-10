@@ -99,6 +99,7 @@ drawable q_lit
 drawable quest
 drawable quest_reversed
 drawable register_to_unlock
+drawable settings
 drawable slot1
 drawable slot2_anon
 drawable slot2_non_anon
@@ -264,6 +265,7 @@ id secondIn4T
 id secondIn5
 id secondIn5T
 id setingsText
+id settindsButton
 id slot1
 id slot2
 id slot2_non_anon

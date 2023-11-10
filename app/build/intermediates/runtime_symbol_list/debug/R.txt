@@ -3518,6 +3518,7 @@ int drawable q_lit 0x7f0701d3
 int drawable quest 0x7f0701d4
 int drawable quest_reversed 0x7f0701d5
 int drawable register_to_unlock 0x7f0701d6
+int drawable settings 0x7f0701e2
 int drawable slot1 0x7f0701d7
 int drawable slot2_anon 0x7f0701d8
 int drawable slot2_non_anon 0x7f0701d9
@@ -4064,6 +4065,7 @@ int id select_dialog_listview 0x7f09020b
 int id selected 0x7f09020c
 int id selection_type 0x7f09020d
 int id setingsText 0x7f09020e
+int id settindsButton 0x7f0902b8
 int id sharedValueSet 0x7f09020f
 int id sharedValueUnset 0x7f090210
 int id shortcut 0x7f090211
