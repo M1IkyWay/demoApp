@@ -8,44 +8,119 @@ import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.os.VibratorManager
+import android.view.View
+import android.widget.ImageView
+import androidx.core.content.getSystemService
 import com.example.cashluckpatrol.databinding.ActivitySettingsBinding
+import kotlin.properties.Delegates
 
 class SettingsActivity : AppCompatActivity() {
 
+
+    lateinit var scoreViewModel : ScoreViewModel
     lateinit var binding : ActivitySettingsBinding
+    lateinit var soundHelper: SoundHelper
+    var currentVolume by Delegates.notNull<Int>()
+    private lateinit var audioManager: AudioManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        soundHelper = (application as MyApplication).soundHelper
+        scoreViewModel = (application as MyApplication).scoreViewModel
 
-        val audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
+
+        audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
         val maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
-        val currentVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)
 
-     val volumeLevels = listOf(
-         binding.grade1,
-         binding.grade2,
-         binding.grade3,
-         binding.grade4,
-         binding.grade5,
-         binding.grade6,
-         binding.grade7,
-         binding.grade8,
-     )
-        volumeLevels.forEachIndexed { index, volumeLevel ->
-           volumeLevel.setOnClickListener {
-               val newVolume = (index + 1) * (maxVolume/volumeLevels.size)
-               volumeLevel.setImageResource(R.drawable.active_rect)
-               for (i in 0  until index ) {
-                   volumeLevels[i].setImageResource(R.drawable.active_rect)
+        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, maxVolume, 0)
+
+
+
+          val sLevel1 = SoundVibroViewClass(binding.grade1, 1, false)
+          val sLevel2 = SoundVibroViewClass(binding.grade2, 2, false)
+          val sLevel3 = SoundVibroViewClass(binding.grade3, 3, false)
+          val sLevel4 = SoundVibroViewClass(binding.grade4, 4, false)
+          val sLevel5 = SoundVibroViewClass(binding.grade5, 5, false)
+          val sLevel6 = SoundVibroViewClass(binding.grade6, 6, false)
+          val sLevel7 = SoundVibroViewClass(binding.grade7, 7, false)
+          val sLevel8 = SoundVibroViewClass(binding.grade8, 8, false)
+
+        val listOfSoundLevels = listOf<SoundVibroViewClass>(sLevel1, sLevel2, sLevel3,
+            sLevel4, sLevel5, sLevel6, sLevel7, sLevel8)
+
+
+
+
+        fun onVolumeClick () {
+           listOfSoundLevels.forEach {
+               it.square.setOnClickListener {
+                   val itsLevel = it.tag.toString().toInt()
+                   it as ImageView
+                   it.setImageResource(R.drawable.active_rect)
+                   val newSoundLevel = (maxVolume / 8 * itsLevel).toFloat()
+                   scoreViewModel.updateSoundVolume(newSoundLevel)
+
+
+                   if (listOfSoundLevels[itsLevel-1].wasClicked == false && itsLevel == 1) {
+                       it.setImageResource(R.drawable.non_active_rect)
+                       scoreViewModel.updateSoundVolume(0f)
+                       listOfSoundLevels[itsLevel-1].wasClicked = true
+                   }
+
+
+
+
+
+
+
+               }
+
+
            }
-                for (i in index+1 until volumeLevels.size-1) {
-                    volumeLevels[i].setImageResource(R.drawable.non_active_rect)
-                }
-               audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, newVolume, 0)
-           }
+
         }
+
+
+
+//        scoreViewModel.soundVolume.observe( this, { newLevel ->
+//            currentVolume = newLevel
+//        })
+//
+//
+//
+//        val soundVolume = scoreViewModel.getSoundVolume()
+//        audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
+//
+//        val maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
+//        val currentVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)
+//
+
+//
+//
+//        volumeLevels.forEachIndexed { index, volumeLevel ->
+//           volumeLevel.setOnClickListener {
+//               val newVolume = (index + 1) * (maxVolume/volumeLevels.size)
+//               volumeLevel.setImageResource(R.drawable.active_rect)
+//               for (i in 0  until index ) {
+//                   volumeLevels[i].setImageResource(R.drawable.active_rect)
+//           }
+//                for (i in index+1 until volumeLevels.size) {
+//                    volumeLevels[i].setImageResource(R.drawable.non_active_rect)
+//                }
+//               audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, newVolume, 0)
+//           }
+//        }
+//
+//
+//
+
+
+
+
+
 //set default value
 
         val vibrationStrengthLevels = listOf(
