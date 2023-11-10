@@ -8,7 +8,7 @@ class ScoreViewModel : ViewModel() {
 
    var score : MutableLiveData<Int> = MutableLiveData()
 
-   var vibroIntensity : MutableLiveData<Float> = MutableLiveData()
+   var vibroIntensity : MutableLiveData<Int> = MutableLiveData()
 
    var soundVolume : MutableLiveData<Float> = MutableLiveData()
 
@@ -16,7 +16,7 @@ class ScoreViewModel : ViewModel() {
 
     init {
         score = MutableLiveData(2000)
-        vibroIntensity = MutableLiveData(1.0f)
+        vibroIntensity = MutableLiveData(255)
         soundVolume = MutableLiveData(1.0f)
         isPrivacyPolicyAccepted = MutableLiveData(false)
     }
@@ -43,13 +43,13 @@ class ScoreViewModel : ViewModel() {
         }
 
 
-    fun getVibroIntensity () : Float {
-    val value : Float? = vibroIntensity.value
+    fun getVibroIntensity () : Int {
+    val value : Int? = vibroIntensity.value
     if (value!=null) return value
-    else return 0f
+    else return 0
     }
 
-    fun updateVibroIntensity (newIntensity : Float) {
+    fun updateVibroIntensity (newIntensity : Int) {
         vibroIntensity.value = newIntensity
     }
 

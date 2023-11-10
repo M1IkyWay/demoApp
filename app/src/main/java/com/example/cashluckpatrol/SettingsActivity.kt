@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.os.VibratorManager
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.core.content.getSystemService
@@ -23,6 +24,9 @@ class SettingsActivity : AppCompatActivity() {
     lateinit var soundHelper: SoundHelper
     var currentVolume by Delegates.notNull<Int>()
     private lateinit var audioManager: AudioManager
+    private lateinit var vibrator : Vibrator
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -136,21 +140,20 @@ class SettingsActivity : AppCompatActivity() {
 
 
 //set default value
-
-        val vibrationStrengthLevels = listOf(
-            binding.vgrade1,
-            binding.vgrade2,
-            binding.vgrade3,
-            binding.vgrade4,
-            binding.vgrade5,
-            binding.vgrade6,
-            binding.vgrade7,
-            binding.vgrade8,
-
-        )
+        val vLevel1 = SoundVibroViewClass(binding.vgrade1, 1, false)
+        val vLevel2 = SoundVibroViewClass(binding.vgrade2, 2, false)
+        val vLevel3 = SoundVibroViewClass(binding.vgrade3, 3, false)
+        val vLevel4 = SoundVibroViewClass(binding.vgrade4, 4, false)
+        val vLevel5 = SoundVibroViewClass(binding.vgrade5, 5, false)
+        val vLevel6 = SoundVibroViewClass(binding.vgrade6, 6, false)
+        val vLevel7 = SoundVibroViewClass(binding.vgrade7, 7, false)
+        val vLevel8 = SoundVibroViewClass(binding.vgrade8, 8, false)
 
 
-        val vib = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+        val listOfVibroLevels = listOf(vLevel1, vLevel2, vLevel3, vLevel4, vLevel5, vLevel6, vLevel7, vLevel8)
+
+
+        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val vibratorManager =
                 getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
             vibratorManager.defaultVibrator
@@ -158,6 +161,91 @@ class SettingsActivity : AppCompatActivity() {
             @Suppress("DEPRECATION")
             getSystemService(VIBRATOR_SERVICE) as Vibrator
         }
+
+        fun vibroSettings () {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+
+                listOfVibroLevels.forEach {
+                    it.square.setOnClickListener {
+                        val str = it.tag.toString()
+                        val itsLevel = str.removeSuffix("v").toInt()
+                        it as ImageView
+
+                        if (itsLevel == 1 && listOfVibroLevels[0].wasClicked == true) {
+                            listOfVibroLevels.forEach {
+                                it.square.setImageResource(R.drawable.non_active_rect)
+                            }
+                            scoreViewModel.updateVibroIntensity(0)
+
+                        } else {
+                            it.setImageResource(R.drawable.active_rect)
+                            val newVibroLevel = (255 / 8 * itsLevel).toInt()
+                            scoreViewModel.updateVibroIntensity(newVibroLevel)
+                            val oneShot = VibrationEffect.createOneShot(200, newVibroLevel)
+                            vibrator.vibrate(oneShot)
+                            Log.d("iiiiiiiiiiiiiiiiiiiiiiii", "Its level is $newVibroLevel")
+
+                            for (i in 0 until itsLevel) {
+                                listOfVibroLevels[i].square.setImageResource(R.drawable.active_rect)
+                            }
+                            if (itsLevel<8) {
+                                for (i in itsLevel until 8) {
+                                    listOfVibroLevels[i].square.setImageResource(R.drawable.non_active_rect)
+                                }
+                            }
+
+                        }
+                        if (listOfVibroLevels[itsLevel - 1].wasClicked == true) {
+                            listOfVibroLevels[itsLevel - 1].wasClicked = false
+                        } else {
+                            listOfVibroLevels[itsLevel - 1].wasClicked = true
+                        }
+                    }
+            }
+            }
+            else {
+                listOfVibroLevels.forEach {
+                    it.square.setOnClickListener {
+                        val str = it.tag.toString()
+                        val itsLevel = str.removeSuffix("v").toInt()
+                        it as ImageView
+
+                        if (itsLevel == 1 && listOfVibroLevels[0].wasClicked == true) {
+                            listOfVibroLevels.forEach {
+                                it.square.setImageResource(R.drawable.non_active_rect)
+                            }
+                            scoreViewModel.updateVibroIntensity(0)
+
+                        } else {
+                            it.setImageResource(R.drawable.active_rect)
+                            val newVibroLevel = (255 / 8 * itsLevel).toInt()
+                            scoreViewModel.updateVibroIntensity(newVibroLevel)
+                            val oneShot = VibrationEffect.createOneShot(200, newVibroLevel)
+                            @Suppress("DEPRECATION")
+                            vibrator.vibrate(200)
+
+                            for (i in 0 until itsLevel) {
+                                listOfVibroLevels[i].square.setImageResource(R.drawable.active_rect)
+                            }
+                            if (itsLevel<8) {
+                                for (i in itsLevel until 8) {
+                                    listOfVibroLevels[i].square.setImageResource(R.drawable.non_active_rect)
+                                }
+                            }
+
+                        }
+                        if (listOfVibroLevels[itsLevel - 1].wasClicked == true) {
+                            listOfVibroLevels[itsLevel - 1].wasClicked = false
+                        } else {
+                            listOfVibroLevels[itsLevel - 1].wasClicked = true
+                        }
+                    }
+                }
+            }
+        }
+
+
+
 
 
 //        val maxAmplitude = 250
@@ -177,7 +265,10 @@ class SettingsActivity : AppCompatActivity() {
 //            }
 //        }
 
-//написати як повністю вимкнути вібро і звук при подвійному танисканні
+        vibroSettings()
+        
+
+
     }
 
 
