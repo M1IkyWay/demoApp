@@ -82,6 +82,7 @@ class FlashGame1Activity : AppCompatActivity() {
 
         val scope = CoroutineScope(Dispatchers.Main)
         val soundVolume = scoreViewModel.getSoundVolume() * 0.7f
+        val intensity = scoreViewModel.getVibroIntensity()
         musicService = MusicService(soundVolume * 0.7f, R.raw.flash_1, this)
         musicService.playMusic(theEnd)
 
@@ -166,6 +167,7 @@ class FlashGame1Activity : AppCompatActivity() {
 //        }
 
         binding.decremBet.setOnClickListener {
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound2(this, soundVolume)
             AnimationHelper.clickView(it, this)
             if (currentBet > 19) {
@@ -180,6 +182,7 @@ class FlashGame1Activity : AppCompatActivity() {
         }
 
         binding.incremBet.setOnClickListener {
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound2(this, soundVolume)
             AnimationHelper.clickView(it, this)
             binding.choosenBet.setTextColor(Color.WHITE)
@@ -332,6 +335,7 @@ class FlashGame1Activity : AppCompatActivity() {
                                 rotator(level, it, textResult, num, drawable)
                                 delay(400)
                                 soundHelper.defeatFlash1(context, soundVolume)
+                                soundHelper.vibroExplosion(intensity)
                                 YoYo.with(Techniques.Shake).duration(500).playOn(it)
 
                                 val defeat = scoreViewModel.getScore() - currentBet
@@ -361,6 +365,7 @@ class FlashGame1Activity : AppCompatActivity() {
                             updateResult(textResult)
                             scope.launch {
                                 rotator(level, it, textResult, num, drawable)
+                                soundHelper.vibroClick(intensity)
                                 //findCorrectSound
                                 delay(400)
                                 it as ImageView
@@ -467,6 +472,7 @@ class FlashGame1Activity : AppCompatActivity() {
                 updateCount(0)
                 binding.choosenBet.setTextColor(resources.getColor(R.color.white))
                 AnimationHelper.clickView(it, this)
+                soundHelper.vibroClick(intensity)
                 soundHelper.clickSound2(this, soundVolume)
 
                 scope.launch {

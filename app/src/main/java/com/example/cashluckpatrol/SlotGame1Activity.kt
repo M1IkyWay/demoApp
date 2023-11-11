@@ -62,6 +62,7 @@ class SlotGame1Activity : AppCompatActivity() {
 
 
         val scope = CoroutineScope (Dispatchers.Main)
+        val intensity = scoreViewModel.getVibroIntensity()
         val soundVolume = scoreViewModel.getSoundVolume()*0.7f
         musicService = MusicService(soundVolume*0.7f, R.raw.slot1, this)
         musicService.playMusic(theEnd)
@@ -71,18 +72,20 @@ class SlotGame1Activity : AppCompatActivity() {
         suspend fun updateWinsCount (isWin : Boolean) {
             if (isWin) {
                 winsCount+=1
+
                 binding.winsCount.setText("${winsCount}")
                 val toast = Toast.makeText (this, "You win!", Toast.LENGTH_SHORT)
+                soundHelper.winShot(intensity)
 
                 toast.show()
                 //add music and vibro
 
             }
             else {
-                binding.confetti.isVisible = true
+                soundHelper.loseSound(this, soundVolume)
+                soundHelper.defeatShot(intensity)
                 val toast = Toast.makeText (this, "You lose!", Toast.LENGTH_SHORT)
                 toast.show()
-                binding.confetti.isVisible = false
 //add music and vibro
             }
 
@@ -92,6 +95,7 @@ class SlotGame1Activity : AppCompatActivity() {
         })
 
         binding.decremBet.setOnClickListener {
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound2(this, soundVolume)
             AnimationHelper.clickView ( it, this)
             if (currentBet>19) {
@@ -106,6 +110,7 @@ class SlotGame1Activity : AppCompatActivity() {
         }
 
         binding.incremBet.setOnClickListener {
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound2(this, soundVolume)
             AnimationHelper.clickView ( it, this)
             binding.choosenBet.setTextColor(Color.WHITE)
@@ -118,6 +123,7 @@ class SlotGame1Activity : AppCompatActivity() {
 
         spinButton.setOnClickListener {
             binding.choosenBet.setTextColor(Color.WHITE)
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound2(this, soundVolume)
             it.isEnabled = false
 
@@ -125,6 +131,7 @@ class SlotGame1Activity : AppCompatActivity() {
                 binding.resultBalance.setTextColor(resources.getColor(R.color.input_color))
                 AnimationHelper.smallClickView(it, this)
                 soundHelper.slotMachineSound(this, soundVolume)
+                soundHelper.spinShot(intensity)
                 scope.launch {
                     slots.start()
                     delay(5500)
@@ -134,6 +141,7 @@ class SlotGame1Activity : AppCompatActivity() {
             }
             else {
                 AnimationHelper.wrongInputAnimation(binding.resultBalance)
+                soundHelper.vibroWarning(intensity)
                 soundHelper.wrongInputSound(this, soundVolume)
                 val toast = Toast.makeText(this, "You don`t have enough money!", Toast.LENGTH_SHORT)
                 toast.show()

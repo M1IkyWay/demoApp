@@ -21,12 +21,15 @@ class AgreementActivity : AppCompatActivity() {
 
         scoreViewModel = (application as MyApplication).scoreViewModel
         val soundVolume = scoreViewModel.getSoundVolume()
+        val intensity = scoreViewModel.getVibroIntensity()
+
 
         soundHelper = (application as MyApplication).soundHelper
 
 
         binding.privPolButton.setOnClickListener {
             AnimationHelper.clickView(it, this)
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound(this, soundVolume)
             startActivity(Intent(this, PrivacyPolicy::class.java))
 
@@ -35,6 +38,7 @@ class AgreementActivity : AppCompatActivity() {
 
         binding.yesButton.setOnClickListener {
             AnimationHelper.smallClickView(it, this)
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound(this, soundVolume)
             startActivity(Intent(this, GamesMenuActivity::class.java))
 
@@ -42,6 +46,7 @@ class AgreementActivity : AppCompatActivity() {
 
         binding.noButton.setOnClickListener {
             AnimationHelper.smallClickView(it, this)
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound(this, soundVolume)
             startActivity(Intent(this, PlayActivity::class.java))
 

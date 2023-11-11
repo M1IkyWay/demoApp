@@ -23,6 +23,7 @@ class GamesMenuActivity : AppCompatActivity() {
         soundHelper = (application as MyApplication).soundHelper
         scoreViewModel = (application as MyApplication).scoreViewModel
         val soundVolume = scoreViewModel.getSoundVolume()
+        val intensity = scoreViewModel.getVibroIntensity()
 
 
         scoreViewModel.score.observe( this, { newscore ->
@@ -31,6 +32,7 @@ class GamesMenuActivity : AppCompatActivity() {
 
 
         binding.settindsButton.setOnClickListener {
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound(this, soundVolume)
             AnimationHelper.smallClickView(it, this)
             val intent = Intent(this, SettingsActivity ::class.java)
@@ -39,6 +41,7 @@ class GamesMenuActivity : AppCompatActivity() {
 
 
         binding.playHotButton.setOnClickListener {
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound(this, soundVolume)
             AnimationHelper.smallClickView(it, this)
             val intent = Intent(this, HotGameActivity ::class.java)
@@ -46,6 +49,7 @@ class GamesMenuActivity : AppCompatActivity() {
         }
 
         binding.playButtonSlot1.setOnClickListener {
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound(this, soundVolume)
             AnimationHelper.smallClickView(it, this)
             val intent = Intent(this, SlotGame1Activity::class.java)
@@ -53,6 +57,7 @@ class GamesMenuActivity : AppCompatActivity() {
         }
 
         binding.playButtonSlot2.setOnClickListener {
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound(this, soundVolume)
             AnimationHelper.smallClickView(it, this)
             val intent = Intent(this, SlotGame2Activity::class.java)
@@ -60,6 +65,7 @@ class GamesMenuActivity : AppCompatActivity() {
         }
 
         binding.playButtonFlash1.setOnClickListener {
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound(this, soundVolume)
             AnimationHelper.smallClickView(it, this)
             val intent = Intent(this, FlashGame1Activity::class.java)
@@ -67,6 +73,7 @@ class GamesMenuActivity : AppCompatActivity() {
         }
 
         binding.playButtonFlash2.setOnClickListener {
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound(this, soundVolume)
             AnimationHelper.smallClickView(it, this)
             val intent = Intent(this, FlashGame2Activity::class.java)
@@ -75,6 +82,7 @@ class GamesMenuActivity : AppCompatActivity() {
         }
 
         binding.slot3.setOnClickListener {
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound(this, soundVolume)
             AnimationHelper.smallClickView(it, this)
             startActivity(Intent(this, ComingSoonActivity::class.java))
@@ -82,6 +90,7 @@ class GamesMenuActivity : AppCompatActivity() {
         }
 
         binding.flash3.setOnClickListener {
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound(this, soundVolume)
             AnimationHelper.smallClickView(it, this)
             startActivity(Intent(this, ComingSoonActivity::class.java))

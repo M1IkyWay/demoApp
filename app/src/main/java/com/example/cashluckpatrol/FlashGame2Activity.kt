@@ -59,6 +59,7 @@ class FlashGame2Activity : AppCompatActivity() {
         spinButton.isEnabled = true
         val scope = CoroutineScope(Dispatchers.Main)
         soundHelper = (application as MyApplication).soundHelper
+        val intensity = scoreViewModel.getVibroIntensity()
 
         val context : Context = this
         incremBut = binding.incremBet
@@ -71,6 +72,7 @@ class FlashGame2Activity : AppCompatActivity() {
         }
 
        decremBut.setOnClickListener {
+           soundHelper.vibroClick(intensity)
             soundHelper.clickSound2(this, soundVolume)
             AnimationHelper.clickView ( it, this)
             if (currentBet>19) {
@@ -86,6 +88,7 @@ class FlashGame2Activity : AppCompatActivity() {
 
        incremBut.setOnClickListener {
             binding.choosenBet.setTextColor(resources.getColor(R.color.input_color))
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound2(this, soundVolume)
             AnimationHelper.clickView ( it, this)
             currentBet += 10
@@ -181,6 +184,7 @@ class FlashGame2Activity : AppCompatActivity() {
 
         listOfButtons.forEach {
             it.setOnClickListener {
+                soundHelper.vibroClick(intensity)
                 it.isEnabled = false
                 setImageForView(it)
             }
@@ -201,6 +205,7 @@ class FlashGame2Activity : AppCompatActivity() {
             }
 
             spinButton.setOnClickListener {
+                soundHelper.vibroClick(intensity)
                 binding.incremBet.isEnabled = false
                 binding.decremBet.isEnabled = false
                 requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LOCKED

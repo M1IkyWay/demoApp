@@ -31,6 +31,7 @@ class HotGameActivity : AppCompatActivity() {
     var successGame by Delegates.notNull<Boolean>()
     var currentBet by Delegates.notNull<Int>()
     var winsCount by Delegates.notNull<Int>()
+    var intensity : Int = 0
 
     lateinit var soundHelper: SoundHelper
     var theEnd = 0
@@ -61,6 +62,7 @@ class HotGameActivity : AppCompatActivity() {
 
         val scope = CoroutineScope (Dispatchers.Main)
         val soundVolume = scoreViewModel.getSoundVolume()
+        intensity = scoreViewModel.getVibroIntensity()
         musicService = MusicService(soundVolume*0.7f, R.raw.hot_game, this)
         musicService.playMusic(theEnd)
 
@@ -70,12 +72,13 @@ class HotGameActivity : AppCompatActivity() {
                 binding.winsCount.setText("${winsCount}")
                 val toast = Toast.makeText (this, "You win!", Toast.LENGTH_SHORT)
                 soundHelper.winSound(this, soundVolume)
+                soundHelper.winShot(intensity)
                 toast.show()
- //add music and vibro
             }
             else {
                 val toast = Toast.makeText (this, "You lose!", Toast.LENGTH_SHORT)
                 soundHelper.loseSound(this, soundVolume)
+                soundHelper.defeatShot(intensity)
                 toast.show()
 //add music and vibro
             }
@@ -97,6 +100,7 @@ class HotGameActivity : AppCompatActivity() {
                 val bet = it.tag.toString()
                 currentBet = bet.toInt()
                 soundHelper.clickSound2(this, soundVolume)
+                soundHelper.vibroClick(intensity)
             AnimationHelper.updateScoreOrBetTextViewAnimation(binding.choosenBet, bet)
             AnimationHelper.pressingAnimation(it, null)
             AnimationHelper.buttonIsPressed(it, lastPressedBet)
@@ -109,6 +113,7 @@ class HotGameActivity : AppCompatActivity() {
         spinButton.setOnClickListener {
             it.isEnabled = false
             soundHelper.clickSound2(this, soundVolume)
+            soundHelper.spinShot(intensity)
             AnimationHelper.clickView ( it, this)
             if (scoreViewModel.getScore()>=currentBet) {
                 soundHelper.slotMachineSound(this, soundVolume)
@@ -122,7 +127,8 @@ class HotGameActivity : AppCompatActivity() {
             else {
                 val toast = Toast.makeText(this, "You don`t have enough money!", Toast.LENGTH_SHORT)
                 toast.show()
-                //add some vibro here
+                soundHelper.vibroWarning(intensity)
+                //add some sound
                 it.isEnabled = true
             }
 

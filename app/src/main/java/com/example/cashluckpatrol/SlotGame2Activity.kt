@@ -97,6 +97,7 @@ class SlotGame2Activity : AppCompatActivity() {
         bet = getStartBet(scoreViewModel.getScore())
         val soundVolume = scoreViewModel.getSoundVolume()
         soundHelper = (application as MyApplication).soundHelper
+        val intensity = scoreViewModel.getVibroIntensity()
         scoreViewModel.score.observe(this) { newScore ->
             val newTextScore = newScore.toString()
             AnimationHelper.updateScoreOrBetTextViewAnimation(binding.balance, newTextScore)
@@ -111,6 +112,7 @@ class SlotGame2Activity : AppCompatActivity() {
 
 //warning was supressed
         btnUp.setOnTouchListener { view, event ->
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
             AnimationHelper.clickView(view, this)
             if (event.action == MotionEvent.ACTION_DOWN) {
@@ -122,6 +124,7 @@ class SlotGame2Activity : AppCompatActivity() {
         }
 
         btnDown.setOnTouchListener { view, event ->
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
             AnimationHelper.clickView(view, this)
             if (event.action == MotionEvent.ACTION_DOWN) {
@@ -167,6 +170,7 @@ class SlotGame2Activity : AppCompatActivity() {
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     true)
                 soundHelper.slot2winSound(this, soundVolume)
+                soundHelper.vibroPopup(intensity)
                 popupWindow.contentView.startAnimation(slideUpAnimation)
                 popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0)
                 handler.postDelayed({
@@ -205,6 +209,7 @@ class SlotGame2Activity : AppCompatActivity() {
         val rotateABit = AnimationUtils.loadAnimation(this, R.anim.rotate_a_bit)
 
         binding.btnRotate.setOnClickListener {
+            soundHelper.vibroClick(intensity)
             soundHelper.clickSound(this, scoreViewModel.getSoundVolume())
             it.isEnabled = false
             AnimationHelper.clickView(it, this)
@@ -212,6 +217,7 @@ class SlotGame2Activity : AppCompatActivity() {
             if (bet == 0) {
                 val toast = Toast.makeText(this, "Set the bet, please!", Toast.LENGTH_SHORT)
                 toast.show()
+                soundHelper.vibroWarning(intensity)
                 AnimationHelper.wrongInputAnimation(binding.betNumber)
                 it.isEnabled = true
 
@@ -219,6 +225,7 @@ class SlotGame2Activity : AppCompatActivity() {
                 binding.roundArrow.startAnimation(rotate)
                 binding.arrow.startAnimation(rotateABit)
                 soundHelper.wheelSpinSound(this, soundVolume)
+                soundHelper.spinShot(intensity)
                 scope.launch {
                     val multiplier = spinCircle()
                     delay(5500)
