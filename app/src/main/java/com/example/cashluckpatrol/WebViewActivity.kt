@@ -2,6 +2,7 @@ package com.example.cashluckpatrol
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -33,23 +34,6 @@ class WebViewActivity : AppCompatActivity() {
         val url = LINK // ccылка может храниться в любом месте
         val webView: WebView = findViewById(R.id.webView)
 
-        webView.setOnScrollChangeListener {
-                _, _, scrollY, _, _ ->
-            val totalHeight = webView.height
-            val contentHeight = webView.contentHeight * webView.scaleY
-            val percentScrolled = (scrollY.toFloat() / (contentHeight - totalHeight)) * 100
-
-            val threshold = 90
-            if (percentScrolled >=threshold) {
-
-                acceptButton.visibility = View.VISIBLE
-                binding.text.visibility = View.VISIBLE
-            }
-            else {
-                acceptButton.visibility = View.GONE
-                binding.text.visibility = View.GONE
-            }
-        }
 
 
         webView.settings.javaScriptEnabled = true
@@ -68,6 +52,46 @@ class WebViewActivity : AppCompatActivity() {
         }
 
         webView.loadUrl(url)
+
+//        webView.setOnScrollChangeListener {
+//                _, _, scrollY, _, _ ->
+//            val totalHeight = webView.height
+//            val contentHeight = webView.contentHeight * webView.scaleY
+//            val percentScrolled = (scrollY.toFloat() / (contentHeight - totalHeight)) * 100
+//
+//            val threshold = 90
+//            if (percentScrolled >=threshold) {
+//                Log.d("$percentScrolled", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+//                acceptButton.post { acceptButton.visibility = View.VISIBLE
+//                    binding.text.visibility = View.VISIBLE}
+////                acceptButton.visibility = View.VISIBLE
+//
+//            }
+//            else {
+//                acceptButton.visibility = View.GONE
+//                binding.text.visibility = View.GONE
+//            }
+//        }
+
+        webView.viewTreeObserver.addOnScrollChangedListener {
+            val totalHeight = webView.height
+            val contentHeight = (webView.contentHeight * webView.scaleY).toInt()
+            val scrollY = webView.scrollY
+
+            val percentScrolled = (scrollY.toFloat() / (contentHeight - totalHeight)) * 100
+
+            val threshold = 99
+            if (percentScrolled >= threshold) {
+                acceptButton.visibility = View.VISIBLE
+                binding.text.visibility = View.VISIBLE
+            } else {
+                acceptButton.visibility = View.GONE
+                binding.text.visibility = View.GONE
+            }
+        }
+
+
+
 
         acceptButton.setOnClickListener {
             AnimationHelper.smallClickView(it, this)
