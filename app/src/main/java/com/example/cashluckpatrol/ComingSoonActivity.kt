@@ -20,9 +20,14 @@ class ComingSoonActivity : AppCompatActivity() {
 
 
         scope.launch {
-            YoYo.with(Techniques.BounceInUp).duration(300).playOn(binding.coomingSoon)
-            YoYo.with(Techniques.BounceInDown).duration(300).playOn(binding.coomingSoon)
-            delay(1000)
+
+            repeat(5) {
+                YoYo.with(Techniques.BounceInUp).duration(300).playOn(binding.coomingSoon)
+                YoYo.with(Techniques.BounceInDown).duration(300).playOn(binding.coomingSoon)
+                delay(700)
+
+            }
+
         }
 
 

@@ -154,6 +154,7 @@ class SoundHelper (context: Context) {
             val array : LongArray = longArrayOf(0, 500, 100, 300, 100, 100)
             val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 1)
             vibratorr.vibrate(vibrationEffect)
+            vibratorr.cancel()
         }
         else {
         vibratorr.vibrate(200)
@@ -164,6 +165,7 @@ class SoundHelper (context: Context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val vibrationEffect = VibrationEffect.createOneShot(80, intensity)
             vibrator.vibrate(vibrationEffect)
+            vibrator.cancel()
         }
         else {
             vibrator.vibrate(100)
@@ -178,6 +180,7 @@ class SoundHelper (context: Context) {
             val array : LongArray = longArrayOf(0, 100, 100, 100, 100, 300, 70, 500)
             val vibrationEffect = VibrationEffect.createWaveform(array, intensity)
             vibratorr.vibrate(vibrationEffect)
+            vibratorr.cancel()
         }
         else {
             vibratorr.vibrate(100)
@@ -210,6 +213,7 @@ class SoundHelper (context: Context) {
 //            vibrator.vibrate(vibrationEffect1)
             vibratorr.cancel()
             vibratorr.vibrate(vibrationEffect2)
+            vibratorr.cancel()
         }
         else {
             vibratorr.vibrate(50)
@@ -225,6 +229,7 @@ class SoundHelper (context: Context) {
             val array : LongArray = longArrayOf(0, 100, 50, 100, 50, 100)
             val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 1)
             vibratorr.vibrate(vibrationEffect)
+            vibratorr.cancel()
         }
         else {
             vibratorr.vibrate(100)
@@ -239,6 +244,7 @@ class SoundHelper (context: Context) {
             val array : LongArray = longArrayOf(0, 100, 50, 200, 50, 300)
             val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 1)
             vibratorr.vibrate(vibrationEffect)
+            vibratorr.cancel()
         }
         else {
             vibratorr.vibrate(200)
@@ -252,6 +258,7 @@ class SoundHelper (context: Context) {
             val array : LongArray = longArrayOf(0, 300, 50, 100)
             val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 1)
             vibratorr.vibrate(vibrationEffect)
+            vibratorr.cancel()
         }
         else {
             vibratorr.vibrate(200)

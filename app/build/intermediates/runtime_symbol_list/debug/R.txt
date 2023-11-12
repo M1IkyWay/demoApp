@@ -3706,6 +3706,7 @@ int id content 0x7f0900a4
 int id contentPanel 0x7f0900a5
 int id contiguous 0x7f0900a6
 int id continuousVelocity 0x7f0900a7
+int id coomingSoon 0x7f0902bb
 int id coordinator 0x7f0900a8
 int id cop 0x7f0900a9
 int id cos 0x7f0900aa
@@ -3872,6 +3873,7 @@ int id legacy 0x7f09014a
 int id level 0x7f09014b
 int id levelText 0x7f09014c
 int id levelView 0x7f09014d
+int id levelnum 0x7f0902bc
 int id line1 0x7f09014e
 int id line2 0x7f09014f
 int id line3 0x7f090150

@@ -17,6 +17,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cashluckpatrol.databinding.ActivityHotGameBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -165,39 +166,112 @@ class HotGameActivity : AppCompatActivity() {
             .setChildIncTime(1000)
             .setOnFinishListener(object : Callback() {
                 override fun onFinishListener() {
-                    val layoutManagers = getLayoutManagers()
-                    val match = HashMap<Int, Int>()
-                    for (i in 0 until 3) {
-                        val imageView = layoutManagers.get(i)
-                            .findViewByPosition(
-                                (layoutManagers.get(i)
-                                    .findFirstVisibleItemPosition() + 1) //+3
-                            ) as ImageView
-                        val drawableId = imageView.tag as Int
 
-                        match[drawableId] = match.getOrDefault(drawableId, 0) + 1 //is it needed?
-                    }
+                    fun checkForMatches() {
+                        val layoutManagers = getLayoutManagers()
 
-                    var resultMatch = 0
-                    match.values.forEach { value ->
-                        if (resultMatch < value) {
-                            resultMatch = value
+                        fun checkRow(layoutManager: LinearLayoutManager): Int {
+                            val match = HashMap<Int, Int>()
+
+                            for (position in 0 until 3) {
+                                val imageView = layoutManager.findViewByPosition(position + 1) as ImageView
+                                val drawableId = imageView.tag as Int
+                                match[drawableId] = match.getOrDefault(drawableId, 0) + 1
+                            }
+
+                            var resultMatch = 0
+                            match.values.forEach { value ->
+                                if (resultMatch < value) {
+                                    resultMatch = value
+                                }
+                            }
+
+                            return resultMatch
                         }
+
+                        fun handleMatch() {
+                            successGame = true
+                            scoreViewModel.countResult(currentBet, 2, successGame)
+                            binding.btnSpin.isEnabled = true
+                            AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
+                        }
+
+                        fun handleNoMatch() {
+                            successGame = false
+                            scoreViewModel.countResult(currentBet, 2, successGame)
+                            binding.btnSpin.isEnabled = true
+                            AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
+                        }
+
+
+                        // Check horizontal rows
+                        for (i in 0 until 3) {
+                            val match = checkRow(layoutManagers[i])
+                            if (match == 3) {
+                                handleMatch()
+                                return
+                            }
+                        }
+
+                        // Check vertical rows
+                        for (i in 0 until 3) {
+                            val layoutManager = getLayoutManager(i)
+                            val match = checkRow(layoutManager)
+                            if (match == 3) {
+                                handleMatch()
+                                return
+                            }
+                        }
+
+                        // Check diagonals
+                        val diagonal1 = checkRow(getDiagonalLayoutManager(true))
+                        val diagonal2 = checkRow(getDiagonalLayoutManager(false))
+
+                        if (diagonal1 == 3 || diagonal2 == 3) {
+                            handleMatch()
+                            return
+                        }
+
+                        // No match found
+                        handleNoMatch()
                     }
 
-                    if (resultMatch == 3 && !binding.btnSpin.isEnabled) {
-                        successGame = true
-                        scoreViewModel.countResult(currentBet, 2, successGame)
-                        //add visual changes
-                        binding.btnSpin.isEnabled = true
-                        AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
-                    }
-                    else {
-                        successGame = false
-                        scoreViewModel.countResult(currentBet, 2, successGame)
-                        binding.btnSpin.isEnabled = true
-                    }
-                    AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
+
+
+
+
+//                    val match = HashMap<Int, Int>()
+//                    for (i in 0 until 3) {
+//                        val imageView = layoutManagers.get(i)
+//                            .findViewByPosition(
+//                                (layoutManagers.get(i)
+//                                    .findFirstVisibleItemPosition() + 1) //+3
+//                            ) as ImageView
+//                        val drawableId = imageView.tag as Int
+//
+//                        match[drawableId] = match.getOrDefault(drawableId, 0) + 1 //is it needed?
+//                    }
+//
+//                    var resultMatch = 0
+//                    match.values.forEach { value ->
+//                        if (resultMatch < value) {
+//                            resultMatch = value
+//                        }
+//                    }
+//
+//                    if (resultMatch == 3 && !binding.btnSpin.isEnabled) {
+//                        successGame = true
+//                        scoreViewModel.countResult(currentBet, 2, successGame)
+//                        //add visual changes
+//                        binding.btnSpin.isEnabled = true
+//                        AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
+//                    }
+//                    else {
+//                        successGame = false
+//                        scoreViewModel.countResult(currentBet, 2, successGame)
+//                        binding.btnSpin.isEnabled = true
+//                    }
+//                    AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
                 }
             })
             .build()

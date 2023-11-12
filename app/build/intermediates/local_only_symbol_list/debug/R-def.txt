@@ -148,6 +148,7 @@ id btn_up
 id buttons
 id choosenBet
 id confetti
+id coomingSoon
 id cop
 id currentBal
 id decremBet
@@ -210,6 +211,7 @@ id incremBet
 id level
 id levelText
 id levelView
+id levelnum
 id line1
 id line2
 id line3
