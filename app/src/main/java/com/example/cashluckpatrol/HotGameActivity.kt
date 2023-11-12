@@ -26,6 +26,7 @@ import kotlinx.coroutines.launch
 import java.security.SecureRandom
 import java.util.HashMap
 import kotlin.properties.Delegates
+import android.app.Activity
 
 class HotGameActivity : AppCompatActivity() {
 
@@ -52,6 +53,8 @@ class HotGameActivity : AppCompatActivity() {
 
             // и остальные
         }
+
+        val contextA : Context = this
 
         soundHelper = (application as MyApplication).soundHelper
         scoreViewModel = (application as MyApplication).scoreViewModel
@@ -173,10 +176,20 @@ class HotGameActivity : AppCompatActivity() {
                         fun checkRow(layoutManager: LinearLayoutManager): Int {
                             val match = HashMap<Int, Int>()
 
-                            for (position in 0 until 3) {
-                                val imageView = layoutManager.findViewByPosition(position + 1) as ImageView
-                                val drawableId = imageView.tag as Int
-                                match[drawableId] = match.getOrDefault(drawableId, 0) + 1
+//                            for (position in 0 until 3) {
+//                                val imageView = layoutManager.findViewByPosition(position+1) as ImageView
+//                                val drawableId = imageView.tag as Int
+//                                match[drawableId] = match.getOrDefault(drawableId, 0)
+//
+
+                                for (i in 0 until 3) {
+                                val imageView = layoutManagers.get(i)
+                                     .findViewByPosition((layoutManagers.get(i)
+                                    .findFirstVisibleItemPosition() + 1) //+3
+                                         ) as ImageView
+                                 val drawableId = imageView.tag as Int
+                                    match[drawableId] = match.getOrDefault(drawableId, 0)
+
                             }
 
                             var resultMatch = 0
@@ -189,11 +202,25 @@ class HotGameActivity : AppCompatActivity() {
                             return resultMatch
                         }
 
+                        fun getLayoutManager (index : Int) : LinearLayoutManager {
+                            return layoutManagers[index]
+
+                        }
+
+                        fun getDiagonalLayoutManager (topLeftToBottomRight : Boolean, activity: Activity) : LinearLayoutManager {
+                            val layoutManager = if (topLeftToBottomRight) {
+                                SpeedManager(activity)
+                            }
+                            else DiagonalLayoutManager(activity)
+                            return layoutManager
+                        }
+
                         fun handleMatch() {
                             successGame = true
                             scoreViewModel.countResult(currentBet, 2, successGame)
                             binding.btnSpin.isEnabled = true
                             AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
+                            Log.d("youuuuuuuuuuuuuuuuuuuuuuuuuuu", "WWWWwwwwiiiiiiiiiiiiiiiiiiiiiiiiinnnnnnnnnnn")
                         }
 
                         fun handleNoMatch() {
@@ -201,6 +228,7 @@ class HotGameActivity : AppCompatActivity() {
                             scoreViewModel.countResult(currentBet, 2, successGame)
                             binding.btnSpin.isEnabled = true
                             AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
+                            Log.d("youuuuuuuuuuuuuuuuuuuuuuuuuuu", "Looooooooooooooooooooooooooooooooooooooooose")
                         }
 
 
@@ -224,8 +252,8 @@ class HotGameActivity : AppCompatActivity() {
                         }
 
                         // Check diagonals
-                        val diagonal1 = checkRow(getDiagonalLayoutManager(true))
-                        val diagonal2 = checkRow(getDiagonalLayoutManager(false))
+                        val diagonal1 = checkRow(getDiagonalLayoutManager(true, this@HotGameActivity))
+                        val diagonal2 = checkRow(getDiagonalLayoutManager(false, this@HotGameActivity))
 
                         if (diagonal1 == 3 || diagonal2 == 3) {
                             handleMatch()
@@ -236,7 +264,7 @@ class HotGameActivity : AppCompatActivity() {
                         handleNoMatch()
                     }
 
-
+                    checkForMatches()
 
 
 
