@@ -19,6 +19,7 @@ object AnimationHelper {
 
 
     fun pressingAnimation(viewBase: View, viewText: View?) {
+
         YoYo.with(Techniques.Pulse).duration(300).playOn(viewBase)
         viewText?.let {
 //            YoYo.with(Techniques.FadeOut).duration(300).playOn(viewText)

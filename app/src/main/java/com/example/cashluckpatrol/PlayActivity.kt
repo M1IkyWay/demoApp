@@ -48,11 +48,11 @@ class PlayActivity : AppCompatActivity() {
             YoYo.with(Techniques.SlideOutLeft).duration(1000).playOn(binding.text)
 
 
-            if (isPrivacyAccepted) {
+            if (scoreViewModel.getPrivacyPolicyAccepted()) {
                 openNextActivity(Intent(this, GamesMenuActivity::class.java))
             }
             else {
-                openNextActivity(Intent(this, AgreementActivity::class.java))
+                openNextActivity(Intent(this, WebViewActivity::class.java))
 
             }
         }

@@ -117,6 +117,7 @@ font unineueheavy_italic
 font you20133
 id accept
 id acceptButton
+id accept_button
 id andTerms
 id arrow
 id back
@@ -313,6 +314,7 @@ id vgrade7
 id vgrade8
 id vibrationText
 id vibroSet
+id webView
 id winColumn
 id winW
 id winsAmount
@@ -333,6 +335,7 @@ layout activity_settings
 layout activity_slot_game1
 layout activity_slot_game2
 layout activity_splash_screen
+layout activity_web_view
 layout item_list
 layout popup_slot2
 mipmap ic_launcher

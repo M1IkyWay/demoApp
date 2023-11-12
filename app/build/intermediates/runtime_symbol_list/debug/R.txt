@@ -3555,6 +3555,7 @@ int id TOP_START 0x7f09000d
 int id accelerate 0x7f09000e
 int id accept 0x7f09000f
 int id acceptButton 0x7f090010
+int id accept_button 0x7f0902ba
 int id accessibility_action_clickable_span 0x7f090011
 int id accessibility_custom_action_0 0x7f090012
 int id accessibility_custom_action_1 0x7f090013
@@ -4218,6 +4219,7 @@ int id view_tree_saved_state_registry_owner 0x7f0902a4
 int id view_tree_view_model_store_owner 0x7f0902a5
 int id visible 0x7f0902a6
 int id visible_removing_fragment_view_tag 0x7f0902a7
+int id webView 0x7f0902b9
 int id west 0x7f0902a8
 int id winColumn 0x7f0902a9
 int id winW 0x7f0902aa
@@ -4332,6 +4334,7 @@ int layout activity_settings 0x7f0c0025
 int layout activity_slot_game1 0x7f0c0026
 int layout activity_slot_game2 0x7f0c0027
 int layout activity_splash_screen 0x7f0c0028
+int layout activity_web_view 0x7f0c008f
 int layout bottom_sheet_country_picker 0x7f0c0029
 int layout custom_dialog 0x7f0c002a
 int layout design_bottom_navigation_item 0x7f0c002b

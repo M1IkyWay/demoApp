@@ -3556,6 +3556,7 @@ id TOP_START
 id accelerate
 id accept
 id acceptButton
+id accept_button
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -4219,6 +4220,7 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id webView
 id west
 id winColumn
 id winW
@@ -4333,6 +4335,7 @@ layout activity_settings
 layout activity_slot_game1
 layout activity_slot_game2
 layout activity_splash_screen
+layout activity_web_view
 layout bottom_sheet_country_picker
 layout custom_dialog
 layout design_bottom_navigation_item

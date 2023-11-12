@@ -33,6 +33,11 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.CashLuckPatrol" >
+        <activity
+            android:name="com.example.cashluckpatrol.WebViewActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:exported="false" />
+
         <service
             android:name="com.example.cashluckpatrol.SoundService"
             android:enabled="true"

@@ -202,6 +202,7 @@ class SoundHelper (context: Context) {
             val vibrationEffect2 = VibrationEffect.createWaveform(array2, intensityArr2, 1)
 
             vibrator.vibrate(vibrationEffect1)
+            vibrator.cancel()
             vibrator.vibrate(vibrationEffect2)
         }
         else {
