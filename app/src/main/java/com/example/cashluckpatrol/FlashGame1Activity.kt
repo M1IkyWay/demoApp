@@ -347,7 +347,7 @@ class FlashGame1Activity : AppCompatActivity() {
                                 rotator(level, it, textResult, num, drawable)
                                 delay(400)
                                 soundHelper.defeatFlash1(context, soundVolume)
-                                soundHelper.vibroExplosion(intensity)
+                                soundHelper.vibroExplosion(intensity, vibrator)
                                 YoYo.with(Techniques.Shake).duration(500).playOn(it)
 
                                 val defeat = scoreViewModel.getScore() - currentBet
@@ -409,6 +409,7 @@ class FlashGame1Activity : AppCompatActivity() {
                                     binding.decremBet.isEnabled = true
                                     spinBtn.isEnabled = true
                                     requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+                                    scoreViewModel.updateLevel(scoreViewModel.getLevel() + 1)
                                     //sound and popup and vibration
                                 } else {
 

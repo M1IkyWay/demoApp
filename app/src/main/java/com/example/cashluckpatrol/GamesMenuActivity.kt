@@ -30,6 +30,10 @@ class GamesMenuActivity : AppCompatActivity() {
             binding.currentBal.setText("$newscore")
         })
 
+        scoreViewModel.level.observe( this, { newLevel ->
+            binding.levelnum.setText("$newLevel")
+        })
+
 
         binding.settindsButton.setOnClickListener {
             soundHelper.vibroClick(intensity)

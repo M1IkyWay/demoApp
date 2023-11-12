@@ -1,8 +1,12 @@
 package com.example.cashluckpatrol
 
+import android.content.Context
 import android.graphics.Color
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Vibrator
+import android.os.VibratorManager
 import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
@@ -59,6 +63,14 @@ class SlotGame1Activity : AppCompatActivity() {
         soundHelper = (application as MyApplication).soundHelper
         successGame = false
 
+        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val vibratorManager =
+                getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+            vibratorManager.defaultVibrator
+        } else {
+            @Suppress("DEPRECATION")
+            getSystemService(VIBRATOR_SERVICE) as Vibrator
+        }
 
 
         val scope = CoroutineScope (Dispatchers.Main)
@@ -75,7 +87,7 @@ class SlotGame1Activity : AppCompatActivity() {
 
                 binding.winsCount.setText("${winsCount}")
                 val toast = Toast.makeText (this, "You win!", Toast.LENGTH_SHORT)
-                soundHelper.winShot(intensity)
+                soundHelper.winShot(intensity, vibrator)
 
                 toast.show()
                 //add music and vibro
@@ -83,7 +95,7 @@ class SlotGame1Activity : AppCompatActivity() {
             }
             else {
                 soundHelper.loseSound(this, soundVolume)
-                soundHelper.defeatShot(intensity)
+                soundHelper.defeatShot(intensity, vibrator)
                 val toast = Toast.makeText (this, "You lose!", Toast.LENGTH_SHORT)
                 toast.show()
 //add music and vibro
@@ -131,7 +143,7 @@ class SlotGame1Activity : AppCompatActivity() {
                 binding.resultBalance.setTextColor(resources.getColor(R.color.input_color))
                 AnimationHelper.smallClickView(it, this)
                 soundHelper.slotMachineSound(this, soundVolume)
-                soundHelper.spinShot(intensity)
+                soundHelper.spinShot(intensity, vibrator)
                 scope.launch {
                     slots.start()
                     delay(5500)
@@ -141,7 +153,7 @@ class SlotGame1Activity : AppCompatActivity() {
             }
             else {
                 AnimationHelper.wrongInputAnimation(binding.resultBalance)
-                soundHelper.vibroWarning(intensity)
+                soundHelper.vibroWarning(intensity, vibrator)
                 soundHelper.wrongInputSound(this, soundVolume)
                 val toast = Toast.makeText(this, "You don`t have enough money!", Toast.LENGTH_SHORT)
                 toast.show()
@@ -197,6 +209,7 @@ class SlotGame1Activity : AppCompatActivity() {
                         //add visual changes
                         binding.btnSpin.isEnabled = true
                         AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
+                        scoreViewModel.updateLevel(scoreViewModel.getLevel() + 1)
                     }
                     else {
 

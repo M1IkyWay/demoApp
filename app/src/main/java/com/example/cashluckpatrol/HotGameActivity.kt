@@ -1,9 +1,13 @@
 package com.example.cashluckpatrol
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.Drawable
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Vibrator
+import android.os.VibratorManager
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
@@ -59,6 +63,15 @@ class HotGameActivity : AppCompatActivity() {
         currentBet = getStartBet(scoreViewModel.getScore())
         var lastPressedBet : View? = null
 
+        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val vibratorManager =
+                getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+            vibratorManager.defaultVibrator
+        } else {
+            @Suppress("DEPRECATION")
+            getSystemService(VIBRATOR_SERVICE) as Vibrator
+        }
+
         val scope = CoroutineScope (Dispatchers.Main)
         val soundVolume = scoreViewModel.getSoundVolume()
         intensity = scoreViewModel.getVibroIntensity()
@@ -71,13 +84,14 @@ class HotGameActivity : AppCompatActivity() {
                 binding.winsCount.setText("${winsCount}")
                 val toast = Toast.makeText (this, "You win!", Toast.LENGTH_SHORT)
                 soundHelper.winSound(this, soundVolume)
-                soundHelper.winShot(intensity)
+                scoreViewModel.updateScore(scoreViewModel.getScore() + 1)
+                soundHelper.winShot(intensity, vibrator)
                 toast.show()
             }
             else {
                 val toast = Toast.makeText (this, "You lose!", Toast.LENGTH_SHORT)
                 soundHelper.loseSound(this, soundVolume)
-                soundHelper.defeatShot(intensity)
+                soundHelper.defeatShot(intensity, vibrator)
                 toast.show()
 //add music and vibro
             }
@@ -112,7 +126,7 @@ class HotGameActivity : AppCompatActivity() {
         spinButton.setOnClickListener {
             it.isEnabled = false
             soundHelper.clickSound2(this, soundVolume)
-            soundHelper.spinShot(intensity)
+            soundHelper.spinShot(intensity, vibrator)
             AnimationHelper.clickView ( it, this)
             if (scoreViewModel.getScore()>=currentBet) {
                 soundHelper.slotMachineSound(this, soundVolume)
@@ -126,7 +140,7 @@ class HotGameActivity : AppCompatActivity() {
             else {
                 val toast = Toast.makeText(this, "You don`t have enough money!", Toast.LENGTH_SHORT)
                 toast.show()
-                soundHelper.vibroWarning(intensity)
+                soundHelper.vibroWarning(intensity, vibrator)
                 //add some sound
                 it.isEnabled = true
             }

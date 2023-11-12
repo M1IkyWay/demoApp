@@ -4,10 +4,13 @@ import android.content.Context
 import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.graphics.drawable.Drawable
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.os.Vibrator
+import android.os.VibratorManager
 import android.util.Log
 import android.view.View
 import android.widget.ImageButton
@@ -51,6 +54,7 @@ class FlashGame2Activity : AppCompatActivity() {
             val roundedBet = kotlin.math.round(currentBet / 10.0) * 10
             return roundedBet.toInt()
         }
+
         currentBet = getStartBet(scoreViewModel.getScore())
         binding.choosenBet.setText(currentBet.toString())
         val soundVolume = scoreViewModel.getSoundVolume()
@@ -60,6 +64,15 @@ class FlashGame2Activity : AppCompatActivity() {
         val scope = CoroutineScope(Dispatchers.Main)
         soundHelper = (application as MyApplication).soundHelper
         val intensity = scoreViewModel.getVibroIntensity()
+
+        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val vibratorManager =
+                getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+            vibratorManager.defaultVibrator
+        } else {
+            @Suppress("DEPRECATION")
+            getSystemService(VIBRATOR_SERVICE) as Vibrator
+        }
 
         val context : Context = this
         incremBut = binding.incremBet
@@ -146,7 +159,7 @@ class FlashGame2Activity : AppCompatActivity() {
                     AnimationHelper.rotateBackward(it)
                     delay(400)
                     view.setImageDrawable(drawable)
-                    soundHelper.vibroExplosion(intensity)
+                    soundHelper.vibroExplosion(intensity, vibrator)
                     soundHelper.explosionSound(context, soundVolume)
                     YoYo.with(Techniques.Shake).duration(500).playOn(view)
 
@@ -179,6 +192,7 @@ class FlashGame2Activity : AppCompatActivity() {
                 incremBut.isEnabled = true
                 decremBut.isEnabled = true
                 requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+                scoreViewModel.updateLevel(scoreViewModel.getLevel() + 1)
 
             }
         }

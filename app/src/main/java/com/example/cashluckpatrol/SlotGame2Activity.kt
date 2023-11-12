@@ -5,10 +5,13 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.ActivityInfo
 import android.graphics.Color
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.os.Vibrator
+import android.os.VibratorManager
 import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -108,6 +111,15 @@ class SlotGame2Activity : AppCompatActivity() {
         btnUp = binding.btnUp
         betText = binding.betNumber
 
+        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val vibratorManager =
+                getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+            vibratorManager.defaultVibrator
+        } else {
+            @Suppress("DEPRECATION")
+            getSystemService(VIBRATOR_SERVICE) as Vibrator
+        }
+
         val scope = CoroutineScope (Dispatchers.Main)
 
 //warning was supressed
@@ -170,7 +182,7 @@ class SlotGame2Activity : AppCompatActivity() {
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     true)
                 soundHelper.slot2winSound(this, soundVolume)
-                soundHelper.vibroPopup(intensity)
+                soundHelper.vibroPopup(intensity, vibrator)
                 popupWindow.contentView.startAnimation(slideUpAnimation)
                 popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0)
                 handler.postDelayed({
@@ -217,7 +229,7 @@ class SlotGame2Activity : AppCompatActivity() {
             if (bet == 0) {
                 val toast = Toast.makeText(this, "Set the bet, please!", Toast.LENGTH_SHORT)
                 toast.show()
-                soundHelper.vibroWarning(intensity)
+                soundHelper.vibroWarning(intensity, vibrator)
                 AnimationHelper.wrongInputAnimation(binding.betNumber)
                 it.isEnabled = true
 
@@ -225,7 +237,7 @@ class SlotGame2Activity : AppCompatActivity() {
                 binding.roundArrow.startAnimation(rotate)
                 binding.arrow.startAnimation(rotateABit)
                 soundHelper.wheelSpinSound(this, soundVolume)
-                soundHelper.spinShot(intensity)
+                soundHelper.spinShot(intensity, vibrator)
                 scope.launch {
                     val multiplier = spinCircle()
                     delay(5500)
@@ -238,6 +250,7 @@ class SlotGame2Activity : AppCompatActivity() {
                         )
                     }
                     scoreViewModel.countScoreSlot2(bet, multiplier)
+                    scoreViewModel.updateLevel(scoreViewModel.getLevel() + 1)
                     createPopup(multiplier)
                     it.isEnabled = true
                 }
