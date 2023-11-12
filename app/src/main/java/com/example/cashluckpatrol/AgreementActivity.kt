@@ -31,7 +31,7 @@ class AgreementActivity : AppCompatActivity() {
             AnimationHelper.clickView(it, this)
             soundHelper.vibroClick(intensity)
             soundHelper.clickSound(this, soundVolume)
-            startActivity(Intent(this, PrivacyPolicy::class.java))
+            startActivity(Intent(this, WebViewActivity::class.java))
 
 
         }

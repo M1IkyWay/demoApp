@@ -198,17 +198,23 @@ class SoundHelper (context: Context) {
                 intensity)
             val array2 = longArrayOf(50, 50, 100, 50, 300, 50, 500, 50, 1000, 50)
 
-            val vibrationEffect1 = VibrationEffect.createWaveform(array1, intensityArr1, 5)
+            val vibrationEffect1 = VibrationEffect.createWaveform(array1, intensityArr1, 1)
             val vibrationEffect2 = VibrationEffect.createWaveform(array2, intensityArr2, 1)
 
+//            Log.d("fffffffffffffffff", "first vibration starts")
+//            vibrator.vibrate(vibrationEffect1)
+//            Log.d("fffffffffffffffff", "second vibration starts")
+//            vibrator.vibrate(vibrationEffect1)
+//            Log.d("fffffffffffffffff", "third vibration starts")
             vibrator.vibrate(vibrationEffect1)
+//            vibrator.vibrate(vibrationEffect1)
             vibrator.cancel()
             vibrator.vibrate(vibrationEffect2)
         }
         else {
+            vibrator.vibrate(50)
             vibrator.vibrate(100)
-            vibrator.vibrate(300)
-            vibrator.vibrate(500)
+            vibrator.vibrate(200)
         }
     }
 

@@ -30,7 +30,7 @@ class HotGameActivity : AppCompatActivity() {
     lateinit var binding : ActivityHotGameBinding
     var successGame by Delegates.notNull<Boolean>()
     var currentBet by Delegates.notNull<Int>()
-    var winsCount by Delegates.notNull<Int>()
+    var winsCount = 0
     var intensity : Int = 0
 
     lateinit var soundHelper: SoundHelper
@@ -39,7 +39,6 @@ class HotGameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHotGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        var winsCount = 0
         if (savedInstanceState!=null) {
             currentBet = savedInstanceState.getInt("currentBet")
             winsCount = savedInstanceState.getInt("count")

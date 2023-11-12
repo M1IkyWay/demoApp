@@ -35,6 +35,7 @@ class SlotGame1Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySlotGame1Binding.inflate(layoutInflater)
         setContentView(binding.root)
+        scoreViewModel = (application as MyApplication).scoreViewModel
         winsCount = 0
 
         if (savedInstanceState!=null) {
@@ -56,7 +57,6 @@ class SlotGame1Activity : AppCompatActivity() {
         binding.choosenBet.setText(currentBet.toString())
         spinButton = binding.btnSpin
         soundHelper = (application as MyApplication).soundHelper
-        scoreViewModel = (application as MyApplication).scoreViewModel
         successGame = false
 
 

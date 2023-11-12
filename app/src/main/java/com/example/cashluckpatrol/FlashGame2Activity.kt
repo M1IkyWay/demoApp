@@ -146,6 +146,7 @@ class FlashGame2Activity : AppCompatActivity() {
                     AnimationHelper.rotateBackward(it)
                     delay(400)
                     view.setImageDrawable(drawable)
+                    soundHelper.vibroExplosion(intensity)
                     soundHelper.explosionSound(context, soundVolume)
                     YoYo.with(Techniques.Shake).duration(500).playOn(view)
 
