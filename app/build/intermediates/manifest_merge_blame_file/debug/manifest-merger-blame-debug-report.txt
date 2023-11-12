@@ -35,7 +35,7 @@
 20-->[androidx.core:core:1.9.0] /home/milkyway/.gradle/caches/transforms-3/3442b491be1019a2d5bfaa8797a65871/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
 21
 22    <application
-22-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:10:5-85:19
+22-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:10:5-80:19
 23        android:name="com.example.cashluckpatrol.MyApplication"
 23-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:11:9-38
 24        android:allowBackup="true"
@@ -167,45 +167,35 @@
 90            android:screenOrientation="portrait" />
 90-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:75:13-49
 91        <activity
-91-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:76:9-80:71
-92            android:name="com.example.cashluckpatrol.PrivacyPolicy"
-92-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:77:13-42
+91-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:76:9-79:52
+92            android:name="com.example.cashluckpatrol.PlayActivity"
+92-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:77:13-41
 93            android:exported="false"
 93-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:78:13-37
-94            android:label="@string/title_activity_privacy_policy"
-94-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:79:13-66
-95            android:theme="@style/Theme.CashLuckPatrol.NoActionBar" />
-95-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:80:13-68
-96        <activity
-96-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:81:9-84:52
-97            android:name="com.example.cashluckpatrol.PlayActivity"
-97-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:82:13-41
-98            android:exported="false"
-98-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:83:13-37
-99            android:screenOrientation="portrait" />
-99-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:84:13-49
-100
-101        <provider
-101-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
-102            android:name="androidx.startup.InitializationProvider"
-102-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
-103            android:authorities="com.example.cashluckpatrol.androidx-startup"
-103-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
-104            android:exported="false" >
-104-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
-105            <meta-data
-105-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-106                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-106-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
-107                android:value="androidx.startup" />
-107-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
-108            <meta-data
-108-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/milkyway/.gradle/caches/transforms-3/4589dead2f7179888e07ccebc2200270/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
-109                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-109-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/milkyway/.gradle/caches/transforms-3/4589dead2f7179888e07ccebc2200270/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
-110                android:value="androidx.startup" />
-110-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/milkyway/.gradle/caches/transforms-3/4589dead2f7179888e07ccebc2200270/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
-111        </provider>
-112    </application>
-113
-114</manifest>
+94            android:screenOrientation="portrait" />
+94-->/home/milkyway/AndroidStudioProjects/CashLuckPatrol2/app/src/main/AndroidManifest.xml:79:13-49
+95
+96        <provider
+96-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+97            android:name="androidx.startup.InitializationProvider"
+97-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+98            android:authorities="com.example.cashluckpatrol.androidx-startup"
+98-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+99            android:exported="false" >
+99-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+100            <meta-data
+100-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+101                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+101-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+102                android:value="androidx.startup" />
+102-->[androidx.emoji2:emoji2:1.2.0] /home/milkyway/.gradle/caches/transforms-3/04dba6cbac05a998083a6e2147dbb18b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+103            <meta-data
+103-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/milkyway/.gradle/caches/transforms-3/4589dead2f7179888e07ccebc2200270/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+104                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+104-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/milkyway/.gradle/caches/transforms-3/4589dead2f7179888e07ccebc2200270/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+105                android:value="androidx.startup" />
+105-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/milkyway/.gradle/caches/transforms-3/4589dead2f7179888e07ccebc2200270/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+106        </provider>
+107    </application>
+108
+109</manifest>

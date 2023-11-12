@@ -4,8 +4,11 @@ import android.content.Context
 import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.graphics.drawable.Drawable
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Vibrator
+import android.os.VibratorManager
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
@@ -78,6 +81,15 @@ class FlashGame1Activity : AppCompatActivity() {
         val context: Context = this
 
         soundHelper = (application as MyApplication).soundHelper
+
+        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val vibratorManager =
+                getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+            vibratorManager.defaultVibrator
+        } else {
+            @Suppress("DEPRECATION")
+            getSystemService(VIBRATOR_SERVICE) as Vibrator
+        }
 
 
         val scope = CoroutineScope(Dispatchers.Main)

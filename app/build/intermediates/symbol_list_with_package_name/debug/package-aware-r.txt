@@ -3555,7 +3555,6 @@ id TOP_END
 id TOP_START
 id accelerate
 id accept
-id acceptButton
 id accept_button
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -4003,7 +4002,6 @@ id playHotButton
 id position
 id postLayout
 id privPolButton
-id privPolText
 id privPolicyButton
 id privacyPolicy
 id progress_circular
@@ -4330,7 +4328,6 @@ layout activity_games_menu
 layout activity_games_menu_anon
 layout activity_hot_game
 layout activity_play
-layout activity_privacy_policy
 layout activity_settings
 layout activity_slot_game1
 layout activity_slot_game2

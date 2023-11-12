@@ -89,11 +89,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.example.cashluckpatrol.PrivacyPolicy"
-            android:exported="false"
-            android:label="@string/title_activity_privacy_policy"
-            android:theme="@style/Theme.CashLuckPatrol.NoActionBar" />
-        <activity
             android:name="com.example.cashluckpatrol.PlayActivity"
             android:exported="false"
             android:screenOrientation="portrait" />

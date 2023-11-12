@@ -147,16 +147,16 @@ class SoundHelper (context: Context) {
 
 
 
-    fun defeatShot (intensity : Int) {
+    fun defeatShot (intensity : Int, vibratorr : Vibrator) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val intensityArr = intArrayOf(intensity, intensity, intensity, intensity,
                 intensity, intensity)
-            val array : LongArray = longArrayOf(500, 100, 300, 100, 100, 100)
+            val array : LongArray = longArrayOf(0, 500, 100, 300, 100, 100)
             val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 1)
-            vibrator.vibrate(vibrationEffect)
+            vibratorr.vibrate(vibrationEffect)
         }
         else {
-        vibrator.vibrate(200)
+        vibratorr.vibrate(200)
         }
     }
 
@@ -171,34 +171,34 @@ class SoundHelper (context: Context) {
         }
     }
 
-    fun winShot (intensity : Int) {
+    fun winShot (intensity : Int, vibratorr: Vibrator) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val intensityArr = intArrayOf(intensity, intensity, intensity, intensity,
                 intensity, intensity, intensity, intensity)
-            val array : LongArray = longArrayOf(100, 100, 100, 100, 300, 70, 500, 100)
+            val array : LongArray = longArrayOf(0, 100, 100, 100, 100, 300, 70, 500)
             val vibrationEffect = VibrationEffect.createWaveform(array, intensity)
-            vibrator.vibrate(vibrationEffect)
+            vibratorr.vibrate(vibrationEffect)
         }
         else {
-            vibrator.vibrate(100)
-            vibrator.vibrate(300)
-            vibrator.vibrate(500)
+            vibratorr.vibrate(100)
+            vibratorr.vibrate(300)
+            vibratorr.vibrate(500)
         }
     }
 
-    fun spinShot (intensity : Int) {
+    fun spinShot (intensity : Int, vibratorr: Vibrator) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val array1 : LongArray = longArrayOf(50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50)
-            val intensityArr1 = intArrayOf(intensity,intensity, intensity, intensity, intensity,
+            val intensityArr1 = intArrayOf(intensity, intensity, intensity, intensity, intensity,
                 intensity, intensity, intensity, intensity, intensity, intensity, intensity, intensity, intensity, intensity,
                 intensity, intensity, intensity, intensity, intensity)
 
             val intensityArr2 = intArrayOf(intensity, intensity, intensity, intensity,
                 intensity, intensity, intensity, intensity, intensity,
                 intensity)
-            val array2 = longArrayOf(50, 50, 100, 50, 300, 50, 500, 50, 1000, 50)
+            val array2 = longArrayOf(0, 50, 50, 100, 50, 300, 50, 500, 50, 1000)
 
-            val vibrationEffect1 = VibrationEffect.createWaveform(array1, intensityArr1, 1)
+            val vibrationEffect1 = VibrationEffect.createWaveform(array1, intensityArr1, 5)
             val vibrationEffect2 = VibrationEffect.createWaveform(array2, intensityArr2, 1)
 
 //            Log.d("fffffffffffffffff", "first vibration starts")
@@ -206,56 +206,56 @@ class SoundHelper (context: Context) {
 //            Log.d("fffffffffffffffff", "second vibration starts")
 //            vibrator.vibrate(vibrationEffect1)
 //            Log.d("fffffffffffffffff", "third vibration starts")
-            vibrator.vibrate(vibrationEffect1)
+            vibratorr.vibrate(vibrationEffect1)
 //            vibrator.vibrate(vibrationEffect1)
-            vibrator.cancel()
-            vibrator.vibrate(vibrationEffect2)
+            vibratorr.cancel()
+            vibratorr.vibrate(vibrationEffect2)
         }
         else {
-            vibrator.vibrate(50)
-            vibrator.vibrate(100)
-            vibrator.vibrate(200)
+            vibratorr.vibrate(50)
+            vibratorr.vibrate(100)
+            vibratorr.vibrate(200)
         }
     }
 
-    fun vibroWarning (intensity : Int) {
+    fun vibroWarning (intensity : Int, vibratorr: Vibrator) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val intensityArr = intArrayOf(intensity, intensity, intensity, intensity,
                 intensity, intensity)
-            val array : LongArray = longArrayOf(100, 50, 100, 50, 100, 50)
+            val array : LongArray = longArrayOf(0, 100, 50, 100, 50, 100)
             val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 1)
-            vibrator.vibrate(vibrationEffect)
+            vibratorr.vibrate(vibrationEffect)
         }
         else {
-            vibrator.vibrate(100)
-            vibrator.vibrate(100)
-            vibrator.vibrate(100)
+            vibratorr.vibrate(100)
+            vibratorr.vibrate(100)
+            vibratorr.vibrate(100)
         }
     }
 
-    fun vibroExplosion (intensity : Int) {
+    fun vibroExplosion (intensity : Int, vibratorr: Vibrator) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            val intensityArr = intArrayOf(intensity, intensity, intensity)
-            val array : LongArray = longArrayOf(200, 100, 400)
+            val intensityArr = intArrayOf(intensity, intensity, intensity, intensity, intensity, intensity)
+            val array : LongArray = longArrayOf(0, 100, 50, 200, 50, 300)
             val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 1)
-            vibrator.vibrate(vibrationEffect)
+            vibratorr.vibrate(vibrationEffect)
         }
         else {
-            vibrator.vibrate(200)
-            vibrator.vibrate(400)
+            vibratorr.vibrate(200)
+            vibratorr.vibrate(400)
         }
     }
 
-    fun vibroPopup (intensity : Int) {
+    fun vibroPopup (intensity : Int, vibratorr: Vibrator) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            val intensityArr = intArrayOf(intensity, intensity, intensity)
-            val array : LongArray = longArrayOf(300, 50, 100)
+            val intensityArr = intArrayOf(intensity, intensity, intensity, intensity)
+            val array : LongArray = longArrayOf(0, 300, 50, 100)
             val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 1)
-            vibrator.vibrate(vibrationEffect)
+            vibratorr.vibrate(vibrationEffect)
         }
         else {
-            vibrator.vibrate(200)
-            vibrator.vibrate(400)
+            vibratorr.vibrate(200)
+            vibratorr.vibrate(400)
         }
     }
 
