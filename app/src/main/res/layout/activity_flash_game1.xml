@@ -273,6 +273,7 @@
 
 
                 <TextView
+                    android:id="@+id/buttText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignStart="@id/btnSpin"
@@ -283,7 +284,7 @@
                     android:layout_marginBottom="@dimen/_5sdp"
                     android:fontFamily="@font/air_millhouse_italic"
                     android:gravity="center"
-                    android:text="Spin"
+                    android:text="Start"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_30sdp" />
 

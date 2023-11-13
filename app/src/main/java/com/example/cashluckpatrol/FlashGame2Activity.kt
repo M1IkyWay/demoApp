@@ -220,6 +220,8 @@ class FlashGame2Activity : AppCompatActivity() {
             }
 
             spinButton.setOnClickListener {
+                count = 0
+                AnimationHelper.updateScoreOrBetTextViewAnimation(binding.winsCount, count.toString())
                 soundHelper.vibroClick(intensity)
                 binding.incremBet.isEnabled = false
                 binding.decremBet.isEnabled = false

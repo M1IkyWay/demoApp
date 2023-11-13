@@ -484,6 +484,7 @@ class FlashGame1Activity : AppCompatActivity() {
                 resultG = 0
                 updateCount(0)
                 binding.choosenBet.setTextColor(resources.getColor(R.color.white))
+                binding.buttText?.setText("Spin")
                 AnimationHelper.clickView(it, this)
                 soundHelper.vibroClick(intensity)
                 soundHelper.clickSound2(this, soundVolume)
