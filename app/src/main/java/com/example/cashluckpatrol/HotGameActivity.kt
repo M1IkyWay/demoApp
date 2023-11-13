@@ -65,6 +65,7 @@ class HotGameActivity : AppCompatActivity() {
             return roundedBet.toInt()
         }
         currentBet = getStartBet(scoreViewModel.getScore())
+        binding.choosenBet.text = currentBet.toString()
         var lastPressedBet : View? = null
 
         val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -152,7 +153,7 @@ class HotGameActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupSlotsMachine() : SlotsBuilder {
+    private fun setupSlotsMachine(): SlotsBuilder {
         val builder = SlotsBuilder().Builder(this)
         val slots = builder
             .addSlots(R.id.slot_one, R.id.slot_two, R.id.slot_three)
@@ -168,144 +169,239 @@ class HotGameActivity : AppCompatActivity() {
             .setScrollTime(500 + SecureRandom().nextInt(1500))
             .setChildIncTime(1000)
             .setOnFinishListener(object : Callback() {
-                override fun onFinishListener() {
 
+                override fun onFinishListener() {
                     fun checkForMatches() {
                         val layoutManagers = getLayoutManagers()
 
-                        fun checkRow(layoutManager: LinearLayoutManager): Int {
-                            val match = HashMap<Int, Int>()
 
-//                            for (position in 0 until 3) {
-//                                val imageView = layoutManager.findViewByPosition(position+1) as ImageView
-//                                val drawableId = imageView.tag as Int
-//                                match[drawableId] = match.getOrDefault(drawableId, 0)
-//
+                        fun checkRow(layoutManager: LinearLayoutManager): Boolean {
+                            val elements = mutableListOf<Int>()
 
-                                for (i in 0 until 3) {
-                                val imageView = layoutManagers.get(i)
-                                     .findViewByPosition((layoutManagers.get(i)
-                                    .findFirstVisibleItemPosition() + 1) //+3
-                                         ) as ImageView
-                                 val drawableId = imageView.tag as Int
-                                    match[drawableId] = match.getOrDefault(drawableId, 0)
-
+                            for (position in 0 until layoutManager.childCount) {
+                                val imageView = layoutManager.getChildAt(position) as ImageView
+                                val drawableId = imageView.tag as Int
+                                Log.d("еееееееееууууу", "tag isssssssssssssssssss $drawableId")
+                                elements.add(drawableId)
                             }
 
-                            var resultMatch = 0
-                            match.values.forEach { value ->
-                                if (resultMatch < value) {
-                                    resultMatch = value
+                            // Проверяем, есть ли элемент, который встречается нужное количество раз (например, 3 раза)
+                            for (element in elements) {
+                                val count = elements.count { it == element }
+                                if (count >= 3) {
+                                    Log.d("aaaaaaaaaaaaaaaaaaaaa", "resultMatch iiiiiiiiiiiiiiis 3")
+                                    return true
                                 }
                             }
-
-                            return resultMatch
+                            return false
                         }
 
-                        fun getLayoutManager (index : Int) : LinearLayoutManager {
-                            return layoutManagers[index]
-
-                        }
-
-                        fun getDiagonalLayoutManager (topLeftToBottomRight : Boolean, activity: Activity) : LinearLayoutManager {
-                            val layoutManager = if (topLeftToBottomRight) {
-                                SpeedManager(activity)
-                            }
-                            else DiagonalLayoutManager(activity)
-                            return layoutManager
-                        }
 
                         fun handleMatch() {
                             successGame = true
                             scoreViewModel.countResult(currentBet, 2, successGame)
                             binding.btnSpin.isEnabled = true
-                            AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
-                            Log.d("youuuuuuuuuuuuuuuuuuuuuuuuuuu", "WWWWwwwwiiiiiiiiiiiiiiiiiiiiiiiiinnnnnnnnnnn")
+                            AnimationHelper.updateScoreOrBetTextViewAnimation(
+                                binding.resultBalance,
+                                scoreViewModel.getScore().toString()
+                            )
+                            Log.d(
+                                "youuuuuuuuuuuuuuuuuuuuuuuuuuu",
+                                "WWWWwwwwiiiiiiiiiiiiiiiiiiiiiiiiinnnnnnnnnnn"
+                            )
                         }
 
                         fun handleNoMatch() {
                             successGame = false
                             scoreViewModel.countResult(currentBet, 2, successGame)
                             binding.btnSpin.isEnabled = true
-                            AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
-                            Log.d("youuuuuuuuuuuuuuuuuuuuuuuuuuu", "Looooooooooooooooooooooooooooooooooooooooose")
+                            AnimationHelper.updateScoreOrBetTextViewAnimation(
+                                binding.resultBalance,
+                                scoreViewModel.getScore().toString()
+                            )
+                            Log.d(
+                                "youuuuuuuuuuuuuuuuuuuuuuuuuuu",
+                                "Looooooooooooooooooooooooooooooooooooooooose"
+                            )
                         }
 
+//////////////////////////////////vertical
 
-                        // Check horizontal rows
-                        for (i in 0 until 3) {
-                            val match = checkRow(layoutManagers[i])
-                            if (match == 3) {
-                                handleMatch()
-                                return
+                        fun checkVertical(): Boolean {
+
+                            for (i in 0 until 3) {
+                                Log.d("ddddddddddd", "iiiiiiiiiiin verticals $i")
+                                val match = checkRow(layoutManagers[i])
+                                Log.d("ииииииииииииииии", "match WAS IN вертикальное is $match")
+                                if (match == true) {
+
+                                    return true
+                                }
                             }
+                            return false
                         }
 
-                        // Check vertical rows
-                        for (i in 0 until 3) {
-                            val layoutManager = getLayoutManager(i)
-                            val match = checkRow(layoutManager)
-                            if (match == 3) {
-                                handleMatch()
-                                return
+                        //////////////////////////////////horizontal
+                        fun checkHorizontal(): Boolean {
+
+                            Log.d("ddddddddddd", "iiiiiiiiiiin horisontals")
+
+                            fun check1h(): Boolean {
+                                var elements1 = mutableListOf<Int>()
+
+                                for (i in 0 until 3) {
+                                    Log.d("ddddddddddd", "iiiiiiiiiiin horisontals $i")
+                                    val imageView = layoutManagers[i].getChildAt(0) as ImageView
+                                    val item = imageView.tag as Int
+                                    Log.d("еееееееееууууу", "tag isssssssssssssssssss $item")
+                                    elements1.add(item)
+                                }
+
+                                    for (element in elements1) {
+                                        val count = elements1.count { it == element }
+                                        Log.d(
+                                            "aaaaaaaaaaaaaaaaaaaaa",
+                                            "count is iiiiiiiiiiiiiiis $count"
+                                        )
+                                        if (count == 3) {
+
+                                            return true
+                                        } else {
+                                            elements1.clear()
+                                        }
+                                    }
+                                return false
                             }
+
+                            fun check2h(): Boolean {
+                                var elements2 = mutableListOf<Int>()
+                                for (i in 0 until 3) {
+                                    val imageView = layoutManagers[i].getChildAt(1) as ImageView
+                                    val item = imageView.tag as Int
+                                    Log.d("еееееееееууууу", "tag isssssssssssssssssss $item")
+                                    elements2.add(item)
+                                }
+                                    for (element in elements2) {
+                                        val count = elements2.count { it == element }
+                                        Log.d(
+                                            "aaaaaaaaaaaaaaaaaaaaa",
+                                            "count is iiiiiiiiiiiiiiis $count"
+                                        )
+                                        if (count == 3) {
+                                            return true
+                                        } else {
+                                            elements2.clear()
+                                        }
+                                    }
+
+                                return false
+                            }
+
+                            fun check3h(): Boolean {
+                                var elements3 = mutableListOf<Int>()
+                                for (i in 0 until 3) {
+                                    val imageView = layoutManagers[i].getChildAt(2) as ImageView
+                                    val item = imageView.tag as Int
+                                    Log.d("еееееееееууууу", "tag isssssssssssssssssss $item")
+                                    elements3.add(item)
+                                }
+                                    for (element in elements3) {
+                                        val count = elements3.count { it == element }
+                                        Log.d(
+                                            "aaaaaaaaaaaaaaaaaaaaa",
+                                            "count is iiiiiiiiiiiiiiis $count"
+                                        )
+                                        if (count == 3) {
+                                            return true
+                                        } else {
+                                            elements3.clear()
+                                        }
+                                    }
+                                return false
+                            }
+
+                            if (check1h() || check2h() || check3h() == true) {
+                                return true
+
+                            } else return false
                         }
 
-                        // Check diagonals
-                        val diagonal1 = checkRow(getDiagonalLayoutManager(true, this@HotGameActivity))
-                        val diagonal2 = checkRow(getDiagonalLayoutManager(false, this@HotGameActivity))
+                        fun checkDiagonals(): Boolean {
 
-                        if (diagonal1 == 3 || diagonal2 == 3) {
+                            Log.d("ddddddddddd", "iiiiiiiiiiin diagonals")
+
+                            fun check1 () : Boolean {
+                                var elements1 = mutableListOf<Int>()
+                                Log.d("ddddddddddd", "fiiiiiiiiiirst diagonal")
+                                for (i in 0 until 3) {
+                                    val imageView = layoutManagers[i].getChildAt(i) as ImageView
+                                    val item = imageView.tag as Int
+                                    Log.d("еееееееееууууу", "tag isssssssssssssssssss $item")
+                                    elements1.add(item)
+                                }
+                                    for (element in elements1) {
+                                        val count = elements1.count { it == element }
+                                        Log.d(
+                                            "aaaaaaaaaaaaaaaaaaaaa",
+                                            "count is iiiiiiiiiiiiiiis $count"
+                                        )
+                                        if (count == 3) {
+                                            return true
+                                        } else {
+                                            elements1.clear()
+                                        }
+                                    }
+
+                                return false
+                            }
+
+
+                            fun check2 () : Boolean {
+                                var counter = 2
+                                var elements2 = mutableListOf<Int>()
+                                for (i in 0 until 3) {
+                                    Log.d("ddddddddddd", "second diagonal")
+                                    val imageView =
+                                        layoutManagers[i].getChildAt(counter - i) as ImageView
+                                    val item = imageView.tag as Int
+                                    Log.d("еееееееееууууу", "tag isssssssssssssssssss $item")
+                                    elements2.add(item)
+                                }
+                                    for (element in elements2) {
+                                        val count = elements2.count { it == element }
+                                        Log.d(
+                                            "aaaaaaaaaaaaaaaaaaaaa",
+                                            "count is iiiiiiiiiiiiiiis $count"
+                                        )
+                                        if (count == 3) {
+                                            return true
+                                        } else {
+                                            elements2.clear()
+                                        }
+                                    }
+
+                                return false
+                            }
+                            if (check1() || check2() == true) {
+                                return true
+                            }
+                            else return false
+                        }
+
+
+                        if (checkVertical() || checkHorizontal() || checkDiagonals() == true) {
                             handleMatch()
-                            return
                         }
-
-                        // No match found
-                        handleNoMatch()
+                        else {
+                            handleNoMatch()
+                        }
                     }
-
                     checkForMatches()
-
-
-
-//                    val match = HashMap<Int, Int>()
-//                    for (i in 0 until 3) {
-//                        val imageView = layoutManagers.get(i)
-//                            .findViewByPosition(
-//                                (layoutManagers.get(i)
-//                                    .findFirstVisibleItemPosition() + 1) //+3
-//                            ) as ImageView
-//                        val drawableId = imageView.tag as Int
-//
-//                        match[drawableId] = match.getOrDefault(drawableId, 0) + 1 //is it needed?
-//                    }
-//
-//                    var resultMatch = 0
-//                    match.values.forEach { value ->
-//                        if (resultMatch < value) {
-//                            resultMatch = value
-//                        }
-//                    }
-//
-//                    if (resultMatch == 3 && !binding.btnSpin.isEnabled) {
-//                        successGame = true
-//                        scoreViewModel.countResult(currentBet, 2, successGame)
-//                        //add visual changes
-//                        binding.btnSpin.isEnabled = true
-//                        AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
-//                    }
-//                    else {
-//                        successGame = false
-//                        scoreViewModel.countResult(currentBet, 2, successGame)
-//                        binding.btnSpin.isEnabled = true
-//                    }
-//                    AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
                 }
             })
             .build()
         return slots
     }
-
     override fun onSaveInstanceState(outState: Bundle) {
         outState.putInt("currentBet", currentBet)
         outState.putInt("winsCount", winsCount)
@@ -325,8 +421,6 @@ class HotGameActivity : AppCompatActivity() {
         super.onResume()
         musicService.playMusic(theEnd)
     }
-
-
     //событие нажатия н акнопку назад
 }
 

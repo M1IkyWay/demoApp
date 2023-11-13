@@ -15,7 +15,7 @@ class DiagonalLayoutManager (context: Context) : LinearLayoutManager (context){
     }
 
     override fun canScrollVertically(): Boolean {
-        return false
+        return true
     }
 
 }

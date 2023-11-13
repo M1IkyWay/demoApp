@@ -21,12 +21,14 @@ class ComingSoonActivity : AppCompatActivity() {
 
         scope.launch {
 
-            repeat(5) {
-                YoYo.with(Techniques.BounceInUp).duration(300).playOn(binding.coomingSoon)
-                YoYo.with(Techniques.BounceInDown).duration(300).playOn(binding.coomingSoon)
-                delay(700)
+//            repeat(7) {
+//                YoYo.with(Techniques.ZoomInLeft).duration(700).playOn(binding.coomingSoon)
 
-            }
+            YoYo.with(Techniques.FadeInLeft).duration(700).playOn(binding.coomingSoon)
+                delay(700)
+//                YoYo.with(Techniques.BounceIn).duration(700).playOn(binding.coomingSoon)
+
+//            }
 
         }
 

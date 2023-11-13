@@ -175,11 +175,13 @@ class SoundHelper (context: Context) {
 
     fun winShot (intensity : Int, vibratorr: Vibrator) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            val intensityArr = intArrayOf(intensity, intensity, intensity, intensity,
-                intensity, intensity, intensity, intensity)
-            val array : LongArray = longArrayOf(0, 100, 100, 100, 100, 300, 70, 500)
-            val vibrationEffect = VibrationEffect.createWaveform(array, intensity)
-            vibratorr.vibrate(vibrationEffect)
+            val intensityArr = intArrayOf(intensity, intensity, intensity, intensity)
+            val array1 : LongArray = longArrayOf(0, 100, 100, 100)
+            val array2 : LongArray = longArrayOf(100, 300, 70, 500)
+            val vibrationEffect1 = VibrationEffect.createWaveform(array1, intensityArr, 1)
+            val vibrationEffect2 = VibrationEffect.createWaveform(array2, intensityArr, 1)
+            vibratorr.vibrate(vibrationEffect1)
+            vibratorr.vibrate(vibrationEffect2)
             vibratorr.cancel()
         }
         else {
