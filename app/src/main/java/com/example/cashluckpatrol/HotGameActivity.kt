@@ -266,8 +266,6 @@ class HotGameActivity : AppCompatActivity() {
                                         if (count == 3) {
 
                                             return true
-                                        } else {
-                                            elements1.clear()
                                         }
                                     }
                                 return false
@@ -289,8 +287,6 @@ class HotGameActivity : AppCompatActivity() {
                                         )
                                         if (count == 3) {
                                             return true
-                                        } else {
-                                            elements2.clear()
                                         }
                                     }
 
@@ -313,8 +309,6 @@ class HotGameActivity : AppCompatActivity() {
                                         )
                                         if (count == 3) {
                                             return true
-                                        } else {
-                                            elements3.clear()
                                         }
                                     }
                                 return false
@@ -347,8 +341,6 @@ class HotGameActivity : AppCompatActivity() {
                                         )
                                         if (count == 3) {
                                             return true
-                                        } else {
-                                            elements1.clear()
                                         }
                                     }
 
@@ -375,8 +367,6 @@ class HotGameActivity : AppCompatActivity() {
                                         )
                                         if (count == 3) {
                                             return true
-                                        } else {
-                                            elements2.clear()
                                         }
                                     }
 
