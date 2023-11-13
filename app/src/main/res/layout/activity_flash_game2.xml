@@ -52,29 +52,32 @@
                 android:layout_alignTop="@id/winsAmount"
                 android:layout_alignEnd="@id/winsAmount"
                 android:layout_alignBottom="@id/winsAmount"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true">
+                android:layout_centerInParent="true"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="8dp">
 
                 <TextView
                     android:id="@+id/winsWord"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/fastup_bold"
+                    android:fontFamily="@font/foooont"
                     android:gravity="center"
-                    android:text="Win "
                     android:shadowColor="@color/white"
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="5"
+                    android:text="WIN "
                     android:textColor="@color/input_color"
-                    android:textSize="@dimen/_18sdp"
+                    android:textSize="@dimen/_15sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.4"
+                    app:layout_constraintHorizontal_bias="0.368"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.5" />
+                    app:layout_constraintVertical_bias="0.555" />
 
                 <TextView
                     android:id="@+id/winsCount"
@@ -82,19 +85,19 @@
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/winsWord"
                     android:fontFamily="@font/air_millhouse_italic"
-                    android:text="0"
                     android:shadowColor="@color/white"
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="5"
+                    android:text="0"
                     android:textColor="@color/input_color"
                     android:textSize="@dimen/_16sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.15"
+                    app:layout_constraintHorizontal_bias="0.212"
                     app:layout_constraintStart_toEndOf="@id/winsWord"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.5" />
+                    app:layout_constraintVertical_bias="0.65" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -117,7 +120,8 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/area_gold" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <RelativeLayout
+                android:id="@+id/parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@id/balance"
@@ -130,39 +134,39 @@
                 <TextView
                     android:id="@+id/balanceW"
                     android:layout_width="@dimen/_60sdp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
                     android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="10dp"
                     android:fontFamily="@font/air_millhouse_italic"
                     android:gravity="center"
-                    android:text="Balance"
                     android:shadowColor="@color/white"
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="5"
+                    android:text="Balance"
                     android:textColor="@color/input_color"
-                    android:textSize="@dimen/_18sdp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.05"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.45" />
+                    android:textSize="@dimen/_18sdp" />
 
                 <TextView
                     android:id="@+id/resultBalance"
                     android:layout_width="@dimen/_70sdp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="-1dp"
                     android:layout_toEndOf="@id/balanceW"
+                    android:ems="6"
                     android:fontFamily="@font/air_millhouse_italic"
-                    android:text="123456"
+                    android:gravity="center"
                     android:shadowColor="@color/white"
                     android:shadowDx="3"
                     android:shadowDy="3"
-                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/_10sdp"
                     android:shadowRadius="5"
+                    android:text="12345"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:textColor="@color/input_color"
                     android:textSize="@dimen/_14sdp"
-                    android:ems="6"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -171,7 +175,7 @@
                     app:layout_constraintVertical_bias="0.5" />
 
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
         </RelativeLayout>
 
     </LinearLayout>
