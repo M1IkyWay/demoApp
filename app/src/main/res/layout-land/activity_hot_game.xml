@@ -23,7 +23,7 @@
         android:layout_height="@dimen/_40sdp"
         android:layout_marginTop="4dp"
         android:orientation="horizontal"
-        android:paddingHorizontal="@dimen/_15sdp"
+        android:paddingHorizontal="@dimen/_115sdp"
         android:translationZ="@dimen/_2sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
-            android:layout_width="@dimen/_70sdp"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/_35sdp"
             android:layout_gravity="center"
             android:layout_marginEnd="@dimen/_5sdp"
@@ -41,22 +41,22 @@
 
             <ImageView
                 android:id="@+id/winsAmount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="156dp"
+                android:layout_height="35dp"
                 app:srcCompat="@drawable/bg_field" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="163dp"
+                android:layout_height="36dp"
                 android:layout_alignStart="@id/winsAmount"
                 android:layout_alignTop="@id/winsAmount"
                 android:layout_alignEnd="@id/winsAmount"
                 android:layout_alignBottom="@id/winsAmount"
                 android:layout_centerInParent="true"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginBottom="8dp">
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="4dp">
 
                 <TextView
                     android:id="@+id/winsWord"
@@ -106,7 +106,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="@dimen/_70sdp"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/_35sdp"
             android:layout_gravity="center"
             android:layout_marginStart="@dimen/_5sdp"
@@ -116,28 +116,31 @@
 
             <ImageView
                 android:id="@+id/balance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="222dp"
+                android:layout_height="match_parent"
                 app:srcCompat="@drawable/bg_field" />
 
             <RelativeLayout
                 android:id="@+id/parent"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_alignStart="@id/balance"
                 android:layout_alignTop="@id/balance"
                 android:layout_alignEnd="@id/balance"
                 android:layout_alignBottom="@id/balance"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true">
+                android:layout_centerInParent="true"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="-1dp">
 
                 <TextView
                     android:id="@+id/balanceW"
                     android:layout_width="@dimen/_60sdp"
                     android:layout_height="@dimen/_20sdp"
-                    android:layout_marginStart="@dimen/_5sdp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_5sdp"
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/air_millhouse_italic"
                     android:gravity="center"
@@ -151,9 +154,11 @@
 
                 <TextView
                     android:id="@+id/resultBalance"
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="98dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="-1dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
                     android:layout_toEndOf="@id/balanceW"
                     android:ems="6"
                     android:fontFamily="@font/air_millhouse_italic"
@@ -161,10 +166,8 @@
                     android:shadowColor="@color/white"
                     android:shadowDx="3"
                     android:shadowDy="3"
-                    android:layout_marginBottom="@dimen/_10sdp"
                     android:shadowRadius="5"
-                    android:text="12345"
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="123456"
                     android:textColor="@color/input_color"
                     android:textSize="@dimen/_14sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
