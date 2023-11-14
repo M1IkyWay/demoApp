@@ -7,6 +7,9 @@ import android.os.Bundle
 import android.os.Handler
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.children
 import com.example.cashluckpatrol.databinding.ActivitySplashScreenBinding
 import kotlinx.coroutines.CoroutineScope
@@ -17,6 +20,7 @@ import kotlinx.coroutines.launch
 import kotlin.random.Random
 
 class SplashScreen : AppCompatActivity() {
+
     lateinit var binding : ActivitySplashScreenBinding
 
     fun startDownloading (intent : Intent) {
@@ -37,6 +41,13 @@ class SplashScreen : AppCompatActivity() {
         }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
+        val windowInsetsController =
+            ViewCompat.getWindowInsetsController(window.decorView) ?: return
+        // Configure the behavior of the hidden system bars
+        windowInsetsController.systemBarsBehavior =
+            WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        // Hide both the status bar and the navigation bar
+        windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)

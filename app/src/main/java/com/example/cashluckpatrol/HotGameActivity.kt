@@ -27,6 +27,9 @@ import java.security.SecureRandom
 import java.util.HashMap
 import kotlin.properties.Delegates
 import android.app.Activity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 
 class HotGameActivity : AppCompatActivity() {
 
@@ -42,6 +45,13 @@ class HotGameActivity : AppCompatActivity() {
     lateinit var soundHelper: SoundHelper
     var theEnd = 0
     override fun onCreate(savedInstanceState: Bundle?) {
+        val windowInsetsController =
+            ViewCompat.getWindowInsetsController(window.decorView) ?: return
+        // Configure the behavior of the hidden system bars
+        windowInsetsController.systemBarsBehavior =
+            WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        // Hide both the status bar and the navigation bar
+        windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
         super.onCreate(savedInstanceState)
         binding = ActivityHotGameBinding.inflate(layoutInflater)
         setContentView(binding.root)

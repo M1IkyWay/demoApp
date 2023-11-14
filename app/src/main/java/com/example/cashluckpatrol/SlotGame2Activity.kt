@@ -27,6 +27,10 @@ import android.widget.ImageView
 import android.widget.PopupWindow
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.example.cashluckpatrol.databinding.ActivitySlotGame2Binding
@@ -77,6 +81,13 @@ class SlotGame2Activity : AppCompatActivity() {
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
+        val windowInsetsController =
+            ViewCompat.getWindowInsetsController(window.decorView) ?: return
+        // Configure the behavior of the hidden system bars
+        windowInsetsController.systemBarsBehavior =
+            WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        // Hide both the status bar and the navigation bar
+        windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
         super.onCreate(savedInstanceState)
         binding = ActivitySlotGame2Binding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -98,6 +109,7 @@ class SlotGame2Activity : AppCompatActivity() {
             return roundedBet.toInt()
         }
         bet = getStartBet(scoreViewModel.getScore())
+        binding.betNumber.text = bet.toString()
         val soundVolume = scoreViewModel.getSoundVolume()
         soundHelper = (application as MyApplication).soundHelper
         val intensity = scoreViewModel.getVibroIntensity()
@@ -121,6 +133,13 @@ class SlotGame2Activity : AppCompatActivity() {
         }
 
         val scope = CoroutineScope (Dispatchers.Main)
+
+        binding.buttBack.setOnClickListener {
+            soundHelper.vibroClick(intensity)
+            soundHelper.clickSound(this, soundVolume)
+            AnimationHelper.smallClickView(it, this)
+            onBackPressed()
+        }
 
 //warning was supressed
         btnUp.setOnTouchListener { view, event ->
