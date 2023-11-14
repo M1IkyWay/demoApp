@@ -3137,6 +3137,7 @@ int drawable abc_vector_test 0x7f070056
 int drawable active_rect 0x7f070057
 int drawable animation 0x7f070058
 int drawable area_gold 0x7f070059
+int drawable arrow_back 0x7f0701e5
 int drawable arrow_rotate 0x7f07005a
 int drawable avd_hide_password 0x7f07005b
 int drawable avd_show_password 0x7f07005c
@@ -3676,6 +3677,7 @@ int id btnSpin 0x7f09007f
 int id btn_down 0x7f090080
 int id btn_up 0x7f090081
 int id buttText 0x7f0902ba
+int id butt_back 0x7f0902bd
 int id buttonPanel 0x7f090082
 int id buttons 0x7f090083
 int id cache_measures 0x7f090084

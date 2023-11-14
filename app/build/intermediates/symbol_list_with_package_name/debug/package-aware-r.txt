@@ -3138,6 +3138,7 @@ drawable abc_vector_test
 drawable active_rect
 drawable animation
 drawable area_gold
+drawable arrow_back
 drawable arrow_rotate
 drawable avd_hide_password
 drawable avd_show_password
@@ -3677,6 +3678,7 @@ id btnSpin
 id btn_down
 id btn_up
 id buttText
+id butt_back
 id buttonPanel
 id buttons
 id cache_measures

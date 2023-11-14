@@ -31,6 +31,7 @@ drawable a_lit
 drawable active_rect
 drawable animation
 drawable area_gold
+drawable arrow_back
 drawable arrow_rotate
 drawable back_flash2
 drawable back_main_circle
@@ -153,6 +154,7 @@ id btnSpin
 id btn_down
 id btn_up
 id buttText
+id butt_back
 id buttons
 id choosenBet
 id confetti
