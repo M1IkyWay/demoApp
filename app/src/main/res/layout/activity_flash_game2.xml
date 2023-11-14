@@ -17,11 +17,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/back_flash2" />
 
+
+    <ImageView
+        android:id="@+id/butt_back"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toTopOf="@id/upperPlace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85"
+        app:srcCompat="@drawable/arrow_back" />
+
+
     <LinearLayout
         android:id="@+id/upperPlace"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_60sdp"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="48dp"
         android:orientation="horizontal"
         android:paddingHorizontal="@dimen/_15sdp"
         android:translationZ="@dimen/_2sdp"
@@ -135,9 +151,9 @@
                     android:id="@+id/balanceW"
                     android:layout_width="@dimen/_60sdp"
                     android:layout_height="@dimen/_20sdp"
-                    android:layout_marginStart="@dimen/_5sdp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_5sdp"
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/air_millhouse_italic"
                     android:gravity="center"
@@ -154,6 +170,8 @@
                     android:layout_width="@dimen/_70sdp"
                     android:layout_height="@dimen/_20sdp"
                     android:layout_marginStart="-1dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
                     android:layout_toEndOf="@id/balanceW"
                     android:ems="6"
                     android:fontFamily="@font/air_millhouse_italic"
@@ -161,10 +179,8 @@
                     android:shadowColor="@color/white"
                     android:shadowDx="3"
                     android:shadowDy="3"
-                    android:layout_marginBottom="@dimen/_10sdp"
                     android:shadowRadius="5"
                     android:text="12345"
-                    android:layout_marginTop="@dimen/_10sdp"
                     android:textColor="@color/input_color"
                     android:textSize="@dimen/_14sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -180,7 +196,6 @@
 
     </LinearLayout>
 
-
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="@dimen/_240sdp"
@@ -191,7 +206,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22">
+        app:layout_constraintVertical_bias="0.3">
 
         <LinearLayout
             android:layout_width="match_parent"

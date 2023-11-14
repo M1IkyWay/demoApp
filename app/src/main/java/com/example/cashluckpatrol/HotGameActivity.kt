@@ -119,6 +119,12 @@ class HotGameActivity : AppCompatActivity() {
         val betList = listOf(binding.bet50, binding.bet100, binding.bet150, binding.bet200, binding.bet250,
             binding.bet300, binding.bet350, binding.bet500)
 
+        binding.buttBack.setOnClickListener {
+            soundHelper.vibroClick(intensity)
+            soundHelper.clickSound(this, soundVolume)
+            AnimationHelper.smallClickView(it, this)
+            onBackPressed()
+        }
 
 
         betList.forEach {

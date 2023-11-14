@@ -190,6 +190,14 @@ class FlashGame1Activity : AppCompatActivity() {
 //            }
 //        }
 
+        binding.buttBack.setOnClickListener {
+            soundHelper.vibroClick(intensity)
+            soundHelper.clickSound2(this, soundVolume)
+            AnimationHelper.smallClickView(it, this)
+            onBackPressed()
+        }
+
+
         binding.decremBet.setOnClickListener {
             soundHelper.vibroClick(intensity)
             soundHelper.clickSound2(this, soundVolume)

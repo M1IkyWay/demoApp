@@ -116,6 +116,17 @@ class SlotGame1Activity : AppCompatActivity() {
             binding.resultBalance.setText("$newscore")
         })
 
+        binding.buttBack.setOnClickListener {
+            soundHelper.vibroClick(intensity)
+            soundHelper.clickSound2(this, soundVolume)
+            AnimationHelper.smallClickView(it, this)
+            onBackPressed()
+        }
+
+
+
+
+
         binding.decremBet.setOnClickListener {
             soundHelper.vibroClick(intensity)
             soundHelper.clickSound2(this, soundVolume)

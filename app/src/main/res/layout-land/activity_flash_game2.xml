@@ -17,6 +17,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bg_flash2_land" />
 
+    <ImageView
+        android:id="@+id/butt_back"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.033"
+        app:srcCompat="@drawable/arrow_back" />
+
 
     <LinearLayout
         android:layout_width="match_parent"

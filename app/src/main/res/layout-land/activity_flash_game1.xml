@@ -17,6 +17,20 @@
         app:srcCompat="@drawable/flash_back1_hor" />
 
 
+    <ImageView
+        android:id="@+id/butt_back"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.033"
+        app:srcCompat="@drawable/arrow_back" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,7 +42,7 @@
             android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="4dp"
             android:orientation="horizontal"
-            android:paddingHorizontal="@dimen/_125sdp"
+            android:paddingHorizontal="@dimen/_135sdp"
             android:translationZ="@dimen/_2sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

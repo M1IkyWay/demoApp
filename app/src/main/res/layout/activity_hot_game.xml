@@ -18,18 +18,36 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/background" />
 
+
+    <ImageView
+        android:id="@+id/butt_back"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toTopOf="@id/upperPlace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/arrow_back" />
+
+
     <LinearLayout
         android:id="@+id/upperPlace"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_60sdp"
+        android:layout_height="@dimen/_50sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:orientation="horizontal"
         android:paddingHorizontal="@dimen/_15sdp"
         android:translationZ="@dimen/_2sdp"
+        app:layout_constraintBottom_toTopOf="@+id/box"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9">
 
         <RelativeLayout
             android:layout_width="@dimen/_70sdp"
@@ -134,9 +152,9 @@
                     android:id="@+id/balanceW"
                     android:layout_width="@dimen/_60sdp"
                     android:layout_height="@dimen/_20sdp"
-                    android:layout_marginStart="@dimen/_5sdp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_5sdp"
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/air_millhouse_italic"
                     android:gravity="center"
@@ -153,6 +171,8 @@
                     android:layout_width="@dimen/_70sdp"
                     android:layout_height="@dimen/_20sdp"
                     android:layout_marginStart="-1dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
                     android:layout_toEndOf="@id/balanceW"
                     android:ems="6"
                     android:fontFamily="@font/air_millhouse_italic"
@@ -160,10 +180,8 @@
                     android:shadowColor="@color/white"
                     android:shadowDx="3"
                     android:shadowDy="3"
-                    android:layout_marginBottom="@dimen/_10sdp"
                     android:shadowRadius="5"
                     android:text="12345"
-                    android:layout_marginTop="@dimen/_10sdp"
                     android:textColor="@color/input_color"
                     android:textSize="@dimen/_14sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -189,7 +207,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.190">
+        app:layout_constraintVertical_bias="0.240">
 
         <ImageView
             android:id="@+id/marginGame"
@@ -257,12 +275,12 @@
         android:id="@+id/imageView12"
         android:layout_width="116dp"
         android:layout_height="121dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.614"
+        app:layout_constraintVertical_bias="1"
         app:srcCompat="@drawable/cop" />
 
     <LinearLayout

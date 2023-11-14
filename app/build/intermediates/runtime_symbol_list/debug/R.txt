@@ -3967,8 +3967,6 @@ int id navigation_header_container 0x7f09019e
 int id never 0x7f09019f
 int id neverCompleteToEnd 0x7f0901a0
 int id neverCompleteToStart 0x7f0901a1
-int id no 0x7f0901a2
-int id noButton 0x7f0901a3
 int id noScroll 0x7f0901a4
 int id noState 0x7f0901a5
 int id none 0x7f0901a6

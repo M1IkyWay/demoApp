@@ -94,6 +94,14 @@ class FlashGame2Activity : AppCompatActivity() {
             AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, newScore.toString())
         }
 
+
+        binding.buttBack.setOnClickListener {
+            soundHelper.vibroClick(intensity)
+            soundHelper.clickSound2(this, soundVolume)
+            AnimationHelper.smallClickView(it, this)
+            onBackPressed()
+        }
+
        decremBut.setOnClickListener {
            soundHelper.vibroClick(intensity)
             soundHelper.clickSound2(this, soundVolume)

@@ -233,8 +233,6 @@ id linearLayout2
 id linear_slots
 id marginGame
 id musicText
-id no
-id noButton
 id num1
 id num2
 id num3

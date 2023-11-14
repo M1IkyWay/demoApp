@@ -44,7 +44,8 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(binding.root)
         soundHelper = (application as MyApplication).soundHelper
         scoreViewModel = (application as MyApplication).scoreViewModel
-
+        var intensity = scoreViewModel.getVibroIntensity()
+        var soundVolume = scoreViewModel.getSoundVolume()
 
         audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
@@ -81,11 +82,13 @@ class SettingsActivity : AppCompatActivity() {
                                 it.square.setImageResource(R.drawable.non_active_rect)
                             }
                             scoreViewModel.updateSoundVolume(0f)
+                            soundVolume = 0f
                             audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 0, 0)
                         } else {
                             it.setImageResource(R.drawable.active_rect)
                             val newSoundLevel = (maxVolume / 8 * itsLevel).toFloat()
                             scoreViewModel.updateSoundVolume(newSoundLevel)
+                            soundVolume = newSoundLevel
                             audioManager.setStreamVolume(
                                 AudioManager.STREAM_MUSIC,
                                 newSoundLevel.toInt(),
@@ -172,6 +175,13 @@ class SettingsActivity : AppCompatActivity() {
             getSystemService(VIBRATOR_SERVICE) as Vibrator
         }
 
+        binding.buttBack.setOnClickListener {
+            soundHelper.vibroClick(intensity)
+            soundHelper.clickSound2(this, soundVolume)
+            AnimationHelper.smallClickView(it, this)
+            onBackPressed()
+        }
+
         fun vibroSettings () {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
 
@@ -186,11 +196,13 @@ class SettingsActivity : AppCompatActivity() {
                                 it.square.setImageResource(R.drawable.non_active_rect)
                             }
                             scoreViewModel.updateVibroIntensity(0)
+                            intensity = 0
 
                         } else {
                             it.setImageResource(R.drawable.active_rect)
                             val newVibroLevel = (255 / 8 * itsLevel).toInt()
                             scoreViewModel.updateVibroIntensity(newVibroLevel)
+                            intensity = newVibroLevel
                             val oneShot = VibrationEffect.createOneShot(200, newVibroLevel)
                             vibrator.vibrate(oneShot)
                             Log.d("iiiiiiiiiiiiiiiiiiiiiiii", "Its level is $newVibroLevel")
@@ -251,6 +263,11 @@ class SettingsActivity : AppCompatActivity() {
                         }
                     }
                 }
+            }
+
+
+            binding.resetScoreText.setOnClickListener {
+                scoreViewModel.updateScore(2000)
             }
         }
 

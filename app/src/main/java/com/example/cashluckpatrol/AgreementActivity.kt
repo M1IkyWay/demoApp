@@ -1,9 +1,12 @@
 package com.example.cashluckpatrol
 
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.ActivityInfo
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -23,7 +26,8 @@ class AgreementActivity : AppCompatActivity() {
         windowInsetsController.systemBarsBehavior =
             WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         // Hide both the status bar and the navigation bar
-        windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
+
+
         super.onCreate(savedInstanceState)
         binding = ActivityAgreementBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -55,13 +59,6 @@ class AgreementActivity : AppCompatActivity() {
 
         }
 
-        binding.noButton.setOnClickListener {
-            AnimationHelper.smallClickView(it, this)
-            soundHelper.vibroClick(intensity)
-            soundHelper.clickSound(this, soundVolume)
-            startActivity(Intent(this, PlayActivity::class.java))
-
-        }
     }
 
 

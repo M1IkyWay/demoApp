@@ -20,9 +20,24 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/background" />
 
+    <ImageView
+        android:id="@+id/butt_back"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@drawable/arrow_back" />
+
     <TextView
         android:id="@+id/setingsText"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/_200sdp"
+        android:gravity="center"
         android:layout_height="wrap_content"
         android:fontFamily="@font/air_millhouse_italic"
         android:shadowColor="@color/shadow_color"
@@ -42,7 +57,8 @@
 
     <TextView
         android:id="@+id/musicText"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/_180sdp"
+        android:gravity="center"
         android:layout_height="wrap_content"
         android:fontFamily="@font/air_millhouse_italic"
         android:shadowColor="@color/shadow_color"
@@ -177,8 +193,9 @@
 
     <TextView
         android:id="@+id/vibrationText"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/_170sdp"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:fontFamily="@font/air_millhouse_italic"
         android:shadowColor="@color/shadow_color"
         android:shadowDx="3"
@@ -323,6 +340,8 @@
         android:text="@string/reset_score"
         android:textColor="@color/white"
         android:textSize="@dimen/_35sdp"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
