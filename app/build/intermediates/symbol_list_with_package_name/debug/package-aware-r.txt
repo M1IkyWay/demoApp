@@ -3153,7 +3153,9 @@ drawable bet_mgn
 drawable bg_btn_flash1
 drawable bg_default
 drawable bg_field
+drawable bg_flash2_land
 drawable bg_input
+drawable bg_slot1_land
 drawable bomb
 drawable bt_play_small
 drawable btn_bet
@@ -3531,9 +3533,14 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable transparent_background
 drawable you_win_
+font a_citynovabolditalic
 font air_millhouse_italic
+font appetiteitalic
+font atyp_display_bold_italic
 font bamf_italic4
 font drpeppers2
+font fastup_bold
+font foooont
 font hot_pizza6
 font try_clother
 font try_clother_bold
@@ -3669,6 +3676,7 @@ id btnRotate
 id btnSpin
 id btn_down
 id btn_up
+id buttText
 id buttonPanel
 id buttons
 id cache_measures
@@ -3847,8 +3855,9 @@ id imageView12
 id imageView13
 id imageView14
 id imageView15
+id imageView16
 id imageView2
-id imageView22
+id imageView3
 id imageView4
 id imageView5
 id imageView6

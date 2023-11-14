@@ -80,9 +80,10 @@
 
         <TextView
             android:id="@+id/hotPlay_text"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_45sdp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:gravity="center"
             android:layout_centerVertical="true"
             android:fontFamily="@font/air_millhouse_italic"
             android:text="@string/play"

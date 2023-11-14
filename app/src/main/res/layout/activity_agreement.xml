@@ -144,7 +144,7 @@
 
     <TextView
         android:id="@+id/yes"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/_60sdp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/air_millhouse_italic"
         android:text="@string/yes_button"

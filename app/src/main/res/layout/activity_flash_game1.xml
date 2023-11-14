@@ -22,7 +22,7 @@
         android:id="@+id/upperPlace"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_60sdp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:orientation="horizontal"
         android:paddingHorizontal="@dimen/_15sdp"
         android:translationZ="@dimen/_2sdp"
@@ -70,7 +70,7 @@
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="5"
-                    android:text="WIN "
+                    android:text="WINS "
                     android:textColor="@color/input_color"
                     android:textSize="@dimen/_15sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -183,13 +183,13 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/_300sdp"
         android:layout_height="@dimen/_130sdp"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.971">
@@ -197,41 +197,42 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_60sdp"
+            android:layout_height="@dimen/_58sdp"
             android:orientation="horizontal">
 
 
             <ImageButton
                 android:id="@+id/decremBet"
-                android:layout_width="@dimen/_70sdp"
+                android:layout_width="@dimen/_48sdp"
                 android:layout_height="@dimen/_58sdp"
-                android:layout_marginTop="@dimen/_3sdp"
                 android:layout_weight="1"
                 android:background="@drawable/transparent_background"
                 android:clickable="true"
                 android:focusable="true"
                 android:scaleType="fitCenter"
-                android:textAlignment="center"
                 app:srcCompat="@drawable/btn_decrement_purple" />
 
             <RelativeLayout
-                android:layout_width="@dimen/_130sdp"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_58sdp"
                 android:layout_gravity="center"
                 android:layout_weight="2"
+                android:paddingHorizontal="@dimen/_5sdp"
                 android:gravity="center">
 
 
                 <ImageView
                     android:id="@+id/bgBet"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_58sdp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/bg_btn_flash1" />
 
                 <ImageView
                     android:id="@+id/betMrg"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:layout_height="@dimen/_58sdp"
                     app:srcCompat="@drawable/marg_flash1" />
 
 
@@ -255,9 +256,8 @@
 
             <ImageButton
                 android:id="@+id/incremBet"
-                android:layout_width="@dimen/_70sdp"
+                android:layout_width="@dimen/_48sdp"
                 android:layout_height="@dimen/_58sdp"
-                android:layout_marginTop="@dimen/_3sdp"
                 android:layout_weight="1"
                 android:background="@drawable/transparent_background"
                 android:clickable="true"
@@ -280,7 +280,6 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/_5sdp"
                 android:layout_gravity="center"
                 android:gravity="center">
 
@@ -290,14 +289,16 @@
                     android:layout_width="wrap_content"
                     android:clickable="true"
                     android:focusable="true"
-                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:paddingHorizontal="@dimen/_1sdp"
+                    android:layout_height="@dimen/_58sdp"
                     app:srcCompat="@drawable/btn_spin_purple" />
 
 
                 <TextView
                     android:id="@+id/buttText"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_58sdp"
                     android:layout_alignStart="@id/btnSpin"
                     android:layout_alignTop="@id/btnSpin"
                     android:layout_alignEnd="@id/btnSpin"
@@ -325,7 +326,7 @@
         android:layout_marginStart="@dimen/_8sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.45">
@@ -1035,8 +1036,9 @@
         android:layout_width="@dimen/_73sdp"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginStart="-4dp"
         android:orientation="vertical"
-        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintVertical_bias="0.45"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -1051,7 +1053,7 @@
 
             <ImageView
                 android:id="@+id/rectangle1"
-                android:layout_width="@dimen/_70sdp"
+                android:layout_width="@dimen/_65sdp"
                 android:layout_height="@dimen/_50sdp"
                 android:layout_gravity="center"
                 android:clickable="true"
@@ -1083,7 +1085,7 @@
 
             <ImageView
                 android:id="@+id/rectangle2"
-                android:layout_width="@dimen/_70sdp"
+                android:layout_width="@dimen/_65sdp"
                 android:layout_height="@dimen/_50sdp"
                 android:layout_gravity="center"
                 android:clickable="true"
@@ -1115,7 +1117,7 @@
 
             <ImageView
                 android:id="@+id/rectangle3"
-                android:layout_width="@dimen/_70sdp"
+                android:layout_width="@dimen/_65sdp"
                 android:layout_height="@dimen/_50sdp"
                 android:layout_gravity="center"
                 android:clickable="true"
@@ -1147,7 +1149,7 @@
 
             <ImageView
                 android:id="@+id/rectangle4"
-                android:layout_width="@dimen/_70sdp"
+                android:layout_width="@dimen/_65sdp"
                 android:layout_height="@dimen/_50sdp"
                 android:layout_gravity="center"
                 android:clickable="true"
@@ -1179,7 +1181,7 @@
 
             <ImageView
                 android:id="@+id/rectangle5"
-                android:layout_width="@dimen/_70sdp"
+                android:layout_width="@dimen/_65sdp"
                 android:layout_height="@dimen/_50sdp"
                 android:layout_gravity="center"
                 android:clickable="true"

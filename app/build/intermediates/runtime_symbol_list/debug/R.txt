@@ -3152,7 +3152,9 @@ int drawable bet_mgn 0x7f070065
 int drawable bg_btn_flash1 0x7f070066
 int drawable bg_default 0x7f070067
 int drawable bg_field 0x7f070068
+int drawable bg_flash2_land 0x7f0701e4
 int drawable bg_input 0x7f070069
+int drawable bg_slot1_land 0x7f0701e3
 int drawable bomb 0x7f07006a
 int drawable bt_play_small 0x7f07006b
 int drawable btn_bet 0x7f07006c
@@ -3530,9 +3532,14 @@ int drawable tooltip_frame_dark 0x7f0701df
 int drawable tooltip_frame_light 0x7f0701e0
 int drawable transparent_background 0x7f0701e1
 int drawable you_win_ 0x7f0701e2
+int font a_citynovabolditalic 0x7f080008
 int font air_millhouse_italic 0x7f080000
+int font appetiteitalic 0x7f080009
+int font atyp_display_bold_italic 0x7f08000a
 int font bamf_italic4 0x7f080001
 int font drpeppers2 0x7f080002
+int font fastup_bold 0x7f08000b
+int font foooont 0x7f08000c
 int font hot_pizza6 0x7f080003
 int font try_clother 0x7f080004
 int font try_clother_bold 0x7f080005
@@ -3668,6 +3675,7 @@ int id btnRotate 0x7f09007e
 int id btnSpin 0x7f09007f
 int id btn_down 0x7f090080
 int id btn_up 0x7f090081
+int id buttText 0x7f0902ba
 int id buttonPanel 0x7f090082
 int id buttons 0x7f090083
 int id cache_measures 0x7f090084
@@ -3846,8 +3854,9 @@ int id imageView12 0x7f090130
 int id imageView13 0x7f090131
 int id imageView14 0x7f090132
 int id imageView15 0x7f090133
+int id imageView16 0x7f0902bc
 int id imageView2 0x7f090134
-int id imageView22 0x7f090135
+int id imageView3 0x7f0902bb
 int id imageView4 0x7f090136
 int id imageView5 0x7f090137
 int id imageView6 0x7f090138

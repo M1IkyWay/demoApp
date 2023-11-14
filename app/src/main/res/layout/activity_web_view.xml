@@ -55,7 +55,7 @@
             android:shadowRadius="5"
             android:text="Accept"
             android:textColor="@color/white"
-            android:textSize="@dimen/_40sdp" />
+            android:textSize="@dimen/_37sdp" />
 
     </RelativeLayout>
 

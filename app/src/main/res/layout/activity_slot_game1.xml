@@ -23,19 +23,18 @@
         android:id="@+id/upperPlace"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_60sdp"
+        android:layout_marginTop="4dp"
         android:orientation="horizontal"
-        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingHorizontal="@dimen/_15sdp"
         android:translationZ="@dimen/_2sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
-            android:layout_width="@dimen/_90sdp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_35sdp"
             android:layout_gravity="center"
             android:layout_marginEnd="@dimen/_5sdp"
             android:layout_weight="0.5"
@@ -46,7 +45,7 @@
                 android:id="@+id/winsAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/bg_default" />
+                app:srcCompat="@drawable/bg_field" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
@@ -55,25 +54,32 @@
                 android:layout_alignTop="@id/winsAmount"
                 android:layout_alignEnd="@id/winsAmount"
                 android:layout_alignBottom="@id/winsAmount"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true">
+                android:layout_centerInParent="true"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="8dp">
 
                 <TextView
                     android:id="@+id/winsWord"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/air_millhouse_italic"
+                    android:fontFamily="@font/foooont"
                     android:gravity="center"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="5"
                     android:text="WINS "
                     android:textColor="@color/input_color"
                     android:textSize="@dimen/_15sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.4"
+                    app:layout_constraintHorizontal_bias="0.368"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.5" />
+                    app:layout_constraintVertical_bias="0.555" />
 
                 <TextView
                     android:id="@+id/winsCount"
@@ -81,25 +87,27 @@
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/winsWord"
                     android:fontFamily="@font/air_millhouse_italic"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="5"
                     android:text="0"
                     android:textColor="@color/input_color"
                     android:textSize="@dimen/_16sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.15"
+                    app:layout_constraintHorizontal_bias="0.212"
                     app:layout_constraintStart_toEndOf="@id/winsWord"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.5" />
-
-
+                    app:layout_constraintVertical_bias="0.65" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="@dimen/_90sdp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_35sdp"
             android:layout_gravity="center"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_weight="0.5"
@@ -110,9 +118,10 @@
                 android:id="@+id/balance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/bg_default" />
+                app:srcCompat="@drawable/bg_field" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <RelativeLayout
+                android:id="@+id/parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@id/balance"
@@ -125,42 +134,51 @@
                 <TextView
                     android:id="@+id/balanceW"
                     android:layout_width="@dimen/_60sdp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
                     android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="10dp"
                     android:fontFamily="@font/air_millhouse_italic"
                     android:gravity="center"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="5"
                     android:text="Balance"
                     android:textColor="@color/input_color"
-                    android:textSize="@dimen/_18sdp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.05"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.45" />
+                    android:textSize="@dimen/_18sdp" />
 
                 <TextView
                     android:id="@+id/resultBalance"
-                    android:layout_width="@dimen/_80sdp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="-1dp"
                     android:layout_toEndOf="@id/balanceW"
+                    android:ems="6"
                     android:fontFamily="@font/air_millhouse_italic"
-                    android:text="123456"
+                    android:gravity="center"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:shadowRadius="5"
+                    android:text="12345"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:textColor="@color/input_color"
                     android:textSize="@dimen/_14sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.15"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@id/balanceW"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.5" />
 
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
         </RelativeLayout>
 
     </LinearLayout>
-
 
     <ImageView
         android:id="@+id/imageView12"
@@ -176,8 +194,8 @@
 
     <RelativeLayout
         android:id="@+id/box"
-        android:layout_width="@dimen/_310sdp"
-        android:layout_height="@dimen/_234sdp"
+        android:layout_width="398dp"
+        android:layout_height="306dp"
         android:translationZ="@dimen/_2sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -197,50 +215,50 @@
             android:id="@+id/linear_slots"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:layout_marginTop="@dimen/_2sdp"
-            android:paddingHorizontal="@dimen/_35sdp"
-            android:paddingVertical="@dimen/_20sdp"
+            android:layout_alignStart="@id/marginGame"
             android:layout_alignTop="@id/marginGame"
-            android:layout_alignBottom="@id/marginGame"
             android:layout_alignEnd="@id/marginGame"
-            android:layout_alignStart="@id/marginGame">
+            android:layout_alignBottom="@id/marginGame"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_35sdp"
+            android:paddingVertical="@dimen/_20sdp">
 
             <com.example.cashluckpatrol.SlotView
                 android:id="@+id/slot_one"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_180sdp"
-                android:scrollbars="none"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
                 android:layout_gravity="center"
-                android:layout_weight="1"/>
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:scrollbars="none" />
 
             <com.example.cashluckpatrol.SlotView
                 android:id="@+id/slot_two"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_180sdp"
-                android:scrollbars="none"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
                 android:layout_gravity="center"
-                android:layout_weight="1"/>
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:scrollbars="none" />
 
             <com.example.cashluckpatrol.SlotView
                 android:id="@+id/slot_three"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_180sdp"
-                android:scrollbars="none"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
                 android:layout_gravity="center"
-                android:layout_weight="1"/>
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:scrollbars="none" />
 
 
         </com.example.cashluckpatrol.SlotsView>
@@ -249,55 +267,56 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/_300sdp"
         android:layout_height="@dimen/_130sdp"
         android:orientation="vertical"
-        android:paddingHorizontal="@dimen/_15sdp"
+        android:paddingHorizontal="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/box"
-        app:layout_constraintVertical_bias="0.2">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.971">
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_60sdp"
+            android:layout_height="@dimen/_58sdp"
             android:orientation="horizontal">
+
 
             <ImageButton
                 android:id="@+id/decremBet"
-                android:layout_marginTop="@dimen/_3sdp"
-                android:layout_width="@dimen/_70sdp"
+                android:layout_width="@dimen/_48sdp"
                 android:layout_height="@dimen/_58sdp"
                 android:layout_weight="1"
                 android:background="@drawable/transparent_background"
                 android:clickable="true"
                 android:focusable="true"
                 android:scaleType="fitCenter"
-                android:textAlignment="center"
                 app:srcCompat="@drawable/btn_decr" />
 
-
             <RelativeLayout
-                android:layout_width="@dimen/_130sdp"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_58sdp"
                 android:layout_gravity="center"
                 android:layout_weight="2"
+                android:paddingHorizontal="@dimen/_5sdp"
                 android:gravity="center">
 
 
                 <ImageView
                     android:id="@+id/bgBet"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_58sdp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/bg_btn_flash1" />
 
                 <ImageView
                     android:id="@+id/betMrg"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:layout_height="@dimen/_58sdp"
                     app:srcCompat="@drawable/marg_flash1" />
 
 
@@ -312,7 +331,6 @@
                     android:layout_centerVertical="true"
                     android:fontFamily="@font/air_millhouse_italic"
                     android:gravity="center"
-                    android:ems="6"
                     android:text="200"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_25sdp" />
@@ -322,9 +340,8 @@
 
             <ImageButton
                 android:id="@+id/incremBet"
-                android:layout_width="@dimen/_70sdp"
+                android:layout_width="@dimen/_48sdp"
                 android:layout_height="@dimen/_58sdp"
-                android:layout_marginTop="@dimen/_3sdp"
                 android:layout_weight="1"
                 android:background="@drawable/transparent_background"
                 android:clickable="true"
@@ -346,25 +363,26 @@
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/_55sdp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:clickable="true"
-                android:focusable="true"
                 android:gravity="center">
 
 
                 <ImageView
                     android:id="@+id/btnSpin"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:clickable="true"
                     android:focusable="true"
+                    android:scaleType="fitXY"
+                    android:paddingHorizontal="@dimen/_1sdp"
+                    android:layout_height="@dimen/_58sdp"
                     app:srcCompat="@drawable/btn_spin_long" />
 
 
                 <TextView
+                    android:id="@+id/buttText"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_58sdp"
                     android:layout_alignStart="@id/btnSpin"
                     android:layout_alignTop="@id/btnSpin"
                     android:layout_alignEnd="@id/btnSpin"
@@ -373,7 +391,7 @@
                     android:layout_marginBottom="@dimen/_5sdp"
                     android:fontFamily="@font/air_millhouse_italic"
                     android:gravity="center"
-                    android:text="Spin"
+                    android:text="Start"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_30sdp" />
 

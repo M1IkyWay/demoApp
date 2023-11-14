@@ -53,7 +53,7 @@ class FlashGame1Activity : AppCompatActivity() {
         binding = ActivityFlashGame1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LOCKED
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
         if (savedInstanceState != null) {
             currentBet = savedInstanceState.getInt("currentBet")

@@ -21,7 +21,9 @@
         <activity
             android:name=".WebViewActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            />
 
         <service
             android:name=".SoundService"
