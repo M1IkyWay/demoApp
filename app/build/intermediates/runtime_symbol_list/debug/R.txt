@@ -3628,6 +3628,7 @@ int id always 0x7f09004e
 int id andTerms 0x7f09004f
 int id animateToEnd 0x7f090050
 int id animateToStart 0x7f090051
+int id animationView 0x7f0902be
 int id antiClockwise 0x7f090052
 int id anticipate 0x7f090053
 int id arc 0x7f090054
@@ -4458,6 +4459,7 @@ int raw explosion 0x7f0f0006
 int raw flash_1 0x7f0f0007
 int raw flash_2 0x7f0f0008
 int raw hot_game 0x7f0f0009
+int raw hot_win 0x7f0f0016
 int raw launcher 0x7f0f000a
 int raw mistake_choice 0x7f0f000b
 int raw rotate 0x7f0f000c

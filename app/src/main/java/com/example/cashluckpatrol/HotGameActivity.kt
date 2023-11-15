@@ -30,6 +30,7 @@ import android.app.Activity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import androidx.core.view.isVisible
 
 class HotGameActivity : AppCompatActivity() {
 
@@ -94,26 +95,40 @@ class HotGameActivity : AppCompatActivity() {
         musicService.playMusic(theEnd)
 
        suspend fun updateWinsCount (isWin : Boolean) {
+
             if (isWin) {
                 winsCount+=1
                 binding.winsCount.setText("${winsCount}")
-                val toast = Toast.makeText (this, "You win!", Toast.LENGTH_SHORT)
-                soundHelper.winSound(this, soundVolume)
-                scoreViewModel.updateScore(scoreViewModel.getScore() + 1)
+                scope.launch{ soundHelper.winSound(contextA, soundVolume)
+                binding.animationView.isVisible = true
                 soundHelper.winShot(intensity, vibrator)
-                toast.show()
+                binding.animationView.playAnimation()
+                delay(2000)
+                binding.animationView.isVisible = false
+                scoreViewModel.updateScore(scoreViewModel.getScore() + 1)
+                }
+                scoreViewModel.updateLevel(scoreViewModel.getLevel()+1)
+
             }
             else {
-                val toast = Toast.makeText (this, "You lose!", Toast.LENGTH_SHORT)
-                soundHelper.loseSound(this, soundVolume)
-                soundHelper.defeatShot(intensity, vibrator)
-                toast.show()
+                scope.launch {
+                    val toast = Toast.makeText (contextA, "You lose!", Toast.LENGTH_SHORT)
+                    soundHelper.loseSound(contextA, soundVolume)
+                    soundHelper.defeatShot(intensity, vibrator)
+                    toast.show()
+
+                }
 //add music and vibro
             }
 
         }
             scoreViewModel.score.observe( this, { newscore ->
             binding.resultBalance.setText("$newscore")
+                AnimationHelper.updateScoreOrBetTextViewAnimation(
+                    binding.resultBalance,
+                    scoreViewModel.getScore().toString()
+                )
+
         })
 
         val betList = listOf(binding.bet50, binding.bet100, binding.bet150, binding.bet200, binding.bet250,
@@ -217,14 +232,11 @@ class HotGameActivity : AppCompatActivity() {
                             successGame = true
                             scoreViewModel.countResult(currentBet, 2, successGame)
                             binding.btnSpin.isEnabled = true
-                            AnimationHelper.updateScoreOrBetTextViewAnimation(
-                                binding.resultBalance,
-                                scoreViewModel.getScore().toString()
-                            )
                             Log.d(
                                 "youuuuuuuuuuuuuuuuuuuuuuuuuuu",
                                 "WWWWwwwwiiiiiiiiiiiiiiiiiiiiiiiiinnnnnnnnnnn"
                             )
+
                         }
 
                         fun handleNoMatch() {

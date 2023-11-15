@@ -126,6 +126,7 @@ font you20133
 id accept
 id accept_button
 id andTerms
+id animationView
 id arrow
 id back
 id backCircle
@@ -358,6 +359,7 @@ raw explosion
 raw flash_1
 raw flash_2
 raw hot_game
+raw hot_win
 raw launcher
 raw mistake_choice
 raw rotate

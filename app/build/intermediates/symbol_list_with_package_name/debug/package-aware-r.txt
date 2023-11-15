@@ -3629,6 +3629,7 @@ id always
 id andTerms
 id animateToEnd
 id animateToStart
+id animationView
 id antiClockwise
 id anticipate
 id arc
@@ -4459,6 +4460,7 @@ raw explosion
 raw flash_1
 raw flash_2
 raw hot_game
+raw hot_win
 raw launcher
 raw mistake_choice
 raw rotate

@@ -254,7 +254,7 @@ class SoundHelper (context: Context) {
         }
     }
 
-    fun vibroPopup (intensity : Int, vibratorr: Vibrator) {
+    fun vibroPopup (intensity : Int, vibratorr: Vibrator, context: Context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val intensityArr = intArrayOf(intensity, intensity, intensity, intensity)
             val array : LongArray = longArrayOf(0, 300, 50, 100)

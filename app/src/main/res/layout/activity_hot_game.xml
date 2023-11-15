@@ -38,15 +38,18 @@
         android:id="@+id/animationView"
         android:layout_width="@dimen/_220sdp"
         android:layout_height="@dimen/_220sdp"
-        app:lottie_url="REPLACE_JSON_URL"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/hot_win"
+        android:visibility="invisible"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false"
+        android:translationZ="@dimen/_2sdp"
+        android:background="@drawable/transparent_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.25"
-        app:flow_horizontalBias="0.5"
+        app:layout_constraintHorizontal_bias="0.5"
         />
 
     <LinearLayout
