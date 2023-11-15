@@ -48,7 +48,7 @@ class PlayActivity : AppCompatActivity() {
         AnimationHelper.appearingButton(binding.playButton, binding.text)
 
 
-        val isPrivacyAccepted = scoreViewModel.getPrivacyPolicyAccepted()
+
 
         binding.playButton.setOnClickListener{
             AnimationHelper.pressingAnimation(it, binding.text)
@@ -57,14 +57,7 @@ class PlayActivity : AppCompatActivity() {
             YoYo.with(Techniques.SlideOutLeft).duration(1000).playOn(binding.playButton)
             YoYo.with(Techniques.SlideOutLeft).duration(1000).playOn(binding.text)
 
-
-            if (scoreViewModel.getPrivacyPolicyAccepted()) {
                 openNextActivity(Intent(this, GamesMenuActivity::class.java))
-            }
-            else {
-                openNextActivity(Intent(this, WebViewActivity::class.java))
-
-            }
         }
 
     }

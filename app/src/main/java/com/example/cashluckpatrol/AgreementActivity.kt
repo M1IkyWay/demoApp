@@ -55,7 +55,7 @@ class AgreementActivity : AppCompatActivity() {
             soundHelper.vibroClick(intensity)
             soundHelper.clickSound(this, soundVolume)
             scoreViewModel.setIsPrivacyPolicyAccepted(true)
-            startActivity(Intent(this, GamesMenuActivity::class.java))
+            startActivity(Intent(this, PlayActivity::class.java))
 
         }
 

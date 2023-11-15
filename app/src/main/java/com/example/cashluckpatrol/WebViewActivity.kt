@@ -63,25 +63,7 @@ class WebViewActivity : AppCompatActivity() {
 
         webView.loadUrl(url)
 
-//        webView.setOnScrollChangeListener {
-//                _, _, scrollY, _, _ ->
-//            val totalHeight = webView.height
-//            val contentHeight = webView.contentHeight * webView.scaleY
-//            val percentScrolled = (scrollY.toFloat() / (contentHeight - totalHeight)) * 100
-//
-//            val threshold = 90
-//            if (percentScrolled >=threshold) {
-//                Log.d("$percentScrolled", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-//                acceptButton.post { acceptButton.visibility = View.VISIBLE
-//                    binding.text.visibility = View.VISIBLE}
-////                acceptButton.visibility = View.VISIBLE
-//
-//            }
-//            else {
-//                acceptButton.visibility = View.GONE
-//                binding.text.visibility = View.GONE
-//            }
-//        }
+
 
         webView.viewTreeObserver.addOnScrollChangedListener {
             val totalHeight = webView.height
@@ -109,6 +91,16 @@ class WebViewActivity : AppCompatActivity() {
             soundHelper.clickSound(this, soundVolume)
 
             startActivity(Intent(this, AgreementActivity::class.java))
+
+            // Я ввела змінну isPrivacyPolicyAccepted (лайвдата у вьюмоделі), яка змінюється на true після
+            // того, як користувач на екрані AgreemenyACtivity погодиться із PrivacyPolicy. Нижче перевіряється цей
+            // момент, і якщо користувач погодився, то завжди відкриватиметься меню ігор після вебв'ю
+
+//            if(scoreViewModel.getPrivacyPolicyAccepted()) {
+//                startActivity(Intent(this, PlayActivity ::class.java))
+//            }
+
+
         }
 
 

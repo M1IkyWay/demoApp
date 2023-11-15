@@ -51,9 +51,13 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+
 }
     override fun onStart() {
         super.onStart()
-        startDownloading(Intent(this, PlayActivity::class.java))
+        startDownloading(Intent(this, WebViewActivity::class.java))
+
     }
     }
