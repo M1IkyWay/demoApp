@@ -114,6 +114,7 @@ class SlotGame1Activity : AppCompatActivity() {
         }
         scoreViewModel.score.observe( this, { newscore ->
             binding.resultBalance.setText("$newscore")
+            AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
         })
 
         binding.buttBack.setOnClickListener {

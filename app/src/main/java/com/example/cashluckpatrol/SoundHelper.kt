@@ -10,6 +10,9 @@ import android.os.VibratorManager
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.getSystemService
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class SoundHelper (context: Context) {
 
@@ -173,16 +176,20 @@ class SoundHelper (context: Context) {
         }
     }
 
-    fun winShot (intensity : Int, vibratorr: Vibrator) {
+    fun winShot (intensity : Int, vibratorr: Vibrator, scope: CoroutineScope) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val intensityArr = intArrayOf(intensity, intensity, intensity, intensity)
             val array1 : LongArray = longArrayOf(0, 100, 100, 100)
-            val array2 : LongArray = longArrayOf(100, 300, 70, 500)
+            val array2 : LongArray = longArrayOf(100, 200, 70, 300)
             val vibrationEffect1 = VibrationEffect.createWaveform(array1, intensityArr, 1)
             val vibrationEffect2 = VibrationEffect.createWaveform(array2, intensityArr, 1)
-            vibratorr.vibrate(vibrationEffect1)
-            vibratorr.vibrate(vibrationEffect2)
-            vibratorr.cancel()
+            scope.launch {
+                vibratorr.vibrate(vibrationEffect1)
+                delay(300)
+                vibratorr.vibrate(vibrationEffect2)
+                vibratorr.cancel()
+            }
+
         }
         else {
             vibratorr.vibrate(100)
@@ -191,7 +198,7 @@ class SoundHelper (context: Context) {
         }
     }
 
-    fun spinShot (intensity : Int, vibratorr: Vibrator) {
+    fun spinShot (intensity : Int, vibratorr: Vibrator, scope: CoroutineScope) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val array1 : LongArray = longArrayOf(50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50)
             val intensityArr1 = intArrayOf(intensity, intensity, intensity, intensity, intensity,
@@ -201,21 +208,21 @@ class SoundHelper (context: Context) {
             val intensityArr2 = intArrayOf(intensity, intensity, intensity, intensity,
                 intensity, intensity, intensity, intensity, intensity,
                 intensity)
-            val array2 = longArrayOf(0, 50, 50, 100, 50, 300, 50, 500, 50, 1000)
+            val array2 = longArrayOf(0, 50, 100, 50, 200, 50, 300, 50, 500, 50)
 
-            val vibrationEffect1 = VibrationEffect.createWaveform(array1, intensityArr1, 5)
+            val vibrationEffect1 = VibrationEffect.createWaveform(array1, intensityArr1, 3)
             val vibrationEffect2 = VibrationEffect.createWaveform(array2, intensityArr2, 1)
 
-//            Log.d("fffffffffffffffff", "first vibration starts")
-//            vibrator.vibrate(vibrationEffect1)
-//            Log.d("fffffffffffffffff", "second vibration starts")
-//            vibrator.vibrate(vibrationEffect1)
-//            Log.d("fffffffffffffffff", "third vibration starts")
-            vibratorr.vibrate(vibrationEffect1)
-//            vibrator.vibrate(vibrationEffect1)
-            vibratorr.cancel()
-            vibratorr.vibrate(vibrationEffect2)
-            vibratorr.cancel()
+            scope.launch {
+                vibratorr.vibrate(vibrationEffect1)
+                delay(3000)
+                vibratorr.vibrate(vibrationEffect2)
+                delay(1350)
+                vibratorr.cancel()
+
+
+            }
+
         }
         else {
             vibratorr.vibrate(50)

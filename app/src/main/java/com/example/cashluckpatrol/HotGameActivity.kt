@@ -79,14 +79,19 @@ class HotGameActivity : AppCompatActivity() {
         binding.choosenBet.text = currentBet.toString()
         var lastPressedBet : View? = null
 
-        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            val vibratorManager =
-                getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
-            vibratorManager.defaultVibrator
-        } else {
-            @Suppress("DEPRECATION")
-            getSystemService(VIBRATOR_SERVICE) as Vibrator
+        fun createVibrator () : Vibrator {
+            val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                val vibratorManager =
+                    getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+                vibratorManager.defaultVibrator
+            } else {
+                @Suppress("DEPRECATION")
+                getSystemService(VIBRATOR_SERVICE) as Vibrator
+            }
+            return vibrator
         }
+
+
 
         val scope = CoroutineScope (Dispatchers.Main)
         val soundVolume = scoreViewModel.getSoundVolume()
@@ -101,7 +106,7 @@ class HotGameActivity : AppCompatActivity() {
                 binding.winsCount.setText("${winsCount}")
                 scope.launch{ soundHelper.winSound(contextA, soundVolume)
                 binding.animationView.isVisible = true
-                soundHelper.winShot(intensity, vibrator)
+                soundHelper.winShot(intensity, createVibrator(), scope)
                 binding.animationView.playAnimation()
                 delay(2000)
                 binding.animationView.isVisible = false
@@ -216,7 +221,6 @@ class HotGameActivity : AppCompatActivity() {
                                 elements.add(drawableId)
                             }
 
-                            // Проверяем, есть ли элемент, который встречается нужное количество раз (например, 3 раза)
                             for (element in elements) {
                                 val count = elements.count { it == element }
                                 if (count >= 3) {
