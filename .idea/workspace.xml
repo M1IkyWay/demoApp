@@ -9,28 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="почала 15.11 о 23:14">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/win_slot1_im.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/raw/flash1_win.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/raw/land_flash2_win.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/AnimationHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/AnimationHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/FlashGame1Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/FlashGame1Activity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/FlashGame2Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/FlashGame2Activity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/HotGameActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/HotGameActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotGame1Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotGame1Activity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotGame2Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SlotGame2Activity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SoundHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cashluckpatrol/SoundHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_flash_game1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_flash_game1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_flash_game2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_flash_game2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_slot_game1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_slot_game1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_flash_game1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_flash_game1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_flash_game2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_flash_game2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_slot_game1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_slot_game1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/slot1_win.mp3" beforeDir="false" />
-    </list>
+    <list default="true" id="99abb7c3-be90-4391-aeab-e2afd89ff3ab" name="Changes" comment="закінчиа 16.11 о 02:09" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -289,13 +268,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696791005397</updated>
-    </task>
-    <task id="LOCAL-00127" summary="закінчила 7.11 о 05:04">
-      <created>1699326295984</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1699326295984</updated>
     </task>
     <task id="LOCAL-00128" summary="почала 7.11 о 12:10">
       <created>1699351884323</created>
@@ -633,7 +605,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700082885741</updated>
     </task>
-    <option name="localTasksCounter" value="176" />
+    <task id="LOCAL-00176" summary="закінчиа 16.11 о 02:09">
+      <created>1700093427484</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1700093427484</updated>
+    </task>
+    <option name="localTasksCounter" value="177" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -669,7 +648,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/f-283/f-283" />
     </ignored-roots>
-    <MESSAGE value="закінчила 11.11 о 03:57" />
     <MESSAGE value="почала 11.11 о 17:49" />
     <MESSAGE value="закінчила 11.11 о 19:00" />
     <MESSAGE value="почала 11.11 о 20:26" />
@@ -694,6 +672,7 @@
     <MESSAGE value="почала 14.11 о 19:43" />
     <MESSAGE value="закінчила 15.11 о 20:29 &#10;&#10;*минулий коміт теж за 15.11" />
     <MESSAGE value="почала 15.11 о 23:14" />
-    <option name="LAST_COMMIT_MESSAGE" value="почала 15.11 о 23:14" />
+    <MESSAGE value="закінчиа 16.11 о 02:09" />
+    <option name="LAST_COMMIT_MESSAGE" value="закінчиа 16.11 о 02:09" />
   </component>
 </project>
