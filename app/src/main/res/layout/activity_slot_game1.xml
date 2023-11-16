@@ -42,7 +42,7 @@
         android:visibility="invisible"
         app:lottie_autoPlay="false"
         app:lottie_loop="false"
-        android:translationZ="@dimen/_2sdp"
+        android:translationZ="@dimen/_13sdp"
         android:background="@drawable/transparent_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,6 +52,22 @@
         app:layout_constraintHorizontal_bias="0.5"
         />
 
+
+    <ImageView
+        android:id="@+id/winImage"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:src="@drawable/win_slot1_im"
+        android:background="@drawable/transparent_background"
+        android:translationZ="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.55"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:visibility="invisible"
+        />
 
     <LinearLayout
         android:id="@+id/upperPlace"

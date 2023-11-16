@@ -11,6 +11,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.getSystemService
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -150,17 +151,25 @@ class SoundHelper (context: Context) {
 
 
 
-    fun defeatShot (intensity : Int, vibratorr : Vibrator) {
+    fun defeatShot (intensity : Int, vibratorr : Vibrator, scope: CoroutineScope) {
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            val intensityArr = intArrayOf(intensity, intensity, intensity, intensity,
-                intensity, intensity)
-            val array : LongArray = longArrayOf(0, 500, 100, 300, 100, 100)
+            val intensityArr = intArrayOf(intensity, intensity, intensity, intensity)
+            val array : LongArray = longArrayOf(0, 120, 100, 80)
             val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 1)
-            vibratorr.vibrate(vibrationEffect)
-            vibratorr.cancel()
+            scope.launch {
+                vibratorr.vibrate(vibrationEffect)
+                delay(300)
+                vibratorr.cancel()
+            }
         }
         else {
-        vibratorr.vibrate(200)
+            scope.launch {
+                vibratorr.vibrate(100)
+                delay(100)
+                vibratorr.cancel()
+            }
+
         }
     }
 
@@ -172,7 +181,6 @@ class SoundHelper (context: Context) {
         }
         else {
             vibrator.vibrate(100)
-
         }
     }
 
@@ -192,9 +200,15 @@ class SoundHelper (context: Context) {
 
         }
         else {
-            vibratorr.vibrate(100)
-            vibratorr.vibrate(300)
-            vibratorr.vibrate(500)
+            scope.launch {
+                vibratorr.vibrate(100)
+                delay(200)
+                vibratorr.vibrate(300)
+                delay(400)
+                vibratorr.vibrate(500)
+                cancel()
+            }
+
         }
     }
 
@@ -219,62 +233,149 @@ class SoundHelper (context: Context) {
                 vibratorr.vibrate(vibrationEffect2)
                 delay(1350)
                 vibratorr.cancel()
-
-
             }
 
         }
         else {
-            vibratorr.vibrate(50)
-            vibratorr.vibrate(100)
-            vibratorr.vibrate(200)
+            scope.launch {
+                vibratorr.vibrate(50)
+                delay(100)
+                vibratorr.vibrate(100)
+                delay(150)
+                vibratorr.vibrate(200)
+                vibratorr.cancel()
+            }
+
         }
     }
 
-    fun vibroWarning (intensity : Int, vibratorr: Vibrator) {
+    fun vibroWarning (intensity : Int, vibratorr: Vibrator, scope: CoroutineScope) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            val intensityArr = intArrayOf(intensity, intensity, intensity, intensity,
-                intensity, intensity)
-            val array : LongArray = longArrayOf(0, 100, 50, 100, 50, 100)
+            val intensityArr = intArrayOf(intensity, intensity, intensity, intensity)
+            val array : LongArray = longArrayOf(0, 100, 100, 50)
             val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 1)
-            vibratorr.vibrate(vibrationEffect)
-            vibratorr.cancel()
+
+            scope.launch {
+                vibratorr.vibrate(vibrationEffect)
+                delay(250)
+                vibratorr.cancel()
+            }
+
+
         }
         else {
-            vibratorr.vibrate(100)
-            vibratorr.vibrate(100)
-            vibratorr.vibrate(100)
+            scope.launch {
+                vibratorr.vibrate(100)
+                delay(200)
+                vibratorr.vibrate(100)
+                delay(200)
+                vibratorr.vibrate(100)
+                vibratorr.cancel()
+
+            }
+
         }
     }
 
-    fun vibroExplosion (intensity : Int, vibratorr: Vibrator) {
+    fun vibroExplosion (intensity : Int, vibratorr: Vibrator, scope: CoroutineScope) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val intensityArr = intArrayOf(intensity, intensity, intensity, intensity, intensity, intensity)
-            val array : LongArray = longArrayOf(0, 100, 50, 200, 50, 300)
+            val array : LongArray = longArrayOf(0, 50, 100, 100, 100, 200)
             val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 1)
-            vibratorr.vibrate(vibrationEffect)
-            vibratorr.cancel()
+            scope.launch{
+                vibratorr.vibrate(vibrationEffect)
+                delay(550)
+                vibratorr.cancel()
+            }
+
         }
         else {
-            vibratorr.vibrate(200)
-            vibratorr.vibrate(400)
+            scope.launch {
+                vibratorr.vibrate(200)
+                delay(250)
+                vibratorr.vibrate(400)
+                vibratorr.cancel()
+            }
+
         }
     }
 
-    fun vibroPopup (intensity : Int, vibratorr: Vibrator, context: Context) {
+    fun vibroPopup (intensity : Int, vibratorr: Vibrator, scope: CoroutineScope) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val intensityArr = intArrayOf(intensity, intensity, intensity, intensity)
             val array : LongArray = longArrayOf(0, 300, 50, 100)
             val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 1)
-            vibratorr.vibrate(vibrationEffect)
-            vibratorr.cancel()
+            scope.launch {
+                vibratorr.vibrate(vibrationEffect)
+                delay(450)
+                vibratorr.cancel()
+            }
+
         }
         else {
-            vibratorr.vibrate(200)
-            vibratorr.vibrate(400)
+            scope.launch {
+                vibratorr.vibrate(200)
+                delay(250)
+                vibratorr.vibrate(100)
+                vibratorr.cancel()
+            }
+
         }
     }
 
+
+    fun winVibroFlash2 (intensity : Int, vibratorr: Vibrator, scope: CoroutineScope) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val intensityArr = intArrayOf(intensity, intensity, intensity, intensity)
+            val array : LongArray = longArrayOf(0, 100, 50, 300)
+            val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 1)
+            scope.launch {
+                vibratorr.vibrate(vibrationEffect)
+                delay(450)
+                vibratorr.cancel()
+            }
+
+        }
+        else {
+            scope.launch {
+                vibratorr.vibrate(100)
+                delay(150)
+                vibratorr.vibrate(300)
+                vibratorr.cancel()
+            }
+
+        }
+    }
+
+    fun winVibroFlash1 (intensity : Int, vibratorr: Vibrator, scope: CoroutineScope) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val intensityArr = intArrayOf(intensity, intensity, intensity, intensity,
+                intensity, intensity, intensity, intensity,
+                intensity, intensity, intensity, intensity,
+                intensity, intensity, intensity)
+            val array : LongArray = longArrayOf(0, 50, 100, 50, 100, 50, 100, 50, 100, 50, 50, 50, 50, 50, 50)
+            val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 1)
+            scope.launch {
+                vibratorr.vibrate(vibrationEffect)
+                delay(900)
+                vibratorr.cancel()
+            }
+
+        }
+        else {
+            scope.launch {
+                vibratorr.vibrate(50)
+                delay(200)
+                vibratorr.vibrate(50)
+                delay(20)
+                vibratorr.vibrate(200)
+                delay(100)
+                vibratorr.vibrate(100)
+                vibratorr.cancel()
+            }
+
+        }
+    }
 }
 
 

@@ -75,6 +75,7 @@ object AnimationHelper {
     }
 
 
+
     fun onRotatedCorrect (button: ImageView, text: TextView) {
         YoYo.with(Techniques.BounceInUp).duration(300).playOn(button)
         YoYo.with(Techniques.BounceInDown).duration(300).playOn(text)

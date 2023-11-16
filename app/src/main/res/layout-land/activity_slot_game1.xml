@@ -30,6 +30,22 @@
         app:layout_constraintVertical_bias="0.033"
         app:srcCompat="@drawable/arrow_back" />
 
+    <ImageView
+        android:id="@+id/winImage"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_180sdp"
+        android:src="@drawable/win_slot1_im"
+        android:background="@drawable/transparent_background"
+        android:translationZ="@dimen/_10sdp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7"
+        app:layout_constraintHorizontal_bias="0.155"
+        />
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
         android:layout_width="@dimen/_230sdp"
@@ -38,7 +54,7 @@
         android:visibility="invisible"
         app:lottie_autoPlay="false"
         app:lottie_loop="false"
-        android:translationZ="@dimen/_2sdp"
+        android:translationZ="@dimen/_13sdp"
         android:background="@drawable/transparent_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

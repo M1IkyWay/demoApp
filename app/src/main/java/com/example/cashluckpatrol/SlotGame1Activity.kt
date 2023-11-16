@@ -15,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.example.cashluckpatrol.databinding.ActivitySlotGame1Binding
@@ -61,6 +62,8 @@ class SlotGame1Activity : AppCompatActivity() {
             // и остальные
         }
 
+        val contextA : Context = this
+
 
         fun getStartBet (score: Int) : Int {
             val currentBet = ((score/100)*5)
@@ -73,13 +76,16 @@ class SlotGame1Activity : AppCompatActivity() {
         soundHelper = (application as MyApplication).soundHelper
         successGame = false
 
-        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            val vibratorManager =
-                getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
-            vibratorManager.defaultVibrator
-        } else {
-            @Suppress("DEPRECATION")
-            getSystemService(VIBRATOR_SERVICE) as Vibrator
+        fun createVibrator () : Vibrator {
+            val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                val vibratorManager =
+                    getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+                vibratorManager.defaultVibrator
+            } else {
+                @Suppress("DEPRECATION")
+                getSystemService(VIBRATOR_SERVICE) as Vibrator
+            }
+            return vibrator
         }
 
 
@@ -92,26 +98,38 @@ class SlotGame1Activity : AppCompatActivity() {
 
 
         suspend fun updateWinsCount (isWin : Boolean) {
+
             if (isWin) {
                 winsCount+=1
-
                 binding.winsCount.setText("${winsCount}")
-                val toast = Toast.makeText (this, "You win!", Toast.LENGTH_SHORT)
-                soundHelper.winShot(intensity, vibrator)
-
-                toast.show()
-                //add music and vibro
+                scope.launch{ soundHelper.winSound(contextA, soundVolume)
+                    binding.winImage.isVisible = true
+                    YoYo.with(Techniques.BounceInDown).duration(1200).playOn(binding.winImage)
+                    binding.animationView.isVisible = true
+                    soundHelper.winShot(intensity, createVibrator(), scope)
+                    binding.animationView.playAnimation()
+                    delay(800)
+                    YoYo.with(Techniques.FadeInUp).duration(300).playOn(binding.winImage)
+                    binding.animationView.isVisible = false
+                    binding.winImage.isVisible = false
+                    scoreViewModel.updateScore(scoreViewModel.getScore() + 1)
+                }
+                scoreViewModel.updateLevel(scoreViewModel.getLevel()+1)
 
             }
             else {
-                soundHelper.loseSound(this, soundVolume)
-                soundHelper.defeatShot(intensity, vibrator)
-                val toast = Toast.makeText (this, "You lose!", Toast.LENGTH_SHORT)
-                toast.show()
+                scope.launch {
+                    val toast = Toast.makeText (contextA, "You lose!", Toast.LENGTH_SHORT)
+                    soundHelper.loseSound(contextA, soundVolume)
+                    soundHelper.defeatShot(intensity, createVibrator(), scope)
+                    toast.show()
+
+                }
 //add music and vibro
             }
 
         }
+
         scoreViewModel.score.observe( this, { newscore ->
             binding.resultBalance.setText("$newscore")
             AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
@@ -140,6 +158,7 @@ class SlotGame1Activity : AppCompatActivity() {
                 AnimationHelper.wrongInputAnimation(binding.choosenBet)
                 soundHelper.wrongInputSound(this, soundVolume)
                 val toast = Toast.makeText(this, "Minimal bet is 10", Toast.LENGTH_SHORT)
+                toast.show()
             }
         }
 
@@ -153,33 +172,29 @@ class SlotGame1Activity : AppCompatActivity() {
             }
 
         val slots = setupSlotsMachine()
-
-
         spinButton.setOnClickListener {
-            binding.choosenBet.setTextColor(Color.WHITE)
-            soundHelper.vibroClick(intensity)
-            soundHelper.clickSound2(this, soundVolume)
             it.isEnabled = false
-
+            binding.incremBet.isEnabled = false
+            binding.decremBet.isEnabled = false
+            soundHelper.clickSound2(this, soundVolume)
+            soundHelper.spinShot(intensity, createVibrator(), scope)
+            AnimationHelper.clickView ( it, this)
             if (scoreViewModel.getScore()>=currentBet) {
-                binding.resultBalance.setTextColor(resources.getColor(R.color.input_color))
-                AnimationHelper.smallClickView(it, this)
                 soundHelper.slotMachineSound(this, soundVolume)
-                soundHelper.spinShot(intensity, vibrator)
                 scope.launch {
                     slots.start()
-                    delay(5500)
+                    delay(6000)
                     updateWinsCount(successGame)
                     it.isEnabled = true
+                    binding.incremBet.isEnabled = true
+                    binding.decremBet.isEnabled = true
                 }
             }
             else {
-                AnimationHelper.wrongInputAnimation(binding.resultBalance)
-                soundHelper.vibroWarning(intensity, vibrator)
-                soundHelper.wrongInputSound(this, soundVolume)
                 val toast = Toast.makeText(this, "You don`t have enough money!", Toast.LENGTH_SHORT)
                 toast.show()
-                //add some vibro here
+                soundHelper.vibroWarning(intensity, createVibrator(), scope)
+                //add some sound
                 it.isEnabled = true
             }
         }
@@ -187,7 +202,6 @@ class SlotGame1Activity : AppCompatActivity() {
         }
 
     private fun setupSlotsMachine() : SlotsBuilder {
-        Log.d("slot machine was set up", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
         val builder = SlotsBuilder().Builder(this)
         val slots = builder
             .addSlots(R.id.slot_one, R.id.slot_two, R.id.slot_three)
@@ -203,44 +217,220 @@ class SlotGame1Activity : AppCompatActivity() {
             .setScrollTime(500 + SecureRandom().nextInt(1500))
             .setChildIncTime(1000)
             .setOnFinishListener(object : Callback() {
+
                 override fun onFinishListener() {
-                    val layoutManagers = getLayoutManagers()
-                    val match = HashMap<Int, Int>()
-                    for (i in 0 until 3) {
-                        val imageView = layoutManagers.get(i)
-                            .findViewByPosition(
-                                (layoutManagers.get(i)
-                                    .findFirstVisibleItemPosition() + 1) //+3
-                            ) as ImageView
-                        val drawableId = imageView.tag as Int
+                    fun checkForMatches() {
+                        val layoutManagers = getLayoutManagers()
 
-                        match[drawableId] = match.getOrDefault(drawableId, 0) + 1 //is it needed?
-                    }
 
-                    var resultMatch = 0
-                    match.values.forEach { value ->
-                        if (resultMatch < value) {
-                            resultMatch = value
+                        fun checkRow(layoutManager: LinearLayoutManager): Boolean {
+                            val elements = mutableListOf<Int>()
+
+                            for (position in 0 until layoutManager.childCount) {
+                                val imageView = layoutManager.getChildAt(position) as ImageView
+                                val drawableId = imageView.tag as Int
+                                Log.d("еееееееееууууу", "tag isssssssssssssssssss $drawableId")
+                                elements.add(drawableId)
+                            }
+
+                            for (element in elements) {
+                                val count = elements.count { it == element }
+                                if (count >= 3) {
+                                    Log.d("aaaaaaaaaaaaaaaaaaaaa", "resultMatch iiiiiiiiiiiiiiis 3")
+                                    return true
+                                }
+                            }
+                            return false
+                        }
+
+
+                        fun handleMatch() {
+                            successGame = true
+                            scoreViewModel.countResult(currentBet, 2, successGame)
+                            binding.btnSpin.isEnabled = true
+                            Log.d(
+                                "youuuuuuuuuuuuuuuuuuuuuuuuuuu",
+                                "WWWWwwwwiiiiiiiiiiiiiiiiiiiiiiiiinnnnnnnnnnn"
+                            )
+
+                        }
+
+                        fun handleNoMatch() {
+                            successGame = false
+                            scoreViewModel.countResult(currentBet, 2, successGame)
+                            binding.btnSpin.isEnabled = true
+                            AnimationHelper.updateScoreOrBetTextViewAnimation(
+                                binding.resultBalance,
+                                scoreViewModel.getScore().toString()
+                            )
+                            Log.d(
+                                "youuuuuuuuuuuuuuuuuuuuuuuuuuu",
+                                "Looooooooooooooooooooooooooooooooooooooooose"
+                            )
+                        }
+
+//////////////////////////////////vertical
+
+                        fun checkVertical(): Boolean {
+
+                            for (i in 0 until 3) {
+                                Log.d("ddddddddddd", "iiiiiiiiiiin verticals $i")
+                                val match = checkRow(layoutManagers[i])
+                                Log.d("ииииииииииииииии", "match WAS IN вертикальное is $match")
+                                if (match == true) {
+
+                                    return true
+                                }
+                            }
+                            return false
+                        }
+
+                        //////////////////////////////////horizontal
+                        fun checkHorizontal(): Boolean {
+
+                            Log.d("ddddddddddd", "iiiiiiiiiiin horisontals")
+
+                            fun check1h(): Boolean {
+                                var elements1 = mutableListOf<Int>()
+
+                                for (i in 0 until 3) {
+                                    Log.d("ddddddddddd", "iiiiiiiiiiin horisontals $i")
+                                    val imageView = layoutManagers[i].getChildAt(0) as ImageView
+                                    val item = imageView.tag as Int
+                                    Log.d("еееееееееууууу", "tag isssssssssssssssssss $item")
+                                    elements1.add(item)
+                                }
+
+                                for (element in elements1) {
+                                    val count = elements1.count { it == element }
+                                    Log.d(
+                                        "aaaaaaaaaaaaaaaaaaaaa",
+                                        "count is iiiiiiiiiiiiiiis $count"
+                                    )
+                                    if (count == 3) {
+
+                                        return true
+                                    }
+                                }
+                                return false
+                            }
+
+                            fun check2h(): Boolean {
+                                var elements2 = mutableListOf<Int>()
+                                for (i in 0 until 3) {
+                                    val imageView = layoutManagers[i].getChildAt(1) as ImageView
+                                    val item = imageView.tag as Int
+                                    Log.d("еееееееееууууу", "tag isssssssssssssssssss $item")
+                                    elements2.add(item)
+                                }
+                                for (element in elements2) {
+                                    val count = elements2.count { it == element }
+                                    Log.d(
+                                        "aaaaaaaaaaaaaaaaaaaaa",
+                                        "count is iiiiiiiiiiiiiiis $count"
+                                    )
+                                    if (count == 3) {
+                                        return true
+                                    }
+                                }
+
+                                return false
+                            }
+
+                            fun check3h(): Boolean {
+                                var elements3 = mutableListOf<Int>()
+                                for (i in 0 until 3) {
+                                    val imageView = layoutManagers[i].getChildAt(2) as ImageView
+                                    val item = imageView.tag as Int
+                                    Log.d("еееееееееууууу", "tag isssssssssssssssssss $item")
+                                    elements3.add(item)
+                                }
+                                for (element in elements3) {
+                                    val count = elements3.count { it == element }
+                                    Log.d(
+                                        "aaaaaaaaaaaaaaaaaaaaa",
+                                        "count is iiiiiiiiiiiiiiis $count"
+                                    )
+                                    if (count == 3) {
+                                        return true
+                                    }
+                                }
+                                return false
+                            }
+
+                            if (check1h() || check2h() || check3h() == true) {
+                                return true
+
+                            } else return false
+                        }
+
+                        fun checkDiagonals(): Boolean {
+
+                            Log.d("ddddddddddd", "iiiiiiiiiiin diagonals")
+
+                            fun check1 () : Boolean {
+                                var elements1 = mutableListOf<Int>()
+                                Log.d("ddddddddddd", "fiiiiiiiiiirst diagonal")
+                                for (i in 0 until 3) {
+                                    val imageView = layoutManagers[i].getChildAt(i) as ImageView
+                                    val item = imageView.tag as Int
+                                    Log.d("еееееееееууууу", "tag isssssssssssssssssss $item")
+                                    elements1.add(item)
+                                }
+                                for (element in elements1) {
+                                    val count = elements1.count { it == element }
+                                    Log.d(
+                                        "aaaaaaaaaaaaaaaaaaaaa",
+                                        "count is iiiiiiiiiiiiiiis $count"
+                                    )
+                                    if (count == 3) {
+                                        return true
+                                    }
+                                }
+
+                                return false
+                            }
+
+
+                            fun check2 () : Boolean {
+                                var counter = 2
+                                var elements2 = mutableListOf<Int>()
+                                for (i in 0 until 3) {
+                                    Log.d("ddddddddddd", "second diagonal")
+                                    val imageView =
+                                        layoutManagers[i].getChildAt(counter - i) as ImageView
+                                    val item = imageView.tag as Int
+                                    Log.d("еееееееееууууу", "tag isssssssssssssssssss $item")
+                                    elements2.add(item)
+                                }
+                                for (element in elements2) {
+                                    val count = elements2.count { it == element }
+                                    Log.d(
+                                        "aaaaaaaaaaaaaaaaaaaaa",
+                                        "count is iiiiiiiiiiiiiiis $count"
+                                    )
+                                    if (count == 3) {
+                                        return true
+                                    }
+                                }
+
+                                return false
+                            }
+                            if (check1() || check2() == true) {
+                                return true
+                            }
+                            else return false
+                        }
+
+
+                        if (checkVertical() || checkHorizontal() || checkDiagonals() == true) {
+                            handleMatch()
+                        }
+                        else {
+                            handleNoMatch()
                         }
                     }
-
-                    if (resultMatch == 3 && !binding.btnSpin.isEnabled) {
-                        successGame = true
-                        scoreViewModel.countResult(currentBet, 2, successGame)
-//                        Log.d("${scoreViewModel.countResult(currentBet, 2, successGame)}", "здесь добавлен результат")
-                        //add visual changes
-                        binding.btnSpin.isEnabled = true
-                        AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
-                        scoreViewModel.updateLevel(scoreViewModel.getLevel() + 1)
-                    }
-                    else {
-
-                        successGame = false
-                        scoreViewModel.countResult(currentBet, 2, successGame)
-//                        Log.d("${scoreViewModel.countResult(currentBet, 2, successGame)}", "здесь посчитан в минус результат $successGame")
-                        binding.btnSpin.isEnabled = true
-                    }
-                    AnimationHelper.updateScoreOrBetTextViewAnimation(binding.resultBalance, scoreViewModel.getScore().toString())
+                    checkForMatches()
                 }
             })
             .build()

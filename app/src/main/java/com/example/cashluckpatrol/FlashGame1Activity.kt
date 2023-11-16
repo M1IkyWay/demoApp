@@ -74,7 +74,17 @@ class FlashGame1Activity : AppCompatActivity() {
             // и остальные
         }
 
-
+        fun createVibrator () : Vibrator {
+            val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                val vibratorManager =
+                    getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+                vibratorManager.defaultVibrator
+            } else {
+                @Suppress("DEPRECATION")
+                getSystemService(VIBRATOR_SERVICE) as Vibrator
+            }
+            return vibrator
+        }
 
 
         spinBtn = binding.btnSpin
@@ -94,14 +104,6 @@ class FlashGame1Activity : AppCompatActivity() {
 
         soundHelper = (application as MyApplication).soundHelper
 
-        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            val vibratorManager =
-                getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
-            vibratorManager.defaultVibrator
-        } else {
-            @Suppress("DEPRECATION")
-            getSystemService(VIBRATOR_SERVICE) as Vibrator
-        }
 
 
         val scope = CoroutineScope(Dispatchers.Main)
@@ -208,6 +210,7 @@ class FlashGame1Activity : AppCompatActivity() {
             } else {
                 AnimationHelper.wrongInputAnimation(binding.choosenBet)
                 soundHelper.wrongInputSound(this, soundVolume)
+                soundHelper.vibroWarning(intensity, createVibrator(), scope)
                 val toast = Toast.makeText(this, "Minimal bet is 10", Toast.LENGTH_SHORT)
                 toast.show()
             }
@@ -367,7 +370,7 @@ class FlashGame1Activity : AppCompatActivity() {
                                 rotator(level, it, textResult, num, drawable)
                                 delay(400)
                                 soundHelper.defeatFlash1(context, soundVolume)
-                                soundHelper.vibroExplosion(intensity, vibrator)
+                                soundHelper.vibroExplosion(intensity, createVibrator(), scope)
                                 YoYo.with(Techniques.Shake).duration(500).playOn(it)
 
                                 val defeat = scoreViewModel.getScore() - currentBet
@@ -419,7 +422,15 @@ class FlashGame1Activity : AppCompatActivity() {
                                 )
 
                                 if (getCount() == 5) {
-                                    scoreViewModel.updateScore(scoreViewModel.getScore() + gameWin)
+                                    scope.launch {
+                                        binding.animationView.isVisible = true
+                                        soundHelper.winVibroFlash1(intensity, createVibrator(), scope)
+                                        scoreViewModel.updateScore(scoreViewModel.getScore() + gameWin)
+                                        binding.animationView.playAnimation()
+                                        delay(1500)
+                                        binding.animationView.isVisible = false
+
+                                    }
                                     updateCount(0)
                                     AnimationHelper.updateScoreOrBetTextViewAnimation(
                                         binding.winsCount,
@@ -470,6 +481,7 @@ class FlashGame1Activity : AppCompatActivity() {
 
         fun spinViews(list: MutableList<ImageView>) {
             soundHelper.rotateSound(context, soundVolume)
+            soundHelper.vibroPopup(intensity, createVibrator(), scope)
             list.forEach {
                 it.isEnabled = false
                 scope.launch {

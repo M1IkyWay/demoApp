@@ -20,6 +20,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProviders
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
@@ -75,13 +76,16 @@ class FlashGame2Activity : AppCompatActivity() {
         soundHelper = (application as MyApplication).soundHelper
         val intensity = scoreViewModel.getVibroIntensity()
 
-        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            val vibratorManager =
-                getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
-            vibratorManager.defaultVibrator
-        } else {
-            @Suppress("DEPRECATION")
-            getSystemService(VIBRATOR_SERVICE) as Vibrator
+        fun createVibrator () : Vibrator {
+            val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                val vibratorManager =
+                    getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+                vibratorManager.defaultVibrator
+            } else {
+                @Suppress("DEPRECATION")
+                getSystemService(VIBRATOR_SERVICE) as Vibrator
+            }
+            return vibrator
         }
 
         val context : Context = this
@@ -113,6 +117,7 @@ class FlashGame2Activity : AppCompatActivity() {
             else {
                 AnimationHelper.wrongInputAnimation(binding.choosenBet)
                 soundHelper.wrongInputSound(this, soundVolume)
+                soundHelper.vibroWarning(intensity, createVibrator(), scope)
                 val toast = Toast.makeText(this, "Minimal bet is 50", Toast.LENGTH_SHORT)
             }
         }
@@ -175,14 +180,16 @@ class FlashGame2Activity : AppCompatActivity() {
                 drawable = AppCompatResources.getDrawable(this, R.drawable.bomb)!!
                 scope.launch {
                     AnimationHelper.rotateBackward(it)
+                    val toast = Toast.makeText(context, "You lose", Toast.LENGTH_SHORT)
                     delay(400)
                     view.setImageDrawable(drawable)
-                    soundHelper.vibroExplosion(intensity, vibrator)
+                    soundHelper.vibroExplosion(intensity, createVibrator(), scope)
                     soundHelper.explosionSound(context, soundVolume)
                     YoYo.with(Techniques.Shake).duration(500).playOn(view)
 
                     val defeat = scoreViewModel.getScore() - currentBet
                     scoreViewModel.updateScore(defeat)
+                    toast.show()
                     delay(400)
                     count = 0
                     AnimationHelper.updateScoreOrBetTextViewAnimation(binding.winsCount, count.toString())
@@ -204,8 +211,15 @@ class FlashGame2Activity : AppCompatActivity() {
                 }
             }
             if (count == 4) {
-                val win = currentBet*2 + scoreViewModel.getScore()
-                scoreViewModel.updateScore(win)
+                scope.launch {
+                    val win = currentBet*2 + scoreViewModel.getScore()
+                    binding.animationView.isVisible = true
+                    soundHelper.winVibroFlash2(intensity, createVibrator(), scope)
+                    scoreViewModel.updateScore(win)
+                    binding.animationView.playAnimation()
+                    delay(1000)
+                    binding.animationView.isVisible = false
+                }
                 count = 0
                 incremBut.isEnabled = true
                 decremBut.isEnabled = true

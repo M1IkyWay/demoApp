@@ -119,7 +119,7 @@ class HotGameActivity : AppCompatActivity() {
                 scope.launch {
                     val toast = Toast.makeText (contextA, "You lose!", Toast.LENGTH_SHORT)
                     soundHelper.loseSound(contextA, soundVolume)
-                    soundHelper.defeatShot(intensity, vibrator)
+                    soundHelper.defeatShot(intensity, createVibrator(), scope)
                     toast.show()
 
                 }
@@ -167,7 +167,7 @@ class HotGameActivity : AppCompatActivity() {
         spinButton.setOnClickListener {
             it.isEnabled = false
             soundHelper.clickSound2(this, soundVolume)
-            soundHelper.spinShot(intensity, vibrator)
+            soundHelper.spinShot(intensity, createVibrator(), scope)
             AnimationHelper.clickView ( it, this)
             if (scoreViewModel.getScore()>=currentBet) {
                 soundHelper.slotMachineSound(this, soundVolume)
@@ -181,7 +181,7 @@ class HotGameActivity : AppCompatActivity() {
             else {
                 val toast = Toast.makeText(this, "You don`t have enough money!", Toast.LENGTH_SHORT)
                 toast.show()
-                soundHelper.vibroWarning(intensity, vibrator)
+                soundHelper.vibroWarning(intensity, createVibrator(), scope)
                 //add some sound
                 it.isEnabled = true
             }
