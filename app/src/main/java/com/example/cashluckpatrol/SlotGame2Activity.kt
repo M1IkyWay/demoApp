@@ -27,10 +27,13 @@ import android.widget.ImageView
 import android.widget.PopupWindow
 import android.widget.TextView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import androidx.core.view.isVisible
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.example.cashluckpatrol.databinding.ActivitySlotGame2Binding
@@ -101,7 +104,7 @@ class SlotGame2Activity : AppCompatActivity() {
             // и остальные
         }
 
-
+        val context : Context = this
         scoreViewModel = (application as MyApplication).scoreViewModel
         fun getStartBet(score: Int): Int {
             val currentBet = ((score / 100) * 5)
@@ -193,28 +196,83 @@ class SlotGame2Activity : AppCompatActivity() {
         animationSet.addAnimation(fadeAnimation)
         animationSet.addAnimation(slideDownAnimation)
 
-        fun createPopup (multiplier: Float) {
-            if (multiplier > 1.0f) {
-                val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-                val view = inflater.inflate(R.layout.popup_slot2, null)
 
-                val popupWindow = PopupWindow (
-                    view,
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    true)
-                soundHelper.slot2winSound(this, soundVolume)
-                soundHelper.vibroPopup(intensity, createVibrator(), scope)
-                popupWindow.contentView.startAnimation(slideUpAnimation)
-                popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0)
-                handler.postDelayed({
-////////////make an animation longer
-                popupWindow.contentView.startAnimation(slideDownAnimation)
-                    handler.postDelayed({
-                        popupWindow.dismiss()},
-                        animationSet.duration
-                    )}, 1000)
+//        fun createImageView () : ImageView{
+//            val imageView = ImageView(this)
+//            imageView.id = View.generateViewId()
+//            val sizeInPixels = resources.getDimensionPixelSize(R.dimen.size_im)
+//            val layoutParams = ConstraintLayout.LayoutParams(sizeInPixels, sizeInPixels)
+//            imageView.layoutParams = layoutParams
+//            imageView.scaleType = ImageView.ScaleType.FIT_CENTER
+//            imageView.setImageResource(R.drawable.you_win_)
+//            val translationZInPixels = resources.getDimensionPixelSize(R.dimen.size_im)
+//            ViewCompat.setTranslationZ(imageView, translationZInPixels.toFloat())
+//
+//            imageView.visibility = View.INVISIBLE
+//
+//            val constraintSet = ConstraintSet()
+//            constraintSet.clone(binding.contParent) // Замените `parentLayout` на ваш родительский контейнер
+//            constraintSet.connect(imageView.id, ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM)
+//            constraintSet.connect(imageView.id, ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.END)
+//            constraintSet.connect(imageView.id, ConstraintSet.START, ConstraintSet.PARENT_ID, ConstraintSet.START)
+//            constraintSet.connect(imageView.id, ConstraintSet.TOP, ConstraintSet.PARENT_ID, ConstraintSet.TOP)
+//            constraintSet.setHorizontalBias(imageView.id, 0.5f)
+//            constraintSet.setVerticalBias(imageView.id, 0.2f)
+//            constraintSet.applyTo(binding.contParent)
+//            binding.contParent.addView(imageView)
+//        return imageView
+//        }
+
+        fun createImageView(): ImageView {
+            val imageView = ImageView(this)
+            imageView.id = View.generateViewId()
+            val sizeInPixels = resources.getDimensionPixelSize(R.dimen.size_im)
+            val layoutParams = ConstraintLayout.LayoutParams(sizeInPixels, sizeInPixels)
+            imageView.layoutParams = layoutParams
+            imageView.scaleType = ImageView.ScaleType.FIT_CENTER
+            imageView.setImageResource(R.drawable.you_win_)
+            val translationZInPixels = resources.getDimensionPixelSize(R.dimen.size_im)
+            ViewCompat.setTranslationZ(imageView, translationZInPixels.toFloat())
+
+            imageView.visibility = View.INVISIBLE
+
+            val params = ConstraintLayout.LayoutParams(sizeInPixels, sizeInPixels)
+            params.bottomToBottom = ConstraintLayout.LayoutParams.PARENT_ID
+            params.endToEnd = ConstraintLayout.LayoutParams.PARENT_ID
+            params.startToStart = ConstraintLayout.LayoutParams.PARENT_ID
+            params.topToTop = ConstraintLayout.LayoutParams.PARENT_ID
+            params.horizontalBias = 0.5f
+            params.verticalBias = 0.2f
+
+            binding.contParent.addView(imageView, params)
+
+            return imageView
+        }
+
+
+        fun createPopup (multiplier: Float) {
+            val youWin = createImageView()
+            if (multiplier > 1.0f) {
+
+                scope.launch {
+                    youWin.isVisible = true
+                    youWin.startAnimation(slideUpAnimation)
+                    soundHelper.slot2winSound(context, soundVolume)
+                    soundHelper.vibroPopupSlot2(intensity, createVibrator(), scope)
+                    delay(1000)
+                    youWin.startAnimation(slideDownAnimation)
+                    delay(50)
+                    YoYo.with(Techniques.FadeOut).duration(200).playOn(youWin)
+//                    delay(300)
+                    youWin.isVisible = false
+
+                    binding.contParent.removeView(youWin)
+                }
     }
+            else {
+                soundHelper.loseSound(context, soundVolume)
+
+            }
             }
 
         fun spinCircle(): Float {
@@ -266,14 +324,15 @@ class SlotGame2Activity : AppCompatActivity() {
                     val thisWin = (bet * multiplier).toInt()
                     if (thisWin > bet) {
                         totalWin += thisWin
+                        createPopup(multiplier)
                         AnimationHelper.updateScoreOrBetTextViewAnimation(
                             binding.scoreWin,
                             totalWin.toString()
                         )
                     }
                     scoreViewModel.countScoreSlot2(bet, multiplier)
+
                     scoreViewModel.updateLevel(scoreViewModel.getLevel() + 1)
-                    createPopup(multiplier)
                     it.isEnabled = true
                 }
             }

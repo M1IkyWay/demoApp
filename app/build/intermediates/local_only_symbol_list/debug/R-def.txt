@@ -27,7 +27,9 @@ color validity_color
 color white
 dimen app_bar_height
 dimen fab_margin
+dimen size_im
 dimen text_margin
+dimen trans_im
 drawable a_lit
 drawable active_rect
 drawable animation
@@ -162,11 +164,16 @@ id butt_back
 id buttons
 id choosenBet
 id confetti
+id cont_parent
 id coomingSoon
 id cop
 id currentBal
+id da
 id decremBet
+id dfd
 id downloadSet
+id dsfsd
+id dvv
 id firstIn1
 id firstIn1T
 id firstIn2
@@ -178,7 +185,6 @@ id firstIn4T
 id firstIn5
 id firstIn5T
 id flash1
-id flash2
 id flash2_non_anon
 id flash3
 id flashGames
@@ -194,6 +200,7 @@ id fourthIn4T
 id fourthIn5
 id fourthIn5T
 id frame500
+id gdfg
 id grade1
 id grade2
 id grade3
@@ -214,7 +221,6 @@ id imageView13
 id imageView14
 id imageView15
 id imageView16
-id imageView2
 id imageView3
 id imageView4
 id imageView5
@@ -262,7 +268,6 @@ id rectangle2
 id rectangle3
 id rectangle4
 id rectangle5
-id registerButton
 id resetScoreText
 id resultBalance
 id roundArrow
@@ -280,7 +285,6 @@ id secondIn5T
 id setingsText
 id settindsButton
 id slot1
-id slot2
 id slot2_non_anon
 id slot3
 id slotGames
@@ -288,10 +292,8 @@ id slot_one
 id slot_three
 id slot_two
 id smBtnPlay
-id smBtnPlayFlash
 id smBtnPlayFlash1
 id smBtnPlayFlash2
-id smBtnPlaySlot
 id smBtnPlaySlot1
 id smBtnPlaySlot2
 id soundSet
@@ -341,7 +343,6 @@ layout activity_coming_soon
 layout activity_flash_game1
 layout activity_flash_game2
 layout activity_games_menu
-layout activity_games_menu_anon
 layout activity_hot_game
 layout activity_play
 layout activity_settings
@@ -350,7 +351,6 @@ layout activity_slot_game2
 layout activity_splash_screen
 layout activity_web_view
 layout item_list
-layout popup_slot2
 mipmap ic_launcher
 mipmap ic_launcher_round
 raw click2

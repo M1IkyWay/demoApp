@@ -232,7 +232,7 @@ class SoundHelper (context: Context) {
             val intensityArr2 = intArrayOf(intensity, intensity, intensity, intensity,
                 intensity, intensity, intensity, intensity, intensity,
                 intensity)
-            val array2 = longArrayOf(0, 50, 100, 50, 200, 50, 300, 50, 500, 50)
+            val array2 = longArrayOf(50, 50, 100, 50, 200, 50, 300, 50, 500, 50)
 
             val vibrationEffect1 = VibrationEffect.createWaveform(array1, intensityArr1, 3)
             val vibrationEffect2 = VibrationEffect.createWaveform(array2, intensityArr2, 1)
@@ -351,20 +351,44 @@ class SoundHelper (context: Context) {
     fun vibroPopup (intensity : Int, vibratorr: Vibrator, scope: CoroutineScope) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val intensityArr = intArrayOf(intensity, intensity, intensity, intensity)
-            val array : LongArray = longArrayOf(0, 300, 50, 100)
+            val array : LongArray = longArrayOf(50, 150, 100, 50)
             val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 1)
             scope.launch {
                 vibratorr.vibrate(vibrationEffect)
-                delay(450)
+                delay(250)
                 vibratorr.cancel()
             }
 
         }
         else {
             scope.launch {
-                vibratorr.vibrate(200)
-                delay(250)
-                vibratorr.vibrate(100)
+                vibratorr.vibrate(150)
+                delay(100)
+                vibratorr.vibrate(50)
+                vibratorr.cancel()
+            }
+
+        }
+    }
+
+
+    fun vibroPopupSlot2 (intensity : Int, vibratorr: Vibrator, scope: CoroutineScope) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val intensityArr = intArrayOf(intensity, intensity, intensity, intensity)
+            val array : LongArray = longArrayOf(100, 50, 100, 200)
+            val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 1)
+            scope.launch {
+                vibratorr.vibrate(vibrationEffect)
+                delay(550)
+                vibratorr.cancel()
+            }
+
+        }
+        else {
+            scope.launch {
+                vibratorr.vibrate(150)
+                delay(100)
+                vibratorr.vibrate(50)
                 vibratorr.cancel()
             }
 

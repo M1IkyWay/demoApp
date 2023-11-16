@@ -12,6 +12,7 @@ import android.os.VibratorManager
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.core.content.getSystemService
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -267,7 +268,12 @@ class SettingsActivity : AppCompatActivity() {
 
 
             binding.resetScoreText.setOnClickListener {
+                soundHelper.vibroClick(intensity)
+                soundHelper.clickSound(this, soundVolume)
+                AnimationHelper.smallClickView(it, this)
                 scoreViewModel.updateScore(2000)
+                val toast = Toast.makeText(this, "Your score is 2000", Toast.LENGTH_SHORT)
+                toast.show()
             }
         }
 

@@ -13,7 +13,9 @@
     <color name="white">#FFFFFF</color>
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="size_im">195dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="trans_im">32dp</dimen>
     <item name="numberInput" type="id"/>
     <string name="accept">Accept?</string>
     <string name="accept_agr">Accept</string>
