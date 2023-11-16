@@ -22,6 +22,7 @@ import kotlin.random.Random
 class SplashScreen : AppCompatActivity() {
 
     lateinit var binding : ActivitySplashScreenBinding
+    lateinit var scoreViewModel : ScoreViewModel
 
     fun startDownloading (intent : Intent) {
         val parentLayout = binding.downloadSet
@@ -51,13 +52,19 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        scoreViewModel = (application as MyApplication).scoreViewModel
 
 
 }
     override fun onStart() {
         super.onStart()
-        startDownloading(Intent(this, WebViewActivity::class.java))
+
+        if (scoreViewModel.getPrivacyPolicyAccepted()) {
+            startDownloading(Intent(this, PlayActivity::class.java))
+        }
+        else {
+            startDownloading(Intent(this, AgreementActivity::class.java))
+        }
 
     }
     }

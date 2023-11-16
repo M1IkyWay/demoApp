@@ -273,16 +273,19 @@ class FlashGame1Activity : AppCompatActivity() {
             }
         }
 
+        fun createPopupResult () {
+
+
+
+        }
+
         fun openOtherLines(levelFlash1: LevelFlash1) {
 
             for (i in levelFlash1.currentLevel until listOfLevels.size) {
 
                 val list = randomizeList()
 
-                Log.d(
-                    "aaaaaaaaaaaaa",
-                    "this is list of strings in level ${list.forEach { it.toString() }}"
-                )
+
                 listOfLevels[i].imageList.forEach {
                     scope.launch {
                         it.isEnabled = false
@@ -352,6 +355,7 @@ class FlashGame1Activity : AppCompatActivity() {
 
                     it.setOnClickListener {
                         it.isEnabled = false
+                        spinBtn.isEnabled = true
                         Log.d(
                             "in setonclick listener",
                             "it was $textResult nowaaaaaaaaaaaaaaaaaaaaaaaaaaaa, ${getResult()}"
@@ -531,57 +535,6 @@ class FlashGame1Activity : AppCompatActivity() {
 
                     setResultAndCount(level1)
 
-//                scope.launch {
-//                    val pred = 1
-//                    setResultAndCount(level1, pred)
-//                    delay(1000)
-//
-//                    if (getResult() > 0) {
-//                        setResultAndCount(level2, getResult())
-//                        delay(1000)
-//
-//
-//                        if (getResult() > 0) {
-//                            val res3 = setResultAndCount(level3, getResult())
-//                            delay(1000)
-//
-//
-//                            if (getResult() > 0) {
-//                                val res4 = setResultAndCount(level4, getResult())
-//                                delay(1000)
-//
-//
-//                                if (getResult() > 0) {
-//                                    val res5 = setResultAndCount(level5, getResult())
-//                                    delay(1000)
-//
-//                                }
-//
-//                                else {
-//                                    openOtherLines(level5, listOfPoints)
-//                                }
-//                            }
-//
-//                            else {
-//                                openOtherLines(level4, listOfPoints)
-//                                openOtherLines(level5, listOfPoints)
-//                            }
-//
-//
-//                        }
-//                        else {
-//                            openOtherLines(level3, listOfPoints)
-//                            openOtherLines(level4, listOfPoints)
-//                            openOtherLines(level5, listOfPoints)
-//                        }
-//
-//
-//
-//                    }
-//                    else {
-//                        openOtherLines(level2, listOfPoints)
-//                        openOtherLines(level3, listOfPoints)
-//                        openOtherLines(level4, listOfPoints)
 //                        openOtherLines(level5, listOfPoints)
                     Log.d("bbbbbbbbbbbbbbbbb", "the button spin finished it's work ")
                     isAllowedExecute = true

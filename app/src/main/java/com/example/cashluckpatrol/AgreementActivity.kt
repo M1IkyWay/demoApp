@@ -46,8 +46,6 @@ class AgreementActivity : AppCompatActivity() {
             soundHelper.vibroClick(intensity)
             soundHelper.clickSound(this, soundVolume)
             startActivity(Intent(this, WebViewActivity::class.java))
-
-
         }
 
         binding.yesButton.setOnClickListener {
@@ -56,7 +54,6 @@ class AgreementActivity : AppCompatActivity() {
             soundHelper.clickSound(this, soundVolume)
             scoreViewModel.setIsPrivacyPolicyAccepted(true)
             startActivity(Intent(this, PlayActivity::class.java))
-
         }
 
     }

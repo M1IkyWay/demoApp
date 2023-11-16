@@ -85,27 +85,33 @@ class WebViewActivity : AppCompatActivity() {
         }
 
 
-
-
-        acceptButton.setOnClickListener {
-            AnimationHelper.smallClickView(it, this)
+        binding.buttBack.setOnClickListener {
             soundHelper.vibroClick(intensity)
-            soundHelper.clickSound(this, soundVolume)
-
-            startActivity(Intent(this, AgreementActivity::class.java))
-
-            // Я ввела змінну isPrivacyPolicyAccepted (лайвдата у вьюмоделі), яка змінюється на true після
-            // того, як користувач на екрані AgreemenyACtivity погодиться із PrivacyPolicy. Нижче перевіряється цей
-            // момент, і якщо користувач погодився, то завжди відкриватиметься меню ігор після вебв'ю
-
-//            if(scoreViewModel.getPrivacyPolicyAccepted()) {
-//                startActivity(Intent(this, PlayActivity ::class.java))
-//            }
-
-
+            soundHelper.clickSound2(this, soundVolume)
+            AnimationHelper.smallClickView(it, this)
+            onBackPressed()
         }
 
 
+//        acceptButton.setOnClickListener {
+//            AnimationHelper.smallClickView(it, this)
+//            soundHelper.vibroClick(intensity)
+//            soundHelper.clickSound(this, soundVolume)
+//
+//            startActivity(Intent(this, AgreementActivity::class.java))
+//
+//            // Я ввела змінну isPrivacyPolicyAccepted (лайвдата у вьюмоделі), яка змінюється на true після
+//            // того, як користувач на екрані AgreemenyACtivity погодиться із PrivacyPolicy. Нижче перевіряється цей
+//            // момент, і якщо користувач погодився, то завжди відкриватиметься меню ігор після вебв'ю
+//
+////            if(scoreViewModel.getPrivacyPolicyAccepted()) {
+////                startActivity(Intent(this, PlayActivity ::class.java))
+////            }
+//
+//
+//        }
+//
+//
     }
 
     override fun onPause() {
