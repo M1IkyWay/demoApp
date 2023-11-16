@@ -4,6 +4,7 @@
     <color name="black">#FF0000</color>
     <color name="border_for_input">#FF7E14</color>
     <color name="hint_color">#483B54</color>
+    <color name="hot_color">#402200C9</color>
     <color name="input_color">#1A12D9</color>
     <color name="invalidity_color">#FF1414</color>
     <color name="pressed_color">#2200C8</color>

@@ -31,6 +31,8 @@ class SoundHelper (context: Context) {
     private var rotate : Int = 0
     private var correctInput : Int = 0
     private var defeatFlash1 : Int = 0
+    private var winFlash1 : Int = 0
+    private var coin : Int = 0
 
 
    init {
@@ -60,6 +62,8 @@ class SoundHelper (context: Context) {
         rotate = soundPool.load(context, R.raw.rotate, 1)
         correctInput = soundPool.load(context, R.raw.correct_input, 1)
         defeatFlash1 = soundPool.load(context, R.raw.defeat_flash1, 1)
+        winFlash1 = soundPool.load(context, R.raw.win1flash, 1)
+        coin = soundPool.load(context, R.raw.coin, 1)
 
 
 //       vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -81,7 +85,13 @@ class SoundHelper (context: Context) {
 
 
 
+    fun win1Flash (context: Context, loud : Float) {
+        soundPool.play(winFlash1, loud, loud, 1, 0, 1.0f)
+    }
 
+    fun coin (context: Context, loud : Float) {
+        soundPool.play(coin, loud, loud, 1, 0, 1.0f)
+    }
     fun slotMachineSound (context: Context, loud : Float) {
         soundPool.play(slotMachineSound, loud, loud, 1, 0, 1.0f)
     }
@@ -212,7 +222,7 @@ class SoundHelper (context: Context) {
         }
     }
 
-    fun spinShot (intensity : Int, vibratorr: Vibrator, scope: CoroutineScope) {
+    fun spinShotCircle (intensity : Int, vibratorr: Vibrator, scope: CoroutineScope) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val array1 : LongArray = longArrayOf(50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50)
             val intensityArr1 = intArrayOf(intensity, intensity, intensity, intensity, intensity,
@@ -230,6 +240,44 @@ class SoundHelper (context: Context) {
             scope.launch {
                 vibratorr.vibrate(vibrationEffect1)
                 delay(3000)
+                vibratorr.vibrate(vibrationEffect2)
+                delay(1350)
+                vibratorr.cancel()
+            }
+
+        }
+        else {
+            scope.launch {
+                vibratorr.vibrate(50)
+                delay(100)
+                vibratorr.vibrate(100)
+                delay(150)
+                vibratorr.vibrate(200)
+                vibratorr.cancel()
+            }
+
+        }
+    }
+
+
+    fun spinShot (intensity : Int, vibratorr: Vibrator, scope: CoroutineScope) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val array1 : LongArray = longArrayOf(50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50)
+            val intensityArr1 = intArrayOf(intensity, intensity, intensity, intensity, intensity,
+                intensity, intensity, intensity, intensity, intensity, intensity, intensity, intensity, intensity, intensity,
+                intensity, intensity, intensity, intensity, intensity)
+
+            val intensityArr2 = intArrayOf(intensity, intensity, intensity, intensity,
+                intensity, intensity, intensity, intensity, intensity,
+                intensity)
+            val array2 = longArrayOf(0, 50, 100, 50, 200, 50, 300, 50, 500, 50)
+
+            val vibrationEffect1 = VibrationEffect.createWaveform(array1, intensityArr1, 4)
+            val vibrationEffect2 = VibrationEffect.createWaveform(array2, intensityArr2, 1)
+
+            scope.launch {
+                vibratorr.vibrate(vibrationEffect1)
+                delay(4000)
                 vibratorr.vibrate(vibrationEffect2)
                 delay(1350)
                 vibratorr.cancel()
@@ -354,10 +402,10 @@ class SoundHelper (context: Context) {
                 intensity, intensity, intensity, intensity,
                 intensity, intensity, intensity)
             val array : LongArray = longArrayOf(0, 50, 100, 50, 100, 50, 100, 50, 100, 50, 50, 50, 50, 50, 50)
-            val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 1)
+            val vibrationEffect = VibrationEffect.createWaveform(array, intensityArr, 2)
             scope.launch {
                 vibratorr.vibrate(vibrationEffect)
-                delay(900)
+                delay(2700)
                 vibratorr.cancel()
             }
 

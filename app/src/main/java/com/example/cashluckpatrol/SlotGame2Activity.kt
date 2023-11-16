@@ -259,7 +259,7 @@ class SlotGame2Activity : AppCompatActivity() {
                 binding.roundArrow.startAnimation(rotate)
                 binding.arrow.startAnimation(rotateABit)
                 soundHelper.wheelSpinSound(this, soundVolume)
-                soundHelper.spinShot(intensity, createVibrator(), scope)
+                soundHelper.spinShotCircle(intensity, createVibrator(), scope)
                 scope.launch {
                     val multiplier = spinCircle()
                     delay(5500)

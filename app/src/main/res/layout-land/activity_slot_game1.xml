@@ -278,7 +278,7 @@
                         <com.example.cashluckpatrol.SlotView
                             android:id="@+id/slot_one"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/_180sdp"
+                            android:layout_height="@dimen/_185sdp"
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
                             android:layout_gravity="center"
@@ -289,7 +289,7 @@
                         <com.example.cashluckpatrol.SlotView
                             android:id="@+id/slot_two"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/_180sdp"
+                            android:layout_height="@dimen/_185sdp"
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
                             android:layout_gravity="center"
@@ -300,7 +300,7 @@
                         <com.example.cashluckpatrol.SlotView
                             android:id="@+id/slot_three"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/_180sdp"
+                            android:layout_height="@dimen/_185sdp"
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
                             android:layout_gravity="center"

@@ -18,6 +18,7 @@ color bg_for_input
 color black
 color border_for_input
 color hint_color
+color hot_color
 color input_color
 color invalidity_color
 color pressed_color
@@ -102,6 +103,7 @@ drawable q_lit
 drawable quest
 drawable quest_reversed
 drawable register_to_unlock
+drawable semitransparent_background
 drawable settings
 drawable slot1
 drawable slot2_anon
@@ -109,6 +111,7 @@ drawable slot2_non_anon
 drawable slot3
 drawable spin_viol
 drawable transparent_background
+drawable win_slot1_im
 drawable you_win_
 font a_citynovabolditalic
 font air_millhouse_italic
@@ -326,6 +329,7 @@ id vibrationText
 id vibroSet
 id webView
 id winColumn
+id winImage
 id winW
 id winsAmount
 id winsCount
@@ -351,15 +355,18 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 raw click2
 raw click_default
+raw coin
 raw confetti
 raw correct_input
 raw defeat_1
 raw defeat_flash1
 raw explosion
+raw flash1_win
 raw flash_1
 raw flash_2
 raw hot_game
 raw hot_win
+raw land_flash2_win
 raw launcher
 raw mistake_choice
 raw rotate
@@ -371,6 +378,7 @@ raw slot_machine
 raw stars_bar
 raw wheel_spin
 raw win
+raw win1flash
 raw wrong_input
 string accept
 string accept_agr

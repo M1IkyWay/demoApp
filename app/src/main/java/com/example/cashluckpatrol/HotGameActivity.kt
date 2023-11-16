@@ -31,6 +31,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
+import com.daimajia.androidanimations.library.Techniques
+import com.daimajia.androidanimations.library.YoYo
 
 class HotGameActivity : AppCompatActivity() {
 
@@ -108,7 +110,9 @@ class HotGameActivity : AppCompatActivity() {
                 binding.animationView.isVisible = true
                 soundHelper.winShot(intensity, createVibrator(), scope)
                 binding.animationView.playAnimation()
-                delay(2000)
+                delay(1800)
+                YoYo.with(Techniques.FadeOut).duration(200).playOn(binding.animationView)
+                delay(200)
                 binding.animationView.isVisible = false
                 scoreViewModel.updateScore(scoreViewModel.getScore() + 1)
                 }

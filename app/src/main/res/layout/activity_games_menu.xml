@@ -470,7 +470,7 @@
                 android:layout_alignTop="@id/level"
                 android:layout_alignBottom="@id/level"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="88dp"
+                android:layout_marginStart="83dp"
                 android:layout_marginTop="13dp"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:layout_marginBottom="13dp"

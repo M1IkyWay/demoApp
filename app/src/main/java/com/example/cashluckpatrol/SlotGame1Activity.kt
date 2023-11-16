@@ -174,6 +174,7 @@ class SlotGame1Activity : AppCompatActivity() {
         val slots = setupSlotsMachine()
         spinButton.setOnClickListener {
             it.isEnabled = false
+            binding.choosenBet.setTextColor(resources.getColor(R.color.white))
             binding.incremBet.isEnabled = false
             binding.decremBet.isEnabled = false
             soundHelper.clickSound2(this, soundVolume)

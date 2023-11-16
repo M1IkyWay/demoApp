@@ -164,7 +164,7 @@ class FlashGame1Activity : AppCompatActivity() {
         val level5 = LevelFlash1(line5, line5T, binding.sum5, 5)
         val listOfLevels = listOf(level1, level2, level3, level4, level5)
 
-        var listOfPoints = mutableListOf("+0", "+0", "+${(currentBet / 2).toInt()}", "+$currentBet")
+
 
         scoreViewModel.score.observe(this) { newScore ->
             binding.resultBalance.setText("$newScore")
@@ -226,6 +226,7 @@ class FlashGame1Activity : AppCompatActivity() {
         }
 
         fun randomizeList(): List<String> {
+            var listOfPoints = mutableListOf("+0", "+0", "+${(currentBet / 2).toInt()}", "+$currentBet")
             val usableList = listOfPoints.shuffled()
             return usableList
         }
@@ -343,6 +344,7 @@ class FlashGame1Activity : AppCompatActivity() {
             fun doBusiness(level: LevelFlash1) {
                 val listOfP = randomizeList()
 
+
                 level.imageList.forEach { it ->
                     it.isEnabled = true
                     val num = it.tag.toString().toInt()
@@ -382,7 +384,7 @@ class FlashGame1Activity : AppCompatActivity() {
                                     binding.winsCount,
                                     getCount().toString()
                                 )
-                                openOthersInLine(level, listOfPoints)
+                                openOthersInLine(level, listOfP)
                                 openOtherLines(level)
                                 requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
                             }
@@ -391,6 +393,7 @@ class FlashGame1Activity : AppCompatActivity() {
                             updateResult(textResult)
 
                         } else {
+
 //                                previousWin = true
                             Log.d(
                                 "in result else",
@@ -401,6 +404,8 @@ class FlashGame1Activity : AppCompatActivity() {
                             scope.launch {
                                 rotator(level, it, textResult, num, drawable)
                                 soundHelper.vibroClick(intensity)
+                                soundHelper.coin(context, soundVolume)
+                                soundHelper.clickSound(context, soundVolume)
                                 //findCorrectSound
                                 delay(400)
                                 it as ImageView
@@ -413,7 +418,7 @@ class FlashGame1Activity : AppCompatActivity() {
                                     textResult
                                 )
                                 gameWin += textResult.toInt()
-                                openOthersInLine(level, listOfPoints)
+                                openOthersInLine(level, listOfP)
                                 updateCount(getCount() + 1)
 
                                 AnimationHelper.updateScoreOrBetTextViewAnimation(
@@ -424,10 +429,18 @@ class FlashGame1Activity : AppCompatActivity() {
                                 if (getCount() == 5) {
                                     scope.launch {
                                         binding.animationView.isVisible = true
-                                        soundHelper.winVibroFlash1(intensity, createVibrator(), scope)
+                                        soundHelper.winVibroFlash1(
+                                            intensity,
+                                            createVibrator(),
+                                            scope
+                                        )
+                                        soundHelper.win1Flash(context, soundVolume)
                                         scoreViewModel.updateScore(scoreViewModel.getScore() + gameWin)
                                         binding.animationView.playAnimation()
-                                        delay(1500)
+                                        delay(2500)
+                                        YoYo.with(Techniques.FadeOut).duration(200)
+                                            .playOn(binding.animationView)
+                                        delay(200)
                                         binding.animationView.isVisible = false
 
                                     }
@@ -439,7 +452,8 @@ class FlashGame1Activity : AppCompatActivity() {
                                     binding.incremBet.isEnabled = true
                                     binding.decremBet.isEnabled = true
                                     spinBtn.isEnabled = true
-                                    requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+                                    requestedOrientation =
+                                        ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
                                     scoreViewModel.updateLevel(scoreViewModel.getLevel() + 1)
                                     //sound and popup and vibration
                                 } else {
@@ -453,30 +467,7 @@ class FlashGame1Activity : AppCompatActivity() {
             }
 
             doBusiness(level)
-
-//            binding.decremBet.isEnabled = true
-//            binding.incremBet.isEnabled = true
-
         }
-
-
-//        suspend fun controller() {
-//            var resul : Int = 1
-//
-//            scope.launch {
-//                for (i in 0 until listOfLevels.size) {
-//                        val job1 = setResultAndCount(listOfLevels[i], resul)
-//                        job1.join()
-//                        resul = getResult()
-//                        Log.d(
-//                            "in controller",
-//                            "it have just finishedto work, and value was taken  nowaaaaaaaaaaaaaaaaaaaaaaaaaaaa, $resul")
-//
-//                    }
-//
-//                }
-//            spinBtn.isEnabled = true
-//            }
 
 
         fun spinViews(list: MutableList<ImageView>) {

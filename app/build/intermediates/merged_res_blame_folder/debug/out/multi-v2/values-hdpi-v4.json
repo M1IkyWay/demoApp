@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.cashluckpatrol.app-mergeDebugResources-32:/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "com.example.cashluckpatrol.app-mergeDebugResources-31:/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
                     "source": "/home/milkyway/.gradle/caches/transforms-3/dc709874b4fddd4696237c2a15de0bfa/transformed/appcompat-1.6.1/res/values-hdpi-v4/values-hdpi-v4.xml",
